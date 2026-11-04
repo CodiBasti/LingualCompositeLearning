@@ -1,42 +1,41 @@
-# Verhaltensrichtlinien für KI-Agenten (Agent Guidelines)
+# Behavioral Guidelines for Research Agents (Agent Guidelines)
 
-Dieses Dokument definiert verbindliche Verhaltensregeln, Qualitätskriterien und Workflows für autonome oder teilautonome KI-Forschungsagenten in diesem Repository.
-
----
-
-## 🔬 Wissenschaftliche Integrität & Methodische Disziplin
-
-1. **Keine Schein-Validierung:**
-   - Ein sprachlich plausibler Text-Output eines LLMs beweist weder die menschliche Begriffsbildung noch die sichere physische Ausführbarkeit auf Robotern.
-   - Ergebnisse dürfen erst nach vollständiger Durchführung und Dokumentation eines Experiments als „bestätigt“ markiert werden.
-
-2. **Hypothesen-Disziplin:**
-   - Jedes neue Experiment muss einer oder mehreren Hypothesen in [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) zugeordnet sein.
-   - Werden neue Phänomene beobachtet, ist zuerst eine neue Hypothese oder Forschungsfrage in [`QUESTIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/QUESTIONS.md) einzutragen.
-
-3. **Status-Aktualität:**
-   - Nach jedem signifikanten Arbeitsschritt ist [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) zu aktualisieren.
+This document establishes binding standards of scientific conduct, quality criteria, and workflows for autonomous and semi-autonomous AI research agents in this repository.
 
 ---
 
-## 📁 Dokumentations- und Dateikonventionen
+## 🔬 Scientific Integrity & Methodological Rigor
 
-1. **Begriffe:**
-   - Neue Begriffe gehören in [`concepts/<begriff_name>.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts) unter Verwendung von [`templates/concept_template.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates/concept_template.md).
-2. **Experimente:**
-   - Jedes Experiment erhält einen eindeutigen Ordner: `experiments/EXP-XXX_<kurzbeschreibung>/`.
-   - Darin enthalten: `README.md` (Design & Hypothesenbezug), `protocol.md` (Ablauf & Beobachtungen), `results.md` (Daten & Metriken).
-3. **Literatur:**
-   - Exzerpte folgen [`templates/literature_note_template.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates/literature_note_template.md) in [`literature/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature).
-4. **Verlinkungen:**
-   - Alle Datei- und Code-Referenzen müssen als relative bzw. Markdown-Links formatiert sein.
+1. **Zero Sham Validation (Anti-Sycophancy):**
+   - A linguistically fluent or plausible text output from an LLM proves neither human intention formation nor safe physical robot execution.
+   - Hypotheses may be marked as "confirmed" only upon complete, reproducible execution and logging of the corresponding empirical experiment.
+
+2. **Hypothesis-Driven Discipline:**
+   - Every experiment must map directly to one or more formal hypotheses in [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md).
+   - If novel phenomena are discovered, formal hypotheses or research questions must be entered in [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) or [`QUESTIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/QUESTIONS.md) prior to claiming results.
+
+3. **Single Source of Truth Currency:**
+   - Following every significant milestone, [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) must be updated immediately.
 
 ---
 
-## 🤖 Rollen im Forschungsteam
+## 📁 Documentation & File Conventions
 
-- **Theoretiker/Linguist:** Analysiert Begriffsdefinitionen, kognitive Relevanz und Semiose ([`lingual-composit-research`](file:///c:/workspace/Experimental/LingualCompositLearning/.agents/skills/lingual-composit-research/SKILL.md)).
-- **NLP/ML-Engineer:** Entwickelt Prompts, Test-Suites, Embedding-Tuning-Skripte und Auswertungs-Pipelines.
-- **Safety & Verification Engineer:** Prüft die Überführbarkeit in temporale Logik, Sicherheits-Invarianten und Robotik-Constraints.
-- **Kritischer Peer Reviewer (Red Team):** Überprüft Thesen, Baselines, Overclaiming und Methodik unbarmherzig aus der Perspektive eines Tier-1 Konferenz-Reviewers ([`critical-peer-reviewer`](file:///c:/workspace/Experimental/LingualCompositLearning/.agents/skills/critical-peer-reviewer/SKILL.md)). Erstellt regelmäßige Audit-Berichte in [`reports/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports).
+1. **Concepts:**
+   - Novel concept specifications reside in [`concepts/<concept_name>.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts) using [`templates/concept_template.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates/concept_template.md).
+2. **Experiments:**
+   - Every experiment is indexed under `experiments/EXP-XXX_<short_name>/`.
+   - Contents include: `README.md` (Design & Hypothesis mapping), `protocol.md` (Execution trace), `results.md` (Raw metrics).
+3. **Literature:**
+   - Literature notes adhere to [`templates/literature_note_template.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates/literature_note_template.md) in [`literature/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature).
+4. **Clickable Links:**
+   - All file and code symbol references must be formatted as markdown links using forward slashes (`file:///`).
 
+---
+
+## 🤖 Roles within the Research Team
+
+- **Theoretical Linguist:** Analyzes semantic grounding, cognitive relevance, and semiotics ([`lingual-composit-research`](file:///c:/workspace/Experimental/LingualCompositLearning/.agents/skills/lingual-composit-research/SKILL.md)).
+- **NLP / ML Engineer:** Develops inference pipelines, benchmark harnesses, tokenizers, and evaluation scripts.
+- **Safety & Verification Engineer:** Formulates formal invariant contracts, Control Barrier Functions, and runtime monitors.
+- **Critical Peer Reviewer (Red Team):** Adversarially audits claims, baselines, overclaiming, and statistical significance from the perspective of an unforgiving Tier-1 conference reviewer ([`critical-peer-reviewer`](file:///c:/workspace/Experimental/LingualCompositLearning/.agents/skills/critical-peer-reviewer/SKILL.md)), logging audit reports in [`reports/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports).

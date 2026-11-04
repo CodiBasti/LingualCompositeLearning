@@ -1,23 +1,23 @@
-# Literatur-Exzerpt: Hewitt et al. (2025) - We Can’t Understand AI Using our Existing Vocabulary
+# Literature Note: Hewitt et al. (2025) - We Can’t Understand AI Using our Existing Vocabulary
 
-- **Zitation:** Hewitt, J., Geirhos, R. & Kim, B. (2025): *Position: We Can’t Understand AI Using our Existing Vocabulary*. ICML 2025.
-- **Quelle:** https://proceedings.mlr.press/v267/hewitt25a.html
-- **Relevanz für Lingual Composite Learning:** Sehr hoch (Theoretische Fundierung neuer Wörter zur KI-Steuerung).
-- **Kategorie:** LLM-Steuerung & Neologismen.
+- **Citation:** Hewitt, J., Geirhos, R. & Kim, B. (2025): *Position: We Can’t Understand AI Using our Existing Vocabulary*. ICML 2025.
+- **Source:** https://proceedings.mlr.press/v267/hewitt25a.html
+- **Relevance for Lingual Composite Learning:** Very High (Theoretical justification for novel synthetic vocabulary in AI control).
+- **Category:** LLM Steerability & Neologisms.
 
 ---
 
-## 1. Kernbeitrag & Kernaussage
-Das Positionspapier argumentiert, dass unser bestehendes Vokabular der natürlichen Sprache unzureichend ist, um das hochdimensionale Verhalten und die internen Zustände von KI-Modellen präzise zu beschreiben und zu steuern. Die Autoren schlagen vor, eine gemeinsame Mensch-Maschine-Sprache durch gezielte Einführung neuer Wörter (Neologismen) zu erweitern.
+## 1. Core Contribution & Thesis
+This position paper argues that existing natural language vocabulary is fundamentally inadequate to precisely describe, steer, and comprehend the high-dimensional internal state manifolds of modern AI models. The authors propose extending human-machine interaction by deliberately introducing new words (neologisms).
 
-## 2. Relevante Methodik & Experimente
-Erste Machbarkeitsnachweise zeigen, wie neu eingeführte Wörter spezifische Steuerungsdimensionen wie z. B. die Antwortlänge oder die Diversität der Modellausgaben regeln können.
+## 2. Methodology & Empirical Evidence
+Initial feasibility demonstrations illustrate how newly introduced words can regulate specific control dimensions, such as response verbosity or generation diversity.
 
-## 3. Direkte Relevanz für unser Projekt
-- Direkte theoretische Rechtfertigung für die Erfindung neuer Wörter wie `fufu`.
-- Zeigt, dass Neologismen als Kontrollinstrumente in modernen Sprachmodellen prinzipiell funktionieren.
+## 3. Direct Relevance to Our Research
+- Provides direct theoretical grounding for synthesizing dedicated behavioral tokens such as `fufu`.
+- Demonstrates that neologisms function effectively as steerability instruments in transformer-based architectures.
 
-## 4. Limitationen & Differenzierung (Forschungslücke)
-- Es handelt sich primär um ein Positionspapier mit ersten, isolierten Machbarkeitsnachweisen (Antwortlänge, Diversität).
-- Untersucht weder die physische/robotische Ausführung noch die psycholinguistische Wirkung auf die menschliche Absichtsbildung.
-- Behandelt keine sicherheitskritischen Handlungsbeschränkungen oder Stop-on-Risk-Szenarien.
+## 4. Limitations & Research Gap
+- Primarily a position paper supported by preliminary, isolated text-only proofs-of-concept (verbosity, lexical diversity).
+- Investigates neither physical/robotic embodiment nor psycholinguistic effects on human intention formation.
+- Does not address safety-critical action constraints or stop-on-risk scenarios under adversarial goal conflicts.

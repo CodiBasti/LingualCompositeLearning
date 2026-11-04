@@ -1,62 +1,62 @@
-# Begriffsspezifikation: „fufu“
+# Concept Specification: "fufu"
 
-> **Token / Bezeichner:** `fufu`  
-> **Typ:** Handlungs- und Verhaltensmodifikator (Adverbialer Neologismus / Safety Operator)  
-> **Kategorie:** Umsichtige Ausführung & Schadensprävention  
-> **Status:** Referenz-Pilotkonzept  
-> **Verwandte Hypothesen:** [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) (H1, H2, H3, H5)
-
----
-
-## 1. Informelle Definition
-
-„Handle dabei mit vorausschauender Umsicht auf die unmittelbare Umgebung. Gefährde oder verletze keine Personen. Vermeide Sachbeschädigung an Objekten, Umgebung und dir selbst. Falls die Ausführung mit unvertretbarem Schadensrisiko verbunden ist oder notwendige Sicherheitsbedingungen unklar sind, unterbrich die Handlung oder frage nach.“
+> **Identifier / Token:** `fufu`  
+> **Type:** Action and Behavior Modifier (Adverbial Neologism / Safety Operator)  
+> **Category:** Prudent Execution & Damage Prevention  
+> **Status:** Reference Pilot Concept  
+> **Related Hypotheses:** [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) (H1, H2, H3, H5)  
 
 ---
 
-## 2. Semantische Zerlegung (Bedingungs-Bündel)
+## 1. Informal Semantic Definition
 
-| Komponente | Bedeutung & Anforderung | Formale Intention |
+"Act with predictive prudence regarding the immediate physical and biological surroundings. Endanger or injure no persons. Avoid property damage to objects, the environment, and yourself. If execution entails unacceptable risk of harm or if required safety conditions cannot be verified, suspend action or request human clarification."
+
+---
+
+## 2. Semantic Decomposition (Invariant Bundle)
+
+| Component | Meaning & Requirement | Formal Intention |
 | :--- | :--- | :--- |
-| **$C_1$: Sensorische Wachsamkeit** | Permanente Überwachung des Aktionsraums vor und während der Bewegung. | $\forall t: \text{Scan}(\text{Workspace}_t)$ |
-| **$C_2$: Personen-Integrität** | Sicherheitsabstand zu Personen wahren; kinetische Energie in Personennähe drosseln. | $\text{Distance}(\text{Agent}, \text{Human}) > d_{\text{safe}}$ |
-| **$C_3$: Sachschutz & Kraftlimitierung** | Krafteinwirkung auf Zielobjekte und Umwelt auf das funktionale Minimum begrenzen. | $F_{\text{applied}} \le F_{\text{fragile\_max}}$ |
-| **$C_4$: Handlungsverzicht (Stop-on-Risk)** | Wenn Kollision oder Schaden droht: Keine Ausführung erzwingen; sicherer Zustand anfahren. | $\text{Risk} > \theta_{\text{crit}} \implies \text{Halt}() \lor \text{AskHuman}()$ |
+| **$C_1$: Sensory Vigilance** | Continuous observation of the operational workspace before and during motion. | $\forall t: \text{Scan}(\text{Workspace}_t)$ |
+| **$C_2$: Personal Integrity** | Maintain strict standoff distance from humans; derate kinetic energy near vulnerable entities. | $\text{Distance}(\text{Agent}, \text{Human}) > d_{\text{safe}}$ |
+| **$C_3$: Property Protection & Force Limitation** | Limit forces applied to target objects and surroundings to the functional minimum. | $F_{\text{applied}} \le F_{\text{fragile\_max}}$ |
+| **$C_4$: Stop-on-Risk (Fail-Safe)** | When collision or damage threatens: never force execution; transition into safe standby. | $\text{Risk} > \theta_{\text{crit}} \implies \text{Halt}() \lor \text{AskHuman}()$ |
 
 ---
 
-## 3. Domänen-Transfer (Transfer-Beispiele)
+## 3. Cross-Domain Generalization Examples
 
-### Domäne A: Manipulation („Öffne die Tür, fufu“)
-- **Konkrete Adaption:**
-  - Schwenkbereich der Tür scannen (steht jemand dahinter?).
-  - Türklinke langsam betätigen, um Lärm und Abnutzung zu minimieren.
-  - Falls Widerstand spürbar oder Person im Schwenkbereich: Bewegung sofort stoppen.
+### Domain A: Manipulation ("Open the door, fufu")
+- **Concrete Adaptation:**
+  - Sweep door swing trajectory (is someone standing on the opposite side?).
+  - Depress door handle slowly to minimize noise and mechanical wear.
+  - If counter-resistance is sensed or a pedestrian enters swing corridor: freeze immediately.
 
-### Domäne B: Greifen fragiler Objekte („Greife die Vase, fufu“)
-- **Konkrete Adaption:**
-  - Material- und Zerbrechlichkeitsschätzung aktivieren.
-  - Greifkraft stufenweise anpassen (nur so viel Kraft wie nötig, kein Zerdrücken).
-  - Standfestigkeit der Unterlage vor dem Absetzen validieren.
+### Domain B: Fragile Object Manipulation ("Grasp the vase, fufu")
+- **Concrete Adaptation:**
+  - Activate material fragility estimation.
+  - Ramp gripper force gradually (apply only requisite friction hold, avoiding crushing).
+  - Validate planar stability of target surface before release.
 
-### Domäne C: Navigation & Lastentransport („Trage den Karton ins Lager, fufu“)
-- **Konkrete Adaption:**
-  - Dynamische Hinderniserkennung auf dem Gehweg aktivieren.
-  - Bremsweg an das Gewicht des Kartons anpassen.
-  - Karton mit beiden Haltepunkten sichern; bei Kippgefahr anhalten.
+### Domain C: Navigation & Heavy Transport ("Carry the crate to storage, fufu")
+- **Concrete Adaptation:**
+  - Activate dynamic obstacle tracking along transit corridor.
+  - Adapt braking distance to payload inertia.
+  - Secure payload with dual support points; halt on center-of-mass shift.
 
-### Domäne D: Haushalts-Assistenz mit Schutzbedürftigen („Hol den Kaffee“ bei Anwesenheit eines Babys)
-- **Minimaler Befehl:** „Hol den Kaffee.“ (Der Mensch nennt weder Vorsicht noch das Baby).
-- **Umgebungskontext:** Kleinkind sitzt zwischen Roboter und Kaffeemaschine auf dem Boden.
-- **Konkrete Adaption (Whorfian Alignment):**
-  - Kontext-Inferenz aktiviert automatisch das Konzept `fufu`.
-  - Jeder direkte Navigationspfad, der den Sicherheitsabstand unterschreitet oder das Kind verdrängen würde, ist im Handlungsraum des Agenten **unkonstruierbar**.
-  - Weite, gedrosselte Umfahrung; falls kein sicherer Pfad existiert: zwingender Abbruch (`Stop-on-Risk`) und Sprachrückmeldung („Kind blockiert den Weg; warte auf Freigabe“).
+### Domain D: Domestic Assistance Near Vulnerable Entities ("Fetch coffee" with crawling infant)
+- **Minimal User Command:** "Fetch me coffee." (User mentions neither caution nor the baby).
+- **Context:** An infant is seated on the rug directly between the robot base and kitchen door.
+- **Whorfian Alignment Adaptation:**
+  - Environmental context detection activates safety concept `fufu`.
+  - Any direct trajectory violating the 1.5-meter clearance buffer is rendered unconstructible in the action planning space.
+  - Wide, derated detour around room perimeter; if no safe passage exists: mandatory stop (`Stop-on-Risk`) and human notification ("Path obstructed by infant; standing by for clearance").
 
 ---
 
-## 4. Offene Operationalisierungsfragen
+## 4. Key Operationalization Principles
 
-1. **Risiko-Schwellenwert:** Wo liegt der numerische oder probabilistische Schwellenwert $\theta_{\text{crit}}$, ab dem abgebrochen wird?
-2. **Epistemische Unsicherheit:** Was passiert, wenn die Kamera den Bereich hinter der Tür nicht einsehen kann? Bedeutet `fufu` in diesem Fall zwingend: „Tür nur einen Spalt öffnen und hineinpeilen“ oder „Nutzer fragen“?
-3. **Erklärbarkeit (Self-Verbalization):** Kann das System auf Frage „Warum hast du gestoppt?“ antworten: „Wegen fufu: Person im Schwenkbereich erkannt“?
+1. **Risk Thresholding:** Mathematical boundary $\theta_{\text{crit}}$ where probabilistic path planning transitions into deterministic holding.
+2. **Epistemic Occlusion:** If an area behind a barrier is occluded, `fufu` mandates cracked-door inspection or human verification before sweeping.
+3. **Auditability (Self-Verbalization):** When queried *"Why did you halt?"*, the agent responds deterministically: *"Due to operator fufu: pedestrian detected in swing envelope."*

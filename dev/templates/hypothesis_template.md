@@ -1,32 +1,32 @@
-# Hypothesen-Profil: H[Nummer] - [Name]
+# Hypothesis Profile: H[Number] - [Name]
 
-- **ID:** H[Nummer]
-- **Aktueller Status:** [Offen / In Prüfung / Gestützt / Widerlegt / Modifiziert]
-- **Theoretischer Bezug:** [Literatur-Referenz / Quelle]
-- **Erstellt am:** [YYYY-MM-DD]
-- **Letzte Aktualisierung:** [YYYY-MM-DD]
-
----
-
-## 1. Hypothesenformulierung
-*Präzise, falsifizierbare Aussage.*
+- **ID:** H[Number]
+- **Current Status:** [Open / Under Evaluation / Confirmed / Refuted / Modified]
+- **Theoretical Reference:** [Literature Citation / Prior Art]
+- **Created Date:** [YYYY-MM-DD]
+- **Last Updated:** [YYYY-MM-DD]
 
 ---
 
-## 2. Rationale & Relevanz
-*Warum ist diese Hypothese für das Gesamtziel bedeutsam?*
+## 1. Hypothesis Formulation
+*Precise, falsifiable scientific claim.*
 
 ---
 
-## 3. Empirischer Prüfplan
-- **Zugeordnetes Experiment:** [`experiments/EXP-...`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/experiments)
-- **Unabhängige Variable(n):**
-- **Abhängige Variable(n) & Metriken:**
-- **Falsifikationsschwelle:**
+## 2. Rationale & Significance
+*Why is this hypothesis central to the overall research objective?*
 
 ---
 
-## 4. Evidenz-Log
-| Datum | Experiment / Beleg | Ergebnis / Trend | Auswirkung auf Status |
+## 3. Empirical Test Plan
+- **Associated Experiment:** [`experiments/EXP-...`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/experiments)
+- **Independent Variable(s):**
+- **Dependent Variable(s) & Metrics:**
+- **Falsification Threshold:**
+
+---
+
+## 4. Evidence Log
+| Date | Experiment / Evidence | Result / Trend | Status Impact |
 | :--- | :--- | :--- | :--- |
 | YYYY-MM-DD | EXP-XXX | ... | ... |

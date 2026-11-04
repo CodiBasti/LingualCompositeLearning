@@ -1,51 +1,50 @@
-# Lingual Composite Learning: Erweiterbare Begriffssprache für Mensch, KI und Roboter
+# Lingual Composite Learning: Scalable Concept Language for Humans, AI, and Robots
 
-> **Forschungsinitiative** zur Untersuchung einer gemeinsamen Begriffssprache (z. B. Kunstwörter / Neologismen wie „fufu“), die als präzise Verhaltensspezifikation dient, die menschliche Absichtsbildung schärft und maschinelles Handeln absichert.
-
----
-
-## 🎯 Kernvision & Leitidee
-
-Natürliche Sprache ist oft mehrdeutig oder erfordert wiederkehrende, langatmige Umschreibungen, um Verhaltensnuancen, Sicherheitsanforderungen und Kontextbedingungen abzubilden. Wer eine Unterscheidung nicht im aktiven Begriffsrepertoire hat, vergisst sie oft bereits bei der **Absichtsbildung** (vor dem Formulieren eines Prompts).
-
-Dieses Forschungsprojekt untersucht:
-1. **Menschlicher Nutzen:** Hilft das Erlernen definierter Begriffe (Neologismen/Symbole), Bedingungen zuverlässiger zu erinnern und präziser zu formulieren?
-2. **Maschineller Nutzen:** Können KI- und Robotersysteme diese Begriffe erlernen (in-context oder per Repräsentationslernen/Embedding-Tuning) und zuverlässig auf neue Aufgaben übertragen?
-3. **Kompositionalität & Verifikation:** Lassen sich Begriffe kombinieren und ihre Einhaltung formal prüfen (z. B. temporale Logik, Safety Constraints)?
-
-Referenzdokument: [`ref/Briefing_Begriffssprache_Mensch_KI.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/ref/Briefing_Begriffssprache_Mensch_KI.md).
+> **Research Initiative** investigating a shared vocabulary of discrete semantic operators (e.g. synthetic neologisms such as `fufu`) that serve as precise behavioral specifications, sharpen human intention formation, and guarantee safe physical robot execution.
 
 ---
 
-## 🧭 Repository-Navigation
+## 🎯 Core Vision & Foundational Concept
 
-| Verzeichnis / Datei | Zweck & Inhalt |
+Natural language is inherently polysemous and often requires repetitive, lengthy descriptions to capture subtle behavioral nuances, safety envelopes, and environmental constraints. When a distinction is absent from an operator's active vocabulary, it is frequently omitted during **initial intention formation**—well before prompt drafting.
+
+This research project investigates:
+1. **Human Cognitive Utility:** Does acquiring formal concept operators (neologisms/symbols) enable humans to remember constraints more reliably and formulate instructions with greater precision?
+2. **Machine Grounding & Generalization:** Can autonomous AI and robotic systems acquire these concepts (in-context or via representation learning / soft embeddings) and transfer them reliably across novel domains?
+3. **Compositionality & Formal Verification:** Can operators be combined sequentially or hierarchically with verifiable adherence to temporal safety constraints?
+
+Reference Briefing Document: [`dev/ref/Briefing_Begriffssprache_Mensch_KI.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/ref/Briefing_Begriffssprache_Mensch_KI.md).
+
+---
+
+## 🧭 Repository Navigation
+
+| Directory / File | Scope & Contents |
 | :--- | :--- |
-| [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) | **Single Source of Truth** für aktuellen Projektfortschritt, Phase und nächste Schritte. |
-| [`RESEARCH_MAP.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/RESEARCH_MAP.md) | Phasenplan und Forschungslandkarte von Theorie bis Robotik-Transfer. |
-| [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) | Strukturierte Hypothesen (H1–H5), Prüfkriterien und Evidenzstatus. |
-| [`QUESTIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/QUESTIONS.md) | Offene Leit- und Forschungsfragen. |
+| [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) | **Single Source of Truth** for current progress, active phase, and immediate milestones. |
+| [`RESEARCH_MAP.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/RESEARCH_MAP.md) | Phased research roadmap spanning theoretical foundations to embodied robotics. |
+| [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) | Structured hypotheses (H1–H5), falsification criteria, and empirical evidence. |
+| [`QUESTIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/QUESTIONS.md) | Guiding scientific and operational research questions. |
 | [`DECISIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/DECISIONS.md) | Architectural & Methodological Decision Records (MDRs/ADRs). |
-| [`BACKLOG.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/BACKLOG.md) | Aufgaben, To-Dos und anstehende Meilensteine. |
-| [`IDEAS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/IDEAS.md) | Rohe Ideen, Erweiterungsansätze und Notizen. |
-| [`AGENTS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/AGENTS.md) | Richtlinien für autonome KI-Forschungsagenten. |
-| [`concepts/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts) | Katalog formaler Begriffsspezifikationen (z. B. [`concepts/fufu.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/fufu.md)). |
-| [`data/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data) | Test-Szenarien, Prompt-Sammlungen, Benchmarks und Probandenstudien-Materialien. |
-| [`experiments/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/experiments) | Experiment-Designs, Protokolle und Versuchsanordnungen. |
-| [`findings/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings) | Konsolidierte, verifizierte Forschungsergebnisse. |
-| [`literature/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature) | Exzerpte, Literaturanalysen und Paper-Reviews. |
-| [`papers/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers) | Publikationsmanuskripte, Abstracts und Veröffentlichungsentwürfe. |
-| [`ref/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/ref) | Originalbriefings, externe Referenzen und historische Dokumente. |
-| [`reports/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports) | Periodische Forschungsberichte und Meilenstein-Zusammenfassungen. |
-| [`runs/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/runs) | Rohe Test- und Modell-Ausgaben, Prompt-Logs und Evaluierungsdaten. |
-| [`src/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src) | Wiederverwendbarer Programmcode (Python-Module, Tools, Evaluatoren). |
-| [`templates/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates) | Standardisierte Vorlagen für Experimente, Konzepte, Hypothesen und Literatur. |
-| [`visualizations/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/visualizations) | Diagramme, Charts, Ablaufvisualisierungen. |
+| [`BACKLOG.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/BACKLOG.md) | Work packages, pending milestones, and task backlog. |
+| [`IDEAS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/IDEAS.md) | Raw research ideas, extensions, and theoretical notes. |
+| [`AGENTS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/AGENTS.md) | Operational guidelines and guardrails for autonomous AI research agents. |
+| [`concepts/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts) | Formal concept specifications (e.g., [`concepts/fufu.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/fufu.md)). |
+| [`data/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data) | Test scenarios, adversarial prompts, and benchmark suites. |
+| [`experiments/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/experiments) | Experimental designs, protocols, and test setups. |
+| [`findings/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings) | Consolidated, peer-reviewed empirical findings. |
+| [`literature/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature) | Literature notes, audits, and comparative matrices. |
+| [`papers/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers) | Research manuscripts, LaTeX sources, and camera-ready papers. |
+| [`ref/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/ref) | Original vision briefing and historical references. |
+| [`reports/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports) | Adversarial peer review audits and evaluation reports. |
+| [`runs/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/runs) | Raw execution traces, model outputs, and evaluation checkpoints. |
+| [`src/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src) | Reusable Python source code (runners, evaluators, dashboards). |
+| [`templates/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/templates) | Standardized markdown templates for experiments, concepts, and literature. |
 
 ---
 
-## ⚡ Schnellstart für Forschende & Agenten
+## ⚡ Quickstart for Researchers & Autonomous Agents
 
-1. Konsultiere [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) für den aktiven Fokus.
-2. Lies die Richtlinien in [`AGENTS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/AGENTS.md).
-3. Beachte die Methodik: Vor jeder Behauptung muss eine Hypothese in [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) referenziert und durch ein Experiment in [`experiments/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/experiments) gestützt werden.
+1. Consult [`STATE.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/STATE.md) for the active research focus.
+2. Review guidelines in [`AGENTS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/AGENTS.md).
+3. Adhere to the empirical method: every scientific claim must reference a hypothesis in [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) backed by reproducible experiment logs in [`runs/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/runs).

@@ -1,39 +1,39 @@
-# Experiment: EXP-[Nummer] - [Titel]
+# Experiment: EXP-[Number] - [Title]
 
-- **Datum:** [YYYY-MM-DD]
-- **Status:** [Geplant / In Durchführung / Abgeschlossen / Verwässert]
-- **Untersuchte Hypothese:** [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) ([z. B. H1, H2])
-- **Verantwortlich / Agent:** [Name / Subagent]
-
----
-
-## 1. Forschungsfrage & Ziel
-*Welche konkrete Frage beantwortet dieses Experiment?*
+- **Date:** [YYYY-MM-DD]
+- **Status:** [Planned / In Execution / Completed / Superseded]
+- **Investigated Hypotheses:** [`HYPOTHESES.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/HYPOTHESES.md) ([e.g. H1, H2])
+- **Responsible Agent:** [Role / Subagent]
 
 ---
 
-## 2. Versuchsaufbau & Methodik
-- **Baseline-Bedingung (Kontrollgruppe):**
-- **Experimentelle Bedingung(en):**
-- **Verwendetes Modell / Umgebung:** [z. B. Claude 3.5 Sonnet / Llama-3.1-8B / Sim]
-- **Prompting / Input-Material:** Verweis auf Datensätze in [`data/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data).
+## 1. Research Question & Objective
+*Which concrete research question is resolved by this experiment?*
 
 ---
 
-## 3. Metriken & Falsifikationskriterien
-- **Metrik 1:**
-- **Metrik 2:**
-- **Erfolgskriterium:**
-- **Falsifikationskriterium:**
+## 2. Experimental Setup & Methodology
+- **Baseline Condition (Control Group):**
+- **Experimental Condition(s):**
+- **Model / Environment:** [e.g. Qwen2.5-14B / Llama-3.1-8B / Sim]
+- **Prompting / Input Material:** Link to datasets in [`data/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data).
 
 ---
 
-## 4. Ergebnisse & Messdaten
-*Tabellen, statistische Auswertungen oder Verweise auf Log-Dateien in [`runs/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/runs).*
+## 3. Metrics & Falsification Criteria
+- **Metric 1:**
+- **Metric 2:**
+- **Success Criterion:**
+- **Falsification Threshold:**
 
 ---
 
-## 5. Diskussion & Ableitung
-- *Wurden die Hypothesen gestützt oder widerlegt?*
-- *Welche unvorhergesehenen Effekte traten auf?*
-- *Nächster Schritt / Folgeexperiment:*
+## 4. Empirical Results & Measurements
+*Data tables, statistical significance tests, or references to raw logs in [`runs/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/runs).*
+
+---
+
+## 5. Discussion & Implications
+- *Were the hypotheses supported or refuted?*
+- *Which unanticipated failure modes or phenomena were observed?*
+- *Immediate next step / follow-up experiment:*

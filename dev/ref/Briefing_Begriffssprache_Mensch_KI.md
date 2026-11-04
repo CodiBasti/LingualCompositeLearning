@@ -1,96 +1,101 @@
-# Forschungsbriefing: Eine erweiterbare Begriffssprache für Mensch, KI und Roboter
+# Research Briefing: An Extensible Concept Language for Humans, AI, and Robots
 
-- **Ideengeber:** Sebastian Oertel.
-- **Stand:** 31. Oktober 2026.
-- **Zweck:** Zusammenfassung der Idee, ihrer Vision, der anschließenden Forschungsfragen und relevanter Vorarbeiten. Hypothesen und belegte Ergebnisse sind ausdrücklich getrennt.
+- **Author / Initiator:** Sebastian Oertel  
+- **Date:** October 31, 2026  
+- **Purpose:** Summary of the foundational vision, guiding research questions, and prior art. Theoretical hypotheses and empirically validated findings are strictly delineated.
 
-## 1. Ausgangsgedanke
+---
 
-- Sprache könnte beeinflussen, welche Unterschiede ein Mensch gewohnheitsmäßig erkennt, berücksichtigt und schließlich einer KI mitteilt.
-- Die ursprüngliche Frage war, ob Deutsch durch bestimmte sprachliche Differenzierungen in einer KI-geprägten Welt an praktischer Relevanz gewinnen könnte.
-- Der zentrale Punkt betrifft bereits die **Bildung einer Absicht vor ihrer Formulierung**: Wer eine Unterscheidung nicht im eigenen begrifflichen Repertoire hat, kommt möglicherweise nicht darauf, sie für einen Auftrag zu spezifizieren.
-- Der Hinweis, man könne eine Nuance in einer anderen Sprache umschreiben, beantwortet diese Frage nicht vollständig. Eine passende Umschreibung setzt voraus, dass der Nutzer die relevante Unterscheidung erkennt.
-- Ein allgemeiner Vorteil des Deutschen folgt daraus bislang nicht. Die weiterführende Idee ist deshalb, nützliche Begriffe bewusst zu entwickeln und für Menschen unterschiedlicher Muttersprachen erlernbar zu machen.
+## 1. Foundational Premise
 
-## 2. Konkrete Idee
+- Language shapes which distinctions humans routinely recognize, incorporate, and communicate to an autonomous AI agent.
+- The initial question examined whether specific linguistic differentiations could provide practical utility in an AI-centric world.
+- The crucial insight concerns **intention formation prior to formulation**: if an operator lacks a distinction in their active conceptual repertoire, they will often fail to recognize the necessity of specifying it in an instruction.
+- The counter-argument—that any nuance can simply be paraphrased in natural language—is incomplete: formulating a suitable paraphrase presupposes that the user has already recognized the relevant distinction.
+- Rather than relying on accidental natural language peculiarities, the progressive approach deliberately synthesizes grounded concept operators that can be acquired across speakers of any native language.
 
-- Neue Wörter, Symbole oder definierte Wortkombinationen sollen wiederverwendbare Verhaltenskonzepte benennen.
-- Mensch und KI beziehungsweise Roboter sollen eine möglichst übereinstimmende Bedeutung dieser Begriffe erlernen.
-- Ein Begriff kann mehrere Bedingungen bündeln und sich als Zusatz in gewöhnliche Anweisungen einfügen.
-- Die Bedeutung soll übertragbar sein: Derselbe Begriff verändert die Ausführung verschiedener Aufgaben situationsgerecht.
-- Denkbare Realisierungen reichen von hinterlegten Definitionen über interaktives Lernen bis zu gezieltem Training neuer Wortrepräsentationen. Diese Varianten sind hinsichtlich Zuverlässigkeit und Generalisierung getrennt zu untersuchen.
+---
 
-## 3. Beispiel „fufu“
+## 2. The Core Concept
 
-- **Anweisung:** „Gehe zu der Tür und öffne sie, fufu.“
-- **Gemeinte Bedeutung:** „Achte dabei auf deine Umgebung. Verletze niemanden. Handle vorsichtig, ohne Tür, Umgebung oder Menschen in der Nähe zu gefährden. Falls die Ausführung Schaden verursachen würde, führe sie nicht aus.“
-- **Funktion:** „Fufu“ bezeichnet eine aufgabenübergreifende Kombination aus Aufmerksamkeit, Vorsicht und Bedingungen für den Verzicht auf eine Handlung.
-- **Übertragung:** Bei einer Tür wären etwa Schwenkbereich und Personen relevant; bei einer Vase Griffkraft und Standfestigkeit; beim Transport ein freier Weg und die Stabilität der Last.
-- **Offene Operationalisierung:** Welche Risiken sind akzeptabel? Wann muss das System stoppen oder nachfragen? Welche Unsicherheit kann es überhaupt erkennen? Die Definition allein garantiert weder vollständige Umgebungskenntnis noch fehlerfreie Ausführung.
+- Dedicated tokens, symbols, or defined compound expressions denote reusable behavioral concepts.
+- Humans and AI/robotic systems acquire shared, aligned semantics for these concepts.
+- An operator bundles multiple physical invariants and can be appended seamlessly to standard task instructions.
+- The semantics must be cross-domain transferable: the same concept alters task execution appropriately depending on situational context.
+- Implementation strategies range from in-context specifications to representation learning of dedicated token embeddings. These variants must be evaluated systematically regarding robustness and generalizability.
+
+---
+
+## 3. The Pilot Example "fufu"
+
+- **Instruction:** "Go to the door and open it, fufu."
+- **Intended Meaning:** "Observe your immediate surroundings. Harm no persons. Act with prudence without endangering the door, the environment, or bystanders. If execution entails unavoidable risk of harm, suspend action."
+- **Function:** "fufu" denotes a cross-task synthesis of spatial vigilance, speed derating, and fail-safe stop-on-risk invariants.
+- **Cross-Domain Transfer:** For a swing door, swing clearance and pedestrian occlusion are critical; for a fragile vase, tactile grip force and planar stability; for payload transport, a clear corridor and dynamic center of mass.
+- **Operational Questions:** What risk thresholds are acceptable? When must the system freeze or query oversight? A definition alone guarantees neither omniscient perception nor flawless execution.
+
+---
 
 ## 4. Vision
 
-- Eine gemeinsam erlernte, erweiterbare Begriffssprache ergänzt natürliche Sprache um präzisere Handlungsbegriffe.
-- Nutzer können komplexe Absichten mit geringem wiederkehrendem Erklärungsaufwand ausdrücken.
-- Durch das Erlernen solcher Begriffe berücksichtigen sie möglicherweise Bedingungen, die ihnen zuvor nicht eingefallen wären.
-- KI-Systeme können bekannte Verhaltensprinzipien auf neue Aufgaben übertragen und bei Bedarf erklären, welche Konsequenzen ein Begriff im konkreten Fall hat.
-- Begriffe könnten langfristig zwischen Nutzern und Systemen geteilt werden, sofern Bedeutung und Verhalten ausreichend abgestimmt und überprüfbar sind.
-- Die Vision verbindet somit **präzisere Absichtsbildung beim Menschen**, **effizientere Kommunikation** und **zuverlässigere Umsetzung durch die Maschine**.
+- A mutually acquired, extensible concept language supplements natural language with precise behavioral operators.
+- Users specify complex constraints with minimal recurring cognitive and descriptive effort.
+- By acquiring such concepts, humans proactively incorporate constraints that might otherwise have been omitted during intention formation.
+- Embodied AI systems transfer known physical invariants to novel tasks and explain their actions deterministically on demand.
+- In the long term, concepts can be shared across agents and human operators, provided semantics and behaviors remain verified.
+- The vision unifies **sharper human intention formation**, **communicative efficiency**, and **guaranteed machine execution safety**.
 
-## 5. Zentrale Forschungshypothesen
+---
 
-- **Begrifflicher Nutzen:** Das Erlernen eines benannten Konzepts erleichtert Menschen, dessen Bedingungen zu erinnern und bei Aufgaben zu berücksichtigen.
-- **Kommunikativer Nutzen:** Ein gemeinsamer Begriff reduziert Auslassungen und Missverständnisse gegenüber frei formulierten Anweisungen.
-- **Transfer:** Menschen und Maschinen wenden das Konzept auch auf Situationen an, die beim Lernen nicht gezeigt wurden.
-- **Kompositionalität:** Mehrere Begriffe lassen sich sinnvoll kombinieren; ihre Reichweite und mögliche Konflikte werden verstanden.
-- **Gemeinsames Verständnis:** Mensch und Maschine verbinden mit einem Begriff hinreichend ähnliche Erwartungen, statt sich nur scheinbar zu verstehen.
-- **Status:** Diese Hypothesen sind durch die nachstehenden Arbeiten teilweise motiviert. Ihre gesamte Wirkungskette ist damit noch nicht nachgewiesen.
+## 5. Core Research Hypotheses
 
-## 6. Forschungsrichtung und entscheidende offene Fragen
+- **Conceptual Utility:** Learning a named concept facilitates human retention and proactive consideration of safety conditions.
+- **Communicative Efficiency:** A shared concept reduces omissions and misunderstandings relative to unconstrained free-text prompts.
+- **Cross-Domain Generalization:** Humans and machines transfer the concept to situations unobserved during training.
+- **Compositionality:** Concepts combine sequentially and hierarchically; domain boundaries and conflict algebras are preserved.
+- **Mutual Semantic Alignment:** Humans and machines share consistent behavioral expectations, eliminating superficial or unfaithful alignment.
 
-- **Schnittstelle:** Neologism Learning, Mensch-KI-Kommunikation, Begriffslernen, Human–Robot Interaction und formale Verhaltensspezifikation.
-- **Leitfrage:** Verbessert ein gezielt erlerntes gemeinsames Vokabular die Fähigkeit von Menschen, relevante Bedingungen selbstständig zu erkennen und gegenüber einer KI wirksam auszudrücken?
-- **Menschlicher Effekt:** Werden nur bekannte Anweisungen kürzer, oder werden Absichten tatsächlich vollständiger und differenzierter?
-- **Maschineller Effekt:** Genügt eine abrufbare Definition, oder verbessert gezieltes Training die Anwendung auf neue Aufgaben?
-- **Gestaltung:** Welche Konzepte eignen sich? Wie unterscheiden sich Fantasiewörter, bestehende Wörter, transparente Komposita und Symbole?
-- **Grenzen:** Wann sind Begriffe zu umfangreich oder abstrakt? Wie werden widersprüchliche Kombinationen und unterschiedliche Interpretationen sichtbar?
-- **Prüfbarkeit:** Welche Teile eines Begriffs lassen sich in beobachtbare Bedingungen und überprüfbare Handlungsregeln überführen?
-- **Aussagekräftiger Vergleich:** Dieselben Inhalte mit und ohne neuen Begriff vermitteln; Training, Beispiele und Übungszeit vergleichbar halten. Zusätzlich bestehende Begriffe als Vergleich verwenden.
-- **Mögliche Messgrößen:** Ausgelassene Bedingungen, Missverständnisse, Lernaufwand, Formulierungsaufwand, Transfer auf neue Aufgaben und tatsächliches Ausführungsverhalten.
-- **Wichtige Trennung:** Ein besserer Prompt beweist noch keine verbesserte Begriffsbildung; erfolgreiches Sprachverständnis beweist noch keine sichere physische Ausführung.
+---
 
-## 7. Relevante Vorarbeiten
+## 6. Research Directions & Critical Open Questions
+
+- **Interdisciplinary Nexus:** Neologism Learning, Human-AI Communication, Concept Learning, Human-Robot Interaction, and Formal Safety Verification.
+- **Guiding Question:** Does an acquired shared vocabulary improve human capability to recognize safety conditions independently and communicate them effectively to an embodied agent?
+- **Human Effects:** Does a concept merely shorten prompt length, or does it genuinely improve the completeness and depth of human intention formation?
+- **Machine Effects:** Is an in-context definition sufficient, or does continuous embedding representation learning improve cross-domain transfer?
+- **Token Design:** How do synthetic neologisms, natural words, transparent compounds, and latent embeddings compare?
+- **Boundaries:** At what point do concepts become overly complex? How are direct goal conflicts resolved?
+- **Verification:** Which components of an operator can be formalized into observable invariants and runtime monitors?
+
+---
+
+## 7. Relevant Prior Art
 
 1. **Hewitt, J., Geirhos, R. & Kim, B. (2025): _Position: We Can’t Understand AI Using our Existing Vocabulary_. ICML 2025.**
-   - Vorschlag einer durch neue Wörter erweiterten gemeinsamen Mensch-Maschine-Sprache, um Konzepte präziser zu vermitteln und Modelle zu steuern.
-   - Erste Experimente mit neuen Wörtern zur Steuerung von Antwortlänge und Antwortvielfalt.
-   - **Nähe zur Idee:** Sehr direkt zum Grundprinzip neuer, wiederverwendbarer Steuerungsbegriffe.
-   - **Grenze:** Positionspapier mit ersten Machbarkeitsnachweisen; kein Nachweis der vollständigen menschlich-robotischen Wirkungskette.
-   - Quelle: https://proceedings.mlr.press/v267/hewitt25a.html
+   - Proposed expanding human-machine vocabulary through novel words to communicate concepts and steer model behaviors with higher precision.
+   - Initial demonstrations steering generation length and lexical diversity.
+   - *Relation:* Direct theoretical justification for reusable control tokens.
+   - *Limitation:* Position paper with text-only demonstrations; no physical embodiment or safety invariants.
 
 2. **Hewitt, J., Tafjord, O., Geirhos, R. & Kim, B. (2026): _Neologism Learning for Controllability and Self-Verbalization_. ICLR 2026; Preprint 2025.**
-   - Neue Wörter werden über zusätzliche, anhand von Beispielen trainierte Embeddings eingeführt; die übrigen Modellparameter bleiben unverändert.
-   - Untersucht unter anderem die Steuerung von Antwortlänge, Schmeichelei und weiteren Konzepten sowie sprachliche Erklärungen der gelernten Wortbedeutung.
-   - **Nähe zur Idee:** Technischer Ansatz für erlernte Zugriffe auf Modellverhalten.
-   - **Grenze:** Keine Demonstration einer allgemeinen oder garantiert sicheren Robotersteuerung.
-   - Quelle: https://arxiv.org/abs/2510.08506
-   - Konferenzfassung: https://proceedings.iclr.cc/paper_files/paper/2026/hash/90463e84605a7ac8d45cdd334cd93316-Abstract-Conference.html
+   - Introduces novel vocabulary by training dedicated token embeddings on few-shot examples while freezing all base model weights.
+   - Evaluates steering and linguistic self-verbalization of acquired meanings.
+   - *Relation:* Technical blueprint for representation learning of concept tokens.
+   - *Limitation:* No physical robotics control or temporal safety verification.
 
 3. **Lupyan, G., Rakison, D. H. & McClelland, J. L. (2007): _Language Is Not Just for Talking: Redundant Labels Facilitate Learning of Novel Categories_. Psychological Science.**
-   - Zusätzliche Fantasienamen erleichterten Versuchspersonen das Erlernen neuer Kategorien, obwohl sie keine zusätzliche Kategorieinformation lieferten.
-   - **Nähe zur Idee:** Experimenteller Anhaltspunkt für einen menschlichen Nutzen neu erlernter Bezeichnungen bei der Begriffsbildung.
-   - **Grenze:** Untersucht Kategorienlernen, keine KI-Anweisungen oder komplexen Handlungsregeln.
-   - Quelle: https://pubmed.ncbi.nlm.nih.gov/18031415/
+   - Redundant category labels significantly facilitated human acquisition and retention of novel categories.
+   - *Relation:* Empirical evidence for human cognitive benefits during concept acquisition.
+   - *Limitation:* Focused on static visual categorization rather than dynamic sequential planning.
 
 4. **Yang, Z., Raman, S. S., Shah, A. & Tellex, S. (2024): _Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents_. ICRA 2024; Preprint 2023.**
-   - Überführt natürlichsprachliche Einschränkungen in temporale Logik und überprüft vorgeschlagene Aktionen auf Regelverletzungen.
-   - Evaluation in einer simulierten Umgebung und an einem realen Roboter.
-   - **Nähe zur Idee:** Ansatz, um die hinter einem Begriff wie „fufu“ liegenden Bedingungen überprüfbar in die Planung einzubinden.
-   - **Grenze:** Kein Ansatz für neue Wörter und kein Nachweis, dass Nutzer dadurch präzisere Absichten bilden. Die Überprüfung hängt von korrekt spezifizierten Regeln und dem verfügbaren Weltmodell ab.
-   - Quelle: https://yzylmc.github.io/safety-chip/
+   - Translates natural language constraints into Linear Temporal Logic (LTL) and verifies proposed robot actions against an environmental world model.
+   - *Relation:* Demonstrates formal verification of constraints underlying operators like `fufu`.
+   - *Limitation:* No synthetic vocabulary or token compression; dependent upon manual rule specification.
 
-## 8. Einordnung des möglichen Forschungsbeitrags
+---
 
-- Die allgemeine Idee neuer Begriffe zur Mensch-KI-Kommunikation ist bereits ausdrücklich beschrieben und teilweise experimentell umgesetzt.
-- Der hier besonders relevante Untersuchungsgegenstand ist die Verbindung beider Seiten: **Menschen lernen ein neues Handlungsrepertoire; Maschinen lernen dessen Bedeutung; beide übertragen es auf neue Aufgaben.**
-- Ob diese konkrete Verbindung einen neuen Forschungsbeitrag darstellt, muss durch vertiefte Literaturrecherche geprüft werden. Aus den genannten Arbeiten allein lässt sich kein Neuheitsanspruch ableiten.
+## 8. Positioning of the Research Contribution
+
+- While individual facets (neologism steering, LTL safety chips, label learning) exist in isolation, the core contribution of this project lies in their complete closed-loop synthesis:
+- **Humans form sharper intentions $\leftrightarrow$ Embodied agents bind discrete concept operators $\leftrightarrow$ Invariants transfer zero-shot across physical domains $\leftrightarrow$ Temporal safety contracts are deterministically enforced.**

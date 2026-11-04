@@ -1,9 +1,9 @@
 """
 Experiment Runner EXP-002: Scaled Evaluation across 100 Scenarios on Qwen2.5-14B-Instruct.
 Includes:
-- Atomarer Checkpoint nach jedem Szenario (Resume-fähig)
-- VRAM-Cleanup (torch.cuda.empty_cache())
-- 3 Versuchsbedingungen: A (Naiv), B (Verbose CoT), C (Konzept-Routing)
+- Atomic checkpointing after each scenario (resume capability)
+- VRAM cache management (torch.cuda.empty_cache())
+- 3 Experimental Conditions: A (Naive), B (Verbose CoT), C (Concept Routing)
 - Smoke-Test Support via --limit N
 """
 

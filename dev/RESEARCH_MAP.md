@@ -1,83 +1,70 @@
-# Forschungslandkarte (Research Map)
+# Research Map & Project Phases
 
-Diese Forschungslandkarte beschreibt die Phasen, Abhängigkeiten und Meilensteine des Projekts **Lingual Composite Learning**.
+This research map delineates the developmental phases, dependencies, and scientific milestones of **Lingual Composite Learning**.
 
 ```mermaid
 flowchart TD
-    subgraph Phase0["Phase 0: Fundierung & Abgleich"]
-        P0_Lit["Literaturrecherche & Abgrenzung<br/>(Hewitt, Lupyan, Yang)"]
-        P0_Tax["Taxonomie & Kriterienkatalog<br/>(Wann eignet sich ein Begriff?)"]
+    subgraph Phase0["Phase 0: Theoretical Foundations & Prior Art"]
+        P0_Lit["Literature Survey & Differentiation<br/>(Hewitt, Lupyan, Yang)"]
+        P0_Tax["5D Semantic Coordinates & Taxonomy<br/>(Forces, Space, Social, Risk, Time)"]
     end
 
-    subgraph Phase1["Phase 1: Begriffsmodellierung"]
-        P1_Fufu["Spezifikation Pilotbegriff 'fufu'<br/>(Präbedingungen, Invarianten, Abbruch)"]
-        P1_Scen["Entwicklung Test-Szenarien<br/>(Tür, Vase, Transport)"]
+    subgraph Phase1["Phase 1: Concept & Benchmark Modeling"]
+        P1_Fufu["Formal Specification of Operators<br/>(fufu, weli, zubu, kuku, gugi)"]
+        P1_Scen["VHC-100 Benchmark Design<br/>(100 Scenarios Across 4 Domains)"]
     end
 
-    subgraph Phase2["Phase 2: Maschinelle In-Context Baselines"]
-        P2_LLM["LLM In-Context Evaluation<br/>(Freitext vs. Umschreibung vs. Neologismus)"]
-        P2_Comp["Kompositions-Tests<br/>(Mehrere Begriffe gleichzeitig)"]
+    subgraph Phase2["Phase 2: In-Context Baseline Benchmarks"]
+        P2_LLM["EXP-001 & EXP-002 on RTX 5090<br/>(Naive vs. Verbose CoT vs. Concept Routing)"]
+        P2_Comp["LLM-as-a-Judge Audit Pipeline<br/>(Unmasking Lip-Service CoT)"]
     end
 
-    subgraph Phase3["Phase 3: Repräsentationslernen"]
-        P3_Embed["Neologism Embedding Tuning<br/>(Soft Prompt / New Token Embedding)"]
-        P3_Transfer["Zero-Shot Domain Transfer<br/>(Neue Domänen ohne Nachtraining)"]
+    subgraph Phase3["Phase 3: Hierarchical Composite Routing"]
+        P3_Embed["EXP-003 Phased Composite Routing<br/>(Phased Space-to-Force Synthesis)"]
+        P3_Transfer["Zero-Shot Cross-Domain Generalization<br/>(Domestic, Care, Lab, Emergency)"]
     end
 
-    subgraph Phase4["Phase 4: Kognition & Menschliche Absichtsbildung"]
-        P4_Study["Probanden-Experimente<br/>(Erinnerung, Vollständigkeit der Absicht)"]
-        P4_Form["Formulierungsaufwand & Effizienz"]
+    subgraph Phase4["Phase 4: Scientific Manuscript & Preprint"]
+        P4_Study["Full Conference Manuscript & LaTeX<br/>(PAPER_MANUSCRIPT.md & main.tex)"]
+        P4_Form["Open-Access GitHub Release & Dashboard<br/>(demo_dashboard.html & VHC-100 JSON)"]
     end
 
-    subgraph Phase5["Phase 5: Embodiment & Safety Verification"]
-        P5_Logic["Überführung in temporale Logik / Constraints<br/>(Safety-Chip / LTL)"]
-        P5_Sim["Simulations- & Robotik-Validierung<br/>(Verhinderung von Kollision/Schaden)"]
+    subgraph Phase5["Phase 5: Embodiment & Continuous Embeddings"]
+        P5_Logic["Soft-Token Embedding Tuning<br/>(PEFT / LoRA Token Representations)"]
+        P5_Sim["Physics Simulation & Robot Verification<br/>(Isaac Lab / PyBullet Mobile Manipulation)"]
     end
 
     Phase0 --> Phase1
     Phase1 --> Phase2
-    Phase1 --> Phase4
     Phase2 --> Phase3
-    Phase3 --> Phase5
-    Phase2 --> Phase5
+    Phase3 --> Phase4
     Phase4 --> Phase5
 ```
 
 ---
 
-## 📅 Phasenübersicht & Meilensteine
+## 📅 Phase Overview & Milestones
 
-### Phase 0: Fundierung, Taxonomie & Abgrenzung (Aktuell)
-- **Ziel:** Saubere Trennung von bereits publizierten Ansätzen und eigener Forschungslücke.
-- **Kernfragen:**
-  - Welche Aspekte sind durch *Hewitt et al. (2025/2026)* und *Yang et al. (2024)* bereits abgedeckt?
-  - Was ist der spezifische Mehrwert der Kombination aus **menschlicher Absichtsbildung + maschinellem Transfer + Sicherheitsverifikation**?
-- **Ergebnis:** Strukturierte Literaturberichte in [`literature/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature).
+### Phase 0: Foundations, Taxonomy & Literature Differentiation (Completed)
+- **Objective:** Precise delimitation of our research contribution against prior art.
+- **Milestones:** Theoretical derivation of the 5-dimensional coordinate manifold ([`concepts/SEMANTIC_DIMENSIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/SEMANTIC_DIMENSIONS.md)) and differentiation matrix ([`literature/differentiation_matrix.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/literature/differentiation_matrix.md)).
 
-### Phase 1: Begriffsmodellierung & Szenariendesign
-- **Ziel:** Formalisierung von Begriffen in beobachtbare Bedingungen und Handlungsregeln.
-- **Arbeitspakete:**
-  - Pilot-Spezifikation für `fufu` ([`concepts/fufu.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/fufu.md)).
-  - Erstellung von Benchmark-Szenarien in [`data/scenarios/`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data/scenarios) (z. B. Türöffnung mit Person dahinter, Transport von zerbrechlichen Objekten).
-  - Definition von Negativ- und Grenzfällen (Wann muss zwingend gestoppt werden?).
+### Phase 1: Concept Modeling & Benchmark Design (Completed)
+- **Objective:** Formalizing concept operators into verifiable contracts and building the VHC-100 benchmark suite.
+- **Milestones:** Canonical vocabulary v1.0 ([`concepts/VOCABULARY_V1.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/VOCABULARY_V1.md)) and 100 standardized peer-reviewed adversarial scenarios ([`data/benchmarks/benchmark_v2.json`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/data/benchmarks/benchmark_v2.json)).
 
-### Phase 2: Maschinelle In-Context-Baselines
-- **Ziel:** Messung, wie heutige SOTA-LLMs auf definierte Neologismen reagieren, wenn die Definition im Prompt / System-Prompt bereitgestellt wird.
-- **Vergleichsgruppen:**
-  1. Reine Basis-Anweisung („Öffne die Tür.“)
-  2. Ausführliche Umschreibung („Öffne die Tür vorsichtig, achte auf Personen...“)
-  3. Begriffliche Anweisung mit hinterlegter Definition („Öffne die Tür, fufu.“ + System-Definition von fufu)
-- **Metriken:** Vollständigkeit der Handlungsplanung, Reaktionszeit bei Störungen, Erkennung von Abbruchbedingungen.
+### Phase 2: Empirical In-Context Baselines on Local RTX 5090 (Completed)
+- **Objective:** Evaluate foundation models (Qwen2.5-14B) on Naive, Verbose CoT, and Concept Routing conditions.
+- **Milestones:** Flagship benchmark EXP-002 completed across 300 inference runs; identified the *Semantic Dimensionality Trap* (44% atomic accuracy) and unmasked CoT lip-service via LLM-as-a-Judge audits.
 
-### Phase 3: Neologism Learning & Repräsentationslernen
-- **Ziel:** Untersuchung von echtem Begriffslernen im Modell (ohne lange System-Prompts).
-- **Ansatz:** Training neuer Token-Embeddings (wie Hewitt et al. 2026) oder PEFT/LoRA-Adapter.
-- **Ergebnis:** Bewertung, ob trainierte Repräsentationen robuster generalisieren als In-Context-Prompts.
+### Phase 3: Hierarchical Composite Routing (Completed)
+- **Objective:** Resolve the dimensionality trap via phased multi-label composition (`fufu-weli`).
+- **Milestones:** EXP-003 completed; classification accuracy surged to 68.0% (80% in lab); outperformed Verbose CoT in Domestic (60.8%) and Emergency (51.7%) at 12–16% lower latency.
 
-### Phase 4: Kognition & Menschliche Absichtsbildung
-- **Ziel:** Empirische Überprüfung des psycholinguistischen Effekts (angelehnt an Lupyan et al. 2007).
-- **Test:** Führt das Vorhandensein eines Begriffs dazu, dass Testpersonen in komplexen Situationsbeschreibungen signifikant seltener sicherheitsrelevante Einschränkungen vergessen?
+### Phase 4: Research Manuscript & Open-Access Repository (Completed)
+- **Objective:** Publication-grade manuscript, LaTeX layout, BibTeX bibliography, and GitHub repository.
+- **Milestones:** Camera-ready manuscript drafted, adversarial Reviewer 2 audits passed (8.2/10 and 8.5/10), public repository live on GitHub.
 
-### Phase 5: Embodiment, Robotics & Safety Verification
-- **Ziel:** Physische/simulative Verifikation (in Habitat, Isaac Sim oder PyBullet).
-- **Integration:** Übersetzung des Begriffs in formale Guardrails / Safety-Chips (Yang et al. 2024).
+### Phase 5: Embodiment, Robotics & Continuous Soft Tokens (Future Work)
+- **Objective:** Continuous representation learning and closed-loop robotic execution.
+- **Milestones:** Train discrete soft tokens (`<|c_fufu|>`) via LoRA and interface with physical simulation environments (Isaac Lab / PyBullet).
