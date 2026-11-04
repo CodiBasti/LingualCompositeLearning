@@ -129,7 +129,7 @@ LingualCompositLearning/
 * NVIDIA GPU with $\ge 28$ GB VRAM (for Qwen2.5-14B in bfloat16)
 
 ```bash
-git clone https://github.com/sebastian-oertel/LingualCompositeLearning.git
+git clone https://github.com/CodiBasti/LingualCompositeLearning.git
 cd LingualCompositeLearning
 pip install torch transformers accelerate
 ```
