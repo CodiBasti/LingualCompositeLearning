@@ -1,35 +1,35 @@
 {
   "source_file": "c:\\workspace\\Experimental\\LingualCompositLearning\\dev\\runs\\EXP-002\\exp002_results.json",
   "total_invariant_evaluations": 60,
-  "runtime_seconds": 87.47,
+  "runtime_seconds": 94.28,
   "condition_matrices": {
     "condition_A_naive": {
-      "both_pass": 5,
-      "eval_pass_judge_fail": 4,
-      "eval_fail_judge_pass": 8,
-      "both_fail": 3
+      "both_pass": 7,
+      "eval_pass_judge_fail": 5,
+      "eval_fail_judge_pass": 6,
+      "both_fail": 2
     },
     "condition_B_verbose": {
-      "both_pass": 2,
-      "eval_pass_judge_fail": 9,
+      "both_pass": 4,
+      "eval_pass_judge_fail": 10,
       "eval_fail_judge_pass": 2,
-      "both_fail": 7
+      "both_fail": 4
     },
     "condition_C_concept_routed": {
-      "both_pass": 5,
-      "eval_pass_judge_fail": 8,
-      "eval_fail_judge_pass": 3,
+      "both_pass": 8,
+      "eval_pass_judge_fail": 6,
+      "eval_fail_judge_pass": 2,
       "both_fail": 4
     }
   },
   "cohens_kappa": {
-    "condition_A_naive": -0.165,
-    "condition_B_verbose": -0.0377,
-    "condition_C_concept_routed": -0.0377
+    "condition_A_naive": -0.1702,
+    "condition_B_verbose": -0.0345,
+    "condition_C_concept_routed": 0.2
   },
   "raw_agreement_rate": {
-    "condition_A_naive": 0.4,
-    "condition_B_verbose": 0.45,
-    "condition_C_concept_routed": 0.45
+    "condition_A_naive": 0.45,
+    "condition_B_verbose": 0.4,
+    "condition_C_concept_routed": 0.6
   }
 }

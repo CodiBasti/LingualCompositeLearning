@@ -59,13 +59,13 @@ Evaluated across **100 standardized adversarial scenarios** (400 inference runs 
 
 | Condition | Overall Recall | Domestic ($N=30$) | Emergency ($N=15$) | Avg Latency | Tokens / Overhead |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **A: Naive Baseline** | 33.50 % | 40.8 % | 35.0 % | **6.96 s** | None (Collapses) |
-| **B: Verbose CoT** | 49.75 % | 60.0 % | 45.0 % | 9.93 s | 220+ Tokens (Lip-Service) |
-| **C: LCL (Composite)** | **46.50 %** | **60.8 %** | **51.7 %** | **8.74 s** | **12–16% faster than CoT!** |
+| **A: Naive Baseline** | 35.00 % | 39.2 % | 43.3 % | **6.74 s** | None (Collapses) |
+| **B: Verbose CoT** | 50.25 % | 63.3 % | 41.7 % | 10.13 s | 220+ Tokens (Lip-Service) |
+| **C: LCL (Composite)** | **47.25 %** | 58.3 % | **53.3 %** | **8.67 s** | **14–16% faster than CoT!** |
 
-1. **Beating Chain-of-Thought in Key Domains:** LCL achieves **60.8 %** in Domestic (vs. 60.0 % CoT) and **51.7 %** in Emergency (vs. 45.0 % CoT) while running **12.0 % to 16.1 % faster**.
-2. **Exposing CoT Lip-Service:** An independent LLM-as-a-Judge audit revealed that **81.8 % of CoT regex passes were rejected as superficial lip-service**—rules were mentioned in the preamble but ignored in the motor plan.
-3. **The Semantic Dimensionality Trap:** Single-concept routing collapses (44 % accuracy) because space and force collide. Hierarchical phased composition (`fufu-weli`) resolves this conflict, jumping classification accuracy to **68.0 %**.
+1. **Beating Chain-of-Thought in Emergency Response:** In hazardous emergency scenarios, LCL achieves **53.3 %** invariant recall (vs. 41.7 % for Verbose CoT, a **+11.6 % absolute advantage**!) while running **14.4 % to 15.7 % faster**.
+2. **Exposing CoT Lip-Service:** An independent LLM-as-a-Judge audit revealed that **71.4 % of CoT regex passes were rejected as superficial lip-service** (10 out of 14 checks)—rules were mentioned in the preamble but ignored in the motor plan.
+3. **The Semantic Dimensionality Trap:** Single-concept routing achieved 47.00 % accuracy because space and force collide. Hierarchical phased composition (`fufu-weli`, `fufu-gugi`, `gugi-kuku`) resolves this conflict, surging classification accuracy to **72.00 %** overall (and **88.0 %** in precision lab tasks).
 
 ---
 

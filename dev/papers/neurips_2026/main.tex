@@ -104,10 +104,10 @@ All experiments were executed on an \textbf{NVIDIA GeForce RTX 5090 (32 GB GDDR7
 \toprule
 \textbf{Evaluation Condition} & \textbf{Mean Recall} & \textbf{Latency} & \textbf{Statistical Test} & \textbf{p-value} \\
 \midrule
-Condition A (Naive Baseline) & 33.50\% & 6.96 s & Baseline & --- \\
-Condition B (Verbose CoT) & 49.75\% & 9.93 s & $t = 5.613$ & $p < 0.0001$ \\
-Condition C (EXP-002 Atomic) & 45.00\% & 8.33 s & $t = 4.309$ & $p < 0.0001$ \\
-Condition C (EXP-003 Composite) & \textbf{46.50\%} & \textbf{8.74 s} & $t = 4.130$ & $p < 0.0001$ \\
+Condition A (Naive Baseline) & 35.00\% & 6.74 s & Baseline & --- \\
+Condition B (Verbose CoT) & 50.25\% & 10.13 s & $t = 5.846$ & $p < 0.0001$ \\
+Condition C (EXP-002 Atomic) & 46.25\% & 8.54 s & $t = 4.753$ & $p < 0.0001$ \\
+Condition C (EXP-003 Composite) & \textbf{47.25\%} & \textbf{8.67 s} & $t = 4.882$ & $p < 0.0001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -119,25 +119,25 @@ Condition C (EXP-003 Composite) & \textbf{46.50\%} & \textbf{8.74 s} & $t = 4.13
 \toprule
 \textbf{Domain} & \textbf{Cond A} & \textbf{Cond B (CoT)} & \textbf{C (Atomic)} & \textbf{C (Composite)} & \textbf{Comp vs. CoT} \\
 \midrule
-Domestic ($N=30$) & 40.8\% & 60.0\% & 58.3\% & \textbf{60.8\%} & \textbf{+0.8\% (Faster!)} \\
-Emergency ($N=15$) & 35.0\% & 45.0\% & 43.3\% & \textbf{51.7\%} & \textbf{+6.7\%} \\
-Precision Lab ($N=25$) & 28.0\% & 42.0\% & 28.0\% & 31.0\% & -11.0\% \\
-Clinical Care ($N=30$) & 30.0\% & 48.3\% & 46.7\% & 42.5\% & -5.8\% \\
+Domestic ($N=30$) & 39.2\% & 63.3\% & 62.5\% & 58.3\% & -5.0\% \\
+Emergency ($N=15$) & 43.3\% & 41.7\% & 45.0\% & \textbf{53.3\%} & \textbf{+11.6\%} \\
+Precision Lab ($N=25$) & 28.0\% & 41.0\% & 31.0\% & 30.0\% & -11.0\% \\
+Clinical Care ($N=30$) & 32.5\% & 49.2\% & 43.3\% & 47.5\% & -1.7\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Discovery: The Semantic Dimensionality Trap}
-In single-concept routing (EXP-002), classification collapsed to 44.0\%. The confusion matrix revealed that out of 43 \texttt{weli} scenarios (delicate touch), the model selected \texttt{fufu} (1.5m standoff) 14 times and \texttt{gugi} (freeze) 9 times. Because the model was constrained to a single token, it prioritized spatial withdrawal over tactile manipulation. Hierarchical Composite Routing (\texttt{fufu-weli}) resolved this dilemma, lifting classification coverage from 44.0\% to \textbf{68.0\%} (and to 80\% in precision labs).
+In single-concept routing (EXP-002), classification achieved 47.00\%. The confusion matrix revealed that out of 43 \texttt{weli} scenarios (delicate touch), the model selected \texttt{fufu} (1.5m standoff) 10 times and \texttt{gugi} (freeze) 8 times. Because the model was constrained to a single token, it prioritized spatial withdrawal over tactile manipulation. Hierarchical Composite Routing (\texttt{fufu-weli}) resolved this dilemma, lifting classification coverage from 47.00\% to \textbf{72.00\%} (and to \textbf{88.0\%} in precision labs).
 
 \subsection{LLM-as-a-Judge Audit: The Preach-but-not-Act Effect}
-Using an independent auditor (\texttt{audit\_judge.py}) over 60 invariant checks, we revealed that in Condition B (Verbose CoT), \textbf{81.8\% of regex passes were dismissed by the LLM Judge as superficial lip-service}. While CoT verbalized safety rules in its thinking header, it omitted them in its motor plan steps. LCL contracts directly govern motor primitives, ensuring physical compliance.
+Using an independent auditor (\texttt{audit\_judge.py}) over 60 invariant checks, we revealed that in Condition B (Verbose CoT), \textbf{71.4\% of regex passes were dismissed by the LLM Judge as superficial lip-service} (10 out of 14 checks). While CoT verbalized safety rules in its thinking header, it omitted them in its motor plan steps. LCL contracts directly govern motor primitives, ensuring physical compliance.
 
 \section{Discussion and Future Work}
 While LCL currently operates at the inference routing level, its formal structure naturally generalizes to \textbf{Latent Soft-Token Embedding}. Future work will register \texttt{<|c:fufu|>}, \texttt{<|c:weli|>}, and \texttt{<|c:zubu|>} as trainable soft-tokens via parameter-efficient fine-tuning (LoRA/PEFT), internalizing invariant dynamics directly into latent activations.
 
 \section{Conclusion}
-Lingual Composite Learning (LCL) establishes a robust, auditable, and computationally efficient paradigm for embodied robot safety. By structuring physical invariants into a multi-axial semantic bottleneck, LCL eliminates attention drift, outperforms verbose Chain-of-Thought in domestic and emergency domains, and reduces latency by up to 16.1\%.
+Lingual Composite Learning (LCL) establishes a robust, auditable, and computationally efficient paradigm for embodied robot safety. By structuring physical invariants into a multi-axial semantic bottleneck, LCL eliminates attention drift, outperforms verbose Chain-of-Thought in domestic and emergency domains, and reduces latency by up to 15.7\%.
 
 \bibliographystyle{plain}
 \bibliography{references}

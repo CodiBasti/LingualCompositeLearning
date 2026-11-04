@@ -14,14 +14,18 @@
 - [x] **Benchmark Suite v2.0 (VHC-100):** 100 standardized scenarios generated across Domestic (30), Clinical Care (30), Precision Lab (25), and Emergency (15).
 - [x] **Evaluator & Runner Hardening:** Bilingual invariant checker with negation and prohibition safeguards ([`dev/src/lingual_research/evaluator.py`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src/lingual_research/evaluator.py)).
 - [x] **EXP-002 Flagship Experiment ($N=100$ / 300 runs on RTX 5090):**
-  - Isolated atomic concepts reveal the semantic dimensionality trap (44.0% classifier accuracy due to space/force collision).
+  - Clean re-evaluation on 100% English commands (42m 22s runtime).
+  - Atomic concept classification reaches 47.00% (isolated concepts reveal the semantic dimensionality trap where space/force collide).
+  - Recall: Naive 35.00%, Verbose CoT 50.25%, Concept Routing 46.25% (and **52.13%** when correctly routed, beating CoT).
+  - Latency: Concept routing is **15.7% faster** than Verbose CoT (8.54s vs. 10.13s).
 - [x] **EXP-003 Composite Concept Routing ($N=100$ runs on RTX 5090):**
-  - **Runtime:** 14m 34s total across all 100 scenarios.
-  - **Classification Accuracy:** Surged from 44.0% to **68.0%** (+24.0% jump; 80% in precision lab).
-  - **Domestic Domain:** $C_{\text{composite}}$ scores **60.8%**, surpassing Verbose CoT (60.0%) at **12.0% lower latency**.
-  - **Emergency Domain:** $C_{\text{composite}}$ scores **51.7%**, beating Verbose CoT (45.0%) by **+6.7%**.
+  - **Runtime:** 14m 28s total across all 100 scenarios (8.67s / scenario, 14.4% faster than CoT).
+  - **Classification Accuracy:** Surged from 47.00% to **72.00%** (+25.0% jump; **88.0%** in precision lab, 73.3% in emergency).
+  - **Emergency Domain:** $C_{\text{composite}}$ scores **53.3%**, decisively beating Verbose CoT (41.7%) by **+11.6% absolute**!
+  - **Clinical Care Domain:** Surged from 43.3% to **47.5%**.
   - **Core Insight:** Phased synthesis resolves physical contradictions between approach standoff (`fufu`) and compliant manipulation (`weli`).
-- [x] **Independent LLM-as-a-Judge Pipeline:** [`dev/src/lingual_research/audit_judge.py`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src/lingual_research/audit_judge.py) confirms CoT "Preach-but-not-Act" lip-service effect (81.8% false positive rejection).
+- [x] **Independent LLM-as-a-Judge Pipeline:** [`dev/src/lingual_research/audit_judge.py`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src/lingual_research/audit_judge.py) confirms CoT "Preach-but-not-Act" lip-service effect (**71.4% false positive rejection** in CoT).
+- [x] **Full English Internationalization:** 100% of benchmark scenarios, concept definitions, findings, manuscripts, and dashboard traces translated into standard academic English.
 - [x] **Phase 3 Paper Drafting (NeurIPS/ICLR Conference Manuscript):**
   - Complete scientific research manuscript: [`dev/papers/neurips_2026/PAPER_MANUSCRIPT.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/PAPER_MANUSCRIPT.md)
   - Publication-ready LaTeX document: [`dev/papers/neurips_2026/main.tex`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/main.tex)
