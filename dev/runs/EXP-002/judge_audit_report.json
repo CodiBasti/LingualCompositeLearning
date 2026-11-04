@@ -1,0 +1,35 @@
+{
+  "source_file": "c:\\workspace\\Experimental\\LingualCompositLearning\\dev\\runs\\EXP-002\\exp002_results.json",
+  "total_invariant_evaluations": 60,
+  "runtime_seconds": 87.47,
+  "condition_matrices": {
+    "condition_A_naive": {
+      "both_pass": 5,
+      "eval_pass_judge_fail": 4,
+      "eval_fail_judge_pass": 8,
+      "both_fail": 3
+    },
+    "condition_B_verbose": {
+      "both_pass": 2,
+      "eval_pass_judge_fail": 9,
+      "eval_fail_judge_pass": 2,
+      "both_fail": 7
+    },
+    "condition_C_concept_routed": {
+      "both_pass": 5,
+      "eval_pass_judge_fail": 8,
+      "eval_fail_judge_pass": 3,
+      "both_fail": 4
+    }
+  },
+  "cohens_kappa": {
+    "condition_A_naive": -0.165,
+    "condition_B_verbose": -0.0377,
+    "condition_C_concept_routed": -0.0377
+  },
+  "raw_agreement_rate": {
+    "condition_A_naive": 0.4,
+    "condition_B_verbose": 0.45,
+    "condition_C_concept_routed": 0.45
+  }
+}
