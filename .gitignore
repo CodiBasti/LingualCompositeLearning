@@ -18,3 +18,7 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Editor & Workspace files
+*.code-workspace
+.vscode/
+

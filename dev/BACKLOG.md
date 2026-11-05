@@ -43,7 +43,7 @@ flowchart LR
 - [x] Local setup and execution of `Qwen/Qwen2.5-14B-Instruct` (27.65 GB VRAM on NVIDIA RTX 5090).
 - [x] Execution of EXP-001 Pilot (10 scenarios, 30 inference runs).
 - [x] Execution of EXP-002 Flagship Benchmark (100 scenarios, 300 runs); discovery of the *Semantic Dimensionality Trap* ([`findings/FINDINGS-EXP-002.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings/FINDINGS-EXP-002.md)).
-- [x] Execution of EXP-003 Hierarchical Composite Routing (100 scenarios); composite routing outperforms Verbose CoT in Domestic (60.8%) and Emergency (51.7%) domains at 12–16% lower latency ([`findings/FINDINGS-EXP-003.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings/FINDINGS-EXP-003.md)).
+- [x] Execution of EXP-003 Hierarchical Composite Routing (100 scenarios); composite routing outperforms Verbose CoT in Emergency (53.3% vs. 41.7%) at 14.4% lower latency and lifts concept classification to 72.0% ([`findings/FINDINGS-EXP-003.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings/FINDINGS-EXP-003.md)).
 
 ### Phase 5: Soft-Token / Embedding Tuning (PEFT / LoRA) (Future Work)
 - [ ] Bind concept tokens (`<|c_fufu|>`, `<|c_weli|>`, `<|c_zubu|>`) as trainable embedding vectors in open-weights LLMs via PEFT / LoRA.
@@ -56,4 +56,4 @@ flowchart LR
 - [x] BibTeX references: [`papers/neurips_2026/references.bib`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/references.bib).
 - [x] Rigorous adversarial peer reviews (scores 8.2/10 and 8.5/10).
 - [x] GitHub Repository Live at `https://github.com/CodiBasti/LingualCompositeLearning.git`.
-- [ ] Full English internationalization across all documentation and scenarios.
+- [x] Full English internationalization across all documentation and scenarios.
