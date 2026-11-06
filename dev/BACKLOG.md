@@ -1,8 +1,8 @@
 # Master Roadmap & Publication Backlog
 
 > **Project:** Lingual Composite Learning  
-> **Objective:** Publication of peer-reviewed scientific research paper and open-access benchmark (Author: Sebastian Oertel).  
-> **Status:** Phase 1–4, 6 Completed; Pre-print live on GitHub.  
+> **Objective:** Empirical investigation of deeply anchored concept-composite tokens for embodied agent and robot coordination (Author: Sebastian Oertel).  
+> **Status:** Phase 1–4, 6 Concluded with Adversarial Red-Team Audit (Score: 2/10 — Strong Reject). In-context prompt-routing transitioned to Open-Science Post-Mortem. Phase 5 (PEFT/LoRA Latent Anchoring) is Active Frontier.  
 
 ---
 
@@ -10,11 +10,11 @@
 
 ```mermaid
 flowchart LR
-    P1["Phase 1: Theory & Formalization"] --> P2["Phase 2: Literature Differentiation"]
-    P2 --> P3["Phase 3: Benchmark Design (VHC-100)"]
-    P3 --> P4["Phase 4: Empirical GPU Tests (EXP-001/002/003)"]
-    P4 --> P5["Phase 5: Embedding Tuning (PEFT/LoRA)"]
-    P5 --> P6["Phase 6: Paper Manuscript & Peer Review"]
+    P1["Phase 1: Theory & Ontology"] --> P2["Phase 2: Literature Audit"]
+    P2 --> P3["Phase 3: Benchmark Suite (VHC-100)"]
+    P3 --> P4["Phase 4: In-Context Prompt Audit & Post-Mortem"]
+    P4 --> P5["Phase 5: Deep Latent Anchoring (PEFT/LoRA)"]
+    P5 --> P6["Phase 6: Simulation / Robotics Validation"]
 ```
 
 ---
@@ -39,21 +39,24 @@ flowchart LR
 - [x] Quantitative evaluator with bilingual stem matching and negation safeguards ([`src/lingual_research/evaluator.py`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src/lingual_research/evaluator.py)).
 - [x] Independent LLM-as-a-Judge validation pipeline ([`src/lingual_research/audit_judge.py`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/src/lingual_research/audit_judge.py)).
 
-### Phase 4: Empirical GPU Benchmark Execution (RTX 5090) (Completed)
+### Phase 4: In-Context Routing Experiments & Adversarial Red-Team Audit (Completed)
 - [x] Local setup and execution of `Qwen/Qwen2.5-14B-Instruct` (27.65 GB VRAM on NVIDIA RTX 5090).
-- [x] Execution of EXP-001 Pilot (10 scenarios, 30 inference runs).
-- [x] Execution of EXP-002 Flagship Benchmark (100 scenarios, 300 runs); discovery of the *Semantic Dimensionality Trap* ([`findings/FINDINGS-EXP-002.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings/FINDINGS-EXP-002.md)).
-- [x] Execution of EXP-003 Hierarchical Composite Routing (100 scenarios); composite routing outperforms Verbose CoT in Emergency (53.3% vs. 41.7%) at 14.4% lower latency and lifts concept classification to 72.0% ([`findings/FINDINGS-EXP-003.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/findings/FINDINGS-EXP-003.md)).
+- [x] Execution of EXP-001 Pilot (30 runs), EXP-002 Flagship (300 runs), EXP-003 Composite (100 runs).
+- [x] Independent Adversarial Red-Team Audit (Nov 05, 2026; 8 GPU hours on RTX 5090):
+  - Audit Score: 2/10 (Strong Reject) — unmasked evaluator keyword flaws, CoT token truncation confound, and superiority of structured natural language baseline.
+  - Documented in [`reports/review_audit_2026-11-05_FULL_PROJECT.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports/review_audit_2026-11-05_FULL_PROJECT.md).
+- [x] Methodological Decision Record MDR-007: Empirical pivot to open-science post-mortem and deep latent representation learning.
 
-### Phase 5: Soft-Token / Embedding Tuning (PEFT / LoRA) (Future Work)
-- [ ] Bind concept tokens (`<|c_fufu|>`, `<|c_weli|>`, `<|c_zubu|>`) as trainable embedding vectors in open-weights LLMs via PEFT / LoRA.
-- [ ] Evaluate direct conditioning without in-context prompts.
-- [ ] Ablation: Neologism token vs natural language token.
+### Phase 5: Deep Latent Concept Anchoring via PEFT/LoRA (Active Frontier)
+- [ ] Extend Qwen2.5-14B tokenizer with dedicated composite concept tokens (`<|c:fufu|>`, `<|c:weli|>`, `<|c:kuku|>`, `<|c:fufu_weli|>`).
+- [ ] Construct synthetic grounding dataset mapping concept tokens directly to strict physical invariant constraints.
+- [ ] Implement LoRA fine-tuning pipeline on local RTX 5090 (bfloat16 / 4-bit QLoRA).
+- [ ] Build a ground-truth numerical constraint validator (measuring numerical distance, force limits, speed derating — eliminating regex keyword matching).
+- [ ] Implement fair unconstrained CoT baseline with 1024 tokens to eliminate truncation confounds.
+- [ ] Benchmark comparison across Agent-to-Robot scenarios: Deeply Anchored Token vs. Structured Direct Natural Language vs. Verbose CoT.
 
-### Phase 6: Manuscript, LaTeX & Open-Source Release (Completed)
-- [x] Scientific research manuscript: [`papers/neurips_2026/PAPER_MANUSCRIPT.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/PAPER_MANUSCRIPT.md).
-- [x] Publication-ready LaTeX compilation: [`papers/neurips_2026/main.tex`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/main.tex).
-- [x] BibTeX references: [`papers/neurips_2026/references.bib`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/references.bib).
-- [x] Rigorous adversarial peer reviews (scores 8.2/10 and 8.5/10).
-- [x] GitHub Repository Live at `https://github.com/CodiBasti/LingualCompositeLearning.git`.
-- [x] Full English internationalization across all documentation and scenarios.
+### Phase 6: Open-Science Post-Mortem Release & Future Embodiment (In Progress)
+- [x] Scientific research manuscript drafted ([`papers/neurips_2026/PAPER_MANUSCRIPT.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/papers/neurips_2026/PAPER_MANUSCRIPT.md)).
+- [x] Previous sycophantic reviews (8.2/10 and 8.5/10) invalidated and replaced with the verified 2/10 Red-Team audit.
+- [ ] Option A: Re-frame `README.md` and repository as an unvarnished post-mortem on prompt-based concept routing and evaluator fragility.
+- [ ] Integration with physics simulation (PyBullet / Isaac Lab / MuJoCo) for Phase 5 embodied validation.
