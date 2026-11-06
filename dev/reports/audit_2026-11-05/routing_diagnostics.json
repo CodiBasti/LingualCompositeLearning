@@ -1,0 +1,2296 @@
+{
+  "status": "descriptive_exploratory",
+  "primary_endpoints_unchanged": true,
+  "caveat": "Reference sets were prescribed by the same auditor before inference, not independently validated unique correct physical policies. Additional labels are not automatically harmful; missing labels may still be implemented in plan text. Existing VHC100 supplies only one expected label, so no complete-set correctness is inferred there.",
+  "arms": {
+    "LCL": {
+      "n": 40,
+      "primary_label_included": 0.95,
+      "all_prescribed_labels_included": 0.95,
+      "exact_prescribed_set": 0.6,
+      "jaccard": 0.775,
+      "predicted_sets": {
+        "fufu": 5,
+        "weli": 4,
+        "fufu+kuku": 4,
+        "gugi": 7,
+        "fufu+zubu": 4,
+        "fufu+weli": 8,
+        "gugi+weli": 3,
+        "fufu+zeze": 3,
+        "fufu+gugi": 2
+      },
+      "missing_label_occurrences": {
+        "zubu": 1,
+        "kuku": 1
+      },
+      "additional_label_occurrences": {
+        "fufu": 14,
+        "weli": 2,
+        "gugi": 2
+      }
+    },
+    "natural_labels": {
+      "n": 40,
+      "primary_label_included": 0.825,
+      "all_prescribed_labels_included": 0.8,
+      "exact_prescribed_set": 0.325,
+      "jaccard": 0.5708333333333333,
+      "predicted_sets": {
+        "fufu": 5,
+        "fufu+weli": 18,
+        "weli": 1,
+        "gugi+kuku": 1,
+        "fufu+zubu": 4,
+        "fufu+gugi": 5,
+        "fufu+zeze": 4,
+        "gugi+weli": 2
+      },
+      "missing_label_occurrences": {
+        "kuku": 5,
+        "zubu": 1,
+        "gugi": 2
+      },
+      "additional_label_occurrences": {
+        "fufu": 24,
+        "weli": 8,
+        "kuku": 1,
+        "zeze": 1
+      }
+    },
+    "renamed_labels": {
+      "n": 40,
+      "primary_label_included": 0.925,
+      "all_prescribed_labels_included": 0.925,
+      "exact_prescribed_set": 0.425,
+      "jaccard": 0.675,
+      "predicted_sets": {
+        "fufu": 5,
+        "weli": 4,
+        "fufu+kuku": 4,
+        "gugi+kuku": 2,
+        "fufu+zubu": 5,
+        "fufu+weli": 10,
+        "fufu+gugi": 5,
+        "gugi+weli": 3,
+        "fufu+zeze": 2
+      },
+      "missing_label_occurrences": {
+        "zubu": 1,
+        "zeze": 1,
+        "kuku": 1
+      },
+      "additional_label_occurrences": {
+        "fufu": 19,
+        "kuku": 2,
+        "weli": 4,
+        "zubu": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "scenario_id": "AUD-001",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "LCL",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "LCL",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "LCL",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "LCL",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "LCL",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "LCL",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "zubu"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "LCL",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "LCL",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "LCL",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "LCL",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "LCL",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "LCL",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "LCL",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-006",
+      "arm": "LCL",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-016",
+      "arm": "LCL",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-026",
+      "arm": "LCL",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-036",
+      "arm": "LCL",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "gugi"
+      ]
+    },
+    {
+      "scenario_id": "AUD-007",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "gugi"
+      ]
+    },
+    {
+      "scenario_id": "AUD-017",
+      "arm": "LCL",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-027",
+      "arm": "LCL",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-037",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-008",
+      "arm": "LCL",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-018",
+      "arm": "LCL",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-028",
+      "arm": "LCL",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-038",
+      "arm": "LCL",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-009",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-019",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-029",
+      "arm": "LCL",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-039",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-010",
+      "arm": "LCL",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-020",
+      "arm": "LCL",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-030",
+      "arm": "LCL",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-040",
+      "arm": "LCL",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "natural_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "natural_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "natural_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "natural_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "kuku"
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "natural_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "natural_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "zubu"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "natural_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "natural_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "zeze"
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.3333333333333333,
+      "missing": [
+        "gugi"
+      ],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-006",
+      "arm": "natural_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-016",
+      "arm": "natural_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-026",
+      "arm": "natural_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-036",
+      "arm": "natural_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-007",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-017",
+      "arm": "natural_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-027",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-037",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-008",
+      "arm": "natural_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-018",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-028",
+      "arm": "natural_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-038",
+      "arm": "natural_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-009",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "gugi"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-019",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-029",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-039",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-010",
+      "arm": "natural_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-020",
+      "arm": "natural_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-030",
+      "arm": "natural_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-040",
+      "arm": "natural_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "renamed_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "renamed_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "renamed_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "renamed_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "kuku"
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "renamed_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "renamed_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "zubu"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "renamed_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "renamed_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-006",
+      "arm": "renamed_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-016",
+      "arm": "renamed_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "zeze"
+      ],
+      "additional": [
+        "fufu",
+        "zubu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-026",
+      "arm": "renamed_labels",
+      "reference": [
+        "zeze"
+      ],
+      "predicted": [
+        "fufu",
+        "zeze"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-036",
+      "arm": "renamed_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-007",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-017",
+      "arm": "renamed_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": false,
+      "all_prescribed_labels_included": false,
+      "exact_prescribed_set": false,
+      "jaccard": 0.0,
+      "missing": [
+        "kuku"
+      ],
+      "additional": [
+        "fufu",
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-027",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-037",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-008",
+      "arm": "renamed_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-018",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi",
+        "weli"
+      ],
+      "predicted": [
+        "gugi",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-028",
+      "arm": "renamed_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-038",
+      "arm": "renamed_labels",
+      "reference": [
+        "weli"
+      ],
+      "predicted": [
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-009",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-019",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "weli"
+      ]
+    },
+    {
+      "scenario_id": "AUD-029",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu"
+      ],
+      "predicted": [
+        "fufu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-039",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "gugi",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "kuku"
+      ]
+    },
+    {
+      "scenario_id": "AUD-010",
+      "arm": "renamed_labels",
+      "reference": [
+        "fufu",
+        "weli"
+      ],
+      "predicted": [
+        "fufu",
+        "weli"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": true,
+      "jaccard": 1.0,
+      "missing": [],
+      "additional": []
+    },
+    {
+      "scenario_id": "AUD-020",
+      "arm": "renamed_labels",
+      "reference": [
+        "zubu"
+      ],
+      "predicted": [
+        "fufu",
+        "zubu"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-030",
+      "arm": "renamed_labels",
+      "reference": [
+        "gugi"
+      ],
+      "predicted": [
+        "fufu",
+        "gugi"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    },
+    {
+      "scenario_id": "AUD-040",
+      "arm": "renamed_labels",
+      "reference": [
+        "kuku"
+      ],
+      "predicted": [
+        "fufu",
+        "kuku"
+      ],
+      "primary_label_included": true,
+      "all_prescribed_labels_included": true,
+      "exact_prescribed_set": false,
+      "jaccard": 0.5,
+      "missing": [],
+      "additional": [
+        "fufu"
+      ]
+    }
+  ]
+}

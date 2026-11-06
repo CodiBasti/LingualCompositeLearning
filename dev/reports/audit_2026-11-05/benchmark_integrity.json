@@ -1,0 +1,24 @@
+{
+  "n": 100,
+  "domain_counts": {
+    "domestic": 30,
+    "clinical_care": 30,
+    "precision_lab": 25,
+    "emergency": 15
+  },
+  "expected_concept_counts": {
+    "fufu": 21,
+    "zubu": 11,
+    "gugi": 8,
+    "zeze": 6,
+    "weli": 43,
+    "kuku": 11
+  },
+  "unique_contexts": 100,
+  "unique_invariant_sets": 100,
+  "repeated_invariant_sets": [],
+  "cluster_sensitivity_definition": "domain + expected canonical concept; conservative semantic-family grouping, not proven dependency structure",
+  "required_invariant_count_distribution": {
+    "4": 100
+  }
+}

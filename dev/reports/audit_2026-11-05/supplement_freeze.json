@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-11-05T15:03:44.675315+00:00",
+  "policy": "After main stage soft limits, reallocate unused global eight-hour budget to missing controls, judge checks, complete timing repetitions, then historical replications. Selection by missing IDs in original fixed order only. No change to prompts, holdout, model, limits or statistics. Frozen before new control inference.",
+  "files": {
+    "complete_remaining.py": "70e58a081f52a5d3d5f7983a631c5f5d2bcd3d62971a6e7a58deb8de1adeb751"
+  }
+}

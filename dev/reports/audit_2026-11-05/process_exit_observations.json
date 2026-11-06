@@ -1,0 +1,29 @@
+{
+  "main": {
+    "tool_session_id": 57423,
+    "reported_outer_session_exit_code_when_joined": 1,
+    "python_completion_marker": "gpu_completion.json: status=finished",
+    "closed_python_process_ledger_entry": "gpu_sessions.jsonl: entry3,18120.25 process seconds",
+    "logged_python_failures_at_check": [],
+    "interpretation": "The outer PowerShell/Tee tool session reported exit1 when joined after a chat usage interruption. Python independently wrote its finished marker and closed its time ledger; the preserved console tail shows normal latency progress without a traceback. The exact cause of the outer-session exit code is not reconstructed. No independent Python exit0 is claimed. Data completeness is assessed from actual records and hashes."
+  },
+  "supplement": {
+    "tool_session_id": 16621,
+    "status": "joined_after_watchdog_budget_stop",
+    "reported_outer_session_exit_code": 1,
+    "python_termination": "Independent watchdog TerminateProcess at global28770.337032 seconds; completion marker budget_stopped. PowerShell also surfaced transformer stderr warnings as NativeCommandError."
+  },
+  "closure": {
+    "old_cpu_waiter_session": 1340,
+    "old_cpu_waiter_status": "Stopped intentionally before any closure command to reload timing diagnostic helper; no GPU resources.",
+    "tool_session_id": 80515,
+    "status": "joined",
+    "reported_outer_session_exit_code": 0,
+    "result": "Report rendered;11 unit tests and final checks passed."
+  },
+  "watchdog": {
+    "tool_session_id": 54499,
+    "reported_exit_code": 0,
+    "status": "joined_after_budget_enforcement"
+  }
+}

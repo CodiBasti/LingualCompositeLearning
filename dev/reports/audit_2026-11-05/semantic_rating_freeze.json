@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-11-05T16:57:00.351750+00:00",
+  "rated_plans": 200,
+  "requirement_decisions": 600,
+  "before_unblinding": "All 200 masked plans individually read and scored. Condition mapping, aggregate new-arm outcomes and local new-judge decisions not inspected before this freeze. Style may reveal arms. Single assistant auditor, no independent human gold standard.",
+  "files": {
+    "semantic_ratings.json": "171b860ecf8c810aaccd01bf5ca2fce18d83b8d164ac606706ae059020904625",
+    "semantic_rating_guide.md": "c5cb5cf2e602b994a9c9db4261e4c84b9d04b520410b64327d06ecd63ab65fa3",
+    "blinded_plans.json": "19ab92c4e1826bfe83ff06abcc583bdd8784f440309b568053bafeaaecf5f853",
+    "blind_mapping.json": "35569c770364eb7504fd29f14a5c54a075c3033c1c0a2c74ec5f383cdb4de0b7",
+    "rating_limitations.md": "8fcc5377c3322c8bb954a7ba4d6d171b5cfc2e0d4d34098e05379a5952bb7595"
+  }
+}

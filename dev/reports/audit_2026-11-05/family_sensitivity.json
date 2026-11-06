@@ -1,0 +1,103 @@
+{
+  "status": "additional_exploratory_sensitivity",
+  "primary_tests_unchanged": true,
+  "rationale": "The same rule/task families occur across domains. domain+operator clusters can still split structurally related tasks. This broader grouping is a conservative heuristic, not a proven dependency model.",
+  "caveat": "Few clusters; intervals unstable. Does not provide a replacement confirmatory p-value.",
+  "families": {
+    "fufu": 7,
+    "weli": 5,
+    "zubu": 5,
+    "gugi": 7,
+    "fufu+weli": 5,
+    "zeze": 3,
+    "kuku": 5,
+    "weli+gugi": 3
+  },
+  "comparisons": {
+    "LCL-cot_equal": {
+      "n": 40,
+      "mean_difference": 0.30833333333333335,
+      "cross_domain_operator_family_clusters": {
+        "clusters": 8,
+        "ci95": [
+          0.1583333333333333,
+          0.5
+        ],
+        "cluster_sizes": {
+          "fufu": 7,
+          "weli": 5,
+          "zubu": 5,
+          "gugi": 7,
+          "fufu+weli": 5,
+          "zeze": 3,
+          "kuku": 5,
+          "weli+gugi": 3
+        }
+      }
+    },
+    "LCL-natural_labels": {
+      "n": 40,
+      "mean_difference": 0.11666666666666667,
+      "cross_domain_operator_family_clusters": {
+        "clusters": 8,
+        "ci95": [
+          0.02549019607843151,
+          0.23529411764705882
+        ],
+        "cluster_sizes": {
+          "fufu": 7,
+          "weli": 5,
+          "zubu": 5,
+          "gugi": 7,
+          "fufu+weli": 5,
+          "zeze": 3,
+          "kuku": 5,
+          "weli+gugi": 3
+        }
+      }
+    },
+    "LCL-renamed_labels": {
+      "n": 40,
+      "mean_difference": 0.08333333333333333,
+      "cross_domain_operator_family_clusters": {
+        "clusters": 8,
+        "ci95": [
+          0.015151515151515148,
+          0.17543859649122806
+        ],
+        "cluster_sizes": {
+          "fufu": 7,
+          "weli": 5,
+          "zubu": 5,
+          "gugi": 7,
+          "fufu+weli": 5,
+          "zeze": 3,
+          "kuku": 5,
+          "weli+gugi": 3
+        }
+      }
+    },
+    "LCL-structured_direct": {
+      "n": 40,
+      "mean_difference": -0.058333333333333334,
+      "cross_domain_operator_family_clusters": {
+        "clusters": 8,
+        "ci95": [
+          -0.17500000000000004,
+          0.07894736842105264
+        ],
+        "cluster_sizes": {
+          "fufu": 7,
+          "weli": 5,
+          "zubu": 5,
+          "gugi": 7,
+          "fufu+weli": 5,
+          "zeze": 3,
+          "kuku": 5,
+          "weli+gugi": 3
+        }
+      }
+    }
+  },
+  "registration": "additional_checks_freeze.json"
+}

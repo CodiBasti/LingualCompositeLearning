@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-11-05T16:06:41.759266+00:00",
+  "context": "60 masked individual plans reviewed, condition mapping and aggregate primary outcomes not inspected. Additional structural sensitivity is exploratory, primary protocol/statistics/ratings rules unchanged.",
+  "rationale": "Template-like operator families repeat across domains; inspect broader operator-only clusters in addition to prespecified domain+operator sensitivity. Also check observed alias-parser capitalization parity, without repairing outputs.",
+  "files": {
+    "family_sensitivity.py": "390114afd5f6e4283d79db60ca8d6af30481abcbcf66dff2d86a00d77f46a137",
+    "control_integrity_check.py": "bcaeca23f896570ebd46336f3c57fe145b5d7a3e02c0353c5f084ecf77c8af9a"
+  }
+}

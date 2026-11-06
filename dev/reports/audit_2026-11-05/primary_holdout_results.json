@@ -1,0 +1,492 @@
+{
+  "status": "rated",
+  "single_auditor": "Codex assistant; no independent human gold standard; artificial identifiers masked, style may reveal condition",
+  "rated_plans": 200,
+  "rated_invariant_decisions": 600,
+  "uncertain_decisions": 130,
+  "complete_paired_scenarios": 40,
+  "confirmatory_contrasts": {
+    "LCL-cot_equal": {
+      "n": 40,
+      "mean_difference": 0.30833333333333335,
+      "ci95": [
+        0.18333333333333332,
+        0.4333333333333333
+      ],
+      "paired_t": 4.7654916510584675,
+      "paired_t_p_two_sided": 2.6174103193559225e-05,
+      "permutation_p_two_sided": 0.00019998000199980003,
+      "positive": 25,
+      "negative": 4,
+      "ties": 11,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.16189754689754685,
+          0.4583333333333333
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.0007999200079992001
+    },
+    "LCL-structured_direct": {
+      "n": 40,
+      "mean_difference": -0.058333333333333334,
+      "ci95": [
+        -0.16666666666666669,
+        0.05
+      ],
+      "paired_t": -1.0694047741223243,
+      "paired_t_p_two_sided": 0.2914617028338602,
+      "permutation_p_two_sided": 0.3705629437056294,
+      "positive": 11,
+      "negative": 15,
+      "ties": 14,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          -0.1742424242424242,
+          0.05263157894736842
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.3705629437056294
+    },
+    "LCL-natural_labels": {
+      "n": 40,
+      "mean_difference": 0.11666666666666667,
+      "ci95": [
+        0.025000000000000005,
+        0.20833333333333334
+      ],
+      "paired_t": 2.478849437493544,
+      "paired_t_p_two_sided": 0.01761193161651073,
+      "permutation_p_two_sided": 0.0240975902409759,
+      "positive": 17,
+      "negative": 5,
+      "ties": 18,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.03508771929824562,
+          0.2017543859649123
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.0722927707229277
+    },
+    "LCL-renamed_labels": {
+      "n": 40,
+      "mean_difference": 0.08333333333333333,
+      "ci95": [
+        0.008125000000000177,
+        0.16666666666666666
+      ],
+      "paired_t": 2.0368937552589155,
+      "paired_t_p_two_sided": 0.04848905969394416,
+      "permutation_p_two_sided": 0.0751953125,
+      "positive": 12,
+      "negative": 5,
+      "ties": 23,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.007575757575757578,
+          0.16666666666666666
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.150390625
+    }
+  },
+  "uncertainty_sensitivity": {
+    "LCL-cot_equal": {
+      "n": 40,
+      "mean_difference": 0.18333333333333332,
+      "ci95": [
+        0.06666666666666667,
+        0.30833333333333335
+      ],
+      "paired_t": 2.905487990874559,
+      "paired_t_p_two_sided": 0.006014169135248945,
+      "permutation_p_two_sided": 0.008099190080991902,
+      "positive": 14,
+      "negative": 5,
+      "ties": 21,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.04166666666666667,
+          0.3333333333333334
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.032396760323967606
+    },
+    "LCL-structured_direct": {
+      "n": 40,
+      "mean_difference": -0.075,
+      "ci95": [
+        -0.14166666666666666,
+        -0.008333333333333335
+      ],
+      "paired_t": -2.2964733069242698,
+      "paired_t_p_two_sided": 0.02710543430635482,
+      "permutation_p_two_sided": 0.046875,
+      "positive": 1,
+      "negative": 10,
+      "ties": 29,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          -0.14285714285714285,
+          -0.008130081300813012
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.046875
+    },
+    "LCL-natural_labels": {
+      "n": 40,
+      "mean_difference": 0.11666666666666667,
+      "ci95": [
+        0.041666666666666664,
+        0.2
+      ],
+      "paired_t": 2.759265448762237,
+      "paired_t_p_two_sided": 0.008777294856355965,
+      "permutation_p_two_sided": 0.012420654296875,
+      "positive": 13,
+      "negative": 3,
+      "ties": 24,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.05000000000000001,
+          0.18115942028985507
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.037261962890625
+    },
+    "LCL-renamed_labels": {
+      "n": 40,
+      "mean_difference": 0.1,
+      "ci95": [
+        0.03333333333333333,
+        0.175
+      ],
+      "paired_t": 2.6234238965856185,
+      "paired_t_p_two_sided": 0.012359142085013835,
+      "permutation_p_two_sided": 0.0166015625,
+      "positive": 11,
+      "negative": 2,
+      "ties": 27,
+      "cluster_sensitivity": {
+        "clusters": 27,
+        "ci95": [
+          0.019607843137254895,
+          0.19166666666666665
+        ],
+        "cluster_sizes": {
+          "domestic_fufu": 2,
+          "domestic_weli": 1,
+          "domestic_zubu": 2,
+          "domestic_gugi": 2,
+          "domestic_fufu+weli": 2,
+          "domestic_zeze": 1,
+          "clinical_care_fufu": 2,
+          "clinical_care_weli": 1,
+          "clinical_care_zubu": 2,
+          "clinical_care_gugi": 1,
+          "clinical_care_fufu+weli": 1,
+          "clinical_care_zeze": 1,
+          "clinical_care_kuku": 1,
+          "clinical_care_weli+gugi": 1,
+          "precision_lab_weli": 2,
+          "precision_lab_fufu": 2,
+          "precision_lab_zubu": 1,
+          "precision_lab_gugi": 2,
+          "precision_lab_fufu+weli": 1,
+          "precision_lab_zeze": 1,
+          "precision_lab_weli+gugi": 1,
+          "emergency_kuku": 4,
+          "emergency_gugi": 2,
+          "emergency_fufu+weli": 1,
+          "emergency_weli+gugi": 1,
+          "emergency_fufu": 1,
+          "emergency_weli": 1
+        }
+      },
+      "permutation_p_holm": 0.037261962890625
+    }
+  },
+  "arms": {
+    "cot_equal": {
+      "n": 40,
+      "strict_macro_recall": 0.35,
+      "lenient_macro_recall": 0.6666666666666666,
+      "all_invariants_pass": 0.05,
+      "task_fulfillment": {
+        "uncertain": 24,
+        "0": 14,
+        "1": 2
+      },
+      "unnecessary_refusal": {
+        "0": 40
+      }
+    },
+    "structured_direct": {
+      "n": 40,
+      "strict_macro_recall": 0.7166666666666666,
+      "lenient_macro_recall": 0.925,
+      "all_invariants_pass": 0.375,
+      "task_fulfillment": {
+        "1": 29,
+        "0": 6,
+        "uncertain": 5
+      },
+      "unnecessary_refusal": {
+        "0": 40
+      }
+    },
+    "LCL": {
+      "n": 40,
+      "strict_macro_recall": 0.6583333333333333,
+      "lenient_macro_recall": 0.85,
+      "all_invariants_pass": 0.325,
+      "task_fulfillment": {
+        "1": 14,
+        "uncertain": 17,
+        "0": 9
+      },
+      "unnecessary_refusal": {
+        "0": 40
+      }
+    },
+    "natural_labels": {
+      "n": 40,
+      "strict_macro_recall": 0.5416666666666666,
+      "lenient_macro_recall": 0.7333333333333332,
+      "all_invariants_pass": 0.175,
+      "task_fulfillment": {
+        "1": 14,
+        "0": 8,
+        "uncertain": 18
+      },
+      "unnecessary_refusal": {
+        "0": 40
+      }
+    },
+    "renamed_labels": {
+      "n": 40,
+      "strict_macro_recall": 0.575,
+      "lenient_macro_recall": 0.7499999999999999,
+      "all_invariants_pass": 0.25,
+      "task_fulfillment": {
+        "uncertain": 19,
+        "1": 10,
+        "0": 11
+      },
+      "unnecessary_refusal": {
+        "0": 40
+      }
+    }
+  }
+}

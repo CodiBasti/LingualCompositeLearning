@@ -1,0 +1,295 @@
+{
+  "created_utc": "2026-11-05T14:16:59.278508+00:00",
+  "git_head": "58df587fd9e74580e0c5a5cd7adcf8616e25b536",
+  "git_status_before_audit": "?? dev/reports/audit_2026-11-05/prepare.py\n",
+  "files": {
+    ".agents/skills/critical-peer-reviewer/SKILL.md": {
+      "sha256": "734f2f0f64e398c592309eb55e13134320cbf3529188569d87a4093c96d397f9",
+      "bytes": 3656
+    },
+    ".agents/skills/lingual-composit-research/SKILL.md": {
+      "sha256": "f7a8ceed366e5cf81f3116b320abb610a6739714970a7c4141cd97e1abce9027",
+      "bytes": 1739
+    },
+    ".gitignore": {
+      "sha256": "201923fcbc3a29b66cdcc0e9ece40b3ad61d0d459897fc8dd10ba7710a36508f",
+      "bytes": 319
+    },
+    "LICENSE": {
+      "sha256": "110f299fe1d09a4f11c748920f026900c87a39cf4ae1131605da99eb5cc4a267",
+      "bytes": 1074
+    },
+    "README.md": {
+      "sha256": "58fc414224d6fcc84481417d0a0cc6bdca0e0ecb89da233f974d5b06cf79871d",
+      "bytes": 9530
+    },
+    "demo_dashboard.html": {
+      "sha256": "f3ee4429c52a861f72c59218f51dbc1904f3b2d6fdd0ee01d3747e5f2ddd1b01",
+      "bytes": 483327
+    },
+    "dev/.agents/skills/critical-peer-reviewer/SKILL.md": {
+      "sha256": "734f2f0f64e398c592309eb55e13134320cbf3529188569d87a4093c96d397f9",
+      "bytes": 3656
+    },
+    "dev/.agents/skills/lingual-composit-research/SKILL.md": {
+      "sha256": "f7a8ceed366e5cf81f3116b320abb610a6739714970a7c4141cd97e1abce9027",
+      "bytes": 1739
+    },
+    "dev/.gitignore": {
+      "sha256": "1a90911494e31caff563f8bdb98659a366a85521069ecaf9e66252c7db0c4e28",
+      "bytes": 507
+    },
+    "dev/AGENTS.md": {
+      "sha256": "c22bb1e50a12cf335ca2d6dedbb1efb50a4f2216d1492f6d5ab943331b70a5ac",
+      "bytes": 3302
+    },
+    "dev/BACKLOG.md": {
+      "sha256": "9e7ff54f2dd6dc9c1d37d9b5e100de1f17f8945ecb1c2fdf9ff3104da0b9bb1d",
+      "bytes": 5065
+    },
+    "dev/DECISIONS.md": {
+      "sha256": "d42427423d634438b56cc0645fd76e1626e36009b8065c64cff4dc2ffd168ab1",
+      "bytes": 5337
+    },
+    "dev/FOUNDATION_ROADMAP.md": {
+      "sha256": "e6c23154a9c1eecb3973ac4405b52f1df8d31930f9592add747b008fc3b8cc3c",
+      "bytes": 4069
+    },
+    "dev/HYPOTHESES.md": {
+      "sha256": "40e2086543a14d8b8906ecd907776989cedd2c898e0b17fa11d5c059c7b005b1",
+      "bytes": 5802
+    },
+    "dev/IDEAS.md": {
+      "sha256": "ca1b0aea5974456c7c0f19df402991a6e5ef6b2fcbf60b8f64ee44a2f428a20b",
+      "bytes": 2462
+    },
+    "dev/QUESTIONS.md": {
+      "sha256": "bfd6fa177bce1e31904fb845867e53fecb5d6fac90e845e0fae1e7c6b89aa0ed",
+      "bytes": 3083
+    },
+    "dev/README.md": {
+      "sha256": "334766738ddbe43da7bfeac3e849238dbe8f4237f4cbc9dd27486774c3854176",
+      "bytes": 5257
+    },
+    "dev/RESEARCH_MAP.md": {
+      "sha256": "691a3a481cf537ad7d218a3ffd44bf5ffe1d8c64ddbc29e6b86f1dea4e8b411d",
+      "bytes": 4324
+    },
+    "dev/STATE.md": {
+      "sha256": "c6b123282e3654674cdace4bc0645e8a8d053be27263e3f417b0a351e17d8af1",
+      "bytes": 4461
+    },
+    "dev/concepts/MORPHOLOGY_AND_SYNTAX.md": {
+      "sha256": "0c7735a04c9a2dbf62e09ca2cf52a641bbf8ac655e05a760fabac647299d6c49",
+      "bytes": 6745
+    },
+    "dev/concepts/SEMANTIC_DIMENSIONS.md": {
+      "sha256": "e283068343f4e59d0839316bdfae7035a3b0dd0387506e59faf1b16ea4815a94",
+      "bytes": 7533
+    },
+    "dev/concepts/VOCABULARY_V1.md": {
+      "sha256": "0637879f7f507cc46190fa13a2d6a5236c5bf8f0637ddab4725d3596c567c026",
+      "bytes": 8142
+    },
+    "dev/concepts/fufu.md": {
+      "sha256": "47176dab9ef721885eb311573aa17fe77135de45dd7f9cdba774949eb9cad139",
+      "bytes": 3846
+    },
+    "dev/data/benchmarks/BENCHMARK_V2_SPEC.md": {
+      "sha256": "b24bc86a155a2300873acfdf35cb81bd0927eda9726b1c323d8227cc80cd65dd",
+      "bytes": 4121
+    },
+    "dev/data/benchmarks/benchmark_v1.json": {
+      "sha256": "157789976e9b36fdbddde39111cda2d894a7f9d3bf837a711a4d76c77a7f8cc6",
+      "bytes": 7563
+    },
+    "dev/data/benchmarks/benchmark_v2.json": {
+      "sha256": "54b759e017e3c44511ad00206c79477a8f299338887bb6e6b7f8c0c8ebd600aa",
+      "bytes": 60306
+    },
+    "dev/data/scenarios/pilot_scenarios.md": {
+      "sha256": "6f1ad6470f5bde5654f7fa05412bc8c50e934ff977a32c5f5909baf8bba628fc",
+      "bytes": 3947
+    },
+    "dev/experiments/EXP-001_concept_routing/README.md": {
+      "sha256": "2ccfa09ffeb8e2e701fec898d9763410793ec998305e397e8639331fdf3c9059",
+      "bytes": 2312
+    },
+    "dev/findings/FINDINGS-EXP-001.md": {
+      "sha256": "22e774840c8e477e70aa38a094c66e2b88fd993a335a2d8c60cdf63a036f0052",
+      "bytes": 5076
+    },
+    "dev/findings/FINDINGS-EXP-002.md": {
+      "sha256": "09bc563a5febea94c4f4367838b8eace920702a3066dd6085b582b41b7232724",
+      "bytes": 7749
+    },
+    "dev/findings/FINDINGS-EXP-003.md": {
+      "sha256": "26246f102de97f3cc15344db0e8035779f1a3459e9d4738f3181c44b2869051d",
+      "bytes": 3727
+    },
+    "dev/literature/DEEP_LITERATURE_AUDIT_2026.md": {
+      "sha256": "dc44e2fcc5f078b9308eb470e574eaca5657027423792bb7bc77a79a79a56647",
+      "bytes": 6844
+    },
+    "dev/literature/differentiation_matrix.md": {
+      "sha256": "e62b876eaf59da4c0c018382fc9c68a5818baba77026174cbd208f01086fee80",
+      "bytes": 6598
+    },
+    "dev/literature/hewitt_2025_cant_understand_ai.md": {
+      "sha256": "fbcabaa23ebae139009e553fd51b65eeea8793d86de3601f1055926047fb1af4",
+      "bytes": 1680
+    },
+    "dev/literature/hewitt_2026_neologism_learning.md": {
+      "sha256": "d39980ebfaadd963201efec8d3f7fad954b925059591601e359598e871a7639a",
+      "bytes": 1842
+    },
+    "dev/literature/lupyan_2007_language_not_just_talking.md": {
+      "sha256": "ddbe9cc53d63a672e29c9a62427d2c813fe9bc669003c3c048480cc45ba65673",
+      "bytes": 1725
+    },
+    "dev/literature/yang_2024_safety_chip.md": {
+      "sha256": "71c1a57f1a8399d47ee9558d3918f024f4de89e5a05e0f3d43596db721028b43",
+      "bytes": 1815
+    },
+    "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md": {
+      "sha256": "261db86afac38dc8d88b30400acff6859e9116bd8658b060bd8685ff8690d778",
+      "bytes": 32151
+    },
+    "dev/papers/neurips_2026/main.tex": {
+      "sha256": "858c3246a3cbb2a8110a5d66d8c79d5260d66810e90b6fa7c7c9514a273d71fa",
+      "bytes": 12593
+    },
+    "dev/papers/neurips_2026/references.bib": {
+      "sha256": "6b19914949c10df5bb9ac8b762665305a58b0b4e51b90d5503481f7c91e1e34e",
+      "bytes": 4077
+    },
+    "dev/ref/Briefing_Begriffssprache_Mensch_KI.md": {
+      "sha256": "6aa56cfe205bdc961296eed5149f8c37eb64b9c9fb08ad5c4e17f2de6ec89f16",
+      "bytes": 7913
+    },
+    "dev/reports/review_audit_2026-11-01_EXP-001.md": {
+      "sha256": "54312e8467a36826d9675ac1e20eee508458596db7123ad19c23c2daf1280aec",
+      "bytes": 3763
+    },
+    "dev/reports/review_audit_2026-11-02_EXP002_TO_EXP003.md": {
+      "sha256": "42302ebf90e94451ab3b36d45512e09e4c05b6e41d92c806e248061e675b9f1f",
+      "bytes": 3436
+    },
+    "dev/reports/review_audit_2026-11-02_PRE_FLIGHT_EXP002.md": {
+      "sha256": "554c7b3333d3fa5723351ff7587501b267da2ac6c7951babe934375bd014c7be",
+      "bytes": 3186
+    },
+    "dev/reports/review_audit_2026-11-02_VOCABULARY_FOUNDATION.md": {
+      "sha256": "af8f41673f987c266aba4f4bf32445dc3522f03bc71e10e1c7a94eddcf570623",
+      "bytes": 4044
+    },
+    "dev/reports/review_audit_2026-11-03_EXP003_PAPER_READINESS.md": {
+      "sha256": "7cae00ebea54d0bd9ff3c77b9c7d97f0058a0473cc2e6d051fd7a37ea702feb7",
+      "bytes": 5122
+    },
+    "dev/reports/review_audit_2026-11-03_FINAL_MANUSCRIPT_AUDIT.md": {
+      "sha256": "ecdf8ff95b7cd736713c557917e3669b45533ee7ded9075a0b6e71cb56bedfe5",
+      "bytes": 3415
+    },
+    "dev/runs/EXP-001/exp001_results.json": {
+      "sha256": "0a95eeaeebf4cfbc326c7696f0ec232a586bf698ee3c9fbf6b5feeefab02a7c5",
+      "bytes": 50530
+    },
+    "dev/runs/EXP-002/exp002_results.json": {
+      "sha256": "031299bdba50feb39a4106cf356a59874d4d19e00f4a4c6b6f3231fe9ed4b701",
+      "bytes": 535981
+    },
+    "dev/runs/EXP-002/judge_audit_report.json": {
+      "sha256": "8191fb05570753d78b38d1ced259bfbfae201d3a08c4eca19581d4c39df2736c",
+      "bytes": 951
+    },
+    "dev/runs/EXP-002/judge_discrepancies.json": {
+      "sha256": "ec2d7cd2759e269e3266b7ad911be6413af70cedb93a064b29094bd6fd2816c1",
+      "bytes": 19866
+    },
+    "dev/runs/EXP-003/exp003_results.json": {
+      "sha256": "339b3304dbb6d4c7db3dfa83198713ea48c8b01a4578835cfab9910e6bbdb75f",
+      "bytes": 195617
+    },
+    "dev/runs/_archive_german_input/EXP-002/exp002_results.json": {
+      "sha256": "07d2dfe3eaacbb80bf5b2c0fe899b6013aa0645ff6429129c7595628ec781d17",
+      "bytes": 540319
+    },
+    "dev/runs/_archive_german_input/EXP-002/judge_audit_report.json": {
+      "sha256": "0fd1d13ce556c580b184f615ec928dc5162fb69ed858bf2dbda27ba3894878eb",
+      "bytes": 954
+    },
+    "dev/runs/_archive_german_input/EXP-002/judge_discrepancies.json": {
+      "sha256": "beed040951ae1306aefe1e5b4d281e0842945bbcb65cf70fc4c9ce4fe2d41847",
+      "bytes": 21702
+    },
+    "dev/runs/_archive_german_input/EXP-003/exp003_results.json": {
+      "sha256": "12ce13c579e18f6b2514e6a21985a706362db70bf3557742ddcbb62a148fd089",
+      "bytes": 194060
+    },
+    "dev/src/lingual_research/__init__.py": {
+      "sha256": "88c1e26fd78d04d9f6b05871f22401a2cd0266bfb19b625f40e0d664837c5223",
+      "bytes": 151
+    },
+    "dev/src/lingual_research/analyze_exp002.py": {
+      "sha256": "5f3dd38f9e8494b7880d1e786e5ddca20b6bef24dd4d7dd81fd399789d1600e3",
+      "bytes": 6245
+    },
+    "dev/src/lingual_research/analyze_exp003.py": {
+      "sha256": "57f34ea4f08c3fb006e181165167ddc1612bf1079b1935f40ec81775bbe5923c",
+      "bytes": 4482
+    },
+    "dev/src/lingual_research/audit_judge.py": {
+      "sha256": "616850dd4ce87161b6cd3877f907c9d50c3bea15722a35c6d92980663209b799",
+      "bytes": 10152
+    },
+    "dev/src/lingual_research/build_benchmark_v2.py": {
+      "sha256": "b037740afa04d4d856f4e29dcf399c50d183897570d90f9164604160a68afc9a",
+      "bytes": 43570
+    },
+    "dev/src/lingual_research/build_dashboard.py": {
+      "sha256": "f57c12392d64df79627373115158f99a99ff13afc7fdca5915ac4f42daab39ad",
+      "bytes": 14914
+    },
+    "dev/src/lingual_research/evaluator.py": {
+      "sha256": "45edb9421abd48adf363304aa40cff37effe6bb37688571248afa2eac8945d95",
+      "bytes": 11081
+    },
+    "dev/src/lingual_research/run_full_evaluation.py": {
+      "sha256": "bfd580821563b6b5f10bd830a6742184244e2bae6308a11e6fab1ad9a7533340",
+      "bytes": 5349
+    },
+    "dev/src/lingual_research/runner_exp001.py": {
+      "sha256": "85a1f035ba1291a7e1a50fa190fd7b1497b8263ea939770e7c6dc8551e6ac674",
+      "bytes": 11684
+    },
+    "dev/src/lingual_research/runner_exp002.py": {
+      "sha256": "76e4f5800437070b53e002a2d09a7e8388ea69a8d8c5ef1b7460992a12784768",
+      "bytes": 15268
+    },
+    "dev/src/lingual_research/runner_exp003.py": {
+      "sha256": "a021d3f08d0177ce3a500e091398cbee7132e4649b03ad7e93fc341de4a3095b",
+      "bytes": 17751
+    },
+    "dev/templates/concept_template.md": {
+      "sha256": "221d90e186810ad292caf93fd509b211f8917e64c2772b47f955fd4d26aa7fa4",
+      "bytes": 1136
+    },
+    "dev/templates/experiment_template.md": {
+      "sha256": "d7b5972802dfb15421a56d725b48bbb19477c23163f10185ba6e96500636dfaf",
+      "bytes": 1272
+    },
+    "dev/templates/hypothesis_template.md": {
+      "sha256": "5016a7417ae7a9aa800f9004b6ef7eb9fa6da43a7e9508b28a6a646b39cb0332",
+      "bytes": 872
+    },
+    "dev/templates/literature_note_template.md": {
+      "sha256": "e135ee5aec838bf2f61ebbb14478a424f7831befb479ccf622885c469a205d3f",
+      "bytes": 750
+    },
+    "ref/Briefing_Begriffssprache_Mensch_KI.md": {
+      "sha256": "6aa56cfe205bdc961296eed5149f8c37eb64b9c9fb08ad5c4e17f2de6ec89f16",
+      "bytes": 7913
+    }
+  }
+}

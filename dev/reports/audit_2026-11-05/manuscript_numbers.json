@@ -1,0 +1,491 @@
+[
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "A: recall",
+    "reported": 35,
+    "reconstructed": 35.0,
+    "status": "reconstructed",
+    "meaning": "Textual regex measure, not executed safety."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "A: latency seconds",
+    "reported": 6.74,
+    "reconstructed": 6.7392900000000004,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Historical logged per-record elapsed time; historical hardware load not reconstructible."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "B: recall",
+    "reported": 50.25,
+    "reconstructed": 50.24999999999999,
+    "status": "reconstructed",
+    "meaning": "Textual regex measure, not executed safety."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "B: latency seconds",
+    "reported": 10.13,
+    "reconstructed": 10.13022,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Historical logged per-record elapsed time; historical hardware load not reconstructible."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "C: recall",
+    "reported": 46.25,
+    "reconstructed": 46.25,
+    "status": "reconstructed",
+    "meaning": "Textual regex measure, not executed safety."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "C: latency seconds",
+    "reported": 8.54,
+    "reconstructed": 8.54228,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Historical logged per-record elapsed time; historical hardware load not reconstructible."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "D: recall",
+    "reported": 47.25,
+    "reconstructed": 47.25,
+    "status": "reconstructed",
+    "meaning": "Textual regex measure, not executed safety."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:204-207; main.tex:107-110",
+    "quantity": "D: latency seconds",
+    "reported": 8.67,
+    "reconstructed": 8.674180000000002,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Historical logged per-record elapsed time; historical hardware load not reconstructible."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:205-207; main.tex:108-110",
+    "quantity": "B-A: paired t",
+    "reported": 5.846,
+    "reconstructed": 5.845991725932527,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "All three actual t-test p-values remain <0.0001; comparison is versus naive A, not CoT B."
+  },
+  {
+    "source": "main.tex:108-110",
+    "quantity": "B-A: two-sided p",
+    "reported": "<0.0001",
+    "reconstructed": 6.480591708719518e-08,
+    "status": "reconstructed",
+    "meaning": "No causal identification of the artificial name from this comparison."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:205-207; main.tex:108-110",
+    "quantity": "C-A: paired t",
+    "reported": 4.753,
+    "reconstructed": 4.752760502525474,
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "All three actual t-test p-values remain <0.0001; comparison is versus naive A, not CoT B."
+  },
+  {
+    "source": "main.tex:108-110",
+    "quantity": "C-A: two-sided p",
+    "reported": "<0.0001",
+    "reconstructed": 6.8089332251975025e-06,
+    "status": "reconstructed",
+    "meaning": "No causal identification of the artificial name from this comparison."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:205-207; main.tex:108-110",
+    "quantity": "D-A: paired t",
+    "reported": 4.882,
+    "reconstructed": 4.627769842651106,
+    "status": "mismatch",
+    "meaning": "All three actual t-test p-values remain <0.0001; comparison is versus naive A, not CoT B."
+  },
+  {
+    "source": "main.tex:108-110",
+    "quantity": "D-A: two-sided p",
+    "reported": "<0.0001",
+    "reconstructed": 1.1220117700859436e-05,
+    "status": "reconstructed",
+    "meaning": "No causal identification of the artificial name from this comparison."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:219-222; main.tex:122-125",
+    "quantity": "domestic four recalls A/B/C/D",
+    "reported": [
+      39.2,
+      63.3,
+      62.5,
+      58.3
+    ],
+    "reconstructed": [
+      39.166666666666664,
+      63.33333333333333,
+      62.5,
+      58.333333333333336
+    ],
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Domestic D-B=-5, emergency +11.6667, precision -11, clinical -1.6667 percentage points. +11.6 truncates rather than conventionally rounding +11.6667 to one decimal."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:219-222; main.tex:122-125",
+    "quantity": "emergency four recalls A/B/C/D",
+    "reported": [
+      43.3,
+      41.7,
+      45,
+      53.3
+    ],
+    "reconstructed": [
+      43.333333333333336,
+      41.66666666666667,
+      45.0,
+      53.333333333333336
+    ],
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Domestic D-B=-5, emergency +11.6667, precision -11, clinical -1.6667 percentage points. +11.6 truncates rather than conventionally rounding +11.6667 to one decimal."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:219-222; main.tex:122-125",
+    "quantity": "precision_lab four recalls A/B/C/D",
+    "reported": [
+      28,
+      41,
+      31,
+      30
+    ],
+    "reconstructed": [
+      28.000000000000004,
+      41.0,
+      31.0,
+      30.0
+    ],
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Domestic D-B=-5, emergency +11.6667, precision -11, clinical -1.6667 percentage points. +11.6 truncates rather than conventionally rounding +11.6667 to one decimal."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:219-222; main.tex:122-125",
+    "quantity": "clinical_care four recalls A/B/C/D",
+    "reported": [
+      32.5,
+      49.2,
+      43.3,
+      47.5
+    ],
+    "reconstructed": [
+      32.5,
+      49.166666666666664,
+      43.333333333333336,
+      47.5
+    ],
+    "status": "reconstructed_to_reported_rounding",
+    "meaning": "Domestic D-B=-5, emergency +11.6667, precision -11, clinical -1.6667 percentage points. +11.6 truncates rather than conventionally rounding +11.6667 to one decimal."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:16",
+    "quantity": "Composite-naive gain",
+    "reported": 12.25,
+    "reconstructed": 12.25,
+    "status": "reconstructed",
+    "meaning": "Percentage points, not relative percent."
+  },
+  {
+    "source": "main.tex:39",
+    "quantity": "Composite-naive gain",
+    "reported": 13,
+    "reconstructed": 12.25,
+    "status": "archive_only",
+    "meaning": "Archived German means support +13 points; current English means support +12.25."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:227",
+    "quantity": "Emergency relative gain",
+    "reported": 27.8,
+    "reconstructed": 28.000000000000004,
+    "status": "rounding_mismatch",
+    "meaning": "Unrounded raw means imply 28%; rounded displayed 53.3/41.7 imply about27.82%. No demonstrated causal elimination of vacillation."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:228",
+    "quantity": "Latency reduction %: composite/atomic",
+    "reported": [
+      14.4,
+      15.7
+    ],
+    "reconstructed": [
+      14.37323177581531,
+      15.675276548781758
+    ],
+    "status": "approximately_reconstructed",
+    "meaning": "Raw data give about14.37 and15.68%; caps differ."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:228",
+    "quantity": "Seconds saved versus CoT",
+    "reported": ">1.45",
+    "reconstructed": [
+      1.456039999999998,
+      1.5879399999999997
+    ],
+    "status": "reconstructed",
+    "meaning": "Recorded mean savings, with unequal output caps."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:59; main.tex:50",
+    "quantity": "CoT latency increase versus naive %",
+    "reported": "30-50",
+    "reconstructed": 50.31583445733896,
+    "status": "approximately_reconstructed",
+    "meaning": "About50.32% in this logged run, just above stated range; not an external general law."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:59; main.tex:50",
+    "quantity": "CoT generated-token increase %",
+    "reported": "200-300",
+    "reconstructed": 50.35848583604914,
+    "status": "mismatch",
+    "meaning": "Exact retokenization artifact is historical_token_audit.json; ~299.89 versus199.45 tokens, not200-300% increase."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:36,58; main.tex:49",
+    "quantity": "Failure percentage",
+    "reported": 66.5,
+    "reconstructed": 65.0,
+    "status": "archive_only_and_construct_mismatch",
+    "meaning": "One minus archived naive recall gives66.5%; current gives65%. Neither is a physical catastrophic failure rate or fraction of whole tasks failing."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:70; main.tex:91-94",
+    "quantity": "Domain scenario counts",
+    "reported": [
+      30,
+      30,
+      25,
+      15
+    ],
+    "reconstructed": [
+      30,
+      30,
+      25,
+      15
+    ],
+    "status": "reconstructed",
+    "meaning": "100 independent scenario IDs evaluated in each of four arms; independence beyond shared authored families not established."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:16,186; main.tex:39,98",
+    "quantity": "Inference runs",
+    "reported": 400,
+    "reconstructed": {
+      "scenario_condition_records": 400,
+      "generation_calls_required_by_code": 600,
+      "distinct_scenarios": 100
+    },
+    "status": "unit_ambiguity",
+    "meaning": "Two stages in each concept arm. Scenario-condition records are not independent tasks or equal to generation calls."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:71-72",
+    "quantity": "Atomic/composite routing old figures",
+    "reported": [
+      44,
+      68
+    ],
+    "reconstructed": [
+      47.0,
+      72.0
+    ],
+    "status": "archive_only",
+    "meaning": "Current values47 and72. Composite membership and atomic exact match are different scoring rules."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:254; main.tex:131",
+    "quantity": "Precision composite label coverage",
+    "reported": 88,
+    "reconstructed": 88.0,
+    "status": "reconstructed",
+    "meaning": "Coverage of one expected label in up to2 predictions; not full-set routing accuracy."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:243-250",
+    "quantity": "6x6 atomic confusion matrix",
+    "reported": [
+      [
+        10,
+        1,
+        0,
+        0,
+        9,
+        1
+      ],
+      [
+        10,
+        24,
+        0,
+        0,
+        8,
+        1
+      ],
+      [
+        6,
+        1,
+        3,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        2,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        7
+      ]
+    ],
+    "reconstructed": [
+      [
+        10,
+        1,
+        0,
+        0,
+        9,
+        1
+      ],
+      [
+        10,
+        24,
+        0,
+        0,
+        8,
+        1
+      ],
+      [
+        6,
+        1,
+        3,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        2,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        7
+      ]
+    ],
+    "status": "reconstructed",
+    "meaning": "Counts support confusion description, not a demonstrated causal dimensionality mechanism."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:288",
+    "quantity": "fufu-weli activation count",
+    "reported": 84,
+    "reconstructed": 85,
+    "status": "archive_only",
+    "meaning": "Current85, archived84; majority pairing alone does not establish physical necessity."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:268-270",
+    "quantity": "Judge regex passes/rejections A/B/C",
+    "reported": [
+      [
+        12,
+        5
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        14,
+        6
+      ]
+    ],
+    "reconstructed": [
+      [
+        12,
+        5
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        14,
+        6
+      ]
+    ],
+    "status": "counts_reconstructed_condition_misattributed",
+    "meaning": "Historical provenance independently checked in historical_judge_provenance.json: C is atomic, not composite; first5 domestic cases, same checkpoint."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:186; main.tex:98",
+    "quantity": "Historical VRAM allocation GB",
+    "reported": 27.65,
+    "reconstructed": null,
+    "status": "not_reconstructible",
+    "meaning": "Original allocation telemetry absent. Current hardware/model load does not prove historical exact allocation."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:119-128; main.tex:66-78",
+    "quantity": "1/1.5m, <3N, 1.5N/s,0dB",
+    "reported": "chosen policy definitions",
+    "reconstructed": null,
+    "status": "definitions_not_empirical_findings",
+    "meaning": "Not measurements or validated universal safety thresholds; conflicting1.0N/s specification elsewhere. No physical force/sound samples."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:275-279",
+    "quantity": "Purported quotation",
+    "reported": "Axiom 1: I must maintain a wide standoff and crawl speed near the infant",
+    "reconstructed": 0,
+    "status": "not_located_in_preserved_plans",
+    "meaning": "No matching full phrase in preserved result plans. May be illustrative; manuscript must label as such or provide exact source. Not proof that no similar behavior occurs."
+  },
+  {
+    "source": "PAPER_MANUSCRIPT.md:275-279",
+    "quantity": "Purported quotation",
+    "reported": "Step 1: Move directly across the room. Step 2: Grasp the cup.",
+    "reconstructed": 0,
+    "status": "not_located_in_preserved_plans",
+    "meaning": "No matching full phrase in preserved result plans. May be illustrative; manuscript must label as such or provide exact source. Not proof that no similar behavior occurs."
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "input_tokens": 6406,
+  "output_tokens": 7039,
+  "generation_seconds": 1390.9404574999353,
+  "calls": 40,
+  "truncated": true
+}

@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-11-05T15:14:38.718946+00:00",
+  "policy": "Same supplement priority and hard budget as supplement_freeze.json; use final pre-control V3 information-matched baseline templates. Wait for three closed main-process ledger entries.",
+  "files": {
+    "complete_remaining.py": "34a1af7d3c583bf163b09c87b046cf05b44d7e1935a36d43bb3b8d3a8c3d2d3c"
+  }
+}

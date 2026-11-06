@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-05T18:01:50.008718+00:00",
+  "scope": "Budget-order feasibility amendment after frozen primary holdout analysis, BEFORE any new judge or latency calls. Main V3 source/loops unchanged; CPU-only supplemental waiter stopped and replaced. Earlier V3 code preserved as complete_remaining_v3.py.",
+  "rationale": "Observed control wall times make300 latency calls unlikely within the1h soft stage. Original rep-major main loop can leave no scenario with all3 repeats. Supplemental fill is therefore scenario-major, completing fixed3x5 blocks before remaining old VHC controls.",
+  "unchanged": [
+    "40 holdout scenarios",
+    "20 fixed latency scenario IDs",
+    "3 repeats",
+    "arm rotation by(i+rep)%5",
+    "model/settings/prompts",
+    "primary semantic ratings/statistics",
+    "global8h watchdog"
+  ],
+  "supplement_priority": [
+    "missing new holdout controls",
+    "complete fixed latency3x5 blocks",
+    "remaining judge checks",
+    "remaining VHC100 controls",
+    "remaining original replications"
+  ],
+  "admission": "Only missing IDs and observed latency/control wall seconds: max90sec, sum1.5x median arm times+30sec. No selection on recall or judge outcomes. Unexpected overrun remains under independent watchdog.",
+  "interpretation": "Latency remains exploratory and order differs between main and supplement. Desktop load and stage/order effects limit speed claims. This is not claimed to have been frozen before primary outcome analysis.",
+  "files": {
+    "complete_remaining.py": "61eac0bc4dd4789b6d2b103142f426d51481b536b583854fdb1da1a6fde44b5b",
+    "gpu_watchdog.py": "3ff356b0fb2b2e6674fa7e0eaaf8092f2e971ee6f6852b60b0131088b66ef929"
+  }
+}

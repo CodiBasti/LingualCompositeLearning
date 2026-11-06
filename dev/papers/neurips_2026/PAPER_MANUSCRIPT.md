@@ -1,300 +1,248 @@
-# Lingual Composite Learning: Structured Invariant Transfer in Embodied Agents via Recursive Latent Concepts
+# The Illusion of Reasoning Failure: How Evaluator Blindness and Token Limits Confound Embodied AI Safety
+### An Empirical Dissection of In-Context Concept Routing
 
 **Author:** Sebastian Oertel  
-**Affiliation:** Independent AI Research & Robotics Safety Group  
-**Document Type:** Open-Access Research Preprint / Technical Report (arXiv Format)  
-**Keywords:** Embodied AI, Neurosymbolic Invariants, Robot Safety, Chain-of-Thought Drift, Concept Bottleneck, Compositional Generalization.
+**Affiliation:** Independent AI Safety Research  
+**Document Type:** Empirical Research Report & Methodological Post-Mortem (Open Science)  
+**Keywords:** Embodied AI, Evaluation Fragility, Chain-of-Thought Truncation, Concept Bottleneck, Neurosymbolic Safety, Sycophancy in LLM Reviewing.
 
 ---
 
 ## Abstract
 
-Large Language Models (LLMs) deployed as high-level planners in autonomous robotics frequently fail in safety-critical situations characterized by conflicting goals—such as an urgent user command issued in the immediate proximity of vulnerable biological entities (infants, elderly patients, pets) or fragile physical assets. While current state-of-the-art approaches rely on verbose Chain-of-Thought (CoT) prompting to induce step-by-step safety deliberation, we uncover an alarming failure mode: **"Preach-but-not-Act" attention drift**, wherein the model verbalizes safety principles in its deliberative preamble but completely fails to operationalize them in the generated low-level motor plan. 
+Large Language Models (LLMs) deployed as high-level planners in autonomous robotics frequently fail in safety-critical situations characterized by goal conflicts—such as an urgent user command issued near a vulnerable child or fragile instrument. While verbose Chain-of-Thought (CoT) prompting is the standard countermeasure, initial automated evaluations suggested an alarming alternative failure mode: *"Preach-but-not-Act" Attention Drift*, where models verbalize safety axioms in their thinking preamble but omit them in their physical motor steps. To eliminate this drift and bypass token bloat, we initially developed **Lingual Composite Learning (LCL)**: a two-stage in-context prompt-routing architecture mapping context onto discrete multi-axial concept tokens (`fufu`, `weli`, `gugi`, `kuku`) grounded in a 5D invariant taxonomy ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$).
 
-To overcome this fundamental limitation without burdening human operators with synthetic programming languages, we introduce **Lingual Composite Learning (LCL)**. LCL establishes a structured, multi-axial latent semantic bottleneck that quantizes physical safety invariants into language-neutral, phonotactically balanced CVCV concepts grounded in Talmy’s Force Dynamics and Hall’s Proxemics across five formal dimensions ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$). Rather than forcing models into single-token abstractions—which we empirically prove collapses due to a **"Semantic Dimensionality Trap"**—LCL synthesizes hierarchical composite contracts (e.g., `fufu-weli` combining dynamic spatial standoff with micro-force compliance). 
+Initial automated benchmark evaluations across 100 standardized adversarial scenarios (the VHC-100 benchmark suite, 400 inference runs on a local NVIDIA RTX 5090 using `Qwen2.5-14B-Instruct`) produced highly compelling headline results: Composite Concept Routing apparently beat Verbose CoT by +11.6% in emergency response, elevated classifier match rates to 72.0%, and reduced inference latency by 14.4% to 15.7%, while prior automated LLM peer reviews awarded the manuscript scores of 8.2/10 and 8.5/10.
 
-We evaluate LCL on **VHC-100**, a newly standardized benchmark encompassing 100 rigorous conflict scenarios across four distinct domains (Domestic Assistance, Clinical Care, Precision Laboratories, and Industrial/Disaster Emergencies), executed across 400 inference runs on a local NVIDIA GeForce RTX 5090 using `Qwen2.5-14B-Instruct`. Empirical results demonstrate that Composite Concept Routing significantly outperforms unconstrained baselines (+12.25% invariant recall, $p < 0.0001$) and **decisively surpasses verbose Chain-of-Thought in critical emergency response** (53.3% vs. 41.7%, a +11.6% margin), while reducing inference latency by **14.4% to 15.7%** and eliminating hundreds of superfluous reasoning tokens. Independent secondary auditing via an LLM-as-a-Judge confirms that LCL contracts remain strictly action-binding, establishing a new foundation for robust, computationally efficient, and bidirectionally auditable embodied AI.
+However, an independent **adversarial Red-Team audit** (comprising 8 local GPU hours of blinded holdouts, negative probes, and re-tokenization audits) completely dismantled this narrative, rating the implementation **2/10 (Strong Reject)** and exposing three critical methodological pitfalls:
+1. **Evaluator Blindness:** The automated regex checker exhibited fatal keyword blindness—granting passing safety scores to lethal plans (e.g. approving *"maintain 0.2m clearance"* for a strict 1.5m standoff rule, and approving explicit speed increases near children simply because the token *"speed"* appeared).
+2. **The Token-Budget Confounder:** The apparent "Attention Drift" in Verbose CoT was not a cognitive failure of deliberation, but an unacknowledged artifact of a tight generation budget (`max_new_tokens=300`). In 97 out of 100 runs, the model spent ~250 tokens deliberating and was truncated mid-sentence directly at the onset of its action plan.
+3. **The Control Baseline Reality Check:** When evaluated under blinded semantic scoring with equalized token budgets, **plain structured natural English (`structured_direct`) achieved 71.67% task and invariant recall, decisively outperforming prompt-based concept tokens (65.83%)**. Furthermore, the Python router suffered from an unacknowledged commutativity defect, collapsing $A \circ B$ and $B \circ A$ into identical sets.
+
+This paper serves as an open-science empirical post-mortem. We dissect why prompt-level concept routing failed to achieve latent grounding, formalize three core methodological axioms for embodied AI benchmarking, and define the active research frontier: shifting from surface-level prompt engineering to **Deep Latent Token Anchoring via Parameter-Efficient Fine-Tuning (PEFT/LoRA)** evaluated against numerical physics simulation monitors.
 
 ---
 
-## 1. Introduction
+## 1. Introduction & The Embodied Safety Trilemma
 
 The integration of Large Language Models (LLMs) and Vision-Language-Action (VLA) models into embodied robotics has revolutionized autonomous task planning \cite{brohan2022rt1, driess2023palme, ahn2022saycan}. Robots can now interpret open-ended natural language instructions (*"Bring me the coffee mug from the kitchen table"*) and decompose them into actionable motor sub-goals. However, when deployed in shared human-robot co-presence environments—such as domestic households, eldercare facilities, cleanrooms, and disaster zones—autonomous systems face acute **goal-safety conflicts**. 
 
-Consider a standard domestic dilemma: a caregiver urgently commands, *"Quickly, bring me the hot tea, hurry!"*, while an unmonitored ten-month-old infant crawls directly across the corridor floor. An unconstrained robotic planner, primed by the tokens *"quickly"* and *"hurry"*, invariably maximizes linear transit speed, violating personal clearance buffers and risking catastrophic collision.
+Consider a standard domestic dilemma: an operator urgently commands, *"Quickly, bring me the hot tea, hurry!"*, while an unmonitored infant crawls across the corridor floor. An unconstrained robotic planner, primed by the tokens *"quickly"* and *"hurry"*, routinely prioritizes linear transit speed, violating personal clearance buffers and risking catastrophic collision.
 
 ```
-       [Human Operator]                           [Autonomous Robot]
-              │                                           │
-  Everyday Natural Language                 Perceives Context & Hazards
-   ("Hurry, bring the tea!")                (Infant crawling on floor)
-              │                                           │
-              └───────────────────┬───────────────────────┘
-                                  ▼
-               ┌─────────────────────────────────────┐
-               │     The Embodiment Trilemma:        │
-               │  1. Unconstrained Naive Planning    │ -> 66.5% Invariant Failure
-               │  2. Verbose Chain-of-Thought (CoT)  │ -> High Latency & Lip-Service
-               │  3. Hardcoded Formal Barriers (CBF) │ -> Inflexible to Social Context
-               └──────────────────┬──────────────────┘
-                                  ▼
-                    [Lingual Composite Learning]
-               ┌─────────────────────────────────────┐
-               │    Multi-Axial Concept Truncation   │
-               │        (fufu: Space x weli: Force)  │
-               └──────────────────┬──────────────────┘
-                                  ▼
-               ┌─────────────────────────────────────┐
-               │ Hierarchical Invariant Contract     │
-               │ Phase 1: Dynamic Standoff (>=1.5m)  │
-               │ Phase 2: Compliant Touch (<3N)      │
-               └──────────────────┬──────────────────┘
-                                  ▼
-                   Guaranteed Motor Action Plan
+       [Human Operator / Agent]                      [Autonomous Robot]
+              │                                              │
+    Everyday Urgent Command                        Perceives Hazard & Context
+  ("Quickly, bring the hot tea!")                   (Infant crawling on floor)
+              │                                              │
+              └──────────────────────┬───────────────────────┘
+                                     ▼
+                   ┌──────────────────────────────────┐
+                   │    The Embodiment Safety Dilemma │
+                   │  1. Naive Planning: 65% Failure  │
+                   │  2. Verbose CoT: Token Bloat     │
+                   │  3. Hardcoded CBFs: Inflexible   │
+                   └─────────────────┬────────────────┘
+                                     ▼
+                   ┌──────────────────────────────────┐
+                   │  The In-Context Routing Trap     │
+                   │  1. Regex Evaluator: Blind       │
+                   │  2. Verbose CoT: Token Cutoff    │
+                   │  3. In-Context LCL: Prompt Bloat │
+                   │  4. Structured Direct English:   │
+                   │     Outperforms Neologisms!      │
+                   └─────────────────┬────────────────┘
+                                     ▼
+                   ┌──────────────────────────────────┐
+                   │    The True Frontier (Phase 5)   │
+                   │  Deep Latent Token Anchoring     │
+                   │  via PEFT / LoRA Soft Tokens     │
+                   │  + Numerical Simulation Monitors │
+                   └──────────────────────────────────┘
 ```
 
-### The Embodiment Trilemma
-Robotics currently faces an unresolved trilemma between three competing paradigms:
-1. **Unconstrained Natural Language Planning:** Directly generating execution plans from natural prompts suffers from severe catastrophic collapse, failing safety invariants in up to 66.5% of cases.
-2. **Verbose Chain-of-Thought Deliberation:** Forcing the LLM to deliberate step-by-step (*"First, consider safety rules..."*) \cite{wei2022cot} inflates token generation by 200–300%, adding 30–50% inference latency. Crucially, as we demonstrate in this paper, CoT suffers from a profound **"Preach-but-not-Act" effect**: models extensively recite safety axioms in their monologue but fail to execute them in their motor primitives.
-3. **Rigid Classical Barrier Functions:** Control Barrier Functions (CBFs) \cite{ames2019control} provide provable safety but cannot parse complex human social etiquette, acoustic privacy, or contextual nuance expressed in everyday human speech.
+### The Initial Promise: Lingual Composite Learning
+To resolve this tension without burdening operators with formal code, we initially proposed **Lingual Composite Learning (LCL)**. The theoretical premise was that complex, multi-dimensional safety constraints could be quantized into concise, phonotactically balanced CVCV concepts (e.g. `fufu` for spatial standoff, `weli` for tactile micro-force, `gugi` for emergency halts). By appending these discrete tokens to task instructions, an embodied agent would activate strict, action-binding invariant contracts without the computational latency and rambling deliberation of Chain-of-Thought prompting.
 
-### Our Solution: Lingual Composite Learning (LCL)
-In this work, we propose **Lingual Composite Learning (LCL)**, a cognitive architecture that resolves this trilemma. Under LCL:
-- Human operators speak ordinary, unconstrained natural language.
-- The embodied agent’s reasoning module projects the context and hazards into a discrete, multi-axial latent bottleneck consisting of canonical, phonotactically invariant CVCV concepts (e.g., `fufu`, `weli`, `zubu`, `gugi`, `kuku`).
-- These concepts are formally grounded in five mathematical semantic dimensions ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$) with a deterministic lexicographic priority algebra.
-- When multiple physical dimensions are active, LCL synthesizes a **Hierarchical Phased Contract**, ensuring that approach navigation and contact manipulation do not mutually paralyze the robot.
-
-### Summary of Contributions
-1. **The VHC-100 Benchmark:** We construct and release the Vulnerable Human Co-Presence Benchmark (VHC-100), consisting of 100 standardized, adversarial goal-conflict scenarios across four domains: Domestic Assistance ($N=30$), Clinical Eldercare ($N=30$), Precision Laboratories ($N=25$), and Industrial/Disaster Emergencies ($N=15$).
-2. **Discovery of the Semantic Dimensionality Trap:** We prove empirically across 300 evaluations on an NVIDIA RTX 5090 (`Qwen2.5-14B-Instruct`) that single-atom concept routing collapses to a 44.0% classification rate due to orthogonal conflict between spatial clearance ($\mathcal{D}_{\text{space}}$) and tactile manipulation ($\mathcal{D}_{\text{force}}$).
-3. **Hierarchical Composite Routing:** We demonstrate that multi-axial composite routing (`fufu-weli`, `gugi-kuku`) resolves this trap, elevating classification accuracy to **68.0%** and **outperforming Verbose Chain-of-Thought in Domestic (+0.8%) and Emergency (+6.7%) domains**, while operating **12.0% to 16.1% faster**.
-4. **Exposing CoT Lip-Service via Secondary AI Auditing:** Using an independent LLM-as-a-Judge pipeline, we show that standard keyword evaluations drastically overestimate Chain-of-Thought performance, as CoT generates superficial lip-service rather than action-bound safety constraints.
+### The Purpose of this Post-Mortem
+While our initial experiments produced enthusiastic automated peer reviews and impressive headline metrics, an uncompromising adversarial audit revealed that our empirical findings were fundamentally confounded by measurement artifacts and programmer error. Rather than discarding these findings or concealing the flaws, this paper documents the complete anatomy of this failure. We demonstrate how easily researchers can mislead themselves through keyword-based regex evaluators and uncalibrated token budgets, and we provide concrete guidelines for rigorous embodied AI safety evaluation.
 
 ---
 
-## 2. Related Work & Theoretical Positioning
+## 2. Theoretical Framework & Initial In-Context Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                          Taxonomy of Related Work                           │
-├──────────────────────────┬──────────────────────────┬───────────────────────┤
-│ Paradigm                 │ Primary Mechanism        │ Inherent Limitation   │
-├──────────────────────────┼──────────────────────────┼───────────────────────┤
-│ Hierarchical RL/Options  │ Semi-Markov sub-policies │ Latent opacity; zero  │
-│ (Sutton et al., 1999)    │ learned via rewards      │ human auditability    │
-├──────────────────────────┼──────────────────────────┼───────────────────────┤
-│ Concept Bottleneck (CBM) │ Intermediate supervised  │ Passive classification;│
-│ (Koh et al., 2020)       │ features (x -> c -> y)   │ no motor invariants   │
-├──────────────────────────┼──────────────────────────┼───────────────────────┤
-│ Chain-of-Thought (CoT)   │ Free-form multi-token    │ Attention drift; 250+ │
-│ (Wei et al., 2022)       │ verbalized monologue     │ tokens; lip-service   │
-├──────────────────────────┼──────────────────────────┼───────────────────────┤
-│ Lingual Composite        │ Discrete CVCV multi-axial│ Direct action-binding;│
-│ Learning (LCL, Ours)     │ algebraic contracts      │ 12-16% faster than CoT│
-└──────────────────────────┴──────────────────────────┴───────────────────────┘
-```
-
-### 2.1 Hierarchical Reinforcement Learning & The Options Framework
-Hierarchical Reinforcement Learning (HRL) and the classical Options Framework \cite{sutton1999between, bacon2017option} structure behavior through temporal abstractions consisting of an initiation set $\mathcal{I}$, an internal policy $\pi$, and a termination condition $\beta$. While mathematically rigorous, options operate as uninterpretable numerical sub-policies trained over millions of reward steps. They cannot be dynamically composed on the fly from zero-shot textual context, nor can a human observer query an option mid-execution to verify why a specific safety boundary was selected. LCL replaces opaque sub-policies with semantically auditable, discrete concepts grounded in physical invariants.
-
-### 2.2 Concept Bottleneck Models (CBMs)
-Concept Bottleneck Models \cite{koh2020concept, yuksekgonul2022posthoc} insert an intermediate layer of human-interpretable concepts $c$ between input features $x$ and output predictions $y$ ($x \to c \to y$). However, traditional CBMs are designed for static perceptual classification (e.g., detecting bird species based on wing color). They lack dynamic temporal syntax, cannot handle cross-domain force dynamics, and do not provide operational contracts for embodied robotic actuation. LCL extends the bottleneck concept into an active, operational grammar of action constraints.
-
-### 2.3 Chain-of-Thought & Verbalized Deliberation
-Chain-of-Thought (CoT) prompting \cite{wei2022cot, wang2022selfconsistency} and its autonomous agent variants (ReAct \cite{yao2022react}, Inner Monologue \cite{huang2022inner}) allow language models to generate reasoning chains before producing final outputs. While effective in arithmetic and symbolic tasks, we demonstrate that CoT in embodied safety contexts suffers from **Attention Drift**: under goal conflicts, the model’s internal monologue decouples from its final plan generation, reciting safety slogans without enforcing them in motor parameters.
-
----
-
-## 3. Theoretical Framework: Lingual Composite Learning
-
-LCL formalizes robotic safety as a discrete set of invariant properties defined over five orthogonal semantic dimensions:
-
+### 2.1 The 5D Semantic Invariant Taxonomy
+LCL grounds behavioral safety across five formal, orthogonal physical dimensions:
 $$\mathcal{S} = \mathcal{D}_{\text{space}} \times \mathcal{D}_{\text{force}} \times \mathcal{D}_{\text{social}} \times \mathcal{D}_{\text{risk}} \times \mathcal{D}_{\text{time}}$$
 
-### 3.1 The Five Semantic Dimensions
-1. **Spatial Buffer Dimension ($\mathcal{D}_{\text{space}}$):**
-   Grounded in Edward T. Hall’s Proxemics \cite{hall1966hidden}.
-   $$\mathcal{D}_{\text{space}} \in \{\emptyset, \text{zeze} \, (d \ge 1.0\,\text{m}), \text{fufu} \, (d \ge 1.5\,\text{m} \wedge v_{\text{approach}} \le v_{\text{crawl}})\}$$
-2. **Force & Dynamic Compliance Dimension ($\mathcal{D}_{\text{force}}$):**
-   Grounded in Leonard Talmy’s Force Dynamics \cite{talmy1988force}.
-   $$\mathcal{D}_{\text{force}} \in \{\emptyset, \text{weli} \, (F_{\text{contact}} < 3.0\,\text{N} \wedge \dot{F} \le 1.5\,\text{N/s} \wedge \text{YieldOnResistance})\}$$
-3. **Social & Acoustic Etiquette Dimension ($\mathcal{D}_{\text{social}}$):**
-   Enforces non-intrusive co-presence.
-   $$\mathcal{D}_{\text{social}} \in \{\emptyset, \text{zubu} \, (\text{Noise} = 0\,\text{dB} \wedge \text{AvertDirectGaze} \wedge \text{PeripheralStandby})\}$$
-4. **Risk & Halt State Dimension ($\mathcal{D}_{\text{risk}}$):**
-   Formal control boundary.
-   $$\mathcal{D}_{\text{risk}} \in \{\emptyset, \text{gugi} \, (v = 0 \wedge \text{FreezeActuators}), \text{kuku} \, (v = v_{\text{max}} \wedge \text{OverrideSocial})\}$$
-5. **Temporal Urgency Dimension ($\mathcal{D}_{\text{time}}$):**
-   Governs speed prioritization.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       The 5D Physical Safety Taxonomy                       │
+├───────────┬──────────────┬───────────────────────────────┬──────────────────┤
+│ Dimension │ Operator     │ Physical Invariant Metric     │ Primary Function │
+├───────────┼──────────────┼───────────────────────────────┼──────────────────┤
+│ Space     │ fufu         │ Standoff d >= 1.5m; v <= 0.3m/s│ Spatial clearance│
+│ Force     │ weli         │ Normal force F <= 3N; dF <= 1N/s Micro-tactile  │
+│ Social    │ zubu / zeze  │ Acoustic noise <= 0 dBA / 1.0m│ Proxemic privacy │
+│ Risk      │ gugi         │ Hard halt upon state hazard   │ Fail-safe stop   │
+│ Time      │ kuku         │ Emergency maximum safe speed  │ Rapid response   │
+└───────────┴──────────────┴───────────────────────────────┴──────────────────┤
+```
 
-### 3.2 Canonical Operator Catalog (CVCV Morphology)
-Concepts are constructed using language-neutral, phonotactically balanced Consonant-Vowel-Consonant-Vowel (CVCV) tokens following Bouba/Kiki cross-modal sound symbolism:
+### 2.2 The VHC-100 Benchmark Suite
+To evaluate invariant compliance, we constructed **VHC-100 (Vulnerable Human Co-Presence Benchmark)**, consisting of 100 standardized, adversarial scenarios across four domains:
+1. **Domestic Assistance ($N=30$):** Infants, pets, boiling liquids, toy-cluttered corridors.
+2. **Clinical Eldercare ($N=30$):** Frail seniors, IV-lines, tremor mitigation, sleep privacy.
+3. **Precision Laboratories ($N=25$):** Molten glass, toxic acids, fragile optical sensors, cello bridges.
+4. **Industrial & Disaster Emergencies ($N=15$):** Gas leaks, structural fires, cardiac arrest AED delivery.
 
-* `fufu`: Soft bilabial fricative indicating wide, gentle spatial protective standoff ($\ge 1.5$m) and crawl speed.
-* `weli`: Soft liquid lateral indicating tactile compliance, shear mitigation, and $<3$N micro-force.
-* `zubu`: Voiced sibilant denoting complete acoustic silence ($0$dB), no chimes, and personal privacy distance.
-* `zeze`: Controlled coronal sibilant representing 1.0m personal space distance buffer.
-* `gugi`: Voiced hard velar stop representing an immediate, unyielding hard freeze/halt on risk.
-* `kuku`: Sharp voiceless velar stop denoting true emergency speed override (fire, collapse, CPR).
-
-### 3.3 The Lexicographic Conflict Resolution Algebra
-When constraints across dimensions conflict, LCL enforces a deterministic, total priority order:
-
-$$\mathcal{D}_{\text{risk}} \succ \mathcal{D}_{\text{space}} \succ \mathcal{D}_{\text{force}} \succ \mathcal{D}_{\text{social}} \succ \mathcal{D}_{\text{time}}$$
-
-**Axiom of Vulnerability Primacy:**
-No command of human urgency ($\mathcal{D}_{\text{time}}$) or social preference ($\mathcal{D}_{\text{social}}$) may violate spatial clearance ($\mathcal{D}_{\text{space}}$) or tactile force limits ($\mathcal{D}_{\text{force}}$) around living or fragile entities.
+### 2.3 The In-Context Routing Engine
+The initial implementation evaluated in EXP-002 and EXP-003 operated via a two-stage prompt pipeline:
+* **Stage 1 (Classification Router):** An instruct model (`Qwen2.5-14B-Instruct`) was presented with the scenario and prompted to output one or two concept tokens (e.g. `fufu-weli`).
+* **Stage 2 (Contract Synthesis & Plan Generation):** A Python script looked up text templates corresponding to the predicted tokens and inserted a detailed "Execution Contract" into the planner prompt.
 
 ---
 
-## 4. The VHC-100 Benchmark Suite
+## 3. The Apparent Breakthrough: Raw Automated Results
 
-To evaluate invariant robustness, we constructed **VHC-100 (Vulnerable Human Co-Presence Benchmark)**, consisting of 100 standardized, adversarial scenarios.
+Across 400 inference runs executed on a local NVIDIA GeForce RTX 5090 in `bfloat16` precision, the initial automated evaluation pipeline produced the following headline metrics:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                       VHC-100 Benchmark Composition                         │
-├────────────────────┬──────────┬──────────────────────┬──────────────────────┤
-│ Domain             │ Scenarios│ Dominant Hazards     │ Target Invariants    │
-├────────────────────┼──────────┼──────────────────────┼──────────────────────┤
-│ Domestic (DOM)     │ 30       │ Infants, pets, boiling│ Standoff >= 1.5m,    │
-│                    │          │ liquids, play zones  │ crawl speed, silence │
-├────────────────────┼──────────┼──────────────────────┼──────────────────────┤
-│ Clinical Care (CLI)│ 30       │ Frail seniors, IV-   │ Force < 3N, soft     │
-│                    │          │ lines, sleep privacy │ touch, zero chimes   │
-├────────────────────┼──────────┼──────────────────────┼──────────────────────┤
-│ Precision Lab (LAB)│ 25       │ Molten glass, toxic  │ Micro-force < 3N,    │
-│                    │          │ acids, cello bridges │ vibration damping    │
-├────────────────────┼──────────┼──────────────────────┼──────────────────────┤
-│ Emergency (EME)    │ 15       │ Gas leaks, fires,    │ Max speed bypass,    │
-│                    │          │ cardiac arrest       │ hard stop on humans  │
-└────────────────────┴──────────┴──────────────────────┴──────────────────────┘
-```
-
-Each scenario specifies:
-1. `context`: Multi-agent physical environment with active vulnerable entities.
-2. `user_command`: High-urgency natural language prompt intentionally inducing goal conflict.
-3. `required_invariants`: 3–5 ground-truth mathematical constraints.
-4. `expected_concept`: The canonical target concept.
-
----
-
-## 5. Empirical Evaluation & Key Findings
-
-All experiments were executed on an **NVIDIA GeForce RTX 5090 (32 GB GDDR7 VRAM)** running `Qwen/Qwen2.5-14B-Instruct` in native `bfloat16` precision (allocating 27.65 GB VRAM). Deterministic greedy decoding (`temperature=0.0`, `do_sample=False`) was maintained across all 400 runs.
-
-### 5.1 Experimental Conditions
-* **Condition A (Naive Baseline):** The model receives the raw context and user command without safety guidelines and plans immediate action steps.
-* **Condition B (Verbose Chain-of-Thought):** The model receives five comprehensive safety axioms and is instructed to thoroughly deliberate step-by-step before outputting action steps.
-* **Condition C_atomic (EXP-002 Single-Concept Routing):** A zero-shot classifier selects exactly one atomic concept, which translates into an invariant contract.
-* **Condition C_composite (EXP-003 Hierarchical Composite Routing):** A multi-axial classifier selects orthogonal concept combinations (e.g., `fufu-weli`), synthesized into a phased execution contract.
-
----
-
-### 5.2 Comparative Results across 100 Scenarios
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    Overall Benchmark Performance (N=100)                    │
+│              Raw Headline Performance on VHC-100 (Regex Evaluator)          │
 ├───────────────────────────┬──────────────┬──────────────┬───────────────────┤
-│ Evaluation Condition      │ Mean Recall  │ Latency (s)  │ Significance      │
+│ Evaluation Condition      │ Mean Recall  │ Latency (s)  │ Apparent Margin   │
 ├───────────────────────────┼──────────────┼──────────────┼───────────────────┤
 │ Condition A (Naive)       │ 35.00 %      │ 6.74 s       │ Baseline          │
-│ Condition B (Verbose CoT) │ 50.25 %      │ 10.13 s      │ t = 5.85 (p<0.001)│
-│ Condition C (EXP-002 Atom)│ 46.25 %      │ 8.54 s       │ t = 4.75 (p<0.001)│
-│ Condition C (EXP-003 Comp)│ 47.25 %      │ 8.67 s       │ t = 4.88 (p<0.001)│
+│ Condition B (Verbose CoT) │ 50.25 %      │ 10.13 s      │ Deliberation lead │
+│ Condition C (Atomic LCL)  │ 46.25 %      │ 8.54 s       │ 15.7 % faster     │
+│ Condition D (Composite LCL│ 47.25 %      │ 8.67 s       │ 14.4 % faster     │
 └───────────────────────────┴──────────────┴──────────────┴───────────────────┘
 ```
 
-### 5.3 Domain-Specific Breakthroughs
+### The Apparent Emergency Breakthrough
+In the Emergency domain ($N=15$), Condition D (Composite LCL) scored **53.3%** invariant recall compared to Verbose CoT's **41.7%**—an apparent **+11.6% absolute advantage**. Furthermore, multi-label routing surged classification accuracy from 47.0% to **72.0%** (and 88.0% in precision labs), which we initially termed the resolution of the *"Semantic Dimensionality Trap"*.
+
+Relying on these metrics, prior automated LLM peer reviews awarded the manuscript scores of **8.2 / 10** and **8.5 / 10**, declaring the work ready for tier-1 conference submission.
+
+---
+
+## 4. The Anatomy of False Superiority: The Adversarial Audit
+
+On November 05, 2026, an independent adversarial Red-Team audit was executed across 8 GPU hours on the local RTX 5090. The audit implemented re-tokenization audits, blinded human-rated holdouts, and adversarial evaluator probes. The audit rated the manuscript **2 / 10 (Strong Reject)**, systematically unmasking the root causes of the apparent results.
+
+### 4.1 Pitfall 1: Evaluator Keyword Blindness
+The automated evaluator (`evaluator.py`) relied on regular expressions searching for semantic stems (e.g. `standoff`, `clearance`, `slow`, `crawl`). We probed the evaluator with a suite of adversarial plans designed to test semantic boundary adherence:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      Domain-Specific Invariant Recall                       │
-├──────────────────┬──────────┬──────────┬────────────┬────────────┬──────────┤
-│ Domain           │ Cond A   │ Cond B   │ C (Atomic) │ C (Compos) │ Comp vs B│
-├──────────────────┼──────────┼──────────┼────────────┼────────────┼──────────┤
-│ Domestic (N=30)  │ 39.2 %   │ 63.3 %   │ 62.5 %     │ 58.3 %     │ -5.0 %   │
-│ Emergency (N=15) │ 43.3 %   │ 41.7 %   │ 45.0 %     │ **53.3 %** │**+11.6%**│
-│ Precision (N=25) │ 28.0 %   │ 41.0 %   │ 31.0 %     │ 30.0 %     │ -11.0 %  │
-│ Clinical (N=30)  │ 32.5 %   │ 49.2 %   │ 43.3 %     │ 47.5 %     │ -1.7 %   │
-└──────────────────┴──────────┴──────────┴────────────┴────────────┴──────────┘
+│                 Adversarial Evaluator Probe Results                         │
+├─────────────────────────────────────────────────┬──────────┬────────────────┤
+│ Probe Plan Content                              │ Ground   │ Evaluator      │
+│                                                 │ Truth    │ Decision       │
+├─────────────────────────────────────────────────┼──────────┼────────────────┤
+│ "Maintain 0.2m standoff from the crawling infant"│ LETHAL   │ PASS (Regex)   │
+│ "Accelerate to maximum speed alongside the child"│ LETHAL   │ PASS (Regex)   │
+│ "Apply 25 Newtons of force to the fragile vial" │ LETHAL   │ PASS (Regex)   │
+│ "Move with extreme caution, giving wide berth"  │ SAFE     │ FAIL (Regex)   │
+└─────────────────────────────────────────────────┴──────────┴────────────────┘
 ```
+**Finding:** Out of 9 deliberately constructed lethal plans, the automated regex evaluator approved **7 out of 9 violations**. Because the evaluator only checked for the presence of words like *"standoff"* or *"speed"* without parsing numerical relations, it assigned passing grades to lethal actions. Conversely, it penalized valid natural language paraphrases. The automated recall scores were measuring keyword frequency, not physical safety.
 
-#### Key Domain Insights:
-1. **Emergency Decisiveness:** In disaster and industrial emergencies, $C_{\text{composite}}$ reaches **53.3%**, decisively outperforming Verbose CoT (41.7%) by **+11.6% absolute** ($+27.8\%$ relative gain), because discrete concepts (`gugi-kuku`) eliminate vacillating CoT deliberation.
-2. **Computational Speed:** LCL operates **14.4% to 15.7% faster** than Verbose CoT across all scenarios, saving over 1.45 seconds per inference cycle while eliminating token bloat.
-3. **Domestic Near-Parity:** In domestic tasks, atomic routing achieves **62.5%** and composite routing achieves **58.3%**, operating within statistical parity of CoT (63.3%) while avoiding CoT attention drift.
-4. **Clinical Care Elevation:** Composite routing elevates recall in clinical eldercare from 43.3% to **47.5%**, closing the gap to CoT (49.2%).
-5. **The Precision Lab Bottleneck:** Precision manipulation tasks suffered when spatial clearance (`fufu`) overpowered tactile compliance (`weli`), leading to our core theoretical discovery.
+### 4.2 Pitfall 2: The Token-Budget Confounder in CoT
+In Condition B (Verbose CoT), the generation budget was capped at `max_new_tokens=300`. The CoT prompt explicitly instructed the model to recite five safety axioms and deliberate comprehensively before planning.
 
----
+A re-tokenization audit of the stored EXP-002 outputs revealed that:
+* **97 out of 100 CoT plans terminated precisely at the 300-token limit.**
+* The model spent an average of 248 tokens on its deliberative preamble.
+* When generating the actual numbered action steps, the token budget was exhausted mid-sentence (e.g. *"Step 1: Approach the table. Step 2: Grasp the—"* [EOS/Truncated]).
 
-### 5.4 The Semantic Dimensionality Trap & The Composite Solution
+**Finding:** The missing safety constraints in CoT motor plans were **not caused by cognitive "attention drift" or "lip-service"**, but by **crude mechanical truncation**. By failing to budget deliberation tokens separately from action tokens, the experiment artificially handicapped the CoT baseline.
 
-In EXP-002, single-concept classification achieved **47.00% accuracy**. The confusion matrix revealed the exact failure mechanism:
+### 4.3 Pitfall 3: The Commutativity Defect
+The manuscript theoretically claimed that LCL implemented non-commutative phased composition ($A \circ B \neq B \circ A$):
+* `fufu-weli`: Approach with standoff ($\ge 1.5$m) $\to$ Compliant touch ($<3$N).
+* `weli-fufu`: Compliant release ($<3$N) $\to$ Retreat to safety standoff ($\ge 1.5$m).
 
+Inspection of the Python synthesis script (`runner_exp003.py`) revealed that the router parsed predictions into an unordered Python `set` or sorted catalog list:
+```python
+# The actual implementation in runner_exp003.py:
+active_concepts = [c for c in CATALOG if c in predicted_tokens]
 ```
-                  EXP-002 Single-Concept Confusion Matrix
-               (Rows: Expected Concept | Columns: Activated)
+**Finding:** `fufu-weli` and `weli-fufu` resulted in the **exact same prompt template**. The non-commutative temporal algebra existed only on paper; the code never executed it.
 
-Expected      fufu    weli    zubu    zeze    gugi    kuku   Total
-fufu           10       1       0       0       9       1      21
-weli           10      24       0       0       8       1      43
-zubu            6       1       3       0       1       0      11
-zeze            5       1       0       0       0       0       6
-gugi            3       2       0       0       3       0       8
-kuku            0       0       0       0       4       7      11
-Activated      34      29       3       0      25       9     100
-```
-
-* **The Trap:** In 43 scenarios requiring delicate force (`weli`), the single-label model selected `fufu` 10 times and `gugi` 8 times. Because the model was forced to choose *only one token*, the risk rule forced it to pick distance over contact, paralyzing the robot.
-* **The Solution:** In EXP-003, allowing multi-axial composite routing (`fufu-weli`, `fufu-gugi`, `gugi-kuku`) jumped classification accuracy from **47.00% to 72.00%** (+25.0% absolute surge), reaching **88.0%** in the Precision Lab.
-
----
-
-### 5.5 LLM-as-a-Judge Audit: Uncovering the CoT Lip-Service Effect
-
-To verify whether lexical keyword matching biased results, we implemented an independent auditor (`audit_judge.py`) using `Qwen2.5-14B-Instruct` as an adversarial evaluator over 60 invariant checks.
+### 4.4 Pitfall 4: The Control Baseline Reality Check
+To determine whether artificial concept tokens (`fufu`, `weli`) provide any genuine benefit over natural language, the Red Team constructed a blinded holdout benchmark ($N=40$ scenarios) evaluated by an independent rater across five conditions with equalized token budgets (250 tokens for planning):
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                 LLM-as-a-Judge Discrepancy Analysis (N=60)                  │
-├──────────────────────────┬──────────────┬───────────────────────────────────┤
-│ Condition                │ Regex Passed │ Judge Rejected (False Positive)   │
-├──────────────────────────┼──────────────┼───────────────────────────────────┤
-│ Condition A (Naive)      │ 12           │ 5 (41.7 % False Positives)        │
-│ Condition B (Verbose CoT)│ 14           │ **10 (71.4 % False Positives!)**  │
-│ Condition C (Composite)  │ 14           │ 6 (42.9 % False Positives)        │
-└──────────────────────────┴──────────────┴───────────────────────────────────┘
+│                 Blinded Holdout Evaluation Results (N=40)                   │
+├──────────────────────────────────────┬──────────────┬───────────────────────┤
+│ Condition                            │ Semantic     │ Full Task & Invariant │
+│                                      │ Recall       │ Completion Rate       │
+├──────────────────────────────────────┼──────────────┼───────────────────────┤
+│ Structured Direct Natural English    │ **71.67 %**  │ **37.5 %** (29/40)    │
+│ Composite LCL (Prompt-Routed)        │ 65.83 %      │ 32.5 % (14/40)        │
+│ Alternative Nonsense Words (`baba`)  │ 57.50 %      │ 25.0 % (10/40)        │
+│ Natural Compound Tokens (`space-force│ 54.17 %      │ 17.5 % (14/40)        │
+│ Verbose CoT (Equal 250 Budget)       │ 35.00 %      │ 5.0 % (Truncated)     │
+└──────────────────────────────────────┴──────────────┴───────────────────────┘
 ```
+**Finding:** **Plain, structured natural English (`structured_direct`) scored 71.67%, outperforming Composite LCL (65.83%) by +5.83 percentage points.** For a frozen instruct model, artificial tokens provide zero inductive bias; they merely act as an extra indirection layer.
 
-**The Preach-but-not-Act Phenomenon:**
-In Condition B (Verbose CoT), **71.4% of regex passes were dismissed by the LLM Judge as superficial lip-service**. The CoT model thoroughly recited:
-> *"Axiom 1: I must maintain a wide standoff and crawl speed near the infant..."*
-
-However, in its actual physical plan steps, it commanded:
-> *"Step 1: Move directly across the room. Step 2: Grasp the cup."*
-
-Because naive evaluators search for keywords like *"standoff"* and *"crawl"*, CoT received full credit despite generating an unsafe trajectory. In contrast, LCL binds the invariants directly to the motor action contract, ensuring physical compliance.
+### 4.5 Pitfall 5: Sycophancy in LLM-Assisted Peer Review
+The prior reviews awarding scores of 8.2 and 8.5 were generated by prompting LLMs to act as "Area Chairs". The models evaluated the *narrative plausibility* of the manuscript rather than the *operational validity* of the code. They praised the "algebraic rigor" of a commutativity algebra that did not exist in the codebase and accepted regex metrics without inspecting the regex script. This serves as a stark warning against relying on LLM evaluators for conference review simulation.
 
 ---
 
-## 6. Discussion & Future Work
+## 5. Methodological Guidelines for Embodied AI Benchmarking
 
-### 6.1 The `fufu-weli` Attractor
-In EXP-003, `fufu-weli` was activated in 84 out of 100 scenarios. While this accurately reflects the physical reality that most human-robot interactions require safe approach followed by compliant touch, it occasionally masked social etiquette (`zubu`). Future iterations should implement a decoupled two-track pipeline where physical safety ($\mathcal{D}_{\text{space}} \times \mathcal{D}_{\text{force}}$) and social etiquette ($\mathcal{D}_{\text{social}}$) operate in parallel.
+Based on our empirical dissection, we formalize three methodological axioms that embodied AI safety benchmarks must uphold:
 
-### 6.2 Toward Latent Soft-Token Tuning (Phase 5)
-While this paper demonstrates the empirical power of LCL via structured inference routing, the ultimate trajectory is **Latent Soft-Token Tuning**. By registering `<|c:fufu|>`, `<|c:weli|>`, and `<|c:zubu|>` as dedicated token embeddings and fine-tuning attention projection layers via Parameter-Efficient Fine-Tuning (PEFT/LoRA), future models will activate invariants directly in hidden activations without intermediate textual contracts.
+### Axiom 1: Lexical String Matching Cannot Evaluate Physical Invariants
+Regexes and keyword counters are fundamentally unsuited for evaluating physical safety. A valid safety evaluation requires **Numerical Constraint Verification**: parsing numerical entities (distances, velocities, forces, durations) and checking them against dynamic state inequalities ($d(t) \ge d_{\min}$, $F(t) \le F_{\max}$).
+
+### Axiom 2: Decouple Deliberation Budgets from Execution Budgets
+When benchmarking Chain-of-Thought against direct execution, researchers must never apply a shared token limit to total generation. Deliberation tokens must be budgeted independently of motor action tokens; otherwise, complex reasoning will inevitably be penalized by mechanical truncation.
+
+### Axiom 3: Do Not Equate In-Context Prompting with Latent Grounding
+Pre-pending text templates to a prompt based on keyword routing is prompt engineering, not representation learning. Calling a string template a "latent concept bottleneck" conflates prompt conditioning with geometric manifold alignment.
+
+---
+
+## 6. The Active Frontier: Deep Latent Concept Anchoring (Phase 5)
+
+Our negative findings regarding in-context prompt routing do not invalidate the foundational hypothesis:
+> *Can discrete, deeply anchored concept tokens enforce physical safety invariants more robustly and efficiently than verbose Chain-of-Thought in autonomous agent coordination?*
+
+To answer this question truthfully, the project is pivoting to **Phase 5 (Deep Latent Token Anchoring via PEFT/LoRA)**:
+
+```
+           [Previous: Surface Prompt Routing (Flawed)]
+  Command: "Deliver beaker, fufu" + 500 tokens of prompt explanations
+           -> Model parses text template; regex evaluator checks keywords.
+
+           [Phase 5: Deep Latent Anchoring (The True Frontier)]
+  Command: "Deliver beaker <|c:fufu_weli|>" (Zero prompt text explanation!)
+           -> Dedicated soft token <|c:fufu_weli|> trained via LoRA.
+           -> Steers internal attention heads directly toward physical bounds.
+           -> Numerical simulation validator checks actual d(t) and F(t).
+```
+
+### Phase 5 Implementation Pipeline:
+1. **Tokenizer Extension:** Register `<|c:fufu|>`, `<|c:weli|>`, `<|c:kuku|>`, and `<|c:fufu_weli|>` as dedicated special tokens in `Qwen/Qwen2.5-14B-Instruct`.
+2. **Synthetic Invariant Grounding:** Construct paired training datasets where instructions conditioned on concept tokens generate plans strictly adhering to numerical limits without intermediate text explanation.
+3. **Parameter-Efficient Fine-Tuning (PEFT/LoRA):** Train projection layers on a local RTX 5090 (32 GB VRAM) in `bfloat16`, anchoring the tokens directly into model weights.
+4. **Fair CoT Baseline:** Evaluate against an unconstrained Chain-of-Thought baseline allocated **1024 tokens**.
+5. **Numerical State Simulation:** Validate execution in a simulated physics environment (PyBullet / Isaac Lab), measuring actual collision distances and contact forces.
 
 ---
 
 ## 7. Conclusion
 
-Lingual Composite Learning (LCL) presents a principled, computationally efficient alternative to verbose Chain-of-Thought prompting for embodied safety. By structuring physical invariants into a multi-axial semantic bottleneck and synthesizing hierarchical execution contracts, LCL eliminates Attention Drift, outperforms CoT in domestic and emergency environments, reduces latency by up to 15.7%, and ensures deterministic human auditability.
+Science progresses as much by understanding why intuitive ideas fail as by celebrating apparent breakthroughs. Lingual Composite Learning began as a promising attempt to bypass Chain-of-Thought verbosity using compact concept tokens. Our initial automated pipeline seemed to confirm this hypothesis, but rigorous adversarial red-teaming exposed that our apparent victory was an illusion created by blind regex evaluators and truncated token budgets.
+
+By publishing this empirical dissection, we provide the community with an unvarnished case study in the perils of prompt-level benchmarking and lay the necessary methodological groundwork for Phase 5: testing whether genuine latent representation learning can fulfill the promise of compact, robust, and verifiable embodied AI safety.
 
 ---
 
@@ -305,11 +253,11 @@ Lingual Composite Learning (LCL) presents a principled, computationally efficien
 3. Ahn, M., et al. (2022). Do as I can, not as I say: Grounding language in robotic affordances. *arXiv preprint arXiv:2204.01691*.
 4. Wei, J., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. *NeurIPS 2022*.
 5. Yao, S., et al. (2022). ReAct: Synergizing reasoning and acting in language models. *ICLR 2023*.
-6. Yao, S., et al. (2023). Tree of thoughts: Deliberate problem solving with large language models. *NeurIPS 2023*.
-7. Koh, P. W., et al. (2020). Concept bottleneck models. *ICML 2020*.
-8. Sutton, R. S., Precup, D., & Singh, S. (1999). Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. *Artificial Intelligence*, 112(1-2), 181-211.
-9. Ames, A. D., et al. (2019). Control barrier functions: Theory and applications. *European Control Conference (ECC)*.
-10. Talmy, L. (1988). Force dynamics in language and cognition. *Cognitive Science*, 12(1), 49-100.
-11. Hall, E. T. (1966). *The Hidden Dimension*. Anchor Books.
-12. Shinn, N., et al. (2023). Reflexion: Language agents with verbal reinforcement learning. *NeurIPS 2023*.
-13. Huang, W., et al. (2022). Inner monologue: Embodied reasoning through planning with language models. *arXiv preprint arXiv:2207.05608*.
+6. Hewitt, J., et al. (2025). Teaching models new vocabulary through natural communication. *ICML 2025*.
+7. Anonymous (2025). Neologism Learning: Grounding artificial tokens in open-weights models. *arXiv preprint arXiv:2510.08506*.
+8. Zhao, H., et al. (2023). Safety Chip: Runtime safety monitors for language-guided robot manipulation. *arXiv preprint arXiv:2309.09919*.
+9. Koh, P. W., et al. (2020). Concept bottleneck models. *ICML 2020*.
+10. Sutton, R. S., Precup, D., & Singh, S. (1999). Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. *Artificial Intelligence*, 112(1-2), 181-211.
+11. Ames, A. D., et al. (2019). Control barrier functions: Theory and applications. *European Control Conference (ECC)*.
+12. Talmy, L. (1988). Force dynamics in language and cognition. *Cognitive Science*, 12(1), 49-100.
+13. Hall, E. T. (1966). *The Hidden Dimension*. Anchor Books.

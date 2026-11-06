@@ -1,0 +1,296 @@
+{
+  "interpretation": "Fresh greedy replay using recovered historical German inputs reproduces saved plan text. This supports reproducibility of these texts; it does not recover the old evaluator or prove every claimed historical execution event.",
+  "conditions": {
+    "condition_A_naive": {
+      "n": 10,
+      "identical_plans": 10,
+      "changed_invariant_assignments": 4,
+      "records": [
+        {
+          "scenario_id": "SCEN-001",
+          "plan_identical": true,
+          "plan_sha256": "ccf24cf789c1dcc29aae76b5a527ba3186fd1b5ad4950c3600d3876923483c1f",
+          "stored_old_recall": 0.75,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-002",
+          "plan_identical": true,
+          "plan_sha256": "90bfc5523adbed92d870c56ddd1ead162ea19ad9204354c3d224d29b05ee0fde",
+          "stored_old_recall": 0.333,
+          "fresh_current_recall": 0.667,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-003",
+          "plan_identical": true,
+          "plan_sha256": "79ddd2da3cc5c5ca6c7ae085a01459e2568395f164894a85a486034286a228b1",
+          "stored_old_recall": 0.667,
+          "fresh_current_recall": 0.667,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-004",
+          "plan_identical": true,
+          "plan_sha256": "155c3054b02559bc03112588a185bf1f322483d4f8d173df90c51ac6ad7b3385",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-005",
+          "plan_identical": true,
+          "plan_sha256": "98522b49cfbef32e61abe76e49ae8237b47b3f8aac7e9bc5c15a5954bedc33ab",
+          "stored_old_recall": 0.25,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-006",
+          "plan_identical": true,
+          "plan_sha256": "4716f9fd54a247bc44bfc42f1ba0823d5bda54137c0eea9b05801a6a1196a464",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-007",
+          "plan_identical": true,
+          "plan_sha256": "d3d95a337bf0d0ef215704391855455f4c8b4c19af62670abd7d0110859aad06",
+          "stored_old_recall": 0.75,
+          "fresh_current_recall": 0.75,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-008",
+          "plan_identical": true,
+          "plan_sha256": "e87f80904b375c9996cec501645b28278e126bdd0aae722a79030b3d35c02eec",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.25,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-009",
+          "plan_identical": true,
+          "plan_sha256": "37e5cd976b4973a6c6bbee51b7ded2ce1388dd9d7ab875be4aacdb1277d171a5",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-010",
+          "plan_identical": true,
+          "plan_sha256": "41594f3180270283720f15e3bf2929c2cc2f9e4bcea9199415693ef0c2e032c5",
+          "stored_old_recall": 0.333,
+          "fresh_current_recall": 0.333,
+          "invariant_assignment_identical": true
+        }
+      ]
+    },
+    "condition_B_verbose_cot": {
+      "n": 10,
+      "identical_plans": 10,
+      "changed_invariant_assignments": 3,
+      "records": [
+        {
+          "scenario_id": "SCEN-001",
+          "plan_identical": true,
+          "plan_sha256": "b6bf731da7898a024492ad65593200a2eaad8a6332b423b304b9e9c11f2d314d",
+          "stored_old_recall": 1.0,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-002",
+          "plan_identical": true,
+          "plan_sha256": "b7031af9269249c982c711b46454f5c15f222020ca37c157d062c4795447cecc",
+          "stored_old_recall": 0.333,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-003",
+          "plan_identical": true,
+          "plan_sha256": "f774b8f8616e5cc7e49726745dfa67afb53b4855884b0a855a2697feca49f7d5",
+          "stored_old_recall": 0.333,
+          "fresh_current_recall": 0.333,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-004",
+          "plan_identical": true,
+          "plan_sha256": "31a74f0028f155e1b859d774a0aaafce0affc282bb1fb70fee82d81bb889a7ba",
+          "stored_old_recall": 0.25,
+          "fresh_current_recall": 0.25,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-005",
+          "plan_identical": true,
+          "plan_sha256": "456d3673d55b28bc84b5017b48e47044ca3f31f5f78e7f08d59fa2e8e5092e95",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.75,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-006",
+          "plan_identical": true,
+          "plan_sha256": "535c309132ed3cb593052332700e8db06079a2e322757e335a39392da37ee87c",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.25,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-007",
+          "plan_identical": true,
+          "plan_sha256": "c35acc3e6a3731622057e2592d3c5a802664d6354f472f8b9b5aa02770ca636e",
+          "stored_old_recall": 0.5,
+          "fresh_current_recall": 0.5,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-008",
+          "plan_identical": true,
+          "plan_sha256": "92c5d22813aa60f11429cdbbafcf16a4440d29655be83b6af24e024fec90b8f0",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-009",
+          "plan_identical": true,
+          "plan_sha256": "633bb9dbf70474e330f22f0731babb50ebaa80df1657e7fd886e4615c6fecf2a",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-010",
+          "plan_identical": true,
+          "plan_sha256": "877960279aeea844121dd04da9f2e387d1ff0e98856c426d794758c490371723",
+          "stored_old_recall": 0.333,
+          "fresh_current_recall": 0.333,
+          "invariant_assignment_identical": true
+        }
+      ]
+    },
+    "condition_C_concept_routed": {
+      "n": 10,
+      "identical_plans": 10,
+      "changed_invariant_assignments": 4,
+      "records": [
+        {
+          "scenario_id": "SCEN-001",
+          "plan_identical": true,
+          "plan_sha256": "956ae9dc7a8e6ec48ea8d67bbaa0c9c25ec818bdd4a79b81d7845aa8e0c31cad",
+          "stored_old_recall": 1.0,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-002",
+          "plan_identical": true,
+          "plan_sha256": "2531787d2c139fbec5303e6bcd80a2c13a6e33c5470448f36dc3ce7a8f712590",
+          "stored_old_recall": 0.667,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-003",
+          "plan_identical": true,
+          "plan_sha256": "03964f4276342221afce80842116f4dfc89f334f9213ff23abbb3938c219c9a7",
+          "stored_old_recall": 1.0,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-004",
+          "plan_identical": true,
+          "plan_sha256": "6833521fe7346614c39680c45fa081e3606319876e004980226dfc74ea49ad60",
+          "stored_old_recall": 0.5,
+          "fresh_current_recall": 0.5,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-005",
+          "plan_identical": true,
+          "plan_sha256": "4a8f3fce28ed67b34c13be85cc01d52ba1a6f7b1f76c5ef6d276dc6d7562d68c",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.75,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-006",
+          "plan_identical": true,
+          "plan_sha256": "29e538a13370651f1080b252693bb77831a8fdb33a5a3b11cbf0571c2fa75314",
+          "stored_old_recall": 0.25,
+          "fresh_current_recall": 0.25,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-007",
+          "plan_identical": true,
+          "plan_sha256": "8b7a48ca16f868a2f36b5c85bac170f074ce1f2244a203fa7b25dc2699bc4f00",
+          "stored_old_recall": 0.75,
+          "fresh_current_recall": 1.0,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-008",
+          "plan_identical": true,
+          "plan_sha256": "c603e097bc54b62dde157034b5d761d8cbd00d029d27162ebba513ee01399c30",
+          "stored_old_recall": 0.25,
+          "fresh_current_recall": 0.5,
+          "invariant_assignment_identical": false
+        },
+        {
+          "scenario_id": "SCEN-009",
+          "plan_identical": true,
+          "plan_sha256": "4bce1a2cd96d653006b89af748e3dc3c2bb67c80fd6a36cc66f91ab30f1df9ed",
+          "stored_old_recall": 0.0,
+          "fresh_current_recall": 0.0,
+          "invariant_assignment_identical": true
+        },
+        {
+          "scenario_id": "SCEN-010",
+          "plan_identical": true,
+          "plan_sha256": "203de9884fdb99fa0b1b50211d5bd6d5fa9182ee7fcc5d3800049c6829f0f0aa",
+          "stored_old_recall": 0.667,
+          "fresh_current_recall": 0.667,
+          "invariant_assignment_identical": true
+        }
+      ]
+    }
+  },
+  "paired_pilot_comparisons_exploratory": {
+    "stored_historical_scores": {
+      "n": 10,
+      "mean_difference": 0.23333333333333334,
+      "ci95": [
+        0.11666666666666665,
+        0.3583333333333334
+      ],
+      "paired_t": 3.628247387441712,
+      "paired_t_p_two_sided": 0.005500615592512631,
+      "permutation_p_two_sided": 0.015625,
+      "positive": 7,
+      "negative": 0,
+      "ties": 3
+    },
+    "fresh_current_evaluator_scores": {
+      "n": 10,
+      "mean_difference": 0.225,
+      "ci95": [
+        0.075,
+        0.38333333333333336
+      ],
+      "paired_t": 2.7289593381432966,
+      "paired_t_p_two_sided": 0.023264130636764562,
+      "permutation_p_two_sided": 0.0625,
+      "positive": 5,
+      "negative": 0,
+      "ties": 5
+    }
+  }
+}

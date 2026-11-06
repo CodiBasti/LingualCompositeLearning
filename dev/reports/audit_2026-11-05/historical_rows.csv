@@ -1,0 +1,831 @@
+version,experiment,condition,scenario_id,domain,expected_concept,recall,current_evaluator_recall,matches,invariants,full_pass,elapsed_seconds,words,chars,routing_membership,activated,family
+active,EXP-001,condition_A_naive,SCEN-001,household_safety,fufu,0.75,1.0,3,4,False,,118,705,,[None],household_safety_fufu
+active,EXP-001,condition_A_naive,SCEN-002,corridor_navigation,fufu,0.3333333333333333,0.667,1,3,False,,125,729,,[None],corridor_navigation_fufu
+active,EXP-001,condition_A_naive,SCEN-003,fragile_manipulation,weli,0.6666666666666666,0.667,2,3,False,,169,1019,,[None],fragile_manipulation_weli
+active,EXP-001,condition_A_naive,SCEN-004,social_pragmatics,zubu,0.0,0.0,0,4,False,,98,615,,[None],social_pragmatics_zubu
+active,EXP-001,condition_A_naive,SCEN-005,hazardous_transport,fufu,0.25,1.0,1,4,False,,207,1108,,[None],hazardous_transport_fufu
+active,EXP-001,condition_A_naive,SCEN-006,medical_and_stealth,zubu,0.0,0.0,0,4,False,,207,1268,,[None],medical_and_stealth_zubu
+active,EXP-001,condition_A_naive,SCEN-007,unstable_load_navigation,fufu,0.75,0.75,3,4,False,,186,1225,,[None],unstable_load_navigation_fufu
+active,EXP-001,condition_A_naive,SCEN-008,micro_manipulation,weli,0.0,0.25,0,4,False,,194,1226,,[None],micro_manipulation_weli
+active,EXP-001,condition_A_naive,SCEN-009,emergency_priority,kuku,0.0,0.0,0,3,False,,176,1055,,[None],emergency_priority_kuku
+active,EXP-001,condition_A_naive,SCEN-010,conservation_restoration,fufu,0.3333333333333333,0.333,1,3,False,,192,1169,,[None],conservation_restoration_fufu
+active,EXP-001,condition_B_verbose_cot,SCEN-001,household_safety,fufu,1.0,1.0,4,4,True,,193,1182,,[None],household_safety_fufu
+active,EXP-001,condition_B_verbose_cot,SCEN-002,corridor_navigation,fufu,0.3333333333333333,1.0,1,3,False,,193,1145,,[None],corridor_navigation_fufu
+active,EXP-001,condition_B_verbose_cot,SCEN-003,fragile_manipulation,weli,0.3333333333333333,0.333,1,3,False,,190,1172,,[None],fragile_manipulation_weli
+active,EXP-001,condition_B_verbose_cot,SCEN-004,social_pragmatics,zubu,0.25,0.25,1,4,False,,198,1246,,[None],social_pragmatics_zubu
+active,EXP-001,condition_B_verbose_cot,SCEN-005,hazardous_transport,fufu,0.0,0.75,0,4,False,,196,1097,,[None],hazardous_transport_fufu
+active,EXP-001,condition_B_verbose_cot,SCEN-006,medical_and_stealth,zubu,0.0,0.25,0,4,False,,186,1153,,[None],medical_and_stealth_zubu
+active,EXP-001,condition_B_verbose_cot,SCEN-007,unstable_load_navigation,fufu,0.5,0.5,2,4,False,,199,1181,,[None],unstable_load_navigation_fufu
+active,EXP-001,condition_B_verbose_cot,SCEN-008,micro_manipulation,weli,0.0,0.0,0,4,False,,201,1237,,[None],micro_manipulation_weli
+active,EXP-001,condition_B_verbose_cot,SCEN-009,emergency_priority,kuku,0.0,0.0,0,3,False,,181,1114,,[None],emergency_priority_kuku
+active,EXP-001,condition_B_verbose_cot,SCEN-010,conservation_restoration,fufu,0.3333333333333333,0.333,1,3,False,,189,1108,,[None],conservation_restoration_fufu
+active,EXP-001,condition_C_concept_routed,SCEN-001,household_safety,fufu,1.0,1.0,4,4,True,,196,1183,True,['fufu'],household_safety_fufu
+active,EXP-001,condition_C_concept_routed,SCEN-002,corridor_navigation,fufu,0.6666666666666666,1.0,2,3,False,,207,1333,True,['fufu'],corridor_navigation_fufu
+active,EXP-001,condition_C_concept_routed,SCEN-003,fragile_manipulation,weli,1.0,1.0,3,3,True,,200,1231,True,['weli'],fragile_manipulation_weli
+active,EXP-001,condition_C_concept_routed,SCEN-004,social_pragmatics,zubu,0.5,0.5,2,4,False,,187,1128,True,['zubu'],social_pragmatics_zubu
+active,EXP-001,condition_C_concept_routed,SCEN-005,hazardous_transport,fufu,0.0,0.75,0,4,False,,210,1225,True,['fufu'],hazardous_transport_fufu
+active,EXP-001,condition_C_concept_routed,SCEN-006,medical_and_stealth,zubu,0.25,0.25,1,4,False,,205,1273,False,['weli'],medical_and_stealth_zubu
+active,EXP-001,condition_C_concept_routed,SCEN-007,unstable_load_navigation,fufu,0.75,1.0,3,4,False,,197,1214,True,['fufu'],unstable_load_navigation_fufu
+active,EXP-001,condition_C_concept_routed,SCEN-008,micro_manipulation,weli,0.25,0.5,1,4,False,,183,1164,True,['weli'],micro_manipulation_weli
+active,EXP-001,condition_C_concept_routed,SCEN-009,emergency_priority,kuku,0.0,0.0,0,3,False,,123,740,True,['kuku'],emergency_priority_kuku
+active,EXP-001,condition_C_concept_routed,SCEN-010,conservation_restoration,fufu,0.6666666666666666,0.667,2,3,False,,199,1219,False,['weli'],conservation_restoration_fufu
+active,EXP-002,condition_A_naive,SCEN-001,domestic,fufu,0.5,0.5,2,4,False,5.878,129,757,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-002,domestic,fufu,0.5,0.5,2,4,False,4.101,102,596,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-003,domestic,fufu,1.0,1.0,4,4,True,5.276,137,707,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,4.115,103,568,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,3.875,96,562,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-006,domestic,gugi,0.25,0.25,1,4,False,3.104,76,454,,[None],domestic_gugi
+active,EXP-002,condition_A_naive,SCEN-007,domestic,fufu,0.25,0.25,1,4,False,4.847,119,650,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-008,domestic,zeze,0.25,0.25,1,4,False,4.03,104,596,,[None],domestic_zeze
+active,EXP-002,condition_A_naive,SCEN-009,domestic,fufu,0.5,0.5,2,4,False,6.899,164,991,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-010,domestic,zeze,0.5,0.5,2,4,False,4.339,106,597,,[None],domestic_zeze
+active,EXP-002,condition_A_naive,SCEN-011,domestic,fufu,1.0,1.0,4,4,True,8.549,194,1159,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,5.13,127,731,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-013,domestic,weli,0.25,0.25,1,4,False,5.664,140,784,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-014,domestic,weli,0.25,0.25,1,4,False,6.315,158,913,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,8.677,216,1199,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-016,domestic,gugi,0.25,0.25,1,4,False,4.245,107,600,,[None],domestic_gugi
+active,EXP-002,condition_A_naive,SCEN-017,domestic,fufu,0.0,0.0,0,4,False,2.353,57,314,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-018,domestic,weli,0.0,0.0,0,4,False,6.308,151,897,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-019,domestic,weli,0.0,0.0,0,4,False,5.463,136,785,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-020,domestic,fufu,0.5,0.5,2,4,False,6.652,162,916,,[None],domestic_fufu
+active,EXP-002,condition_A_naive,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,5.107,123,718,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-022,domestic,zubu,0.25,0.25,1,4,False,3.268,77,438,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-023,domestic,zubu,0.25,0.25,1,4,False,5.449,133,820,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-024,domestic,weli,0.25,0.25,1,4,False,8.447,204,1183,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-025,domestic,weli,0.5,0.5,2,4,False,3.903,92,509,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-026,domestic,weli,0.0,0.0,0,4,False,4.278,100,608,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-027,domestic,weli,0.0,0.0,0,4,False,5.711,143,781,,[None],domestic_weli
+active,EXP-002,condition_A_naive,SCEN-028,domestic,zubu,0.5,0.5,2,4,False,4.25,101,587,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-029,domestic,zubu,0.0,0.0,0,4,False,4.412,111,600,,[None],domestic_zubu
+active,EXP-002,condition_A_naive,SCEN-030,domestic,zeze,0.5,0.5,2,4,False,4.739,121,668,,[None],domestic_zeze
+active,EXP-002,condition_A_naive,SCEN-031,clinical_care,weli,0.0,0.0,0,4,False,8.41,215,1212,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-032,clinical_care,weli,0.75,0.75,3,4,False,8.5,199,1250,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-033,clinical_care,zeze,0.25,0.25,1,4,False,5.99,147,862,,[None],clinical_care_zeze
+active,EXP-002,condition_A_naive,SCEN-034,clinical_care,weli,0.75,0.75,3,4,False,6.543,163,880,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-035,clinical_care,fufu,0.25,0.25,1,4,False,8.388,215,1277,,[None],clinical_care_fufu
+active,EXP-002,condition_A_naive,SCEN-036,clinical_care,zeze,0.75,0.75,3,4,False,5.812,139,846,,[None],clinical_care_zeze
+active,EXP-002,condition_A_naive,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,5.273,130,762,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-038,clinical_care,weli,0.5,0.5,2,4,False,8.377,203,1173,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-039,clinical_care,gugi,0.75,0.75,3,4,False,7.603,187,1125,,[None],clinical_care_gugi
+active,EXP-002,condition_A_naive,SCEN-040,clinical_care,gugi,0.25,0.25,1,4,False,8.37,210,1272,,[None],clinical_care_gugi
+active,EXP-002,condition_A_naive,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,8.399,197,1166,,[None],clinical_care_zubu
+active,EXP-002,condition_A_naive,SCEN-042,clinical_care,zubu,0.25,0.25,1,4,False,7.554,194,1096,,[None],clinical_care_zubu
+active,EXP-002,condition_A_naive,SCEN-043,clinical_care,weli,0.25,0.25,1,4,False,5.751,140,844,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-044,clinical_care,weli,0.5,0.5,2,4,False,6.653,153,970,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-045,clinical_care,zubu,0.25,0.25,1,4,False,5.556,137,853,,[None],clinical_care_zubu
+active,EXP-002,condition_A_naive,SCEN-046,clinical_care,zeze,0.25,0.25,1,4,False,4.486,108,633,,[None],clinical_care_zeze
+active,EXP-002,condition_A_naive,SCEN-047,clinical_care,weli,0.5,0.5,2,4,False,8.394,206,1232,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-048,clinical_care,weli,0.0,0.0,0,4,False,6.211,148,925,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-049,clinical_care,zubu,0.25,0.25,1,4,False,4.504,113,628,,[None],clinical_care_zubu
+active,EXP-002,condition_A_naive,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,6.139,152,912,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-051,clinical_care,weli,0.25,0.25,1,4,False,8.462,205,1110,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-052,clinical_care,weli,0.25,0.25,1,4,False,6.934,173,992,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-053,clinical_care,weli,0.5,0.5,2,4,False,4.939,122,680,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-054,clinical_care,weli,0.0,0.0,0,4,False,5.659,138,838,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-055,clinical_care,weli,0.5,0.5,2,4,False,8.372,215,1217,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-056,clinical_care,weli,0.0,0.0,0,4,False,7.399,188,1070,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-057,clinical_care,zubu,0.25,0.25,1,4,False,4.939,126,784,,[None],clinical_care_zubu
+active,EXP-002,condition_A_naive,SCEN-058,clinical_care,fufu,0.5,0.5,2,4,False,8.401,203,1134,,[None],clinical_care_fufu
+active,EXP-002,condition_A_naive,SCEN-059,clinical_care,weli,0.25,0.25,1,4,False,4.81,115,677,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-060,clinical_care,weli,0.0,0.0,0,4,False,8.022,209,1193,,[None],clinical_care_weli
+active,EXP-002,condition_A_naive,SCEN-061,precision_lab,weli,0.0,0.0,0,4,False,6.133,156,890,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-062,precision_lab,fufu,0.0,0.0,0,4,False,6.54,164,928,,[None],precision_lab_fufu
+active,EXP-002,condition_A_naive,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,8.302,191,1184,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-064,precision_lab,weli,0.0,0.0,0,4,False,8.329,178,1131,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-065,precision_lab,fufu,0.25,0.25,1,4,False,6.357,157,919,,[None],precision_lab_fufu
+active,EXP-002,condition_A_naive,SCEN-066,precision_lab,weli,0.5,0.5,2,4,False,8.408,195,1296,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-067,precision_lab,weli,0.25,0.25,1,4,False,8.411,191,1160,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,8.388,196,1225,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-069,precision_lab,weli,0.25,0.25,1,4,False,4.647,121,659,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,7.37,179,1071,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,8.36,187,1116,,[None],precision_lab_fufu
+active,EXP-002,condition_A_naive,SCEN-072,precision_lab,weli,0.5,0.5,2,4,False,8.395,198,1227,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.367,194,1086,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.374,194,1223,,[None],precision_lab_gugi
+active,EXP-002,condition_A_naive,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,8.357,201,1258,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-076,precision_lab,gugi,0.25,0.25,1,4,False,8.328,207,1314,,[None],precision_lab_gugi
+active,EXP-002,condition_A_naive,SCEN-077,precision_lab,weli,0.0,0.0,0,4,False,5.523,127,765,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-078,precision_lab,weli,0.5,0.5,2,4,False,6.951,163,971,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.396,196,1155,,[None],precision_lab_gugi
+active,EXP-002,condition_A_naive,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.323,196,1161,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-081,precision_lab,fufu,0.5,0.5,2,4,False,8.402,187,1151,,[None],precision_lab_fufu
+active,EXP-002,condition_A_naive,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,8.354,204,1279,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-083,precision_lab,weli,0.75,0.75,3,4,False,8.332,187,1147,,[None],precision_lab_weli
+active,EXP-002,condition_A_naive,SCEN-084,precision_lab,gugi,0.5,0.5,2,4,False,8.35,194,1191,,[None],precision_lab_gugi
+active,EXP-002,condition_A_naive,SCEN-085,precision_lab,fufu,0.5,0.5,2,4,False,8.337,189,1246,,[None],precision_lab_fufu
+active,EXP-002,condition_A_naive,SCEN-086,emergency,kuku,0.25,0.25,1,4,False,8.341,213,1258,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-087,emergency,kuku,0.25,0.25,1,4,False,8.375,203,1246,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,6.608,162,975,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-089,emergency,weli,0.5,0.5,2,4,False,6.185,150,902,,[None],emergency_weli
+active,EXP-002,condition_A_naive,SCEN-090,emergency,kuku,0.75,0.75,3,4,False,8.194,199,1264,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-091,emergency,kuku,0.0,0.0,0,4,False,8.384,191,1248,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,7.39,196,1095,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-093,emergency,fufu,0.25,0.25,1,4,False,8.427,203,1186,,[None],emergency_fufu
+active,EXP-002,condition_A_naive,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,8.372,208,1192,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-095,emergency,kuku,0.25,0.25,1,4,False,8.35,200,1255,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-096,emergency,fufu,0.75,0.75,3,4,False,8.459,202,1289,,[None],emergency_fufu
+active,EXP-002,condition_A_naive,SCEN-097,emergency,kuku,0.5,0.5,2,4,False,8.383,208,1301,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,7.43,182,1083,,[None],emergency_fufu
+active,EXP-002,condition_A_naive,SCEN-099,emergency,kuku,0.5,0.5,2,4,False,8.383,206,1341,,[None],emergency_kuku
+active,EXP-002,condition_A_naive,SCEN-100,emergency,kuku,0.5,0.5,2,4,False,8.38,200,1298,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-001,domestic,fufu,0.75,0.75,3,4,False,10.136,238,1548,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-002,domestic,fufu,0.75,0.75,3,4,False,10.231,213,1372,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-003,domestic,fufu,1.0,1.0,4,4,True,10.183,228,1318,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,10.113,231,1433,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,10.155,207,1294,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-006,domestic,gugi,0.75,0.75,3,4,False,10.178,238,1569,,[None],domestic_gugi
+active,EXP-002,condition_B_verbose,SCEN-007,domestic,fufu,0.75,0.75,3,4,False,10.196,216,1375,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-008,domestic,zeze,0.75,0.75,3,4,False,10.157,227,1427,,[None],domestic_zeze
+active,EXP-002,condition_B_verbose,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,10.261,211,1375,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-010,domestic,zeze,1.0,1.0,4,4,True,10.192,216,1412,,[None],domestic_zeze
+active,EXP-002,condition_B_verbose,SCEN-011,domestic,fufu,1.0,1.0,4,4,True,10.157,219,1328,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,10.184,213,1320,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-013,domestic,weli,0.5,0.5,2,4,False,10.548,218,1376,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-014,domestic,weli,0.75,0.75,3,4,False,10.359,221,1389,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,10.473,223,1351,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-016,domestic,gugi,0.5,0.5,2,4,False,10.333,224,1366,,[None],domestic_gugi
+active,EXP-002,condition_B_verbose,SCEN-017,domestic,fufu,0.75,0.75,3,4,False,10.338,202,1321,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-018,domestic,weli,0.5,0.5,2,4,False,10.342,214,1348,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-019,domestic,weli,0.5,0.5,2,4,False,10.278,215,1376,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-020,domestic,fufu,0.0,0.0,0,4,False,10.312,223,1318,,[None],domestic_fufu
+active,EXP-002,condition_B_verbose,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,10.297,243,1490,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-022,domestic,zubu,0.25,0.25,1,4,False,10.137,223,1404,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-023,domestic,zubu,0.5,0.5,2,4,False,10.25,217,1458,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-024,domestic,weli,0.5,0.5,2,4,False,10.196,231,1495,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-025,domestic,weli,0.5,0.5,2,4,False,10.128,212,1336,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-026,domestic,weli,0.25,0.25,1,4,False,10.147,230,1444,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-027,domestic,weli,0.25,0.25,1,4,False,10.145,224,1355,,[None],domestic_weli
+active,EXP-002,condition_B_verbose,SCEN-028,domestic,zubu,1.0,1.0,4,4,True,10.162,206,1366,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-029,domestic,zubu,0.5,0.5,2,4,False,10.167,219,1420,,[None],domestic_zubu
+active,EXP-002,condition_B_verbose,SCEN-030,domestic,zeze,0.5,0.5,2,4,False,10.159,220,1444,,[None],domestic_zeze
+active,EXP-002,condition_B_verbose,SCEN-031,clinical_care,weli,0.25,0.25,1,4,False,10.123,220,1364,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,10.152,219,1389,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-033,clinical_care,zeze,0.5,0.5,2,4,False,10.322,220,1479,,[None],clinical_care_zeze
+active,EXP-002,condition_B_verbose,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,10.173,228,1421,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-035,clinical_care,fufu,0.25,0.25,1,4,False,10.343,214,1402,,[None],clinical_care_fufu
+active,EXP-002,condition_B_verbose,SCEN-036,clinical_care,zeze,0.5,0.5,2,4,False,10.075,209,1360,,[None],clinical_care_zeze
+active,EXP-002,condition_B_verbose,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,10.069,221,1456,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-038,clinical_care,weli,0.75,0.75,3,4,False,10.037,235,1481,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-039,clinical_care,gugi,1.0,1.0,4,4,True,10.073,213,1401,,[None],clinical_care_gugi
+active,EXP-002,condition_B_verbose,SCEN-040,clinical_care,gugi,0.75,0.75,3,4,False,10.118,228,1466,,[None],clinical_care_gugi
+active,EXP-002,condition_B_verbose,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,10.117,215,1450,,[None],clinical_care_zubu
+active,EXP-002,condition_B_verbose,SCEN-042,clinical_care,zubu,0.5,0.5,2,4,False,10.106,218,1365,,[None],clinical_care_zubu
+active,EXP-002,condition_B_verbose,SCEN-043,clinical_care,weli,0.5,0.5,2,4,False,10.119,224,1421,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-044,clinical_care,weli,0.5,0.5,2,4,False,10.055,230,1511,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-045,clinical_care,zubu,0.25,0.25,1,4,False,10.138,226,1439,,[None],clinical_care_zubu
+active,EXP-002,condition_B_verbose,SCEN-046,clinical_care,zeze,0.5,0.5,2,4,False,10.104,227,1452,,[None],clinical_care_zeze
+active,EXP-002,condition_B_verbose,SCEN-047,clinical_care,weli,0.75,0.75,3,4,False,10.012,223,1400,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-048,clinical_care,weli,0.5,0.5,2,4,False,10.073,197,1366,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-049,clinical_care,zubu,0.5,0.5,2,4,False,10.053,227,1500,,[None],clinical_care_zubu
+active,EXP-002,condition_B_verbose,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,10.058,226,1462,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-051,clinical_care,weli,0.75,0.75,3,4,False,10.044,223,1404,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-052,clinical_care,weli,0.5,0.5,2,4,False,10.013,226,1445,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-053,clinical_care,weli,0.5,0.5,2,4,False,10.091,215,1417,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-054,clinical_care,weli,0.25,0.25,1,4,False,10.071,234,1524,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-055,clinical_care,weli,0.25,0.25,1,4,False,9.992,221,1373,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-056,clinical_care,weli,0.25,0.25,1,4,False,10.001,231,1490,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-057,clinical_care,zubu,0.5,0.5,2,4,False,10.109,232,1477,,[None],clinical_care_zubu
+active,EXP-002,condition_B_verbose,SCEN-058,clinical_care,fufu,0.5,0.5,2,4,False,10.038,235,1453,,[None],clinical_care_fufu
+active,EXP-002,condition_B_verbose,SCEN-059,clinical_care,weli,0.5,0.5,2,4,False,10.046,229,1446,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-060,clinical_care,weli,1.0,1.0,4,4,True,10.052,211,1454,,[None],clinical_care_weli
+active,EXP-002,condition_B_verbose,SCEN-061,precision_lab,weli,0.5,0.5,2,4,False,10.066,220,1429,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-062,precision_lab,fufu,0.5,0.5,2,4,False,10.106,208,1333,,[None],precision_lab_fufu
+active,EXP-002,condition_B_verbose,SCEN-063,precision_lab,weli,0.25,0.25,1,4,False,10.081,214,1383,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-064,precision_lab,weli,0.5,0.5,2,4,False,10.025,197,1309,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-065,precision_lab,fufu,0.5,0.5,2,4,False,10.042,212,1373,,[None],precision_lab_fufu
+active,EXP-002,condition_B_verbose,SCEN-066,precision_lab,weli,0.75,0.75,3,4,False,10.026,217,1407,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-067,precision_lab,weli,0.5,0.5,2,4,False,10.092,215,1341,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,10.087,213,1397,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-069,precision_lab,weli,0.5,0.5,2,4,False,10.027,224,1463,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,10.074,224,1464,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,10.045,206,1344,,[None],precision_lab_fufu
+active,EXP-002,condition_B_verbose,SCEN-072,precision_lab,weli,0.75,0.75,3,4,False,10.101,206,1302,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,10.059,220,1380,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-074,precision_lab,gugi,0.5,0.5,2,4,False,10.06,204,1402,,[None],precision_lab_gugi
+active,EXP-002,condition_B_verbose,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,10.011,229,1371,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-076,precision_lab,gugi,0.25,0.25,1,4,False,10.069,206,1439,,[None],precision_lab_gugi
+active,EXP-002,condition_B_verbose,SCEN-077,precision_lab,weli,0.5,0.5,2,4,False,10.143,226,1450,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-078,precision_lab,weli,0.25,0.25,1,4,False,10.085,227,1397,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,10.178,222,1399,,[None],precision_lab_gugi
+active,EXP-002,condition_B_verbose,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,10.066,207,1357,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-081,precision_lab,fufu,0.5,0.5,2,4,False,10.095,202,1297,,[None],precision_lab_fufu
+active,EXP-002,condition_B_verbose,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,10.016,229,1496,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-083,precision_lab,weli,0.5,0.5,2,4,False,10.04,198,1330,,[None],precision_lab_weli
+active,EXP-002,condition_B_verbose,SCEN-084,precision_lab,gugi,0.75,0.75,3,4,False,10.024,222,1392,,[None],precision_lab_gugi
+active,EXP-002,condition_B_verbose,SCEN-085,precision_lab,fufu,0.25,0.25,1,4,False,10.059,220,1452,,[None],precision_lab_fufu
+active,EXP-002,condition_B_verbose,SCEN-086,emergency,kuku,0.5,0.5,2,4,False,10.054,214,1368,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-087,emergency,kuku,0.25,0.25,1,4,False,10.075,209,1455,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,10.168,236,1565,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-089,emergency,weli,0.5,0.5,2,4,False,9.997,216,1442,,[None],emergency_weli
+active,EXP-002,condition_B_verbose,SCEN-090,emergency,kuku,0.5,0.5,2,4,False,10.01,216,1384,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-091,emergency,kuku,0.25,0.25,1,4,False,10.018,227,1444,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-092,emergency,kuku,0.5,0.5,2,4,False,10.104,228,1448,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-093,emergency,fufu,0.5,0.5,2,4,False,10.041,218,1436,,[None],emergency_fufu
+active,EXP-002,condition_B_verbose,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,10.11,231,1441,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-095,emergency,kuku,0.25,0.25,1,4,False,10.486,215,1453,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-096,emergency,fufu,0.25,0.25,1,4,False,10.232,209,1422,,[None],emergency_fufu
+active,EXP-002,condition_B_verbose,SCEN-097,emergency,kuku,0.25,0.25,1,4,False,10.11,231,1496,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,10.092,213,1414,,[None],emergency_fufu
+active,EXP-002,condition_B_verbose,SCEN-099,emergency,kuku,0.5,0.5,2,4,False,10.088,226,1543,,[None],emergency_kuku
+active,EXP-002,condition_B_verbose,SCEN-100,emergency,kuku,0.75,0.75,3,4,False,10.069,238,1541,,[None],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-001,domestic,fufu,1.0,1.0,4,4,True,8.611,202,1213,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-002,domestic,fufu,0.5,0.5,2,4,False,8.615,195,1200,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-003,domestic,fufu,1.0,1.0,4,4,True,8.602,202,1174,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,8.675,194,1191,False,['fufu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,8.608,195,1208,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-006,domestic,gugi,0.5,0.5,2,4,False,8.687,200,1214,False,['fufu'],domestic_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-007,domestic,fufu,0.75,0.75,3,4,False,8.664,203,1171,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-008,domestic,zeze,1.0,1.0,4,4,True,8.641,210,1296,False,['fufu'],domestic_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,8.669,195,1182,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-010,domestic,zeze,1.0,1.0,4,4,True,8.653,189,1165,False,['fufu'],domestic_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-011,domestic,fufu,1.0,1.0,4,4,True,8.625,208,1243,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,8.559,209,1250,False,['weli'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-013,domestic,weli,0.5,0.5,2,4,False,8.78,202,1249,True,['weli'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-014,domestic,weli,0.25,0.25,1,4,False,8.808,190,1124,True,['weli'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,8.768,200,1216,True,['fufu'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-016,domestic,gugi,0.5,0.5,2,4,False,8.704,190,1129,False,['weli'],domestic_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-017,domestic,fufu,0.25,0.25,1,4,False,8.663,195,1208,False,['gugi'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-018,domestic,weli,0.25,0.25,1,4,False,8.71,204,1257,False,['gugi'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-019,domestic,weli,0.25,0.25,1,4,False,8.696,205,1217,False,['fufu'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-020,domestic,fufu,0.5,0.5,2,4,False,8.971,187,1112,False,['gugi'],domestic_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,8.581,198,1246,False,['fufu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-022,domestic,zubu,0.25,0.25,1,4,False,8.603,198,1208,True,['zubu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-023,domestic,zubu,0.75,0.75,3,4,False,8.639,196,1228,True,['zubu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-024,domestic,weli,0.5,0.5,2,4,False,8.595,205,1242,True,['weli'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-025,domestic,weli,0.75,0.75,3,4,False,8.55,195,1248,True,['weli'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-026,domestic,weli,0.5,0.5,2,4,False,8.567,201,1299,True,['weli'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-027,domestic,weli,0.5,0.5,2,4,False,8.623,197,1196,False,['fufu'],domestic_weli
+active,EXP-002,condition_C_concept_routed,SCEN-028,domestic,zubu,0.75,0.75,3,4,False,8.674,197,1272,False,['fufu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-029,domestic,zubu,0.25,0.25,1,4,False,8.683,196,1243,True,['zubu'],domestic_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-030,domestic,zeze,0.75,0.75,3,4,False,8.594,197,1238,False,['fufu'],domestic_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-031,clinical_care,weli,0.0,0.0,0,4,False,8.606,191,1159,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,8.566,199,1209,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-033,clinical_care,zeze,0.5,0.5,2,4,False,8.85,192,1172,False,['fufu'],clinical_care_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,8.557,202,1140,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-035,clinical_care,fufu,0.5,0.5,2,4,False,8.781,201,1283,True,['fufu'],clinical_care_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-036,clinical_care,zeze,0.75,0.75,3,4,False,8.523,196,1230,False,['weli'],clinical_care_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-037,clinical_care,weli,0.25,0.25,1,4,False,8.49,187,1149,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-038,clinical_care,weli,0.5,0.5,2,4,False,8.582,208,1251,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-039,clinical_care,gugi,0.5,0.5,2,4,False,8.577,188,1250,False,['fufu'],clinical_care_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-040,clinical_care,gugi,0.75,0.75,3,4,False,8.496,201,1249,False,['weli'],clinical_care_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-041,clinical_care,zubu,0.25,0.25,1,4,False,8.55,197,1172,False,['gugi'],clinical_care_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-042,clinical_care,zubu,0.25,0.25,1,4,False,8.488,199,1245,False,['fufu'],clinical_care_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-043,clinical_care,weli,0.0,0.0,0,4,False,8.53,200,1212,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-044,clinical_care,weli,0.75,0.75,3,4,False,8.541,191,1253,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-045,clinical_care,zubu,0.25,0.25,1,4,False,8.566,200,1244,False,['fufu'],clinical_care_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,8.581,208,1272,False,['fufu'],clinical_care_zeze
+active,EXP-002,condition_C_concept_routed,SCEN-047,clinical_care,weli,0.5,0.5,2,4,False,8.527,198,1213,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,8.564,204,1276,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-049,clinical_care,zubu,0.25,0.25,1,4,False,8.529,198,1235,False,['weli'],clinical_care_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,8.498,203,1246,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-051,clinical_care,weli,0.5,0.5,2,4,False,8.498,194,1144,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-052,clinical_care,weli,0.5,0.5,2,4,False,8.493,191,1193,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-053,clinical_care,weli,0.75,0.75,3,4,False,8.565,198,1270,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-054,clinical_care,weli,0.25,0.25,1,4,False,8.544,187,1173,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-055,clinical_care,weli,0.5,0.5,2,4,False,8.473,207,1244,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-056,clinical_care,weli,0.5,0.5,2,4,False,8.534,200,1265,True,['weli'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-057,clinical_care,zubu,0.5,0.5,2,4,False,8.395,204,1319,False,['fufu'],clinical_care_zubu
+active,EXP-002,condition_C_concept_routed,SCEN-058,clinical_care,fufu,0.25,0.25,1,4,False,8.535,204,1164,True,['fufu'],clinical_care_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-059,clinical_care,weli,0.5,0.5,2,4,False,8.494,206,1288,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-060,clinical_care,weli,0.0,0.0,0,4,False,8.567,180,1205,False,['fufu'],clinical_care_weli
+active,EXP-002,condition_C_concept_routed,SCEN-061,precision_lab,weli,0.25,0.25,1,4,False,8.523,202,1212,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-062,precision_lab,fufu,0.25,0.25,1,4,False,8.57,207,1287,False,['gugi'],precision_lab_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-063,precision_lab,weli,0.25,0.25,1,4,False,8.509,194,1164,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-064,precision_lab,weli,0.25,0.25,1,4,False,8.53,175,1155,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-065,precision_lab,fufu,0.25,0.25,1,4,False,8.489,187,1198,False,['gugi'],precision_lab_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-066,precision_lab,weli,0.5,0.5,2,4,False,8.55,194,1320,False,['fufu'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-067,precision_lab,weli,0.25,0.25,1,4,False,8.551,190,1183,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,8.601,200,1259,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-069,precision_lab,weli,0.25,0.25,1,4,False,6.923,166,1049,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-070,precision_lab,weli,0.25,0.25,1,4,False,8.534,188,1264,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,8.561,192,1189,False,['gugi'],precision_lab_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-072,precision_lab,weli,0.25,0.25,1,4,False,8.521,181,1170,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.537,188,1156,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.523,194,1247,True,['gugi'],precision_lab_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,8.532,195,1240,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-076,precision_lab,gugi,0.5,0.5,2,4,False,8.524,201,1263,True,['gugi'],precision_lab_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-077,precision_lab,weli,0.0,0.0,0,4,False,8.572,186,1212,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-078,precision_lab,weli,0.75,0.75,3,4,False,8.515,189,1220,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.622,193,1189,False,['fufu'],precision_lab_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.561,180,1173,False,['fufu'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-081,precision_lab,fufu,0.25,0.25,1,4,False,8.461,185,1133,False,['gugi'],precision_lab_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,8.527,187,1167,True,['weli'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-083,precision_lab,weli,0.0,0.0,0,4,False,8.535,182,1196,False,['gugi'],precision_lab_weli
+active,EXP-002,condition_C_concept_routed,SCEN-084,precision_lab,gugi,0.75,0.75,3,4,False,8.4,195,1263,True,['gugi'],precision_lab_gugi
+active,EXP-002,condition_C_concept_routed,SCEN-085,precision_lab,fufu,0.5,0.5,2,4,False,8.536,196,1285,False,['gugi'],precision_lab_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-086,emergency,kuku,0.25,0.25,1,4,False,8.497,202,1290,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-087,emergency,kuku,0.25,0.25,1,4,False,8.533,205,1305,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,8.568,193,1146,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-089,emergency,weli,0.5,0.5,2,4,False,8.534,203,1308,False,['kuku'],emergency_weli
+active,EXP-002,condition_C_concept_routed,SCEN-090,emergency,kuku,0.75,0.75,3,4,False,7.557,181,1152,False,['gugi'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-091,emergency,kuku,0.25,0.25,1,4,False,8.554,194,1192,False,['gugi'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,8.478,203,1273,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-093,emergency,fufu,0.5,0.5,2,4,False,8.478,204,1292,False,['gugi'],emergency_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,8.526,209,1189,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-095,emergency,kuku,0.75,0.75,3,4,False,8.609,197,1326,True,['kuku'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-096,emergency,fufu,0.25,0.25,1,4,False,8.839,196,1279,False,['kuku'],emergency_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-097,emergency,kuku,0.5,0.5,2,4,False,8.552,207,1301,False,['gugi'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-098,emergency,fufu,0.0,0.0,0,4,False,7.374,175,1054,False,['gugi'],emergency_fufu
+active,EXP-002,condition_C_concept_routed,SCEN-099,emergency,kuku,0.25,0.25,1,4,False,8.585,202,1270,False,['gugi'],emergency_kuku
+active,EXP-002,condition_C_concept_routed,SCEN-100,emergency,kuku,0.75,0.75,3,4,False,8.519,204,1309,True,['kuku'],emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-001,domestic,fufu,1.0,1.0,4,4,True,9.356,185,1172,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-002,domestic,fufu,0.5,0.5,2,4,False,8.673,191,1179,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-003,domestic,fufu,0.75,0.75,3,4,False,8.652,188,1122,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-004,domestic,zubu,0.0,0.0,0,4,False,8.684,182,1127,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,8.68,187,1098,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-006,domestic,gugi,0.25,0.25,1,4,False,8.678,195,1260,False,"['fufu', 'weli']",domestic_gugi
+active,EXP-003,condition_C_composite,SCEN-007,domestic,fufu,0.75,0.75,3,4,False,8.617,197,1214,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-008,domestic,zeze,1.0,1.0,4,4,True,8.754,196,1230,False,"['fufu', 'weli']",domestic_zeze
+active,EXP-003,condition_C_composite,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,8.653,199,1226,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-010,domestic,zeze,0.75,0.75,3,4,False,8.682,195,1227,False,"['fufu', 'weli']",domestic_zeze
+active,EXP-003,condition_C_composite,SCEN-011,domestic,fufu,0.75,0.75,3,4,False,8.649,197,1211,True,"['fufu', 'gugi']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-012,domestic,fufu,0.5,0.5,2,4,False,8.701,201,1228,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-013,domestic,weli,0.75,0.75,3,4,False,8.678,190,1135,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-014,domestic,weli,0.75,0.75,3,4,False,8.648,194,1163,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,8.602,193,1187,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-016,domestic,gugi,0.5,0.5,2,4,False,8.636,194,1168,False,"['fufu', 'weli']",domestic_gugi
+active,EXP-003,condition_C_composite,SCEN-017,domestic,fufu,0.5,0.5,2,4,False,8.611,192,1190,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-018,domestic,weli,0.75,0.75,3,4,False,8.672,194,1192,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-019,domestic,weli,0.0,0.0,0,4,False,8.68,191,1190,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-020,domestic,fufu,0.5,0.5,2,4,False,8.622,203,1182,True,"['fufu', 'weli']",domestic_fufu
+active,EXP-003,condition_C_composite,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,8.659,199,1257,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-022,domestic,zubu,0.5,0.5,2,4,False,8.673,191,1217,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-023,domestic,zubu,0.5,0.5,2,4,False,8.697,188,1212,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-024,domestic,weli,0.25,0.25,1,4,False,8.597,194,1216,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-025,domestic,weli,0.25,0.25,1,4,False,8.665,198,1217,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-026,domestic,weli,0.25,0.25,1,4,False,8.649,188,1233,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-027,domestic,weli,0.5,0.5,2,4,False,8.682,195,1182,True,"['fufu', 'weli']",domestic_weli
+active,EXP-003,condition_C_composite,SCEN-028,domestic,zubu,0.75,0.75,3,4,False,8.691,187,1197,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-029,domestic,zubu,0.25,0.25,1,4,False,8.686,203,1241,False,"['fufu', 'weli']",domestic_zubu
+active,EXP-003,condition_C_composite,SCEN-030,domestic,zeze,0.75,0.75,3,4,False,8.622,196,1227,False,"['fufu', 'weli']",domestic_zeze
+active,EXP-003,condition_C_composite,SCEN-031,clinical_care,weli,0.25,0.25,1,4,False,8.697,191,1137,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,8.692,182,1120,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-033,clinical_care,zeze,0.75,0.75,3,4,False,8.683,191,1229,False,"['fufu', 'weli']",clinical_care_zeze
+active,EXP-003,condition_C_composite,SCEN-034,clinical_care,weli,0.75,0.75,3,4,False,8.706,201,1178,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-035,clinical_care,fufu,0.5,0.5,2,4,False,8.635,199,1228,True,"['fufu', 'weli']",clinical_care_fufu
+active,EXP-003,condition_C_composite,SCEN-036,clinical_care,zeze,0.5,0.5,2,4,False,8.701,185,1172,False,"['fufu', 'weli']",clinical_care_zeze
+active,EXP-003,condition_C_composite,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,8.626,194,1165,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-038,clinical_care,weli,0.5,0.5,2,4,False,8.684,199,1245,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-039,clinical_care,gugi,0.75,0.75,3,4,False,8.649,200,1254,False,"['fufu', 'weli']",clinical_care_gugi
+active,EXP-003,condition_C_composite,SCEN-040,clinical_care,gugi,0.75,0.75,3,4,False,8.718,195,1231,False,"['fufu', 'weli']",clinical_care_gugi
+active,EXP-003,condition_C_composite,SCEN-041,clinical_care,zubu,0.25,0.25,1,4,False,8.668,196,1227,False,"['fufu', 'weli']",clinical_care_zubu
+active,EXP-003,condition_C_composite,SCEN-042,clinical_care,zubu,0.5,0.5,2,4,False,8.701,196,1217,False,"['fufu', 'weli']",clinical_care_zubu
+active,EXP-003,condition_C_composite,SCEN-043,clinical_care,weli,0.25,0.25,1,4,False,8.686,191,1212,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-044,clinical_care,weli,0.75,0.75,3,4,False,8.691,195,1220,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-045,clinical_care,zubu,0.0,0.0,0,4,False,8.68,196,1215,False,"['fufu', 'weli']",clinical_care_zubu
+active,EXP-003,condition_C_composite,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,8.671,199,1259,False,"['fufu', 'weli']",clinical_care_zeze
+active,EXP-003,condition_C_composite,SCEN-047,clinical_care,weli,0.25,0.25,1,4,False,8.711,190,1188,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,8.635,188,1152,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-049,clinical_care,zubu,0.25,0.25,1,4,False,8.712,201,1222,False,"['fufu', 'weli']",clinical_care_zubu
+active,EXP-003,condition_C_composite,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,8.646,193,1256,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-051,clinical_care,weli,0.5,0.5,2,4,False,8.685,186,1161,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-052,clinical_care,weli,0.5,0.5,2,4,False,8.711,191,1212,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-053,clinical_care,weli,0.5,0.5,2,4,False,8.671,190,1189,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-054,clinical_care,weli,0.5,0.5,2,4,False,8.65,183,1121,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-055,clinical_care,weli,0.75,0.75,3,4,False,8.702,193,1155,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-056,clinical_care,weli,0.0,0.0,0,4,False,8.713,198,1176,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-057,clinical_care,zubu,0.5,0.5,2,4,False,8.66,202,1289,False,"['fufu', 'weli']",clinical_care_zubu
+active,EXP-003,condition_C_composite,SCEN-058,clinical_care,fufu,0.5,0.5,2,4,False,8.652,194,1165,True,"['fufu', 'weli']",clinical_care_fufu
+active,EXP-003,condition_C_composite,SCEN-059,clinical_care,weli,0.75,0.75,3,4,False,8.664,187,1144,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-060,clinical_care,weli,0.5,0.5,2,4,False,8.735,185,1154,True,"['fufu', 'weli']",clinical_care_weli
+active,EXP-003,condition_C_composite,SCEN-061,precision_lab,weli,0.25,0.25,1,4,False,8.694,199,1209,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-062,precision_lab,fufu,0.5,0.5,2,4,False,8.668,183,1165,True,"['fufu', 'weli']",precision_lab_fufu
+active,EXP-003,condition_C_composite,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,8.698,183,1168,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-064,precision_lab,weli,0.0,0.0,0,4,False,8.715,188,1199,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-065,precision_lab,fufu,0.25,0.25,1,4,False,8.661,204,1210,True,"['fufu', 'gugi']",precision_lab_fufu
+active,EXP-003,condition_C_composite,SCEN-066,precision_lab,weli,0.5,0.5,2,4,False,8.664,190,1172,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-067,precision_lab,weli,0.0,0.0,0,4,False,8.632,191,1219,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-068,precision_lab,weli,0.5,0.5,2,4,False,8.647,202,1234,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-069,precision_lab,weli,0.25,0.25,1,4,False,8.658,199,1265,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,8.653,184,1218,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,8.666,184,1186,True,"['fufu', 'weli']",precision_lab_fufu
+active,EXP-003,condition_C_composite,SCEN-072,precision_lab,weli,0.5,0.5,2,4,False,8.646,191,1201,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.653,184,1161,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.653,184,1167,False,"['fufu', 'weli']",precision_lab_gugi
+active,EXP-003,condition_C_composite,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,8.68,195,1242,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-076,precision_lab,gugi,0.25,0.25,1,4,False,8.632,200,1266,True,"['fufu', 'gugi']",precision_lab_gugi
+active,EXP-003,condition_C_composite,SCEN-077,precision_lab,weli,0.5,0.5,2,4,False,8.711,182,1149,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-078,precision_lab,weli,0.75,0.75,3,4,False,8.623,195,1166,False,"['fufu', 'gugi']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.674,190,1194,False,"['fufu', 'weli']",precision_lab_gugi
+active,EXP-003,condition_C_composite,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.7,189,1236,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-081,precision_lab,fufu,0.5,0.5,2,4,False,8.687,189,1194,True,"['fufu', 'weli']",precision_lab_fufu
+active,EXP-003,condition_C_composite,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,8.633,187,1203,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-083,precision_lab,weli,0.0,0.0,0,4,False,8.603,185,1132,True,"['fufu', 'weli']",precision_lab_weli
+active,EXP-003,condition_C_composite,SCEN-084,precision_lab,gugi,1.0,1.0,4,4,True,8.681,189,1199,True,"['fufu', 'gugi']",precision_lab_gugi
+active,EXP-003,condition_C_composite,SCEN-085,precision_lab,fufu,0.25,0.25,1,4,False,8.697,196,1228,True,"['fufu', 'gugi']",precision_lab_fufu
+active,EXP-003,condition_C_composite,SCEN-086,emergency,kuku,0.5,0.5,2,4,False,8.647,194,1215,True,"['fufu', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-087,emergency,kuku,0.5,0.5,2,4,False,8.653,203,1241,True,"['gugi', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,8.659,192,1220,False,"['fufu', 'weli']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-089,emergency,weli,1.0,1.0,4,4,True,8.64,194,1248,True,"['fufu', 'weli']",emergency_weli
+active,EXP-003,condition_C_composite,SCEN-090,emergency,kuku,1.0,1.0,4,4,True,8.608,199,1265,True,"['gugi', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-091,emergency,kuku,0.25,0.25,1,4,False,8.693,189,1193,False,"['fufu', 'weli']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,8.647,202,1289,True,"['fufu', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-093,emergency,fufu,0.5,0.5,2,4,False,8.74,195,1149,True,"['fufu', 'gugi']",emergency_fufu
+active,EXP-003,condition_C_composite,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,8.645,194,1147,True,"['gugi', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-095,emergency,kuku,0.5,0.5,2,4,False,8.663,196,1227,False,"['fufu', 'weli']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-096,emergency,fufu,0.5,0.5,2,4,False,8.676,199,1283,True,"['fufu', 'gugi']",emergency_fufu
+active,EXP-003,condition_C_composite,SCEN-097,emergency,kuku,0.5,0.5,2,4,False,8.639,209,1389,True,"['gugi', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,8.647,182,1118,True,"['fufu', 'weli']",emergency_fufu
+active,EXP-003,condition_C_composite,SCEN-099,emergency,kuku,0.25,0.25,1,4,False,8.613,202,1325,True,"['gugi', 'kuku']",emergency_kuku
+active,EXP-003,condition_C_composite,SCEN-100,emergency,kuku,0.5,0.5,2,4,False,8.635,202,1293,False,"['fufu', 'weli']",emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-001,domestic,fufu,0.0,0.0,0,4,False,4.83,97,550,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-002,domestic,fufu,0.75,0.75,3,4,False,8.058,188,1134,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-003,domestic,fufu,1.0,1.0,4,4,True,5.869,157,820,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-004,domestic,zubu,0.0,0.0,0,4,False,6.751,161,934,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-005,domestic,fufu,0.5,0.5,2,4,False,7.298,181,1029,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-006,domestic,gugi,0.25,0.25,1,4,False,5.841,142,873,,[None],domestic_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-007,domestic,fufu,0.5,0.5,2,4,False,7.415,174,950,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-008,domestic,zeze,0.5,0.5,2,4,False,4.843,124,710,,[None],domestic_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-009,domestic,fufu,0.5,0.5,2,4,False,6.023,157,905,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-010,domestic,zeze,1.0,1.0,4,4,True,5.188,121,690,,[None],domestic_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-011,domestic,fufu,1.0,1.0,4,4,True,8.412,218,1163,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,5.99,150,880,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-013,domestic,weli,0.75,0.75,3,4,False,8.429,211,1175,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-014,domestic,weli,0.0,0.0,0,4,False,5.752,142,777,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,8.452,207,1214,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-016,domestic,gugi,0.25,0.25,1,4,False,3.284,82,449,,[None],domestic_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-017,domestic,fufu,0.0,0.0,0,4,False,5.264,138,792,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-018,domestic,weli,0.0,0.0,0,4,False,6.248,157,919,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-019,domestic,weli,0.5,0.5,2,4,False,8.331,206,1247,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-020,domestic,fufu,0.25,0.25,1,4,False,8.092,200,1143,,[None],domestic_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-021,domestic,zubu,0.5,0.5,2,4,False,4.305,110,636,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-022,domestic,zubu,0.25,0.25,1,4,False,5.012,132,773,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-023,domestic,zubu,0.25,0.25,1,4,False,4.595,112,713,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-024,domestic,weli,0.25,0.25,1,4,False,6.878,175,994,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-025,domestic,weli,0.5,0.5,2,4,False,5.308,124,725,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-026,domestic,weli,0.0,0.0,0,4,False,5.199,124,774,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-027,domestic,weli,0.0,0.0,0,4,False,5.19,135,797,,[None],domestic_weli
+archived_german,EXP-002,condition_A_naive,SCEN-028,domestic,zubu,0.5,0.5,2,4,False,3.578,89,527,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-029,domestic,zubu,0.0,0.0,0,4,False,6.562,152,918,,[None],domestic_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-030,domestic,zeze,0.5,0.5,2,4,False,8.446,207,1241,,[None],domestic_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-031,clinical_care,weli,0.0,0.0,0,4,False,8.552,213,1210,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,8.979,204,1231,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-033,clinical_care,zeze,0.25,0.25,1,4,False,6.024,152,865,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,3.88,104,605,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-035,clinical_care,fufu,0.5,0.5,2,4,False,8.223,199,1200,,[None],clinical_care_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-036,clinical_care,zeze,0.5,0.5,2,4,False,6.759,162,975,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,5.869,148,843,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-038,clinical_care,weli,0.25,0.25,1,4,False,7.205,167,967,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-039,clinical_care,gugi,0.75,0.75,3,4,False,4.662,119,734,,[None],clinical_care_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-040,clinical_care,gugi,0.25,0.25,1,4,False,8.299,215,1287,,[None],clinical_care_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,8.099,196,1186,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-042,clinical_care,zubu,0.25,0.25,1,4,False,8.15,193,1201,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-043,clinical_care,weli,0.25,0.25,1,4,False,6.559,167,993,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-044,clinical_care,weli,0.0,0.0,0,4,False,6.282,156,979,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-045,clinical_care,zubu,0.25,0.25,1,4,False,6.222,152,881,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,4.994,127,760,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_A_naive,SCEN-047,clinical_care,weli,0.25,0.25,1,4,False,8.268,202,1262,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,7.459,176,1079,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-049,clinical_care,zubu,0.5,0.5,2,4,False,6.238,150,859,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,8.136,213,1250,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-051,clinical_care,weli,0.0,0.0,0,4,False,8.199,196,1123,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-052,clinical_care,weli,0.0,0.0,0,4,False,8.184,216,1277,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-053,clinical_care,weli,0.25,0.25,1,4,False,5.028,126,770,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-054,clinical_care,weli,0.0,0.0,0,4,False,5.332,139,848,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-055,clinical_care,weli,0.0,0.0,0,4,False,6.372,168,943,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-056,clinical_care,weli,0.5,0.5,2,4,False,7.96,219,1308,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-057,clinical_care,zubu,0.5,0.5,2,4,False,7.147,188,1147,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_A_naive,SCEN-058,clinical_care,fufu,0.25,0.25,1,4,False,8.151,201,1184,,[None],clinical_care_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-059,clinical_care,weli,0.25,0.25,1,4,False,4.395,107,645,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-060,clinical_care,weli,0.5,0.5,2,4,False,5.881,146,930,,[None],clinical_care_weli
+archived_german,EXP-002,condition_A_naive,SCEN-061,precision_lab,weli,0.5,0.5,2,4,False,7.942,202,1212,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-062,precision_lab,fufu,0.75,0.75,3,4,False,6.527,167,1001,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,8.157,197,1214,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-064,precision_lab,weli,0.25,0.25,1,4,False,7.922,191,1181,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-065,precision_lab,fufu,0.25,0.25,1,4,False,7.081,188,1087,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-066,precision_lab,weli,0.25,0.25,1,4,False,7.985,188,1198,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-067,precision_lab,weli,0.25,0.25,1,4,False,8.248,186,1158,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,8.198,194,1212,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-069,precision_lab,weli,0.25,0.25,1,4,False,4.853,113,689,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,8.576,195,1182,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,7.818,173,1077,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-072,precision_lab,weli,0.25,0.25,1,4,False,8.36,192,1255,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.031,188,1065,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.205,191,1214,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,7.972,192,1175,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-076,precision_lab,gugi,0.0,0.0,0,4,False,7.925,198,1305,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-077,precision_lab,weli,0.0,0.0,0,4,False,7.903,184,1146,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-078,precision_lab,weli,0.5,0.5,2,4,False,8.014,195,1173,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.243,214,1253,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.307,182,1197,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-081,precision_lab,fufu,0.25,0.25,1,4,False,8.149,182,1106,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,7.906,199,1229,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-083,precision_lab,weli,0.75,0.75,3,4,False,7.915,194,1168,,[None],precision_lab_weli
+archived_german,EXP-002,condition_A_naive,SCEN-084,precision_lab,gugi,0.5,0.5,2,4,False,8.0,196,1206,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_A_naive,SCEN-085,precision_lab,fufu,0.0,0.0,0,4,False,5.53,130,854,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-086,emergency,kuku,0.25,0.25,1,4,False,7.939,201,1184,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-087,emergency,kuku,0.75,0.75,3,4,False,7.284,183,1144,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-088,emergency,kuku,0.0,0.0,0,4,False,8.265,190,1250,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-089,emergency,weli,0.25,0.25,1,4,False,7.926,196,1215,,[None],emergency_weli
+archived_german,EXP-002,condition_A_naive,SCEN-090,emergency,kuku,0.25,0.25,1,4,False,7.854,192,1222,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-091,emergency,kuku,0.0,0.0,0,4,False,7.846,190,1196,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-092,emergency,kuku,0.5,0.5,2,4,False,5.323,148,824,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-093,emergency,fufu,0.25,0.25,1,4,False,6.899,189,1087,,[None],emergency_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,7.862,208,1270,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-095,emergency,kuku,0.25,0.25,1,4,False,7.863,191,1168,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-096,emergency,fufu,0.25,0.25,1,4,False,7.841,196,1243,,[None],emergency_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-097,emergency,kuku,0.25,0.25,1,4,False,7.893,182,1221,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-098,emergency,fufu,0.5,0.5,2,4,False,5.182,135,858,,[None],emergency_fufu
+archived_german,EXP-002,condition_A_naive,SCEN-099,emergency,kuku,0.5,0.5,2,4,False,8.215,196,1261,,[None],emergency_kuku
+archived_german,EXP-002,condition_A_naive,SCEN-100,emergency,kuku,0.5,0.5,2,4,False,7.188,198,1216,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-001,domestic,fufu,0.75,0.75,3,4,False,10.956,235,1539,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-002,domestic,fufu,0.75,0.75,3,4,False,10.752,227,1395,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-003,domestic,fufu,0.75,0.75,3,4,False,9.919,223,1294,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,10.044,222,1398,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-005,domestic,fufu,0.25,0.25,1,4,False,10.39,208,1291,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-006,domestic,gugi,1.0,1.0,4,4,True,11.005,218,1353,,[None],domestic_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-007,domestic,fufu,0.75,0.75,3,4,False,10.283,219,1420,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-008,domestic,zeze,0.75,0.75,3,4,False,9.854,228,1443,,[None],domestic_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,10.623,230,1447,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-010,domestic,zeze,1.0,1.0,4,4,True,10.695,212,1352,,[None],domestic_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-011,domestic,fufu,0.75,0.75,3,4,False,10.163,222,1334,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,10.159,211,1368,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-013,domestic,weli,0.5,0.5,2,4,False,10.178,213,1312,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-014,domestic,weli,0.5,0.5,2,4,False,10.008,218,1363,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,10.079,224,1375,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-016,domestic,gugi,0.5,0.5,2,4,False,10.058,214,1373,,[None],domestic_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-017,domestic,fufu,0.5,0.5,2,4,False,9.956,210,1393,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-018,domestic,weli,0.75,0.75,3,4,False,10.054,220,1354,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-019,domestic,weli,0.5,0.5,2,4,False,9.933,231,1408,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-020,domestic,fufu,0.0,0.0,0,4,False,9.774,222,1365,,[None],domestic_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,9.909,228,1461,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-022,domestic,zubu,0.5,0.5,2,4,False,9.831,234,1485,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-023,domestic,zubu,0.5,0.5,2,4,False,9.83,233,1549,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-024,domestic,weli,0.5,0.5,2,4,False,9.814,222,1433,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-025,domestic,weli,0.25,0.25,1,4,False,10.049,217,1302,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-026,domestic,weli,0.5,0.5,2,4,False,10.047,218,1394,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-027,domestic,weli,0.25,0.25,1,4,False,10.117,219,1384,,[None],domestic_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-028,domestic,zubu,0.75,0.75,3,4,False,9.917,228,1479,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-029,domestic,zubu,0.5,0.5,2,4,False,9.874,236,1497,,[None],domestic_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-030,domestic,zeze,0.5,0.5,2,4,False,10.022,230,1414,,[None],domestic_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-031,clinical_care,weli,0.5,0.5,2,4,False,11.001,229,1422,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,10.167,215,1388,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-033,clinical_care,zeze,0.5,0.5,2,4,False,9.841,218,1496,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,9.784,219,1401,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-035,clinical_care,fufu,0.0,0.0,0,4,False,10.01,212,1342,,[None],clinical_care_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-036,clinical_care,zeze,0.75,0.75,3,4,False,9.843,224,1474,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,10.335,213,1423,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-038,clinical_care,weli,0.5,0.5,2,4,False,10.309,226,1416,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-039,clinical_care,gugi,0.75,0.75,3,4,False,9.896,220,1510,,[None],clinical_care_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-040,clinical_care,gugi,1.0,1.0,4,4,True,9.94,227,1466,,[None],clinical_care_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,9.886,224,1420,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-042,clinical_care,zubu,0.25,0.25,1,4,False,9.867,223,1434,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-043,clinical_care,weli,0.5,0.5,2,4,False,9.876,223,1420,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-044,clinical_care,weli,0.75,0.75,3,4,False,9.759,221,1448,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-045,clinical_care,zubu,0.0,0.0,0,4,False,9.933,230,1489,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,9.928,221,1418,,[None],clinical_care_zeze
+archived_german,EXP-002,condition_B_verbose,SCEN-047,clinical_care,weli,0.5,0.5,2,4,False,9.893,232,1414,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,10.291,219,1451,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-049,clinical_care,zubu,0.5,0.5,2,4,False,9.805,215,1439,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-050,clinical_care,weli,1.0,1.0,4,4,True,9.8,224,1444,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-051,clinical_care,weli,0.75,0.75,3,4,False,9.869,239,1443,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-052,clinical_care,weli,0.25,0.25,1,4,False,9.815,229,1459,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-053,clinical_care,weli,0.75,0.75,3,4,False,9.79,219,1412,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-054,clinical_care,weli,0.25,0.25,1,4,False,9.866,205,1381,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-055,clinical_care,weli,0.25,0.25,1,4,False,9.754,223,1381,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-056,clinical_care,weli,0.25,0.25,1,4,False,9.727,228,1429,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-057,clinical_care,zubu,0.5,0.5,2,4,False,9.622,220,1423,,[None],clinical_care_zubu
+archived_german,EXP-002,condition_B_verbose,SCEN-058,clinical_care,fufu,0.75,0.75,3,4,False,9.902,228,1412,,[None],clinical_care_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-059,clinical_care,weli,0.25,0.25,1,4,False,9.743,225,1433,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-060,clinical_care,weli,1.0,1.0,4,4,True,9.575,205,1420,,[None],clinical_care_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-061,precision_lab,weli,0.5,0.5,2,4,False,9.546,207,1315,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-062,precision_lab,fufu,0.25,0.25,1,4,False,9.984,211,1339,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,9.659,222,1447,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-064,precision_lab,weli,0.5,0.5,2,4,False,9.643,220,1404,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-065,precision_lab,fufu,0.5,0.5,2,4,False,9.518,207,1328,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-066,precision_lab,weli,0.75,0.75,3,4,False,9.888,216,1368,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-067,precision_lab,weli,0.5,0.5,2,4,False,9.873,215,1328,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,9.925,223,1373,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-069,precision_lab,weli,0.5,0.5,2,4,False,10.307,220,1459,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-070,precision_lab,weli,0.25,0.25,1,4,False,9.963,212,1440,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,10.316,208,1350,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-072,precision_lab,weli,0.75,0.75,3,4,False,9.626,201,1368,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,10.103,223,1365,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-074,precision_lab,gugi,0.5,0.5,2,4,False,9.736,206,1372,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,9.514,211,1372,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-076,precision_lab,gugi,0.25,0.25,1,4,False,9.519,221,1426,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-077,precision_lab,weli,0.5,0.5,2,4,False,9.5,212,1370,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-078,precision_lab,weli,0.25,0.25,1,4,False,9.481,222,1405,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,9.848,217,1405,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-080,precision_lab,weli,0.25,0.25,1,4,False,10.475,224,1459,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-081,precision_lab,fufu,0.5,0.5,2,4,False,9.661,218,1384,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,9.497,230,1503,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-083,precision_lab,weli,0.5,0.5,2,4,False,9.513,200,1285,,[None],precision_lab_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-084,precision_lab,gugi,0.75,0.75,3,4,False,9.471,220,1400,,[None],precision_lab_gugi
+archived_german,EXP-002,condition_B_verbose,SCEN-085,precision_lab,fufu,0.5,0.5,2,4,False,9.547,223,1440,,[None],precision_lab_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-086,emergency,kuku,0.5,0.5,2,4,False,9.568,226,1454,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-087,emergency,kuku,0.5,0.5,2,4,False,9.973,215,1373,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,9.645,221,1472,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-089,emergency,weli,0.5,0.5,2,4,False,9.617,223,1455,,[None],emergency_weli
+archived_german,EXP-002,condition_B_verbose,SCEN-090,emergency,kuku,0.75,0.75,3,4,False,9.461,221,1497,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-091,emergency,kuku,0.5,0.5,2,4,False,9.444,230,1464,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,9.566,233,1442,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-093,emergency,fufu,0.75,0.75,3,4,False,9.531,224,1446,,[None],emergency_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,9.455,217,1414,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-095,emergency,kuku,0.5,0.5,2,4,False,9.453,220,1409,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-096,emergency,fufu,0.25,0.25,1,4,False,9.44,210,1396,,[None],emergency_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-097,emergency,kuku,0.0,0.0,0,4,False,9.475,230,1494,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,12.561,230,1524,,[None],emergency_fufu
+archived_german,EXP-002,condition_B_verbose,SCEN-099,emergency,kuku,0.25,0.25,1,4,False,10.238,227,1422,,[None],emergency_kuku
+archived_german,EXP-002,condition_B_verbose,SCEN-100,emergency,kuku,0.25,0.25,1,4,False,9.751,233,1494,,[None],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-001,domestic,fufu,0.75,0.75,3,4,False,9.879,192,1192,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-002,domestic,fufu,0.5,0.5,2,4,False,8.561,202,1223,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-003,domestic,fufu,1.0,1.0,4,4,True,8.305,200,1195,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,9.027,188,1184,False,['fufu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,9.271,202,1237,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-006,domestic,gugi,0.75,0.75,3,4,False,8.973,201,1276,False,['fufu'],domestic_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-007,domestic,fufu,0.75,0.75,3,4,False,8.586,196,1216,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-008,domestic,zeze,1.0,1.0,4,4,True,8.358,207,1343,False,['fufu'],domestic_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,9.11,201,1249,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-010,domestic,zeze,0.75,0.75,3,4,False,8.582,199,1221,False,['fufu'],domestic_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-011,domestic,fufu,0.75,0.75,3,4,False,8.559,202,1218,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-012,domestic,fufu,1.0,1.0,4,4,True,8.823,201,1153,False,['weli'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-013,domestic,weli,0.5,0.5,2,4,False,8.524,193,1199,True,['weli'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-014,domestic,weli,0.5,0.5,2,4,False,8.478,204,1229,True,['weli'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,8.717,191,1145,True,['fufu'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-016,domestic,gugi,1.0,1.0,4,4,True,8.794,201,1157,False,['weli'],domestic_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-017,domestic,fufu,0.0,0.0,0,4,False,8.288,198,1234,False,['gugi'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-018,domestic,weli,0.25,0.25,1,4,False,8.386,205,1259,False,['gugi'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-019,domestic,weli,0.5,0.5,2,4,False,8.301,205,1281,False,['fufu'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-020,domestic,fufu,0.25,0.25,1,4,False,8.343,195,1110,False,['gugi'],domestic_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-021,domestic,zubu,0.5,0.5,2,4,False,8.36,205,1264,False,['fufu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-022,domestic,zubu,0.5,0.5,2,4,False,8.414,196,1241,True,['zubu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-023,domestic,zubu,0.5,0.5,2,4,False,8.319,205,1251,True,['zubu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-024,domestic,weli,0.25,0.25,1,4,False,8.342,202,1206,True,['weli'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-025,domestic,weli,0.25,0.25,1,4,False,8.449,178,1082,True,['weli'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-026,domestic,weli,0.25,0.25,1,4,False,8.478,192,1207,True,['weli'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-027,domestic,weli,0.5,0.5,2,4,False,8.498,193,1197,False,['fufu'],domestic_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-028,domestic,zubu,0.75,0.75,3,4,False,8.335,189,1177,False,['fufu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-029,domestic,zubu,0.25,0.25,1,4,False,8.512,193,1241,True,['zubu'],domestic_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-030,domestic,zeze,0.5,0.5,2,4,False,8.824,201,1251,False,['zubu'],domestic_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-031,clinical_care,weli,0.25,0.25,1,4,False,9.16,199,1298,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,8.455,188,1199,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-033,clinical_care,zeze,0.5,0.5,2,4,False,8.288,188,1197,False,['fufu'],clinical_care_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,8.308,192,1168,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-035,clinical_care,fufu,0.5,0.5,2,4,False,7.458,185,1157,True,['fufu'],clinical_care_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-036,clinical_care,zeze,0.75,0.75,3,4,False,8.355,190,1196,False,['weli'],clinical_care_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-037,clinical_care,weli,0.0,0.0,0,4,False,8.635,205,1250,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-038,clinical_care,weli,0.75,0.75,3,4,False,8.613,201,1223,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-039,clinical_care,gugi,1.0,1.0,4,4,True,8.329,194,1233,False,['fufu'],clinical_care_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-040,clinical_care,gugi,1.0,1.0,4,4,True,8.3,192,1219,False,['weli'],clinical_care_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,8.269,193,1191,False,['gugi'],clinical_care_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-042,clinical_care,zubu,0.0,0.0,0,4,False,8.479,197,1192,False,['fufu'],clinical_care_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-043,clinical_care,weli,0.25,0.25,1,4,False,8.411,185,1171,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-044,clinical_care,weli,0.5,0.5,2,4,False,8.385,195,1254,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-045,clinical_care,zubu,0.25,0.25,1,4,False,8.355,191,1241,False,['fufu'],clinical_care_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,7.575,184,1154,False,['fufu'],clinical_care_zeze
+archived_german,EXP-002,condition_C_concept_routed,SCEN-047,clinical_care,weli,0.5,0.5,2,4,False,8.42,195,1182,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,8.567,187,1250,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-049,clinical_care,zubu,0.25,0.25,1,4,False,8.372,193,1220,False,['fufu'],clinical_care_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-050,clinical_care,weli,1.0,1.0,4,4,True,8.363,199,1236,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-051,clinical_care,weli,0.5,0.5,2,4,False,8.278,194,1164,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-052,clinical_care,weli,0.5,0.5,2,4,False,8.342,200,1293,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-053,clinical_care,weli,0.75,0.75,3,4,False,8.42,190,1171,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-054,clinical_care,weli,0.0,0.0,0,4,False,8.364,191,1248,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-055,clinical_care,weli,0.5,0.5,2,4,False,8.141,203,1223,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-056,clinical_care,weli,0.25,0.25,1,4,False,8.21,198,1242,True,['weli'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-057,clinical_care,zubu,0.75,0.75,3,4,False,6.609,158,1012,True,['zubu'],clinical_care_zubu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-058,clinical_care,fufu,0.5,0.5,2,4,False,8.413,196,1166,True,['fufu'],clinical_care_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-059,clinical_care,weli,0.5,0.5,2,4,False,8.306,196,1225,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-060,clinical_care,weli,0.25,0.25,1,4,False,8.188,192,1250,False,['fufu'],clinical_care_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-061,precision_lab,weli,0.25,0.25,1,4,False,8.282,198,1204,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-062,precision_lab,fufu,0.5,0.5,2,4,False,8.413,198,1167,False,['gugi'],precision_lab_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,8.073,188,1156,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-064,precision_lab,weli,0.25,0.25,1,4,False,8.112,179,1151,True,['weli'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-065,precision_lab,fufu,0.0,0.0,0,4,False,8.06,192,1219,False,['gugi'],precision_lab_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-066,precision_lab,weli,0.25,0.25,1,4,False,8.407,192,1239,False,['fufu'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-067,precision_lab,weli,0.5,0.5,2,4,False,8.418,183,1132,True,['weli'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-068,precision_lab,weli,0.5,0.5,2,4,False,8.977,190,1204,False,['fufu'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-069,precision_lab,weli,0.0,0.0,0,4,False,8.415,197,1223,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,8.452,193,1287,True,['weli'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-071,precision_lab,fufu,0.25,0.25,1,4,False,9.065,188,1188,False,['gugi'],precision_lab_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-072,precision_lab,weli,0.25,0.25,1,4,False,8.093,182,1164,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.433,185,1109,True,['weli'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.063,194,1221,True,['gugi'],precision_lab_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-075,precision_lab,weli,0.25,0.25,1,4,False,8.069,184,1152,True,['weli'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-076,precision_lab,gugi,0.25,0.25,1,4,False,8.037,199,1249,True,['gugi'],precision_lab_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-077,precision_lab,weli,0.0,0.0,0,4,False,8.093,188,1175,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-078,precision_lab,weli,0.25,0.25,1,4,False,8.221,200,1234,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.466,211,1279,True,['gugi'],precision_lab_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.779,189,1238,False,['fufu'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-081,precision_lab,fufu,0.5,0.5,2,4,False,8.197,178,1084,True,['fufu'],precision_lab_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,8.09,205,1203,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-083,precision_lab,weli,0.75,0.75,3,4,False,8.074,185,1170,False,['gugi'],precision_lab_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-084,precision_lab,gugi,0.75,0.75,3,4,False,8.153,191,1237,True,['gugi'],precision_lab_gugi
+archived_german,EXP-002,condition_C_concept_routed,SCEN-085,precision_lab,fufu,0.5,0.5,2,4,False,8.175,204,1208,False,['gugi'],precision_lab_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-086,emergency,kuku,0.5,0.5,2,4,False,8.128,194,1211,True,['kuku'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-087,emergency,kuku,0.25,0.25,1,4,False,8.369,203,1260,True,['kuku'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,8.069,192,1248,False,['gugi'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-089,emergency,weli,0.25,0.25,1,4,False,8.116,201,1294,False,['kuku'],emergency_weli
+archived_german,EXP-002,condition_C_concept_routed,SCEN-090,emergency,kuku,0.75,0.75,3,4,False,8.003,192,1218,False,['gugi'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-091,emergency,kuku,0.25,0.25,1,4,False,8.004,181,1158,False,['gugi'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,8.087,198,1242,True,['kuku'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-093,emergency,fufu,0.5,0.5,2,4,False,8.016,202,1236,False,['gugi'],emergency_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,7.721,206,1257,True,['kuku'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-095,emergency,kuku,0.5,0.5,2,4,False,8.002,200,1281,True,['kuku'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-096,emergency,fufu,0.5,0.5,2,4,False,8.047,199,1274,False,['kuku'],emergency_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-097,emergency,kuku,0.25,0.25,1,4,False,4.548,107,715,False,['gugi'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,8.61,190,1266,False,['gugi'],emergency_fufu
+archived_german,EXP-002,condition_C_concept_routed,SCEN-099,emergency,kuku,0.0,0.0,0,4,False,8.216,205,1351,False,['gugi'],emergency_kuku
+archived_german,EXP-002,condition_C_concept_routed,SCEN-100,emergency,kuku,0.75,0.75,3,4,False,8.304,209,1291,True,['kuku'],emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-001,domestic,fufu,1.0,1.0,4,4,True,9.208,187,1143,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-002,domestic,fufu,0.75,0.75,3,4,False,8.503,189,1154,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-003,domestic,fufu,0.75,0.75,3,4,False,8.911,198,1191,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-004,domestic,zubu,0.25,0.25,1,4,False,9.141,182,1125,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-005,domestic,fufu,0.75,0.75,3,4,False,11.219,180,1058,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-006,domestic,gugi,0.75,0.75,3,4,False,9.267,197,1237,False,"['fufu', 'weli']",domestic_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-007,domestic,fufu,0.5,0.5,2,4,False,8.737,203,1217,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-008,domestic,zeze,1.0,1.0,4,4,True,11.081,197,1172,False,"['fufu', 'weli']",domestic_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-009,domestic,fufu,1.0,1.0,4,4,True,9.061,183,1147,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-010,domestic,zeze,1.0,1.0,4,4,True,9.931,192,1199,False,"['fufu', 'weli']",domestic_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-011,domestic,fufu,0.75,0.75,3,4,False,10.094,187,1134,True,"['fufu', 'gugi']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-012,domestic,fufu,0.75,0.75,3,4,False,10.394,199,1271,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-013,domestic,weli,0.5,0.5,2,4,False,10.678,203,1160,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-014,domestic,weli,0.5,0.5,2,4,False,10.588,188,1156,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-015,domestic,fufu,1.0,1.0,4,4,True,11.154,209,1225,True,"['fufu', 'gugi']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-016,domestic,gugi,0.5,0.5,2,4,False,11.268,183,1120,False,"['fufu', 'weli']",domestic_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-017,domestic,fufu,0.5,0.5,2,4,False,11.7,196,1145,True,"['fufu', 'weli']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-018,domestic,weli,0.75,0.75,3,4,False,8.549,184,1181,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-019,domestic,weli,0.5,0.5,2,4,False,8.7,182,1142,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-020,domestic,fufu,0.0,0.0,0,4,False,8.979,188,1144,True,"['fufu', 'gugi']",domestic_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-021,domestic,zubu,0.75,0.75,3,4,False,8.681,183,1134,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-022,domestic,zubu,0.25,0.25,1,4,False,8.522,193,1145,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-023,domestic,zubu,0.5,0.5,2,4,False,8.703,188,1178,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-024,domestic,weli,0.5,0.5,2,4,False,8.426,178,1145,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-025,domestic,weli,0.25,0.25,1,4,False,8.706,179,1107,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-026,domestic,weli,0.25,0.25,1,4,False,8.622,182,1159,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-027,domestic,weli,0.5,0.5,2,4,False,8.476,188,1162,True,"['fufu', 'weli']",domestic_weli
+archived_german,EXP-003,condition_C_composite,SCEN-028,domestic,zubu,0.5,0.5,2,4,False,8.596,182,1135,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-029,domestic,zubu,0.5,0.5,2,4,False,8.585,200,1249,False,"['fufu', 'weli']",domestic_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-030,domestic,zeze,0.75,0.75,3,4,False,8.75,186,1126,False,"['fufu', 'weli']",domestic_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-031,clinical_care,weli,0.25,0.25,1,4,False,8.521,199,1216,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-032,clinical_care,weli,0.5,0.5,2,4,False,8.703,189,1235,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-033,clinical_care,zeze,0.5,0.5,2,4,False,8.564,196,1270,False,"['fufu', 'weli']",clinical_care_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-034,clinical_care,weli,0.5,0.5,2,4,False,8.4,198,1189,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-035,clinical_care,fufu,0.5,0.5,2,4,False,8.432,198,1254,True,"['fufu', 'weli']",clinical_care_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-036,clinical_care,zeze,0.5,0.5,2,4,False,8.408,185,1143,False,"['fufu', 'weli']",clinical_care_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-037,clinical_care,weli,0.25,0.25,1,4,False,8.423,187,1194,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-038,clinical_care,weli,0.5,0.5,2,4,False,8.416,198,1238,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-039,clinical_care,gugi,0.75,0.75,3,4,False,8.451,199,1170,False,"['fufu', 'weli']",clinical_care_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-040,clinical_care,gugi,0.25,0.25,1,4,False,8.381,188,1209,False,"['fufu', 'weli']",clinical_care_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-041,clinical_care,zubu,0.0,0.0,0,4,False,8.442,195,1208,False,"['fufu', 'weli']",clinical_care_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-042,clinical_care,zubu,0.5,0.5,2,4,False,8.399,194,1169,False,"['fufu', 'weli']",clinical_care_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-043,clinical_care,weli,0.5,0.5,2,4,False,8.413,192,1176,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-044,clinical_care,weli,0.75,0.75,3,4,False,8.411,187,1184,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-045,clinical_care,zubu,0.0,0.0,0,4,False,8.401,176,1134,False,"['fufu', 'weli']",clinical_care_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-046,clinical_care,zeze,0.75,0.75,3,4,False,8.479,190,1190,False,"['fufu', 'weli']",clinical_care_zeze
+archived_german,EXP-003,condition_C_composite,SCEN-047,clinical_care,weli,0.5,0.5,2,4,False,8.424,191,1161,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-048,clinical_care,weli,0.25,0.25,1,4,False,8.425,187,1146,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-049,clinical_care,zubu,0.25,0.25,1,4,False,8.426,198,1255,False,"['fufu', 'weli']",clinical_care_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-050,clinical_care,weli,0.75,0.75,3,4,False,8.404,196,1226,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-051,clinical_care,weli,0.5,0.5,2,4,False,8.397,191,1170,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-052,clinical_care,weli,0.25,0.25,1,4,False,8.48,191,1212,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-053,clinical_care,weli,0.25,0.25,1,4,False,8.418,198,1250,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-054,clinical_care,weli,0.5,0.5,2,4,False,8.436,185,1179,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-055,clinical_care,weli,1.0,1.0,4,4,True,8.445,193,1136,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-056,clinical_care,weli,0.0,0.0,0,4,False,8.419,181,1125,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-057,clinical_care,zubu,0.25,0.25,1,4,False,8.487,187,1175,False,"['fufu', 'weli']",clinical_care_zubu
+archived_german,EXP-003,condition_C_composite,SCEN-058,clinical_care,fufu,0.5,0.5,2,4,False,8.421,195,1160,True,"['fufu', 'weli']",clinical_care_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-059,clinical_care,weli,0.75,0.75,3,4,False,8.416,188,1154,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-060,clinical_care,weli,0.0,0.0,0,4,False,8.409,195,1214,True,"['fufu', 'weli']",clinical_care_weli
+archived_german,EXP-003,condition_C_composite,SCEN-061,precision_lab,weli,0.5,0.5,2,4,False,8.404,195,1207,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-062,precision_lab,fufu,0.25,0.25,1,4,False,8.412,183,1173,True,"['fufu', 'weli']",precision_lab_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-063,precision_lab,weli,0.0,0.0,0,4,False,8.43,186,1186,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-064,precision_lab,weli,0.0,0.0,0,4,False,8.406,184,1206,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-065,precision_lab,fufu,0.25,0.25,1,4,False,8.417,182,1124,True,"['fufu', 'gugi']",precision_lab_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-066,precision_lab,weli,0.5,0.5,2,4,False,8.394,188,1224,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-067,precision_lab,weli,0.5,0.5,2,4,False,8.523,193,1238,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-068,precision_lab,weli,0.75,0.75,3,4,False,8.411,184,1145,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-069,precision_lab,weli,0.0,0.0,0,4,False,8.391,191,1237,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-070,precision_lab,weli,0.0,0.0,0,4,False,8.416,183,1189,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-071,precision_lab,fufu,0.0,0.0,0,4,False,8.399,197,1191,True,"['fufu', 'weli']",precision_lab_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-072,precision_lab,weli,0.5,0.5,2,4,False,8.42,184,1145,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-073,precision_lab,weli,0.25,0.25,1,4,False,8.424,194,1175,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-074,precision_lab,gugi,0.25,0.25,1,4,False,8.398,189,1194,False,"['fufu', 'weli']",precision_lab_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-075,precision_lab,weli,0.5,0.5,2,4,False,8.496,193,1185,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-076,precision_lab,gugi,0.0,0.0,0,4,False,8.39,189,1171,False,"['fufu', 'weli']",precision_lab_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-077,precision_lab,weli,0.5,0.5,2,4,False,8.421,184,1196,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-078,precision_lab,weli,0.5,0.5,2,4,False,8.405,192,1252,False,"['fufu', 'gugi']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-079,precision_lab,gugi,0.25,0.25,1,4,False,8.474,200,1259,False,"['fufu', 'weli']",precision_lab_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-080,precision_lab,weli,0.0,0.0,0,4,False,8.44,190,1189,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-081,precision_lab,fufu,0.75,0.75,3,4,False,8.426,170,1080,True,"['fufu', 'weli']",precision_lab_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-082,precision_lab,weli,0.25,0.25,1,4,False,8.408,192,1222,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-083,precision_lab,weli,0.0,0.0,0,4,False,8.411,184,1191,True,"['fufu', 'weli']",precision_lab_weli
+archived_german,EXP-003,condition_C_composite,SCEN-084,precision_lab,gugi,0.75,0.75,3,4,False,8.67,180,1130,False,"['fufu', 'weli']",precision_lab_gugi
+archived_german,EXP-003,condition_C_composite,SCEN-085,precision_lab,fufu,0.5,0.5,2,4,False,8.644,183,1197,True,"['fufu', 'gugi']",precision_lab_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-086,emergency,kuku,0.5,0.5,2,4,False,8.462,193,1235,True,"['fufu', 'kuku']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-087,emergency,kuku,0.5,0.5,2,4,False,8.363,209,1301,True,"['gugi', 'kuku']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-088,emergency,kuku,0.25,0.25,1,4,False,8.407,202,1278,False,"['fufu', 'gugi']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-089,emergency,weli,0.75,0.75,3,4,False,8.509,197,1213,True,"['fufu', 'weli']",emergency_weli
+archived_german,EXP-003,condition_C_composite,SCEN-090,emergency,kuku,1.0,1.0,4,4,True,8.471,190,1301,True,"['gugi', 'kuku']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-091,emergency,kuku,0.0,0.0,0,4,False,8.562,194,1197,False,"['fufu', 'weli']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-092,emergency,kuku,0.75,0.75,3,4,False,8.468,194,1199,True,"['fufu', 'kuku']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-093,emergency,fufu,0.75,0.75,3,4,False,8.502,201,1295,True,"['fufu', 'gugi']",emergency_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-094,emergency,kuku,0.75,0.75,3,4,False,8.377,205,1208,True,"['gugi', 'kuku']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-095,emergency,kuku,0.25,0.25,1,4,False,8.416,201,1208,False,"['fufu', 'weli']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-096,emergency,fufu,0.75,0.75,3,4,False,8.399,191,1204,True,"['fufu', 'gugi']",emergency_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-097,emergency,kuku,0.25,0.25,1,4,False,8.407,189,1260,False,"['fufu', 'gugi']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-098,emergency,fufu,0.25,0.25,1,4,False,8.408,191,1180,True,"['fufu', 'weli']",emergency_fufu
+archived_german,EXP-003,condition_C_composite,SCEN-099,emergency,kuku,0.25,0.25,1,4,False,8.426,201,1269,False,"['fufu', 'gugi']",emergency_kuku
+archived_german,EXP-003,condition_C_composite,SCEN-100,emergency,kuku,0.75,0.75,3,4,False,8.402,197,1205,False,"['fufu', 'weli']",emergency_kuku

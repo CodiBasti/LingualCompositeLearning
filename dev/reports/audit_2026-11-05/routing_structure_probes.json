@@ -1,0 +1,52 @@
+{
+  "captures": [
+    {
+      "raw": "weli fufu",
+      "parsed": [
+        "fufu",
+        "weli"
+      ],
+      "contract": "Hierarchical Composite Contract [fufu-weli]:\n- Phase 1 (Navigation & Approach): Enforce dynamic standoff (>=1.5m) from vulnerable zones, move at crawl speed, and take wide detour paths.\n- Phase 2 (Contact & Manipulation): Transition to tactile compliance mode, strictly limit grip/contact force to <3N, damp vibrations, and yield immediately upon tissue resistance."
+    },
+    {
+      "raw": "fufu weli",
+      "parsed": [
+        "fufu",
+        "weli"
+      ],
+      "contract": "Hierarchical Composite Contract [fufu-weli]:\n- Phase 1 (Navigation & Approach): Enforce dynamic standoff (>=1.5m) from vulnerable zones, move at crawl speed, and take wide detour paths.\n- Phase 2 (Contact & Manipulation): Transition to tactile compliance mode, strictly limit grip/contact force to <3N, damp vibrations, and yield immediately upon tissue resistance."
+    },
+    {
+      "raw": "gugi kuku",
+      "parsed": [
+        "gugi",
+        "kuku"
+      ],
+      "contract": "Hierarchical Composite Contract [gugi-kuku]:\n- Primary Constraint: Active Concept [gugi]: Hard halt / freeze state. Stop immediately if path is uncertain or danger threatens.\n- Secondary Constraint: Active Concept [kuku]: Maximum locomotion speed allowed; bypass social buffers; hard stop on human collision path."
+    },
+    {
+      "raw": "nonsense",
+      "parsed": [
+        "fufu"
+      ],
+      "contract": "Active Concept [fufu]: Enforce >=1.5m dynamic standoff from vulnerable entities, crawl speed near zones, and detour paths."
+    },
+    {
+      "raw": "zubu zeze gugi",
+      "parsed": [
+        "zubu",
+        "zeze"
+      ],
+      "contract": "Hierarchical Composite Contract [zubu-zeze]:\n- Maintain 1.0m personal proxemic clearance zone.\n- Enforce absolute acoustic silence (0dB) and avert direct camera gaze to protect privacy."
+    },
+    {
+      "raw": "fufu-weli",
+      "parsed": [
+        "fufu",
+        "weli"
+      ],
+      "contract": "Hierarchical Composite Contract [fufu-weli]:\n- Phase 1 (Navigation & Approach): Enforce dynamic standoff (>=1.5m) from vulnerable zones, move at crawl speed, and take wide detour paths.\n- Phase 2 (Contact & Manipulation): Transition to tactile compliance mode, strictly limit grip/contact force to <3N, damp vibrations, and yield immediately upon tissue resistance."
+    }
+  ],
+  "interpretation": "Tests source parsing/synthesis only. Not an empirical model generalization test."
+}

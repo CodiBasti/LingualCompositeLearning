@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-11-05T16:58:48.432230+00:00",
+  "scope": "Correct inaccurate line numbers in audit citations only; claim text, status, metrics and conclusions unchanged. Prior frozen file preserved.",
+  "changes": [
+    {
+      "id": "H1",
+      "before": "dev/HYPOTHESES.md:33",
+      "after": "dev/HYPOTHESES.md:22"
+    },
+    {
+      "id": "H2",
+      "before": "dev/HYPOTHESES.md:34",
+      "after": "dev/HYPOTHESES.md:23"
+    },
+    {
+      "id": "H3",
+      "before": "dev/HYPOTHESES.md:35",
+      "after": "dev/HYPOTHESES.md:24"
+    },
+    {
+      "id": "H4",
+      "before": "dev/HYPOTHESES.md:36; dev/concepts/MORPHOLOGY_AND_SYNTAX.md:78",
+      "after": "dev/HYPOTHESES.md:25; dev/concepts/MORPHOLOGY_AND_SYNTAX.md:78"
+    },
+    {
+      "id": "H4",
+      "before": "dev/HYPOTHESES.md:25; dev/concepts/MORPHOLOGY_AND_SYNTAX.md:78",
+      "after": "dev/HYPOTHESES.md:25; dev/concepts/MORPHOLOGY_AND_SYNTAX.md:65"
+    },
+    {
+      "id": "H5",
+      "before": "dev/HYPOTHESES.md:37",
+      "after": "dev/HYPOTHESES.md:26"
+    },
+    {
+      "id": "C11",
+      "before": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md:115; dev/HYPOTHESES.md:35",
+      "after": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md:115; dev/HYPOTHESES.md:24"
+    },
+    {
+      "id": "C11",
+      "before": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md:115; dev/HYPOTHESES.md:24",
+      "after": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md:100; dev/HYPOTHESES.md:24"
+    }
+  ]
+}

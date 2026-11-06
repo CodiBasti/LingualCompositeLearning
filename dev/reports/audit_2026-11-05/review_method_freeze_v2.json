@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-11-05T15:17:22.834289+00:00",
+  "changes": "Narrative now includes pre-control information-matching amendment and exact German pilot text replay; numeric token-inflation claim added. Statistical methods, primary contrasts and rating guide unchanged. Earlier report/claims/tests drafts preserved.",
+  "files": {
+    "analyze.py": "0035e0a70f341bda379d79cd17b5876ee0151d4239c45631b289ce693a4a614f",
+    "summarize_new.py": "d3668be96389838ce8b7bf249d6b6b38a77f06c58a1d6f15e3d336d425b34ad5",
+    "semantic_rating_guide.md": "c5cb5cf2e602b994a9c9db4261e4c84b9d04b520410b64327d06ecd63ab65fa3",
+    "claims.json": "b9ce30a5d326b94c8ddb63aad573d26cedadfcaeb2031e5b2c302f2327ab5a6c",
+    "test_audit.py": "d43a99ff5b1ce1e8330e408e813405ea3d26849ec7ef232d71c1c9dcde672798",
+    "build_report.py": "3b3cb50effd5888d347417dccfc1edabee33accacaa2117a9dddd9c5af49498b"
+  }
+}

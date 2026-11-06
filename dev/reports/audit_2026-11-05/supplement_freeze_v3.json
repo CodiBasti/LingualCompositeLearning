@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-11-05T15:34:05.799509+00:00",
+  "policy": "Unchanged missing-ID priority and model/control methods. Register own supplement PID plus exact creation time for external conservative hard-cap watchdog. Main active audit PID was separately validated against model-loading timestamp; other applications are not stopped.",
+  "files": {
+    "complete_remaining.py": "a3fde2cfcf76ecbfc7b3fc57832a0c2bfa27ca09ac468342ff8bff0154093f62",
+    "gpu_watchdog.py": "3ff356b0fb2b2e6674fa7e0eaaf8092f2e971ee6f6852b60b0131088b66ef929"
+  }
+}

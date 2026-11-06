@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-11-05T15:36:12.190808+00:00",
+  "primary_model_status": "Control inference has begun after all final prompt/holdout/rating/statistical freezes.",
+  "completed_original_replication_rows": 48,
+  "primary_review": "All200 masked plans/600 requirements frozen before unblinding; primary analysis available. Historical+new semantic results separated. Remaining VHC controls, judge and latency running.",
+  "budget": "External watchdog uses registered audit PIDs and creation times, conservative cap 28770 seconds; other applications not modified.",
+  "updated_utc": "2026-11-05T22:22:52.316308+00:00",
+  "rated_plans": 200,
+  "ratings_batches": 28,
+  "pending_primary_scenarios": [],
+  "active_sessions": {},
+  "active_main_pid": null,
+  "primary_result_file": "primary_holdout_results.json",
+  "primary_semantic_summary": {
+    "LCL": 0.6583333333333333,
+    "structured_direct": 0.7166666666666666,
+    "cot_equal": 0.35,
+    "LCL_vs_CoT_Holm_p": 0.0007999200079992001,
+    "LCL_vs_direct_Holm_p": 0.3705629437056294
+  },
+  "supplement_policy": "supplement_freeze_v4.json",
+  "resumed_utc": "2026-11-05T19:50:53.294038+00:00",
+  "resume_check": "Model jobs continued during chat usage interruption; all frozen rating files verified unchanged. No model stages restarted.",
+  "active_supplement_pid": null,
+  "main_gpu_concluded": true,
+  "closure_restarted_reason": "CPU-only finalizer reloaded updated post-hoc timing diagnostic command list; no model process restarted.",
+  "status": "complete_with_documented_limits",
+  "final_report": "dev/reports/review_audit_2026-11-05_FULL_PROJECT.md",
+  "final_counts": {
+    "replication_rows": 48,
+    "controls_rows": 425,
+    "judge_invariant_checks": 600,
+    "latency_rows": 140
+  },
+  "gpu_process_hours": 7.991760286666667
+}

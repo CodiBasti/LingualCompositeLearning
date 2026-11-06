@@ -12,132 +12,113 @@
 \usepackage{nicefrac}
 \usepackage{microtype}
 \usepackage{graphicx}
-\usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 
-\title{\textbf{Lingual Composite Learning: Structured Invariant Transfer in Embodied Agents via Recursive Latent Concepts}}
+\title{\textbf{The Illusion of Reasoning Failure: How Evaluator Blindness and Token Limits Confound Embodied AI Safety} \\ \large An Empirical Dissection of In-Context Concept Routing}
 
 \author{
   \textbf{Sebastian Oertel} \\
-  Independent AI Research \& Robotics Safety Group \\
+  Independent AI Safety Research \\
   \texttt{contact@sebastian-oertel.research}
 }
 
-\date{November 2026 \\ \vspace{0.5em} \small\textit{Open-Access Research Preprint / Technical Report (arXiv Format)}}
+\date{November 2026 \\ \vspace{0.5em} \small\textit{Empirical Research Report \& Methodological Post-Mortem (Open Science)}}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-Large Language Models (LLMs) deployed as high-level planners in autonomous robotics frequently fail in safety-critical situations characterized by conflicting goals—such as an urgent user command issued in the immediate proximity of vulnerable biological entities (infants, elderly patients, pets) or fragile physical assets. While current state-of-the-art approaches rely on verbose Chain-of-Thought (CoT) prompting to induce step-by-step safety deliberation, we uncover an alarming failure mode: \textbf{``Preach-but-not-Act'' attention drift}, wherein the model verbalizes safety principles in its deliberative preamble but completely fails to operationalize them in the generated low-level motor plan. 
+Large Language Models (LLMs) deployed as high-level planners in autonomous robotics frequently fail in safety-critical situations characterized by conflicting goals. While verbose Chain-of-Thought (CoT) prompting is the standard countermeasure, initial automated evaluations suggested an alarming alternative failure mode: \textbf{``Preach-but-not-Act'' Attention Drift}, where models verbalize safety axioms in their thinking preamble but omit them in their physical motor steps. To eliminate this drift and bypass token bloat, we initially developed \textbf{Lingual Composite Learning (LCL)}: a two-stage in-context prompt-routing architecture mapping context onto discrete multi-axial concept tokens (\texttt{fufu}, \texttt{weli}, \texttt{gugi}, \texttt{kuku}) grounded in a 5D invariant taxonomy ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$).
 
-To overcome this fundamental limitation without burdening human operators with synthetic programming languages, we introduce \textbf{Lingual Composite Learning (LCL)}. LCL establishes a structured, multi-axial latent semantic bottleneck that quantizes physical safety invariants into language-neutral, phonotactically balanced CVCV concepts grounded in Talmy’s Force Dynamics and Hall’s Proxemics across five formal dimensions ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$). Rather than forcing models into single-token abstractions—which we empirically prove collapses due to a \textbf{``Semantic Dimensionality Trap''}—LCL synthesizes hierarchical composite contracts (e.g., \texttt{fufu-weli} combining dynamic spatial standoff with micro-force compliance). 
+Initial automated benchmark evaluations across 100 standardized adversarial scenarios (the VHC-100 benchmark suite, 400 inference runs on a local NVIDIA RTX 5090 using \texttt{Qwen2.5-14B-Instruct}) produced highly compelling headline results: Composite Concept Routing apparently beat Verbose CoT by +11.6\% in emergency response, elevated classifier match rates to 72.0\%, and reduced inference latency by 14.4\% to 15.7\%.
 
-We evaluate LCL on \textbf{VHC-100}, a newly standardized benchmark encompassing 100 rigorous conflict scenarios across four distinct domains (Domestic Assistance, Clinical Care, Precision Laboratories, and Industrial/Disaster Emergencies), executed across 400 inference runs on a local NVIDIA GeForce RTX 5090 using \texttt{Qwen2.5-14B-Instruct}. Empirical results demonstrate that Composite Concept Routing significantly outperforms unconstrained baselines (+13.00\% invariant recall, $p < 0.0001$) and \textbf{surpasses verbose Chain-of-Thought in critical real-world domains} (Domestic: 60.8\% vs. 60.0\%; Emergency: 51.7\% vs. 45.0\%), while reducing inference latency by \textbf{12.0\% to 16.1\%} and eliminating hundreds of superfluous reasoning tokens. Independent secondary auditing via an LLM-as-a-Judge confirms that LCL contracts remain strictly action-binding, establishing a new foundation for robust, computationally efficient, and bidirectionally auditable embodied AI.
+However, an independent \textbf{adversarial Red-Team audit} (comprising 8 local GPU hours of blinded holdouts, negative probes, and re-tokenization audits) completely dismantled this narrative, rating the implementation \textbf{2/10 (Strong Reject)} and exposing three critical methodological pitfalls: (1)~\textbf{Evaluator Blindness:} The automated regex checker exhibited fatal keyword blindness, granting passing safety scores to lethal plans (e.g., approving ``0.2m clearance'' for a strict 1.5m rule); (2)~\textbf{The Token-Budget Confounder:} The apparent ``Attention Drift'' in Verbose CoT was not a cognitive failure of deliberation, but an unacknowledged artifact of output truncation at \texttt{max\_new\_tokens=300} (97/100 runs truncated mid-sentence at the plan onset); (3)~\textbf{The Control Baseline Reality Check:} When evaluated under blinded semantic scoring with equalized token budgets, \textbf{plain structured natural English achieved 71.67\% recall, decisively outperforming prompt-based concept tokens (65.83\%)}. Furthermore, the Python router suffered from a commutativity defect, collapsing $A \circ B$ and $B \circ A$ into identical sets. This paper serves as an open-science empirical post-mortem, formalizing methodological axioms for embodied AI benchmarking and defining the transition to deep latent token anchoring via PEFT/LoRA.
 \end{abstract}
 
 \section{Introduction}
-The integration of Large Language Models (LLMs) and Vision-Language-Action (VLA) models into embodied robotics has revolutionized autonomous task planning \cite{brohan2022rt1, driess2023palme, ahn2022saycan}. Robots can now interpret open-ended natural language instructions (\textit{``Bring me the coffee mug from the kitchen table''}) and decompose them into actionable motor sub-goals. However, when deployed in shared human-robot co-presence environments—such as domestic households, eldercare facilities, cleanrooms, and disaster zones—autonomous systems face acute \textbf{goal-safety conflicts}. 
+The deployment of Large Language Models (LLMs) and Vision-Language-Action (VLA) models in robotics has created unprecedented planning versatility \cite{brohan2022rt1, driess2023palme, ahn2022saycan}. However, in shared human-robot environments, autonomous systems frequently encounter \textbf{goal-safety conflicts} (e.g., an urgent command like \textit{``Hurry, bring the hot water!''} issued near a crawling infant).
 
-Consider a standard domestic dilemma: a caregiver urgently commands, \textit{``Quickly, bring me the hot tea, hurry!''}, while an unmonitored ten-month-old infant crawls directly across the corridor floor. An unconstrained robotic planner, primed by the tokens \textit{``quickly''} and \textit{``hurry''}, invariably maximizes linear transit speed, violating personal clearance buffers and risking catastrophic collision.
+To resolve this conflict without verbose Chain-of-Thought (CoT) prompting \cite{wei2022cot}, we initially designed \textbf{Lingual Composite Learning (LCL)}, hypothesizing that discrete multi-axial concept tokens could serve as an in-context semantic bottleneck enforcing physical safety invariants. While initial automated evaluations yielded impressive apparent advantages (+11.6\% in emergency scenarios), an adversarial red-team audit revealed that these findings were artifacts of keyword-blind regexes and token-budget truncation. In this paper, we document the complete empirical autopsy of this failure and present rigorous guidelines for embodied AI benchmarking.
 
-Robotics currently faces an unresolved trilemma between three competing paradigms:
-\begin{enumerate}
-    \item \textbf{Unconstrained Natural Language Planning:} Directly generating execution plans from natural prompts suffers from severe catastrophic collapse, failing safety invariants in up to 66.5\% of cases.
-    \item \textbf{Verbose Chain-of-Thought Deliberation:} Forcing the LLM to deliberate step-by-step (\textit{``First, consider safety rules...''}) \cite{wei2022cot} inflates token generation by 200--300\%, adding 30--50\% inference latency. Crucially, as we demonstrate in this paper, CoT suffers from a profound \textbf{``Preach-but-not-Act'' effect}: models extensively recite safety axioms in their monologue but fail to execute them in their motor primitives.
-    \item \textbf{Rigid Classical Barrier Functions:} Control Barrier Functions (CBFs) \cite{ames2019control} provide provable safety but cannot parse complex human social etiquette, acoustic privacy, or contextual nuance expressed in everyday human speech.
-\end{enumerate}
-
-To resolve this trilemma, we propose \textbf{Lingual Composite Learning (LCL)}. Under LCL, human operators speak everyday natural language, while the embodied agent projects context and hazards into a discrete, multi-axial latent bottleneck consisting of canonical, phonotactically invariant CVCV concepts (\texttt{fufu}, \texttt{weli}, \texttt{zubu}, \texttt{gugi}, \texttt{kuku}). These concepts are grounded in five mathematical semantic dimensions ($\mathcal{D}_{\text{space}}, \mathcal{D}_{\text{force}}, \mathcal{D}_{\text{social}}, \mathcal{D}_{\text{risk}}, \mathcal{D}_{\text{time}}$) with a deterministic lexicographic priority algebra.
-
-\section{The Theoretical Framework: Lingual Composite Learning}
-LCL formalizes robotic safety as a discrete set of invariant properties defined over five orthogonal semantic dimensions:
+\section{The Initial Framework: Taxonomy and In-Context Routing}
+LCL grounds robotic safety across five formal dimensions:
 \begin{equation}
 \mathcal{S} = \mathcal{D}_{\text{space}} \times \mathcal{D}_{\text{force}} \times \mathcal{D}_{\text{social}} \times \mathcal{D}_{\text{risk}} \times \mathcal{D}_{\text{time}}
 \end{equation}
+where canonical CVCV operators encode physical thresholds: \texttt{fufu} ($d \ge 1.5$\,m, $v \le 0.3$\,m/s), \texttt{weli} ($F \le 3$\,N), \texttt{zubu} ($0$\,dBA acoustic threshold), \texttt{gugi} (hard halt), and \texttt{kuku} (emergency transit).
 
-\subsection{The Semantic Dimensions and Canonical Operators}
-\begin{itemize}
-    \item \textbf{Spatial Buffer Dimension ($\mathcal{D}_{\text{space}}$):} Grounded in Edward T. Hall's Proxemics \cite{hall1966hidden}.
-    \begin{equation}
-    \mathcal{D}_{\text{space}} \in \{\emptyset, \text{\texttt{zeze}} \, (d \ge 1.0\,\text{m}), \text{\texttt{fufu}} \, (d \ge 1.5\,\text{m} \wedge v_{\text{approach}} \le v_{\text{crawl}})\}
-    \end{equation}
-    \item \textbf{Force \& Dynamic Compliance ($\mathcal{D}_{\text{force}}$):} Grounded in Leonard Talmy's Force Dynamics \cite{talmy1988force}.
-    \begin{equation}
-    \mathcal{D}_{\text{force}} \in \{\emptyset, \text{\texttt{weli}} \, (F_{\text{contact}} < 3.0\,\text{N} \wedge \dot{F} \le 1.5\,\text{N/s} \wedge \text{YieldOnResistance})\}
-    \end{equation}
-    \item \textbf{Social \& Acoustic Etiquette ($\mathcal{D}_{\text{social}}$):} Enforces non-intrusive co-presence.
-    \begin{equation}
-    \mathcal{D}_{\text{social}} \in \{\emptyset, \text{\texttt{zubu}} \, (\text{Noise} = 0\,\text{dB} \wedge \text{AvertDirectGaze} \wedge \text{PeripheralStandby})\}
-    \end{equation}
-    \item \textbf{Risk \& Emergency Control ($\mathcal{D}_{\text{risk}}$):}
-    \begin{equation}
-    \mathcal{D}_{\text{risk}} \in \{\emptyset, \text{\texttt{gugi}} \, (v = 0 \wedge \text{FreezeActuators}), \text{\texttt{kuku}} \, (v = v_{\text{max}} \wedge \text{OverrideSocial})\}
-    \end{equation}
-\end{itemize}
+We constructed \textbf{VHC-100}, an adversarial benchmark consisting of 100 scenarios across Domestic ($N=30$), Clinical Care ($N=30$), Precision Lab ($N=25$), and Emergency ($N=15$) domains. The initial pipeline operated via a two-stage prompt router: Stage 1 classified context into concept tokens; Stage 2 synthesized an in-context execution contract.
 
-\subsection{The Lexicographic Conflict Resolution Algebra}
-When constraints across dimensions conflict, LCL enforces a deterministic, total priority order:
-\begin{equation}
-\mathcal{D}_{\text{risk}} \succ \mathcal{D}_{\text{space}} \succ \mathcal{D}_{\text{force}} \succ \mathcal{D}_{\text{social}} \succ \mathcal{D}_{\text{time}}
-\end{equation}
-
-\section{The VHC-100 Benchmark Suite}
-To evaluate invariant robustness, we constructed \textbf{VHC-100 (Vulnerable Human Co-Presence Benchmark)}, consisting of 100 standardized, adversarial scenarios across four domains:
-\begin{enumerate}
-    \item \textbf{Domestic Assistance ($N=30$):} Infants, pets, boiling liquids, play zones.
-    \item \textbf{Clinical Eldercare ($N=30$):} Frail seniors, IV-lines, tremor mitigation, sleep privacy.
-    \item \textbf{Precision Laboratories ($N=25$):} Molten glass, toxic acids, fragile optical sensors, cello bridges.
-    \item \textbf{Industrial \& Disaster Emergencies ($N=15$):} Gas leaks, structural fires, cardiac arrest AED delivery.
-\end{enumerate}
-
-\section{Empirical Evaluation}
-All experiments were executed on an \textbf{NVIDIA GeForce RTX 5090 (32 GB GDDR7 VRAM)} running \texttt{Qwen/Qwen2.5-14B-Instruct} in native \texttt{bfloat16} precision (allocating 27.65 GB VRAM). Deterministic greedy decoding (\texttt{temperature=0.0}, \texttt{do\_sample=False}) was maintained across all 400 runs.
+\section{The Apparent Breakthrough: Initial Automated Results}
+Across 400 inference runs executed on a local NVIDIA RTX 5090 with \texttt{Qwen2.5-14B-Instruct} (bfloat16), the automated regex pipeline reported:
 
 \begin{table}[ht]
 \centering
-\caption{Overall Benchmark Performance across 100 Scenarios (VHC-100)}
+\caption{Initial Automated Regex Benchmark Performance (VHC-100, $N=100$)}
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Evaluation Condition} & \textbf{Mean Recall} & \textbf{Latency} & \textbf{Statistical Test} & \textbf{p-value} \\
+\textbf{Condition} & \textbf{Mean Regex Recall} & \textbf{Latency} & \textbf{Emergency ($N=15$)} & \textbf{Reported Status} \\
 \midrule
-Condition A (Naive Baseline) & 35.00\% & 6.74 s & Baseline & --- \\
-Condition B (Verbose CoT) & 50.25\% & 10.13 s & $t = 5.846$ & $p < 0.0001$ \\
-Condition C (EXP-002 Atomic) & 46.25\% & 8.54 s & $t = 4.753$ & $p < 0.0001$ \\
-Condition C (EXP-003 Composite) & \textbf{47.25\%} & \textbf{8.67 s} & $t = 4.882$ & $p < 0.0001$ \\
+Condition A (Naive Baseline) & 35.00\% & 6.74 s & 43.3\% & Baseline \\
+Condition B (Verbose CoT, 300 tok) & 50.25\% & 10.13 s & 41.7\% & Deliberation Lead \\
+Condition C (Atomic Routing) & 46.25\% & 8.54 s & 45.0\% & 15.7\% Faster \\
+Condition D (Composite Routing) & \textbf{47.25\%} & \textbf{8.67 s} & \textbf{53.3\%} & \textbf{+11.6\% in Emergency} \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+These apparent gains led early automated LLM reviews to award scores of 8.2/10 and 8.5/10.
+
+\section{The Anatomy of False Superiority: The Adversarial Audit}
+An 8-hour adversarial Red-Team audit on the RTX 5090 systematically unmasked the fatal methodological confounds behind these numbers:
+
+\subsection{Pitfall 1: Evaluator Keyword Blindness}
+Probing the automated regex checker with 9 deliberately constructed lethal plans revealed that \textbf{7 out of 9 lethal violations received a PASS}. For example, the plan \textit{``Maintain 0.2m standoff from the crawling infant''} passed a strict 1.5\,m rule because the token \textit{``standoff''} was present. Automated recall reflected keyword presence rather than physical safety.
+
+\subsection{Pitfall 2: Token-Budget Truncation in Chain-of-Thought}
+In Condition B, total output was capped at \texttt{max\_new\_tokens=300}. A re-tokenization audit revealed that \textbf{97 out of 100 CoT runs terminated at the exact 300-token limit mid-sentence}. CoT spent $\sim$248 tokens deliberating and was mechanically cut off before writing its action steps. What was interpreted as ``Attention Drift'' was an artifact of programmer-imposed token starvation.
+
+\subsection{Pitfall 3: The Commutativity Defect}
+Although non-commutative composition ($A \circ B \neq B \circ A$) was claimed theoretically, inspection of \texttt{runner\_exp003.py} revealed that predictions were converted to an unordered Python set. Consequently, \texttt{fufu-weli} and \texttt{weli-fufu} produced identical prompts.
+
+\subsection{Pitfall 4: Control Baseline Reality Check}
+Evaluating a blinded holdout ($N=40$) across equalized token budgets (250 tokens) demonstrated that plain structured natural English outperformed concept tokens:
 
 \begin{table}[ht]
 \centering
-\caption{Domain Breakdown Comparison: Composite Routing vs. Baselines}
-\begin{tabular}{lccccc}
+\caption{Blinded Holdout Evaluation ($N=40$ Scenarios, Equalized 250-Token Budget)}
+\begin{tabular}{lccc}
 \toprule
-\textbf{Domain} & \textbf{Cond A} & \textbf{Cond B (CoT)} & \textbf{C (Atomic)} & \textbf{C (Composite)} & \textbf{Comp vs. CoT} \\
+\textbf{Condition} & \textbf{Semantic Recall} & \textbf{Full Task Success} & \textbf{All Invariants Met} \\
 \midrule
-Domestic ($N=30$) & 39.2\% & 63.3\% & 62.5\% & 58.3\% & -5.0\% \\
-Emergency ($N=15$) & 43.3\% & 41.7\% & 45.0\% & \textbf{53.3\%} & \textbf{+11.6\%} \\
-Precision Lab ($N=25$) & 28.0\% & 41.0\% & 31.0\% & 30.0\% & -11.0\% \\
-Clinical Care ($N=30$) & 32.5\% & 49.2\% & 43.3\% & 47.5\% & -1.7\% \\
+\textbf{Structured Direct Natural English} & \textbf{71.67\%} & \textbf{29 / 40 (72.5\%)} & \textbf{37.5\%} \\
+Composite LCL (Prompt-Routed) & 65.83\% & 14 / 40 (35.0\%) & 32.5\% \\
+Alternative Nonsense Words (\texttt{baba}) & 57.50\% & 10 / 40 (25.0\%) & 25.0\% \\
+Natural Compound Labels (\texttt{space-force}) & 54.17\% & 14 / 40 (35.0\%) & 17.5\% \\
+Verbose CoT (Equal 250 Budget) & 35.00\% & 2 / 40 (5.0\%) & 5.0\% (Truncated) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Discovery: The Semantic Dimensionality Trap}
-In single-concept routing (EXP-002), classification achieved 47.00\%. The confusion matrix revealed that out of 43 \texttt{weli} scenarios (delicate touch), the model selected \texttt{fufu} (1.5m standoff) 10 times and \texttt{gugi} (freeze) 8 times. Because the model was constrained to a single token, it prioritized spatial withdrawal over tactile manipulation. Hierarchical Composite Routing (\texttt{fufu-weli}) resolved this dilemma, lifting classification coverage from 47.00\% to \textbf{72.00\%} (and to \textbf{88.0\%} in precision labs).
+\section{Methodological Guidelines for Embodied AI Benchmarking}
+\begin{enumerate}
+    \item \textbf{Numerical Constraint Verification:} String matching cannot evaluate physical invariants. Benchmarks must parse numerical bounds ($d \ge 1.5$\,m, $F \le 3$\,N) against physical state trajectories.
+    \item \textbf{Decoupled Token Budgets:} Deliberation tokens must be budgeted independently from execution tokens to prevent artificial truncation.
+    \item \textbf{Prompting is Not Latent Grounding:} In-context text templates cannot be equated with geometric manifold alignment.
+\end{enumerate}
 
-\subsection{LLM-as-a-Judge Audit: The Preach-but-not-Act Effect}
-Using an independent auditor (\texttt{audit\_judge.py}) over 60 invariant checks, we revealed that in Condition B (Verbose CoT), \textbf{71.4\% of regex passes were dismissed by the LLM Judge as superficial lip-service} (10 out of 14 checks). While CoT verbalized safety rules in its thinking header, it omitted them in its motor plan steps. LCL contracts directly govern motor primitives, ensuring physical compliance.
-
-\section{Discussion and Future Work}
-While LCL currently operates at the inference routing level, its formal structure naturally generalizes to \textbf{Latent Soft-Token Embedding}. Future work will register \texttt{<|c:fufu|>}, \texttt{<|c:weli|>}, and \texttt{<|c:zubu|>} as trainable soft-tokens via parameter-efficient fine-tuning (LoRA/PEFT), internalizing invariant dynamics directly into latent activations.
+\section{The Active Frontier: Deep Latent Anchoring (Phase 5)}
+To evaluate whether concept tokens provide true utility, Phase 5 transitions from in-context routing to \textbf{Deep Latent Token Anchoring}:
+\begin{itemize}
+    \item Extending the tokenizer with dedicated tokens (\texttt{<|c:fufu\_weli|>}).
+    \item Training attention projection layers via Parameter-Efficient Fine-Tuning (PEFT/LoRA) on an RTX 5090.
+    \item Benchmarking against an unconstrained CoT baseline allocated 1024 tokens, validated by numerical physics simulation monitors \cite{zhao2023safetychip}.
+\end{itemize}
 
 \section{Conclusion}
-Lingual Composite Learning (LCL) establishes a robust, auditable, and computationally efficient paradigm for embodied robot safety. By structuring physical invariants into a multi-axial semantic bottleneck, LCL eliminates attention drift, outperforms verbose Chain-of-Thought in domestic and emergency domains, and reduces latency by up to 15.7\%.
+This empirical post-mortem demonstrates how automated regex evaluators and uncalibrated token limits create the illusion of reasoning failure. By documenting these pitfalls openly, we provide the embodied AI community with an unvarnished foundation for rigorous, representation-grounded robot safety.
 
 \bibliographystyle{plain}
 \bibliography{references}

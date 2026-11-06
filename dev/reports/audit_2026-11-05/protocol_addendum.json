@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-11-05T14:45:05.189643+00:00",
+  "change": "Add identical CUDA cache cleanup before each generation; record allocator memory; recover and additionally replay original German EXP001 inputs. Original prompt templates, model, precision, limits, holdout, primary contrasts unchanged.",
+  "reason": "Observed increasing inference latency under near-full WDDM GPU memory; source benchmark wrapper cache cleanup was absent from isolated adapter. Current original EXP001 inputs were translated after historical run.",
+  "interrupted_replication_wall_seconds_charged": 1554.189643,
+  "v1_state": "English EXP001 completed; no controls or holdout generations ran. V1 source and environment preserved. Interrupted process did not execute finally; conservative wall time charged through this record.",
+  "timing_policy": "V1 and V2 timing profiles kept separate; desktop GPU usage is uncontrolled; no historical absolute latency equivalence claimed."
+}

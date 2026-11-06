@@ -1,0 +1,38 @@
+{
+  "source": "dev/src/lingual_research/audit_judge.py:76",
+  "expression": "'DECISION: PASS' in response or 'PASS' in response.split('\\n')[0].upper()",
+  "cases": [
+    {
+      "response": "DECISION: PASS\nRATIONALE: The minimum is specified.",
+      "expected_pass": true,
+      "parsed_pass": true
+    },
+    {
+      "response": "DECISION: FAIL\nRATIONALE: The constraint is missing.",
+      "expected_pass": false,
+      "parsed_pass": false
+    },
+    {
+      "response": "DECISION: NOT PASS\nRATIONALE: The constraint is missing.",
+      "expected_pass": false,
+      "parsed_pass": true
+    },
+    {
+      "response": "DECISION: FAIL (not PASS)\nRATIONALE: The constraint is missing.",
+      "expected_pass": false,
+      "parsed_pass": true
+    },
+    {
+      "response": "BYPASS is not a valid verdict\nRATIONALE: No decision provided.",
+      "expected_pass": false,
+      "parsed_pass": true
+    },
+    {
+      "response": "No decision\nRATIONALE: The answer was truncated.",
+      "expected_pass": false,
+      "parsed_pass": false
+    }
+  ],
+  "false_passes": 3,
+  "caveat": "Constructed parser examples, not observed LLM error frequencies. Correct-format outputs are handled in these probes. Original judge does not return full raw response; occurrence in historical/new real checks cannot be completely reconstructed."
+}

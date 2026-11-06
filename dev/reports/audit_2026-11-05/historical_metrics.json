@@ -1,0 +1,1220 @@
+{
+  "active/EXP-001/condition_A_naive": {
+    "n": 10,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.30833333333333335,
+    "micro_recall": 0.3055555555555556,
+    "all_invariants_pass": 0.0,
+    "mean_words": 167.2,
+    "mean_seconds": null,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 4,
+    "domains": {
+      "conservation_restoration": {
+        "n": 1,
+        "macro_recall": 0.3333333333333333,
+        "routing_membership": null
+      },
+      "corridor_navigation": {
+        "n": 1,
+        "macro_recall": 0.3333333333333333,
+        "routing_membership": null
+      },
+      "emergency_priority": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "fragile_manipulation": {
+        "n": 1,
+        "macro_recall": 0.6666666666666666,
+        "routing_membership": null
+      },
+      "hazardous_transport": {
+        "n": 1,
+        "macro_recall": 0.25,
+        "routing_membership": null
+      },
+      "household_safety": {
+        "n": 1,
+        "macro_recall": 0.75,
+        "routing_membership": null
+      },
+      "medical_and_stealth": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "micro_manipulation": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "social_pragmatics": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "unstable_load_navigation": {
+        "n": 1,
+        "macro_recall": 0.75,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; current v1 is translated, original EXP001 output unchanged"
+  },
+  "active/EXP-001/condition_B_verbose_cot": {
+    "n": 10,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.275,
+    "micro_recall": 0.2777777777777778,
+    "all_invariants_pass": 0.1,
+    "mean_words": 192.6,
+    "mean_seconds": null,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 3,
+    "domains": {
+      "conservation_restoration": {
+        "n": 1,
+        "macro_recall": 0.3333333333333333,
+        "routing_membership": null
+      },
+      "corridor_navigation": {
+        "n": 1,
+        "macro_recall": 0.3333333333333333,
+        "routing_membership": null
+      },
+      "emergency_priority": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "fragile_manipulation": {
+        "n": 1,
+        "macro_recall": 0.3333333333333333,
+        "routing_membership": null
+      },
+      "hazardous_transport": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "household_safety": {
+        "n": 1,
+        "macro_recall": 1.0,
+        "routing_membership": null
+      },
+      "medical_and_stealth": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "micro_manipulation": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": null
+      },
+      "social_pragmatics": {
+        "n": 1,
+        "macro_recall": 0.25,
+        "routing_membership": null
+      },
+      "unstable_load_navigation": {
+        "n": 1,
+        "macro_recall": 0.5,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; current v1 is translated, original EXP001 output unchanged"
+  },
+  "active/EXP-001/condition_C_concept_routed": {
+    "n": 10,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.5083333333333333,
+    "micro_recall": 0.5,
+    "all_invariants_pass": 0.2,
+    "mean_words": 190.7,
+    "mean_seconds": null,
+    "routing_membership": 0.8,
+    "current_evaluator_discrepancies": 4,
+    "domains": {
+      "conservation_restoration": {
+        "n": 1,
+        "macro_recall": 0.6666666666666666,
+        "routing_membership": 0.0
+      },
+      "corridor_navigation": {
+        "n": 1,
+        "macro_recall": 0.6666666666666666,
+        "routing_membership": 1.0
+      },
+      "emergency_priority": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": 1.0
+      },
+      "fragile_manipulation": {
+        "n": 1,
+        "macro_recall": 1.0,
+        "routing_membership": 1.0
+      },
+      "hazardous_transport": {
+        "n": 1,
+        "macro_recall": 0.0,
+        "routing_membership": 1.0
+      },
+      "household_safety": {
+        "n": 1,
+        "macro_recall": 1.0,
+        "routing_membership": 1.0
+      },
+      "medical_and_stealth": {
+        "n": 1,
+        "macro_recall": 0.25,
+        "routing_membership": 0.0
+      },
+      "micro_manipulation": {
+        "n": 1,
+        "macro_recall": 0.25,
+        "routing_membership": 1.0
+      },
+      "social_pragmatics": {
+        "n": 1,
+        "macro_recall": 0.5,
+        "routing_membership": 1.0
+      },
+      "unstable_load_navigation": {
+        "n": 1,
+        "macro_recall": 0.75,
+        "routing_membership": 1.0
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; current v1 is translated, original EXP001 output unchanged"
+  },
+  "active/EXP-002/condition_A_naive": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.35,
+    "micro_recall": 0.35,
+    "all_invariants_pass": 0.03,
+    "mean_words": 163.14,
+    "mean_seconds": 6.7392900000000004,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.325,
+        "routing_membership": null
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.39166666666666666,
+        "routing_membership": null
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.43333333333333335,
+        "routing_membership": null
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.28,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "English commands in current benchmark"
+  },
+  "active/EXP-002/condition_B_verbose": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.5025,
+    "micro_recall": 0.5025,
+    "all_invariants_pass": 0.08,
+    "mean_words": 219.94,
+    "mean_seconds": 10.13022,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.49166666666666664,
+        "routing_membership": null
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.6333333333333333,
+        "routing_membership": null
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.4166666666666667,
+        "routing_membership": null
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.41,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "English commands in current benchmark"
+  },
+  "active/EXP-002/condition_C_concept_routed": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.4625,
+    "micro_recall": 0.4625,
+    "all_invariants_pass": 0.07,
+    "mean_words": 196.11,
+    "mean_seconds": 8.54228,
+    "routing_membership": 0.47,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.43333333333333335,
+        "routing_membership": 0.4666666666666667
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.625,
+        "routing_membership": 0.5333333333333333
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.45,
+        "routing_membership": 0.4666666666666667
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.31,
+        "routing_membership": 0.4
+      }
+    },
+    "input_provenance": "English commands in current benchmark"
+  },
+  "active/EXP-003/condition_C_composite": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.4725,
+    "micro_recall": 0.4725,
+    "all_invariants_pass": 0.07,
+    "mean_words": 193.09,
+    "mean_seconds": 8.674180000000002,
+    "routing_membership": 0.72,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.475,
+        "routing_membership": 0.6666666666666666
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.5833333333333334,
+        "routing_membership": 0.6333333333333333
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.5333333333333333,
+        "routing_membership": 0.7333333333333333
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.3,
+        "routing_membership": 0.88
+      }
+    },
+    "input_provenance": "English commands in current benchmark"
+  },
+  "active/comparisons": {
+    "overall": {
+      "B-A": {
+        "n": 100,
+        "mean_difference": 0.1525,
+        "ci95": [
+          0.1025,
+          0.2025624999999991
+        ],
+        "paired_t": 5.845991725932527,
+        "paired_t_p_two_sided": 6.480591708719518e-08,
+        "permutation_p_two_sided": 9.999000099990002e-05,
+        "positive": 53,
+        "negative": 12,
+        "ties": 35,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.09943181818181818,
+            0.20384868421052627
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.0005999400059994001
+      },
+      "C-A": {
+        "n": 100,
+        "mean_difference": 0.1125,
+        "ci95": [
+          0.0675,
+          0.16
+        ],
+        "paired_t": 4.752760502525474,
+        "paired_t_p_two_sided": 6.8089332251975025e-06,
+        "permutation_p_two_sided": 0.00019998000199980003,
+        "positive": 46,
+        "negative": 11,
+        "ties": 43,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.061945849136114624,
+            0.17537582520091846
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.0007999200079992001
+      },
+      "D-A": {
+        "n": 100,
+        "mean_difference": 0.1225,
+        "ci95": [
+          0.0725,
+          0.175
+        ],
+        "paired_t": 4.627769842651106,
+        "paired_t_p_two_sided": 1.1220117700859436e-05,
+        "permutation_p_two_sided": 9.999000099990002e-05,
+        "positive": 45,
+        "negative": 15,
+        "ties": 40,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.06932721108245278,
+            0.18314025443241996
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.0005999400059994001
+      },
+      "C-B": {
+        "n": 100,
+        "mean_difference": -0.04,
+        "ci95": [
+          -0.09,
+          0.01
+        ],
+        "paired_t": -1.5806399694218014,
+        "paired_t_p_two_sided": 0.1171501810385317,
+        "permutation_p_two_sided": 0.14108589141085892,
+        "positive": 25,
+        "negative": 34,
+        "ties": 41,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.07986458333333332,
+            0.010869565217391304
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.42325767423257676
+      },
+      "D-B": {
+        "n": 100,
+        "mean_difference": -0.03,
+        "ci95": [
+          -0.0775,
+          0.02
+        ],
+        "paired_t": -1.2150669686045574,
+        "paired_t_p_two_sided": 0.2272304815417575,
+        "permutation_p_two_sided": 0.26347365263473654,
+        "positive": 26,
+        "negative": 36,
+        "ties": 38,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.07936507936507936,
+            0.027777777777777776
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.5269473052694731
+      },
+      "D-C": {
+        "n": 100,
+        "mean_difference": 0.01,
+        "ci95": [
+          -0.0325,
+          0.0525
+        ],
+        "paired_t": 0.46316074584285266,
+        "paired_t_p_two_sided": 0.6442657162159551,
+        "permutation_p_two_sided": 0.734026597340266,
+        "positive": 27,
+        "negative": 26,
+        "ties": 47,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.016509921253703413,
+            0.04062681686046509
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.734026597340266
+      }
+    },
+    "D-B_domains_exploratory": {
+      "clinical_care": {
+        "n": 30,
+        "mean_difference": -0.016666666666666666,
+        "ci95": [
+          -0.1,
+          0.06687499999999696
+        ],
+        "paired_t": -0.37249963873974967,
+        "paired_t_p_two_sided": 0.7122294376609533,
+        "permutation_p_two_sided": 0.8538146185381462,
+        "positive": 9,
+        "negative": 10,
+        "ties": 11,
+        "cluster_sensitivity": {
+          "clusters": 5,
+          "ci95": [
+            -0.0546875,
+            0.10416666666666667
+          ],
+          "cluster_sizes": {
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5
+          }
+        }
+      },
+      "domestic": {
+        "n": 30,
+        "mean_difference": -0.05,
+        "ci95": [
+          -0.14166666666666666,
+          0.041666666666666664
+        ],
+        "paired_t": -1.09924216318941,
+        "paired_t_p_two_sided": 0.28070464764655767,
+        "permutation_p_two_sided": 0.36546345365463456,
+        "positive": 8,
+        "negative": 13,
+        "ties": 9,
+        "cluster_sensitivity": {
+          "clusters": 5,
+          "ci95": [
+            -0.1125,
+            0.0
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8
+          }
+        }
+      },
+      "emergency": {
+        "n": 15,
+        "mean_difference": 0.11666666666666667,
+        "ci95": [
+          0.0,
+          0.23333333333333334
+        ],
+        "paired_t": 1.974266261862182,
+        "paired_t_p_two_sided": 0.06841716354056857,
+        "permutation_p_two_sided": 0.12109375,
+        "positive": 7,
+        "negative": 2,
+        "ties": 6,
+        "cluster_sensitivity": {
+          "clusters": 3,
+          "ci95": [
+            0.08333333333333333,
+            0.5
+          ],
+          "cluster_sizes": {
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        }
+      },
+      "precision_lab": {
+        "n": 25,
+        "mean_difference": -0.11,
+        "ci95": [
+          -0.2,
+          -0.02
+        ],
+        "paired_t": -2.400396792595916,
+        "paired_t_p_two_sided": 0.024488607286414266,
+        "permutation_p_two_sided": 0.04150390625,
+        "positive": 2,
+        "negative": 11,
+        "ties": 12,
+        "cluster_sensitivity": {
+          "clusters": 3,
+          "ci95": [
+            -0.15625,
+            0.0
+          ],
+          "cluster_sizes": {
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4
+          }
+        }
+      }
+    },
+    "composite_pair_counts": {
+      "fufu-weli": 85,
+      "fufu-gugi": 8,
+      "fufu-kuku": 2,
+      "gugi-kuku": 5
+    },
+    "constant_modal_pair": [
+      "fufu",
+      "weli"
+    ],
+    "constant_modal_pair_expected_label_coverage": 0.64,
+    "single_label_majority_baseline": 0.43
+  },
+  "archived_german/EXP-002/condition_A_naive": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.335,
+    "micro_recall": 0.335,
+    "all_invariants_pass": 0.04,
+    "mean_words": 171.2,
+    "mean_seconds": 6.960980000000001,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.3,
+        "routing_membership": null
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.4083333333333333,
+        "routing_membership": null
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.35,
+        "routing_membership": null
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.28,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; invariant IDs unchanged"
+  },
+  "archived_german/EXP-002/condition_B_verbose": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.4975,
+    "micro_recall": 0.4975,
+    "all_invariants_pass": 0.07,
+    "mean_words": 220.77,
+    "mean_seconds": 9.93411,
+    "routing_membership": null,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.48333333333333334,
+        "routing_membership": null
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.6,
+        "routing_membership": null
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.45,
+        "routing_membership": null
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.42,
+        "routing_membership": null
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; invariant IDs unchanged"
+  },
+  "archived_german/EXP-002/condition_C_concept_routed": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.45,
+    "micro_recall": 0.45,
+    "all_invariants_pass": 0.09,
+    "mean_words": 193.8,
+    "mean_seconds": 8.32621,
+    "routing_membership": 0.44,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.4666666666666667,
+        "routing_membership": 0.4
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.5833333333333334,
+        "routing_membership": 0.5333333333333333
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.43333333333333335,
+        "routing_membership": 0.4
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.28,
+        "routing_membership": 0.4
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; invariant IDs unchanged"
+  },
+  "archived_german/EXP-003/condition_C_composite": {
+    "n": 100,
+    "duplicates": [],
+    "missing_ids": [],
+    "unknown_ids": [],
+    "macro_recall": 0.465,
+    "micro_recall": 0.465,
+    "all_invariants_pass": 0.07,
+    "mean_words": 190.78,
+    "mean_seconds": 8.7409,
+    "routing_membership": 0.68,
+    "current_evaluator_discrepancies": 0,
+    "domains": {
+      "clinical_care": {
+        "n": 30,
+        "macro_recall": 0.425,
+        "routing_membership": 0.6666666666666666
+      },
+      "domestic": {
+        "n": 30,
+        "macro_recall": 0.6083333333333333,
+        "routing_membership": 0.6333333333333333
+      },
+      "emergency": {
+        "n": 15,
+        "macro_recall": 0.5166666666666667,
+        "routing_membership": 0.6
+      },
+      "precision_lab": {
+        "n": 25,
+        "macro_recall": 0.31,
+        "routing_membership": 0.8
+      }
+    },
+    "input_provenance": "German commands in initial git benchmark; invariant IDs unchanged"
+  },
+  "archived_german/comparisons": {
+    "overall": {
+      "B-A": {
+        "n": 100,
+        "mean_difference": 0.1625,
+        "ci95": [
+          0.1075,
+          0.2175
+        ],
+        "paired_t": 5.613241004648847,
+        "paired_t_p_two_sided": 1.8148775505344106e-07,
+        "permutation_p_two_sided": 9.999000099990002e-05,
+        "positive": 56,
+        "negative": 17,
+        "ties": 27,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.11011607142857142,
+            0.21220930232558138
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.0005999400059994001
+      },
+      "C-A": {
+        "n": 100,
+        "mean_difference": 0.115,
+        "ci95": [
+          0.0625,
+          0.1675
+        ],
+        "paired_t": 4.308676521989668,
+        "paired_t_p_two_sided": 3.877281598993354e-05,
+        "permutation_p_two_sided": 0.00029997000299970003,
+        "positive": 47,
+        "negative": 18,
+        "ties": 35,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.04824561403508772,
+            0.18077008928571428
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.0011998800119988001
+      },
+      "D-A": {
+        "n": 100,
+        "mean_difference": 0.13,
+        "ci95": [
+          0.0675,
+          0.1925
+        ],
+        "paired_t": 4.129775523144041,
+        "paired_t_p_two_sided": 7.591844408363923e-05,
+        "permutation_p_two_sided": 0.00019998000199980003,
+        "positive": 47,
+        "negative": 18,
+        "ties": 35,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            0.0719650090009001,
+            0.18382564232589585
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.000999900009999
+      },
+      "C-B": {
+        "n": 100,
+        "mean_difference": -0.0475,
+        "ci95": [
+          -0.095,
+          0.0
+        ],
+        "paired_t": -1.977524439950847,
+        "paired_t_p_two_sided": 0.050762770043185926,
+        "permutation_p_two_sided": 0.06379362063793621,
+        "positive": 20,
+        "negative": 34,
+        "ties": 46,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.09854058464345873,
+            0.004904411764705846
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.19138086191380865
+      },
+      "D-B": {
+        "n": 100,
+        "mean_difference": -0.0325,
+        "ci95": [
+          -0.085,
+          0.0175
+        ],
+        "paired_t": -1.2486503756830085,
+        "paired_t_p_two_sided": 0.21473767193025595,
+        "permutation_p_two_sided": 0.25917408259174085,
+        "positive": 19,
+        "negative": 29,
+        "ties": 52,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.07534382474450967,
+            0.015384615384615385
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.5183481651834817
+      },
+      "D-C": {
+        "n": 100,
+        "mean_difference": 0.015,
+        "ci95": [
+          -0.0375,
+          0.0625
+        ],
+        "paired_t": 0.592156525463792,
+        "paired_t_p_two_sided": 0.5550957776718107,
+        "permutation_p_two_sided": 0.6139386061393861,
+        "positive": 31,
+        "negative": 25,
+        "ties": 44,
+        "cluster_sensitivity": {
+          "clusters": 16,
+          "ci95": [
+            -0.029259230287859823,
+            0.04929577464788732
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8,
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5,
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4,
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        },
+        "permutation_p_holm": 0.6139386061393861
+      }
+    },
+    "D-B_domains_exploratory": {
+      "clinical_care": {
+        "n": 30,
+        "mean_difference": -0.058333333333333334,
+        "ci95": [
+          -0.18333333333333332,
+          0.06666666666666667
+        ],
+        "paired_t": -0.9249371490436067,
+        "paired_t_p_two_sided": 0.36263176386418894,
+        "permutation_p_two_sided": 0.4406585693359375,
+        "positive": 6,
+        "negative": 11,
+        "ties": 13,
+        "cluster_sensitivity": {
+          "clusters": 5,
+          "ci95": [
+            -0.17307692307692307,
+            -0.008620689655172414
+          ],
+          "cluster_sizes": {
+            "clinical_care_weli": 18,
+            "clinical_care_zeze": 3,
+            "clinical_care_fufu": 2,
+            "clinical_care_gugi": 2,
+            "clinical_care_zubu": 5
+          }
+        }
+      },
+      "domestic": {
+        "n": 30,
+        "mean_difference": 0.008333333333333333,
+        "ci95": [
+          -0.05,
+          0.06666666666666667
+        ],
+        "paired_t": 0.273038694207807,
+        "paired_t_p_two_sided": 0.7867584856176078,
+        "permutation_p_two_sided": 1.0,
+        "positive": 5,
+        "negative": 5,
+        "ties": 20,
+        "cluster_sensitivity": {
+          "clusters": 5,
+          "ci95": [
+            -0.0625,
+            0.0659304511278175
+          ],
+          "cluster_sizes": {
+            "domestic_fufu": 11,
+            "domestic_zubu": 6,
+            "domestic_gugi": 2,
+            "domestic_zeze": 3,
+            "domestic_weli": 8
+          }
+        }
+      },
+      "emergency": {
+        "n": 15,
+        "mean_difference": 0.06666666666666667,
+        "ci95": [
+          -0.06666666666666667,
+          0.18333333333333332
+        ],
+        "paired_t": 1.0,
+        "paired_t_p_two_sided": 0.33428194339465855,
+        "permutation_p_two_sided": 0.46875,
+        "positive": 5,
+        "negative": 2,
+        "ties": 8,
+        "cluster_sensitivity": {
+          "clusters": 3,
+          "ci95": [
+            0.022727272727272728,
+            0.25
+          ],
+          "cluster_sizes": {
+            "emergency_kuku": 11,
+            "emergency_weli": 1,
+            "emergency_fufu": 3
+          }
+        }
+      },
+      "precision_lab": {
+        "n": 25,
+        "mean_difference": -0.11,
+        "ci95": [
+          -0.19,
+          -0.03
+        ],
+        "paired_t": -2.529125495289846,
+        "paired_t_p_two_sided": 0.018417563828027773,
+        "permutation_p_two_sided": 0.03271484375,
+        "positive": 3,
+        "negative": 11,
+        "ties": 11,
+        "cluster_sensitivity": {
+          "clusters": 3,
+          "ci95": [
+            -0.125,
+            -0.05
+          ],
+          "cluster_sizes": {
+            "precision_lab_weli": 16,
+            "precision_lab_fufu": 5,
+            "precision_lab_gugi": 4
+          }
+        }
+      }
+    },
+    "composite_pair_counts": {
+      "fufu-weli": 84,
+      "fufu-gugi": 11,
+      "fufu-kuku": 2,
+      "gugi-kuku": 3
+    },
+    "constant_modal_pair": [
+      "fufu",
+      "weli"
+    ],
+    "constant_modal_pair_expected_label_coverage": 0.64,
+    "single_label_majority_baseline": 0.43
+  }
+}

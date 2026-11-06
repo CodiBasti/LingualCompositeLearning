@@ -1,0 +1,2636 @@
+{
+  "status": "post_hoc_descriptive_timing_diagnostic",
+  "registration": "After inspecting600 judge checks and ongoing latency timings; primary tests and ratings unchanged.",
+  "definition": "Group exact rendered message payload and output text hashes, equal input/output token counts, same scenario and arm; planner calls only. Same pinned model/settings under V3 adapter.",
+  "caveat": "Time variation is observed. This diagnostic does not identify its cause or separate concurrent application load, paging, thermal/clock state, cache/runtime effects and other factors. Reruns may span main/supplement processes. No new independent accuracy observations.",
+  "identical_prompt_output_groups_repeated": 100,
+  "median_within_group_max_min_ratio": 3.9262104519097822,
+  "largest_within_group_max_min_ratio": 19.667193343615974,
+  "groups": [
+    {
+      "scenario_id": "AUD-011",
+      "arm": "cot_equal",
+      "prompt_sha256": "247e46a7fe7bd7cb70d25b9682b5f1cb70e259159c93ad50804ac36e5aa111ea",
+      "output_sha256": "e869e5755f73a9a32582e1b5bf863d606b365b434bbd66a11c19ad4895b45f2d",
+      "input_tokens": 783,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 20.41542400000617,
+      "max_seconds": 401.5140910000191,
+      "max_min_ratio": 19.667193343615974,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 20.41542400000617
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.565497699950356
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 401.5140910000191
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 207.42009460000554
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "renamed_labels",
+      "prompt_sha256": "58c66173cbd7299146653f782d9636de2de9ee4e353391eaead5b1eff468618c",
+      "output_sha256": "de31705e03240f63dfe10a79a9cfbca553014f4cd68471605a0d7d687686894c",
+      "input_tokens": 160,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 16.71820669999579,
+      "max_seconds": 197.55677269998705,
+      "max_min_ratio": 11.816863868541404,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.71820669999579
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.007414699997753
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 197.55677269998705
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 197.23210300004575
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "renamed_labels",
+      "prompt_sha256": "0b3590f06db31141ece2e2dfce6eb7b14114c7fc1b577cda646824b7ed597382",
+      "output_sha256": "2d376ca4bfc224c4e697505f424765a5e1e7d3c75f4cd4421a89ec9f4b6b8116",
+      "input_tokens": 115,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 16.82474439998623,
+      "max_seconds": 197.39481160003925,
+      "max_min_ratio": 11.732410722400086,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.82474439998623
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 30.275700800004415
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 196.9896335999947
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 197.39481160003925
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "LCL",
+      "prompt_sha256": "b0ddf5f8b52393442aae4367c1ee22e2aa770e5fa2307e263c8c974556f4789a",
+      "output_sha256": "4206db2c19bd76a082ab8c2692ba1dab34b1bc7e43b9d70a692e034cbd2af7a4",
+      "input_tokens": 124,
+      "output_tokens": 250,
+      "n_calls": 3,
+      "min_seconds": 17.17205210000975,
+      "max_seconds": 197.60271919996012,
+      "max_min_ratio": 11.507228026628683,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.17205210000975
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.901206700014882
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 197.60271919996012
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "LCL",
+      "prompt_sha256": "7d4e1a2626c85c6e0adaf0a98fca453fc8d801bee9e5bc4b8bb10a7f5a0bd14d",
+      "output_sha256": "f2fbec31fa9c8a8ebde01946ab3b54ab0574c0c4697e7ed1fec55bc7e634e187",
+      "input_tokens": 120,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.365213999990374,
+      "max_seconds": 198.89054019999458,
+      "max_min_ratio": 11.453388377482986,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.365213999990374
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.887785400031134
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 52.9926263000234
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 198.89054019999458
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "structured_direct",
+      "prompt_sha256": "7949b30c2cb5ffdd7f8324c11b24d39c1591e139167fb9cbce32e547d5307f33",
+      "output_sha256": "ee669c1f1bca5ba001bf54143b155185804feb7c7fd0519ba7c18587f0d4dc99",
+      "input_tokens": 691,
+      "output_tokens": 136,
+      "n_calls": 3,
+      "min_seconds": 9.9958300999715,
+      "max_seconds": 113.60351729998365,
+      "max_min_ratio": 11.365090859268163,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.9958300999715
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 10.873804500035476
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 113.60351729998365
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "natural_labels",
+      "prompt_sha256": "01b2b63e782a3aa24e603fa85b1bbd47cff9a15e686efcf64694d4696fe0935b",
+      "output_sha256": "a43dab4086d7e51f3930156b3f90a16c5f0349a94316f915cf1bf46e71a38eb7",
+      "input_tokens": 124,
+      "output_tokens": 250,
+      "n_calls": 3,
+      "min_seconds": 17.40738240000792,
+      "max_seconds": 197.2755019000033,
+      "max_min_ratio": 11.33286426222897,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.40738240000792
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 19.33392519998597
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 197.2755019000033
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "natural_labels",
+      "prompt_sha256": "d681111ebe2e96a8f40ff197a1d11fae82a4402a5cc1a72cb4a4c809fbf238ce",
+      "output_sha256": "2de61264342c799b8115b2612e5faff14d610b3e0d0bec97793780a8c497ec6c",
+      "input_tokens": 172,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.80292320001172,
+      "max_seconds": 198.43414520000806,
+      "max_min_ratio": 11.14615521117776,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.80292320001172
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.50816460000351
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 198.3008011999773
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 198.43414520000806
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "natural_labels",
+      "prompt_sha256": "c25bb49053dbc0b2d1812fee54c7e331bdba3a2a00861e56ca162a68ac1ccd2e",
+      "output_sha256": "ce984d6915adcf675b9c37e071725d3ceed9518c59253f1d4a9640d26c235c13",
+      "input_tokens": 119,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.44614240003284,
+      "max_seconds": 193.99380580004072,
+      "max_min_ratio": 11.119581701893912,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.44614240003284
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.073252699978184
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 22.9098820000072
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 193.99380580004072
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "renamed_labels",
+      "prompt_sha256": "8db5995a6f4e33cefc029fc9bb6207f6d2bd9e7795b7e80fa88affb8c9664d5f",
+      "output_sha256": "d2a89c12fd5063549ad7f8f0c3e71e1156269d26d9f959392413e8e98231bcba",
+      "input_tokens": 119,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.55189210001845,
+      "max_seconds": 194.15822310000658,
+      "max_min_ratio": 11.061954004366429,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.55189210001845
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.523277900007088
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 77.71944850002183
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 194.15822310000658
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "cot_equal",
+      "prompt_sha256": "459dd1be99c9f169817ca152952b8e44ca74d38ca44fb1731d6a12467fc571cb",
+      "output_sha256": "341d6c83913c4f1eb99eab82379329cca78eefeca4106b3771c2a505fef4ee76",
+      "input_tokens": 783,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 19.704611699969973,
+      "max_seconds": 208.9016255000024,
+      "max_min_ratio": 10.601661615099005,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.704611699969973
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 29.787940700014587
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 208.9016255000024
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 206.31206989998464
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "structured_direct",
+      "prompt_sha256": "62d5dfaf61b9bad028ed81c3fc485b8f8185e9791747de3cbfa7e53484782454",
+      "output_sha256": "db58ee989de3c0f58ed77fe03ac58027c4403193174ad5971f93d1378ad44045",
+      "input_tokens": 684,
+      "output_tokens": 218,
+      "n_calls": 4,
+      "min_seconds": 17.3034288000199,
+      "max_seconds": 181.45622649998404,
+      "max_min_ratio": 10.486720787950151,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.3034288000199
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.570361299964134
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 180.2765650000074
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 181.45622649998404
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-031",
+      "arm": "LCL",
+      "prompt_sha256": "de98fc2e7586f9a5c7c52465c45ce7af0918941a736340e135ad62e2fba85297",
+      "output_sha256": "b15b160c4a85d4b4c65f57a9cfa343e3e91941317df049df376b6e25aa02a3c3",
+      "input_tokens": 162,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 19.06417299999157,
+      "max_seconds": 198.932003599999,
+      "max_min_ratio": 10.43486143354275,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.06417299999157
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.734875300026033
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 197.52644599997438
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 198.932003599999
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "cot_equal",
+      "prompt_sha256": "5c7d4c83189f45a0a202a783149277eddfddd7eb420bc8344179da67a223f5c7",
+      "output_sha256": "06d794b57019912391f660146c40587c810f28081f991e9ab934a84047cc7a38",
+      "input_tokens": 790,
+      "output_tokens": 250,
+      "n_calls": 3,
+      "min_seconds": 20.977668999985326,
+      "max_seconds": 208.94794639997417,
+      "max_min_ratio": 9.960494009135159,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 29.41013470001053
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.977668999985326
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 208.94794639997417
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-002",
+      "arm": "renamed_labels",
+      "prompt_sha256": "5cb32d11a555491e8c23957a6e0ca47e08b60875264f7fce2a07aa3f106afedc",
+      "output_sha256": "05c05ef458bbbad00312708f2cf5118302d8be6506f0eb395ee8f250aa70dcbf",
+      "input_tokens": 124,
+      "output_tokens": 250,
+      "n_calls": 3,
+      "min_seconds": 20.24204969999846,
+      "max_seconds": 197.27444200002356,
+      "max_min_ratio": 9.745774016157986,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 21.343638199963607
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.24204969999846
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 197.27444200002356
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "structured_direct",
+      "prompt_sha256": "c0e126caf9bb23188312126cbebe6179e237e7c2eedb7ab32185d3edf3c8fcd9",
+      "output_sha256": "43eac31b62a53adc5b53c9c7b6b850fdeee43f6dbf6a3c9a84a953b4b6393843",
+      "input_tokens": 682,
+      "output_tokens": 210,
+      "n_calls": 4,
+      "min_seconds": 18.136527399998158,
+      "max_seconds": 172.90797679999378,
+      "max_min_ratio": 9.53368707176057,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.147434199985582
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.136527399998158
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 172.90797679999378
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 172.85701550001977
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "cot_equal",
+      "prompt_sha256": "7f837ae140fdaf950675f9b474c276c8e8e23044b5320392a15443349ad84cf6",
+      "output_sha256": "cec6df2daf977c68a96da3f5a75ff8a5772b101095f3adc5d21439271154b3b9",
+      "input_tokens": 773,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.82759120000992,
+      "max_seconds": 74.58056580001721,
+      "max_min_ratio": 8.448574940798505,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.82759120000992
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 74.58056580001721
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "structured_direct",
+      "prompt_sha256": "32b288be745367cae18de86985733a67d8dead076a10b397c043de8c255ef5c3",
+      "output_sha256": "4acb31193a3da81a41d300a17e3e0cf6b847b2fc0f9ee62d1aec8dcdb5c5e58f",
+      "input_tokens": 674,
+      "output_tokens": 184,
+      "n_calls": 2,
+      "min_seconds": 6.532928900036495,
+      "max_seconds": 53.86482010001782,
+      "max_min_ratio": 8.245125719907485,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 6.532928900036495
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 53.86482010001782
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "cot_equal",
+      "prompt_sha256": "8597dc3a82048dd1467d545a7e8a8ac1dd97db9b9ca8bbc24d4e264eee2c38f8",
+      "output_sha256": "0a79a11aac902fbb9567f25bd0b3f3113675373a6c835afb1442a9760017a433",
+      "input_tokens": 790,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.91217389999656,
+      "max_seconds": 73.28441050002584,
+      "max_min_ratio": 8.222955624783548,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.91217389999656
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 73.28441050002584
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "structured_direct",
+      "prompt_sha256": "76787cb21938c990502af914c2c50345b2b60e6112124cee5a662f5f444355cb",
+      "output_sha256": "8ab9d8d49c3df605d2ccedf3a17c152427fb39a0e969ba0df765e028083776ec",
+      "input_tokens": 674,
+      "output_tokens": 99,
+      "n_calls": 2,
+      "min_seconds": 3.595022799971048,
+      "max_seconds": 29.287890599982347,
+      "max_min_ratio": 8.146788554503246,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 3.595022799971048
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 29.287890599982347
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "cot_equal",
+      "prompt_sha256": "0732c39418e679d605c8e031c06d8f0bf61129c0d2c5c326ad0dada9db86d1b2",
+      "output_sha256": "ba3e7b860ebca69515d25b7dfdfcfe1de0c127bd38f22f0c05d5c29b931b3a74",
+      "input_tokens": 777,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 20.31894560001092,
+      "max_seconds": 164.12202959996648,
+      "max_min_ratio": 8.07729066413162,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 20.31894560001092
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 164.12202959996648
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "cot_equal",
+      "prompt_sha256": "30cc54aa08f72bf181c29efede1e04ce4c76c15428bd4f9770173123de05cfbc",
+      "output_sha256": "8c14adee9df3d4b3c84e4f38092cc40c81ec04c9f4b07b87e62dc37890ad6ca9",
+      "input_tokens": 773,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.958886499982327,
+      "max_seconds": 72.29957149998518,
+      "max_min_ratio": 8.070151519402305,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.958886499982327
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 72.29957149998518
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "cot_equal",
+      "prompt_sha256": "c256b42f55e293a5678576cef778e559cef9faa36c99da934179d00597ad378d",
+      "output_sha256": "ebb34a3947b6db4f0b224609dfd8c13b11792b23b47d0924e349fcad681162c3",
+      "input_tokens": 785,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.220125299994834,
+      "max_seconds": 73.80271359998733,
+      "max_min_ratio": 8.004523929846016,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.220125299994834
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 73.80271359998733
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "structured_direct",
+      "prompt_sha256": "2d9b2be51a63ee28a771a5bc1051d6ea3fe44380e1e91c804ec1efa6bef12009",
+      "output_sha256": "b621e6d0b497a134381f83973b9373a46706c037bec3ab835b2c8882f9eec557",
+      "input_tokens": 691,
+      "output_tokens": 165,
+      "n_calls": 2,
+      "min_seconds": 5.918560900026932,
+      "max_seconds": 47.31012510001892,
+      "max_min_ratio": 7.993518339872728,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 5.918560900026932
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 47.31012510001892
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "cot_equal",
+      "prompt_sha256": "5bf06faf539a7801d3eca0d3e8f5104c22e8d6846f08e5c374e728226820866e",
+      "output_sha256": "ea7c37e73d628884d74f1176a07a9bbfd1545cff874c2b1c9d5c2df957af3e35",
+      "input_tokens": 788,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.886423499963712,
+      "max_seconds": 70.76290590001736,
+      "max_min_ratio": 7.963035511452534,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.886423499963712
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 70.76290590001736
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-011",
+      "arm": "structured_direct",
+      "prompt_sha256": "811022f45477342f00ee8272e0332e602c30d8e30c14186d64cc051de0deec95",
+      "output_sha256": "8081d2bf84404bbade90f3f4bfe0cdb8be8e3fe6b1c29d8d097ecdf514c2e2b6",
+      "input_tokens": 684,
+      "output_tokens": 181,
+      "n_calls": 4,
+      "min_seconds": 18.860694999981206,
+      "max_seconds": 149.57262930000434,
+      "max_min_ratio": 7.930388000026159,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 37.37291929998901
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.860694999981206
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 148.57931429997552
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 149.57262930000434
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "structured_direct",
+      "prompt_sha256": "ad6c53f6d591c02c3e0d2a7170d9f71a20903ca450723fb07cdc22d0547b7c47",
+      "output_sha256": "657da062d6d1a397da9fc4ec983c675c7d7bb2f6be857893732adbc53f1a2f2d",
+      "input_tokens": 689,
+      "output_tokens": 170,
+      "n_calls": 2,
+      "min_seconds": 6.056454300007317,
+      "max_seconds": 46.653296200034674,
+      "max_min_ratio": 7.7030707884608836,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 6.056454300007317
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 46.653296200034674
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "structured_direct",
+      "prompt_sha256": "0a17fd2b4dfe1280981576a9103e009352dcefcb68c9c1adf3bf045ab634d7ee",
+      "output_sha256": "00e1cc7fc75e3af095884fc2dbc38d4c76ee0bfc6bdd7ce400a99df9fddf6b47",
+      "input_tokens": 686,
+      "output_tokens": 158,
+      "n_calls": 2,
+      "min_seconds": 5.782364900049288,
+      "max_seconds": 43.366743299993686,
+      "max_min_ratio": 7.4998281930675175,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 5.782364900049288
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 43.366743299993686
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "cot_equal",
+      "prompt_sha256": "1dd3bd960c643d6f25790960dc21c096bc914927d54c627d5a868c86cc516f7e",
+      "output_sha256": "518154377de859a90a2115923fd7bcf29b1b935f67cd91ef5d30a17aefa0507e",
+      "input_tokens": 785,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.44487940002,
+      "max_seconds": 70.48969659995055,
+      "max_min_ratio": 7.463271219725821,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.44487940002
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 70.48969659995055
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "structured_direct",
+      "prompt_sha256": "58771761a781a85de4f0f4933e36801aba435deae47e665f808cc1aa677a0f05",
+      "output_sha256": "bf0f97dea4153bf05030e275584f7fa4da18f085adae5bcf41a7332dbafe7caa",
+      "input_tokens": 686,
+      "output_tokens": 189,
+      "n_calls": 2,
+      "min_seconds": 6.998731100000441,
+      "max_seconds": 50.15310459997272,
+      "max_min_ratio": 7.166028224740562,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 6.998731100000441
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 50.15310459997272
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "structured_direct",
+      "prompt_sha256": "40a72e73b82381f68df30b34015359ebce70e1d6f5f1abbb555bfeb20d18a220",
+      "output_sha256": "08668a2c5233f5179c42a9311d6542e4a10fa1d3a1188026d42ac5c2baf43d0b",
+      "input_tokens": 677,
+      "output_tokens": 87,
+      "n_calls": 2,
+      "min_seconds": 3.995259699993767,
+      "max_seconds": 27.340381699963473,
+      "max_min_ratio": 6.843205136328466,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 3.995259699993767
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 27.340381699963473
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "cot_equal",
+      "prompt_sha256": "e9e37cfa316767d9816fb1fa8580049432329717d2019dd785a961adddac0c7b",
+      "output_sha256": "b75bccc61047aff3e49091993a9439771ba322e8d8a4437666fe9536eeb9df43",
+      "input_tokens": 781,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 32.02777589997277,
+      "max_seconds": 206.59376479999628,
+      "max_min_ratio": 6.45045617420384,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 53.73246669996297
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 32.02777589997277
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 206.59376479999628
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 205.66309240000555
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "structured_direct",
+      "prompt_sha256": "0aaf8858129fb039514eb35f97012c477fc46c4f8f3a90b9905f7e9a2d6d8555",
+      "output_sha256": "1fbe83db37cf4e78ac229335028cf3b496b9191ce0300359e386d8f71929dc25",
+      "input_tokens": 692,
+      "output_tokens": 140,
+      "n_calls": 4,
+      "min_seconds": 11.423103299981449,
+      "max_seconds": 73.0201407999848,
+      "max_min_ratio": 6.392320797808367,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 11.423103299981449
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 12.357583799981512
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 47.64426460000686
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 73.0201407999848
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "LCL",
+      "prompt_sha256": "dc9a1a1939b8a16fa6bad6149fef9555eabb1404a4f4d3b2c0d096d794679adb",
+      "output_sha256": "0c0db4a7eb8cbc03510f3a8d59ea725defab6f6093c97fa89b8fe93a352469c7",
+      "input_tokens": 115,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 31.519213799969293,
+      "max_seconds": 198.76360529998783,
+      "max_min_ratio": 6.306109237413196,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 31.519213799969293
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 31.89067709998926
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 196.81465630000457
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 198.76360529998783
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "cot_equal",
+      "prompt_sha256": "a3891f09ec2bf003590512654c6c3e4101c3f6568ed6a3d9dd73e8a1de1d5f6f",
+      "output_sha256": "ec1993b789b4b1d1561065d3151ab4296532e83d5c0c7416714d7473934c68f9",
+      "input_tokens": 791,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 21.559261800022796,
+      "max_seconds": 130.49898639996536,
+      "max_min_ratio": 6.0530359346453775,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 21.760770900000352
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.559261800022796
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 95.27445440000156
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 130.49898639996536
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-021",
+      "arm": "natural_labels",
+      "prompt_sha256": "0625958a183c86456748ed61bdf5bed2cfaa10b249fe507312c71a2c920e2ae6",
+      "output_sha256": "ea1eb0c5165b1068130ec5d0fcaa8c5409b787bed44c62c328f226fc0fd2dca8",
+      "input_tokens": 170,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 35.52435050002532,
+      "max_seconds": 198.88565609999932,
+      "max_min_ratio": 5.5985726213307565,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 123.96084870002232
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.52435050002532
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 198.88565609999932
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 198.6626716000028
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "LCL",
+      "prompt_sha256": "47d9748e04d00f03804c1d6795a63f692588eeee66279a7b1dbe403f13d4383d",
+      "output_sha256": "ab677f2dc5fa18fd64d3f4bc489329accd6ea383052175fa3fbafa22a97be3e0",
+      "input_tokens": 152,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.792728100030217,
+      "max_seconds": 41.00148229999468,
+      "max_min_ratio": 4.663112726055269,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.792728100030217
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 41.00148229999468
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "natural_labels",
+      "prompt_sha256": "f1acd6c24a40c0b67dd4c65f8d4c94fdd06c3898fbe61e53212b1f2279bc362e",
+      "output_sha256": "f2356e77c6b1a4d6925a9c1e707716e753dc5d86112150858a061c553a41976d",
+      "input_tokens": 151,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.990546500019263,
+      "max_seconds": 72.80993580003269,
+      "max_min_ratio": 4.285320416265018,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.990546500019263
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 72.80993580003269
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "natural_labels",
+      "prompt_sha256": "200e30bf0220e93bd1d906f78b2eaef070af85619548897751e5b807ab388b16",
+      "output_sha256": "a7260cef7e0d51db5579e2231e652150e064f388bab3ee5231a3aee214ef5e22",
+      "input_tokens": 177,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.742714500054717,
+      "max_seconds": 36.40660079999361,
+      "max_min_ratio": 4.164221627020504,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.742714500054717
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.40660079999361
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "renamed_labels",
+      "prompt_sha256": "c59958f5e87a671c7ba820fcfae6ee028f5522476b13a4eef8c1d98751627e84",
+      "output_sha256": "0eec6ec5c07177defab8a339361cf158a84b1868f92f98887a38cd60fa38b161",
+      "input_tokens": 179,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.98901899997145,
+      "max_seconds": 37.08591600001091,
+      "max_min_ratio": 4.1256911349423895,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.98901899997145
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 37.08591600001091
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "natural_labels",
+      "prompt_sha256": "7fb5f852fc0ecd2b57db6cff36e21328f9aa8773115e947aedcf92d00482681b",
+      "output_sha256": "b557653a293a5819daa84714e57439659e9fa5495553ccf69110ae84f9e2b5d6",
+      "input_tokens": 179,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.060673500003759,
+      "max_seconds": 36.87510060000932,
+      "max_min_ratio": 4.069796864437729,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.060673500003759
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.87510060000932
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "renamed_labels",
+      "prompt_sha256": "f05392fa2412202739ee16ff0e7f0ebce075f14c6d474d2d8c00a07c374be332",
+      "output_sha256": "0a78f0e061947f0e690f6748ba9d1b13261fa5b299c003b4ec4b63eb431bcd92",
+      "input_tokens": 174,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.781886400014628,
+      "max_seconds": 35.73451239999849,
+      "max_min_ratio": 4.069115765371205,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.781886400014628
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.73451239999849
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "renamed_labels",
+      "prompt_sha256": "2ed177207b6a751a2f0f30a707d1860485a263443493f8239a3c74058b7f7c5a",
+      "output_sha256": "b194f2c9263e63ce21293cfa209d91e8a32b1cf99a2d912a952957819c5a3bfb",
+      "input_tokens": 177,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.870129099988844,
+      "max_seconds": 35.9951564000221,
+      "max_min_ratio": 4.058019448676048,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.870129099988844
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.9951564000221
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "natural_labels",
+      "prompt_sha256": "5015a90dca84664d42fb5d78768b936041ea5253adf7dd763a6b05bfa9fd84a7",
+      "output_sha256": "9214a0766347fc3be20efa8a86d41035ee50fab415e5fdb5d3887136520bd2d1",
+      "input_tokens": 148,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.846696000022348,
+      "max_seconds": 35.86313089996111,
+      "max_min_ratio": 4.053844610447845,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.846696000022348
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.86313089996111
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-015",
+      "arm": "LCL",
+      "prompt_sha256": "d5c00431263b85a446b2e74e2bd8f5e9e81c9aa7c032e4330f6c04289a1ff54b",
+      "output_sha256": "15379615a28674b66d043a5c36f87aee1f53236a58372e13e69817c26cda70d7",
+      "input_tokens": 178,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.017620500002522,
+      "max_seconds": 36.44395980000263,
+      "max_min_ratio": 4.041416446832336,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.017620500002522
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.44395980000263
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "renamed_labels",
+      "prompt_sha256": "23619ce58ecf0fbd791fa0e65966dd210b59fb56c7b7c2ace9e1bd90b8f656e0",
+      "output_sha256": "8c755a39f0190306902f811dabca2db1f38fb234b5a338719b4355d1b47051f8",
+      "input_tokens": 150,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.852344000013545,
+      "max_seconds": 35.355006899975706,
+      "max_min_ratio": 3.993858225563942,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.852344000013545
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.355006899975706
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "natural_labels",
+      "prompt_sha256": "0f4cc7e1abd435d562e470c4e91790adcf607ea616ece47ae1ef1dc845d98a8c",
+      "output_sha256": "95ad8d0b012b82f8e09915f4b1793f5b9d65a15a8a0920a6de32c27eee572893",
+      "input_tokens": 174,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.001121399982367,
+      "max_seconds": 35.75261279998813,
+      "max_min_ratio": 3.9720176199443515,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.001121399982367
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.75261279998813
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "natural_labels",
+      "prompt_sha256": "b1b9cb5ad6c909e8b9f5f981719b83bf8cbd6e8a2750a62b4e1be3b03138c325",
+      "output_sha256": "4720bd58e0e974e30c09e6da041f55e3b35e4987bf2874ee8ecb4d80e644236c",
+      "input_tokens": 174,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.19096370000625,
+      "max_seconds": 36.46842580003431,
+      "max_min_ratio": 3.967856580698878,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.19096370000625
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.46842580003431
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-025",
+      "arm": "LCL",
+      "prompt_sha256": "87f146f919822e7b02f2df4b1ab2243c81eab5675d1d0c5a113bd95e1c602701",
+      "output_sha256": "e4a87b9cfc3edba0036ff9dca550f6693ce21a2fd4c632df1091a60cc9753da6",
+      "input_tokens": 175,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.23479529999895,
+      "max_seconds": 36.35032389999833,
+      "max_min_ratio": 3.9362349374438717,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.23479529999895
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.35032389999833
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-034",
+      "arm": "natural_labels",
+      "prompt_sha256": "01610b0aa85f064c74e1f3e3856dba2a88e5b5e83e97bbbc74cfe47d2e04a8a7",
+      "output_sha256": "de44c57a5946fe7c841906b2a9ef372bb16f25fc6d8d3f2a6b72ca161ef0a5f4",
+      "input_tokens": 149,
+      "output_tokens": 248,
+      "n_calls": 2,
+      "min_seconds": 8.868746799998917,
+      "max_seconds": 34.86059540003771,
+      "max_min_ratio": 3.9307239440009685,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.868746799998917
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 34.86059540003771
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-005",
+      "arm": "LCL",
+      "prompt_sha256": "384a13e331e5d662fc5e20448d4b1df770a2506ae40a2541f2031d5873b7ae68",
+      "output_sha256": "5a8582ffebe56a7bf317e79285443bac9b17d3136276799bec9aacc221697696",
+      "input_tokens": 180,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.381888600008097,
+      "max_seconds": 36.7929240000085,
+      "max_min_ratio": 3.921696959818596,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.381888600008097
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.7929240000085
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "natural_labels",
+      "prompt_sha256": "9df5d6944376afd6457cf74bfc936240ac3e84327cd7059b36f9adfa0c380fa4",
+      "output_sha256": "58e8dcd2aecb2e0865dd065a2005a7ee783551f9fa34af3b5909d53e58717433",
+      "input_tokens": 127,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.81833589996677,
+      "max_seconds": 68.05801389995031,
+      "max_min_ratio": 3.819549383401019,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.81833589996677
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.88593889999902
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 31.811989600013476
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 68.05801389995031
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "LCL",
+      "prompt_sha256": "a8708796f73afb299bb8d55d6c0b691c1579de8e325e177cadeb08d7299c2322",
+      "output_sha256": "8f9ae8cea827b7dc3da9109c1ec40b4d2a930751e03a4c4a15b79b5b1a7b5d5c",
+      "input_tokens": 136,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.290262199996505,
+      "max_seconds": 34.59509469999466,
+      "max_min_ratio": 3.7238017566401598,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.290262199996505
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 34.59509469999466
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "renamed_labels",
+      "prompt_sha256": "69336e541feb3205405c008b04d3b382bbd1c5970885b31d05b55d9ef45f7986",
+      "output_sha256": "4150d64f2ee0367993f4e0f850b74049e9701f6f3f0f171d24fe8d1b1d1ab8da",
+      "input_tokens": 127,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 17.784097799973097,
+      "max_seconds": 66.02125720004551,
+      "max_min_ratio": 3.7123759632127857,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.784097799973097
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 20.882258599973284
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 31.753515199990943
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 66.02125720004551
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-035",
+      "arm": "renamed_labels",
+      "prompt_sha256": "bb10d87ce96b0619697b74b6904d52352a9172448d8689262d8ec449e38ebe57",
+      "output_sha256": "561f50cf56a1ec6a3d154e8ed30dbdebb276e8b4824df5beec8e64a186f3cca1",
+      "input_tokens": 136,
+      "output_tokens": 238,
+      "n_calls": 2,
+      "min_seconds": 8.985382599988952,
+      "max_seconds": 33.22758399997838,
+      "max_min_ratio": 3.697959839797944,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.985382599988952
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 33.22758399997838
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "LCL",
+      "prompt_sha256": "522fe91678e3924e00e559c2da24cc9d45989acfcee9a1ce6a8dd7b0d4462896",
+      "output_sha256": "a721fbe4826586f7e61f1a5bc80818543abf9ff8d3f2112764f5c92404499f26",
+      "input_tokens": 105,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.124846899998374,
+      "max_seconds": 33.07682790001854,
+      "max_min_ratio": 3.624918671240877,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.124846899998374
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 33.07682790001854
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "renamed_labels",
+      "prompt_sha256": "bd4bed2c5209830f04863c689b425a07152ad1c323e82a6fd318eecff9791d7f",
+      "output_sha256": "a8fe57446564db22110fa333fce4e182074815b4bebe38f395387d52395fdd39",
+      "input_tokens": 149,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 9.741980799997691,
+      "max_seconds": 35.14336450002156,
+      "max_min_ratio": 3.6074146748503026,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.741980799997691
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 35.14336450002156
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "LCL",
+      "prompt_sha256": "1b90168bd36b58d1b1309582f8dfdbe37b4930b618fa31f8f186200edb49641d",
+      "output_sha256": "c746d949c4d8cbd7cda96f58547587cca3240449c7eddb65d9ae606a7c250a2e",
+      "input_tokens": 113,
+      "output_tokens": 125,
+      "n_calls": 2,
+      "min_seconds": 19.687556199962273,
+      "max_seconds": 64.97322549996898,
+      "max_min_ratio": 3.3002179061763632,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 64.97322549996898
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 19.687556199962273
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-024",
+      "arm": "LCL",
+      "prompt_sha256": "5b942f5567abc1f4988c35cafea3d3a985142a4252e84720d811a76e107622b5",
+      "output_sha256": "e16a955c9139e3735cbaecf14cbfed7aed9184b3492e7c55584266ca98eb96ae",
+      "input_tokens": 102,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 8.80734769999981,
+      "max_seconds": 28.635776299983263,
+      "max_min_ratio": 3.2513507216234783,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 8.80734769999981
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 28.635776299983263
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "cot_equal",
+      "prompt_sha256": "9b84b453b54c0b6571eec1fdf0d23fe47357d167b14232c1e5cd871e5a929160",
+      "output_sha256": "a8541987b2584c44da91eb3b6908fe8ee7b7577e4d1b22ab7712b69c6639ac88",
+      "input_tokens": 785,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 20.257187200011685,
+      "max_seconds": 63.2221819999977,
+      "max_min_ratio": 3.1209753543651524,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 20.257187200011685
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 63.2221819999977
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "LCL",
+      "prompt_sha256": "da57887ad3dabce235ab31dc2d0fe0c11c1c6b593cabca92f4723d809310f810",
+      "output_sha256": "2ad02fd9964a42f1f5c01d66c4a37ff3be54b3a3fadc127c85ba3c1639d84ff5",
+      "input_tokens": 168,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 18.723973599961028,
+      "max_seconds": 57.75188590004109,
+      "max_min_ratio": 3.0843819337665215,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 18.723973599961028
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 57.75188590004109
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "structured_direct",
+      "prompt_sha256": "10ac597489c23f95ccc9dd94f880e450d5ea277046140d4772223daad4e69e41",
+      "output_sha256": "436335d535aa45567a7daa4323ae3c16f0e9dac774d4e7d80a9cf509a898fc8c",
+      "input_tokens": 686,
+      "output_tokens": 151,
+      "n_calls": 2,
+      "min_seconds": 11.398458099982236,
+      "max_seconds": 34.11709129996598,
+      "max_min_ratio": 2.9931321412691028,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 11.398458099982236
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 34.11709129996598
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "natural_labels",
+      "prompt_sha256": "6efb98856f3a24e03f2412d137dcf9fdfc08ec43a302f6a2d4fbcc4d228864a9",
+      "output_sha256": "d8d6bec7cff328a17199ca1eab1658527906125ce356ae5611658502697e56bc",
+      "input_tokens": 167,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 17.722195899987128,
+      "max_seconds": 52.2119278999744,
+      "max_min_ratio": 2.946131968895137,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.722195899987128
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 52.2119278999744
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "renamed_labels",
+      "prompt_sha256": "d320df0d40d9982e0ef89eea431da37e2aafaa33f03619018396bdd85e5330e1",
+      "output_sha256": "b6dcee2f01855a92a61f85fdbd2b44773d6b663c64ccf763cd454a7f6e647b14",
+      "input_tokens": 174,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 19.444747900008224,
+      "max_seconds": 44.910794500028715,
+      "max_min_ratio": 2.309661957613229,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.444747900008224
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 44.910794500028715
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "natural_labels",
+      "prompt_sha256": "9993564be4431b1ca286ff09cad42c45e97705eaecdc8c97c62532c265c23caa",
+      "output_sha256": "3db7d1b4c34d16db7147a82fb3c9b0ea427c7053d309c5a8f43483e3d2ea02b5",
+      "input_tokens": 174,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 18.20134660002077,
+      "max_seconds": 41.92305739998119,
+      "max_min_ratio": 2.3032942738386923,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 18.20134660002077
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 41.92305739998119
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "LCL",
+      "prompt_sha256": "07018cc868dc9469a008e8dc98e54ce3d04e9cdc494eb823f8c874ffe909bdb9",
+      "output_sha256": "248a47765fc0aee369ffcec26b167ef8f06ef6c58185d4c4bed1c26fe5baab60",
+      "input_tokens": 142,
+      "output_tokens": 186,
+      "n_calls": 2,
+      "min_seconds": 13.429269200016279,
+      "max_seconds": 30.305489200050943,
+      "max_min_ratio": 2.2566744882896685,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 13.429269200016279
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 30.305489200050943
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "cot_equal",
+      "prompt_sha256": "d444a852122b1dcb917002024cedbbff500e357074cfcb8e785a887940b1baeb",
+      "output_sha256": "495cda6515ec5773c47c59bd9c0808e4f561b06a2989227ed414ce5a40959603",
+      "input_tokens": 783,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 19.77056909998646,
+      "max_seconds": 44.28365080000367,
+      "max_min_ratio": 2.239877394325184,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.77056909998646
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 44.28365080000367
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "renamed_labels",
+      "prompt_sha256": "0fb375aa6bb884b8fa51bcf38ae554f49e1fd7d79d7cc2cf982199830abf7593",
+      "output_sha256": "b5f03b11c74ed668cd094c5781bc9ee176b43ed01577bd73958ae14de6085e84",
+      "input_tokens": 152,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.869968799990602,
+      "max_seconds": 36.44748059997801,
+      "max_min_ratio": 2.1604948433572866,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.869968799990602
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 36.44748059997801
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "LCL",
+      "prompt_sha256": "b7890ec132d118535c02fc27a8e311db2f758fb0a94635893abd029b589b4885",
+      "output_sha256": "6b1766a5993d08f561ca1419ad9cc21144f2d55a539fbf40b85174540a54f6bb",
+      "input_tokens": 175,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 17.590620199975092,
+      "max_seconds": 34.90505010000197,
+      "max_min_ratio": 1.9842990015810469,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.590620199975092
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 34.90505010000197
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "renamed_labels",
+      "prompt_sha256": "d1c4d5e202aad2d4a7cdf780dad0fd24b35510c5a4eb7eeffc624373484f29c7",
+      "output_sha256": "41627b4a4a238735cdf62165fc0f3e3a11e10c4aefc57a558f90d83b83f895f4",
+      "input_tokens": 160,
+      "output_tokens": 236,
+      "n_calls": 2,
+      "min_seconds": 52.27599430002738,
+      "max_seconds": 100.78662279999116,
+      "max_min_ratio": 1.927971416890647,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 100.78662279999116
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 52.27599430002738
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "renamed_labels",
+      "prompt_sha256": "fa4f489657ecb1e4bc0b25d8bd9dab77d9ae17084eab7dcb0707dee41c358ed2",
+      "output_sha256": "96f02c62565fa0ecf1631b691c2627f9adc8eab84683d852006ced725587cc1b",
+      "input_tokens": 140,
+      "output_tokens": 237,
+      "n_calls": 2,
+      "min_seconds": 16.078279400011525,
+      "max_seconds": 30.606121400021948,
+      "max_min_ratio": 1.9035694453723706,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.078279400011525
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 30.606121400021948
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "structured_direct",
+      "prompt_sha256": "9b37158245bfb5556eccf28275f73a9d22f5688feee296e76c0d3cc0c3d1469c",
+      "output_sha256": "ef8695e9dfeea96996989cbe52f357158cbe02dcdf2e07d41703cd0fc46cdda2",
+      "input_tokens": 678,
+      "output_tokens": 63,
+      "n_calls": 2,
+      "min_seconds": 5.143924099975266,
+      "max_seconds": 9.59593660000246,
+      "max_min_ratio": 1.8654895394060347,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 5.143924099975266
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 9.59593660000246
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "natural_labels",
+      "prompt_sha256": "7f6334800bde907b6912ad6e820a9cded888ecb8c2c1260b3fbf2f8ca8650c8f",
+      "output_sha256": "74e60d12c69b7509bb4c7e4ee9f8f369f28698ff5277c6f56d5d4f5033a88bb4",
+      "input_tokens": 140,
+      "output_tokens": 221,
+      "n_calls": 2,
+      "min_seconds": 15.769598399987444,
+      "max_seconds": 28.24029019998852,
+      "max_min_ratio": 1.7908059218560066,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 15.769598399987444
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 28.24029019998852
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "natural_labels",
+      "prompt_sha256": "a12136b0a703f7623c8fb669febe32af2b947cd53b6d20e50d4e8c928b4b2547",
+      "output_sha256": "82acede5911bc515b6d388e25052d7af6bcbe6dffc136e6bc0f479c69231fb1a",
+      "input_tokens": 119,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.770980999979656,
+      "max_seconds": 29.994611500005703,
+      "max_min_ratio": 1.7884828263798098,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.770980999979656
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 29.994611500005703
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-001",
+      "arm": "LCL",
+      "prompt_sha256": "b03ba0f375b39120cb3d1c775afbe21930b99515a7a7d8ddb51a7c4e456eddb7",
+      "output_sha256": "4b90150e63893a6d84bc08a8c959700696d4ce3ecf665836668a2b081b428e41",
+      "input_tokens": 128,
+      "output_tokens": 250,
+      "n_calls": 4,
+      "min_seconds": 21.08116160001373,
+      "max_seconds": 33.23447370005306,
+      "max_min_ratio": 1.5765010643451172,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 22.25702929997351
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.08116160001373
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 1,
+          "seconds": 31.101705199980643
+        },
+        {
+          "stage": "supplement_latency",
+          "rep": 2,
+          "seconds": 33.23447370005306
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "cot_equal",
+      "prompt_sha256": "c0bbe3a65da397147cfca4573d55ad0030415d6d3e8a968cd517a7ef4d5a9dd8",
+      "output_sha256": "a5e332ba450cd47fe20e1414fd7cd369cf29bfa89b1a4e85d5cf58c04e8db77c",
+      "input_tokens": 778,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 45.58949929999653,
+      "max_seconds": 63.27518910000799,
+      "max_min_ratio": 1.3879334072882175,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 63.27518910000799
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 45.58949929999653
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "renamed_labels",
+      "prompt_sha256": "fb7689136e89e949c04c73ae70fc5ac495835747b86dd09be69ad6d8d0792ba5",
+      "output_sha256": "46c39464a0729b46aa0ab8e0729845092b67971716aefc5d4705db67c0056cd7",
+      "input_tokens": 167,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.93753229995491,
+      "max_seconds": 21.699048599984962,
+      "max_min_ratio": 1.281122197478716,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.93753229995491
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.699048599984962
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "structured_direct",
+      "prompt_sha256": "afa61ef7b6210d6cab517ea2665dea35c429fa40b3c33efeb5169090a91d587e",
+      "output_sha256": "8d98953ad99677098138c073ba1e31445099a4f51d34d3cfb89f8de82d1545bd",
+      "input_tokens": 684,
+      "output_tokens": 94,
+      "n_calls": 2,
+      "min_seconds": 6.422381299955305,
+      "max_seconds": 8.074648599955253,
+      "max_min_ratio": 1.2572670825401548,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 6.422381299955305
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 8.074648599955253
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "LCL",
+      "prompt_sha256": "4651564863f83a8bb20710b4064ca3867bc8be807f4e8d41bd20d8e339cbad66",
+      "output_sha256": "ca36273cd770cfd1918cb396884a6c3a4cbff2347f8f8a95bf1900674f8940e7",
+      "input_tokens": 120,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 17.497043300012592,
+      "max_seconds": 21.596389600017574,
+      "max_min_ratio": 1.234287943952338,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.497043300012592
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 21.596389600017574
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "structured_direct",
+      "prompt_sha256": "cd1daecadd497ee3a099d6c102e156de86a9f2d9f138d6399faa3f58b08db10c",
+      "output_sha256": "edc3393ad547191419a19fbe2a1a60cd0d8ee498937b175e999b298ffe3de898",
+      "input_tokens": 679,
+      "output_tokens": 145,
+      "n_calls": 2,
+      "min_seconds": 10.00231580005493,
+      "max_seconds": 11.991913600009866,
+      "max_min_ratio": 1.1989137155561524,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 10.00231580005493
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 11.991913600009866
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "natural_labels",
+      "prompt_sha256": "f00513f966f4da221625206543418df73a7e975fa36aa3396bc85269d3a09ad4",
+      "output_sha256": "743b5a3a4786c54ccf7e989232e75227f4f8e1b7d438c5f1be0aea433b51f4f1",
+      "input_tokens": 159,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 36.62396280001849,
+      "max_seconds": 43.477578499994706,
+      "max_min_ratio": 1.1871347384607096,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 36.62396280001849
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 43.477578499994706
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "LCL",
+      "prompt_sha256": "c0d8db4a898d2f5b52d2f9038ae097c0e6c3e7ea637ef06749109a6914acb23e",
+      "output_sha256": "9bbb11b52ef9118bfe8cd2cdab7625592d87f84a93ac31a3860eaf1c6933b754",
+      "input_tokens": 112,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.632057400012854,
+      "max_seconds": 19.53743869997561,
+      "max_min_ratio": 1.174685622475095,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.632057400012854
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 19.53743869997561
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "structured_direct",
+      "prompt_sha256": "b6fec3d9962d4f9e00736748793d3b5679691e86a0db290e4024bd8b188315f7",
+      "output_sha256": "ca72040d6b53a676518104fc5d1ea41d7ba816b00def0736d7d614655b0b7721",
+      "input_tokens": 677,
+      "output_tokens": 124,
+      "n_calls": 2,
+      "min_seconds": 9.803919600031804,
+      "max_seconds": 11.492031000030693,
+      "max_min_ratio": 1.1721873973745573,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 9.803919600031804
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 11.492031000030693
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "cot_equal",
+      "prompt_sha256": "8e5a1bc343586d6a4f302558c560b2d325b88667b4e6c47717d02947196d78fe",
+      "output_sha256": "c0523205efb05258756208f03b515f644900adb551cdf1e2daa13884aee4202c",
+      "input_tokens": 776,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 19.933491399977356,
+      "max_seconds": 23.198186499997973,
+      "max_min_ratio": 1.163779391904437,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.933491399977356
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 23.198186499997973
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-033",
+      "arm": "cot_equal",
+      "prompt_sha256": "ec6d8c256f0a524f0ffea5ca9d19c5f6d30f3ec71aac0b4f18cd858c58ab4e4d",
+      "output_sha256": "b21f5f738bf402f705edc45e68d8803e1847c2db6fe1b9ce40f51ee757a0cabc",
+      "input_tokens": 785,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 75.49146059999475,
+      "max_seconds": 87.81551619997481,
+      "max_min_ratio": 1.163250988946701,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 75.49146059999475
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 87.81551619997481
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "cot_equal",
+      "prompt_sha256": "1b22f9ff23b063e7451f48ef24268de25e3de4a533fcedba7cda134f794c418c",
+      "output_sha256": "48696a016631d0f81b11f723497f040811b1e91464b1857cfa2304ddb0a28a30",
+      "input_tokens": 784,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 114.16698009998072,
+      "max_seconds": 132.08143169997493,
+      "max_min_ratio": 1.156914473732298,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 132.08143169997493
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 114.16698009998072
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "renamed_labels",
+      "prompt_sha256": "ddedea9f3360536bff967bb2ba414d0b3f90aa184f3a597d1566acb0d83d3f2f",
+      "output_sha256": "6b95b143ad1c807f5ebea9c6f22f4d5f4adf3777da3edc6dd06e7d9d06a30f65",
+      "input_tokens": 112,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.79118699999526,
+      "max_seconds": 19.16407539998181,
+      "max_min_ratio": 1.1413174899420284,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.79118699999526
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 19.16407539998181
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "renamed_labels",
+      "prompt_sha256": "90503ee5348991147716f8ba0c0d0413a49460f3a1a025b3827a93fe0849decd",
+      "output_sha256": "fa4c7c74d58e361214446a5515259889c67a188ecc1569213d97070debfebdd8",
+      "input_tokens": 131,
+      "output_tokens": 218,
+      "n_calls": 2,
+      "min_seconds": 14.863318899995647,
+      "max_seconds": 16.891807800042443,
+      "max_min_ratio": 1.136476174244461,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 14.863318899995647
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 16.891807800042443
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-004",
+      "arm": "structured_direct",
+      "prompt_sha256": "e58d16063e1adc0af77526fe4c118d91c6515aef88b3d88e02d399514d8a675f",
+      "output_sha256": "9e39906e55f72e8a8da40c4cb09484643323539fae71af88bf7109636531e424",
+      "input_tokens": 685,
+      "output_tokens": 67,
+      "n_calls": 2,
+      "min_seconds": 26.74309559998801,
+      "max_seconds": 29.83220419997815,
+      "max_min_ratio": 1.1155105095608875,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 26.74309559998801
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 29.83220419997815
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "natural_labels",
+      "prompt_sha256": "cf6065995b5b508c8a296ea756552ff4ecd63c434b9e7597bfb3e439d9497f81",
+      "output_sha256": "e33cef1a4ebf4fd88356f5cb1dbf057769a4937f88d4c19939458bb2cf34ff9c",
+      "input_tokens": 131,
+      "output_tokens": 218,
+      "n_calls": 2,
+      "min_seconds": 15.116692700015847,
+      "max_seconds": 16.85740890004672,
+      "max_min_ratio": 1.115151920765648,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 15.116692700015847
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 16.85740890004672
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-012",
+      "arm": "natural_labels",
+      "prompt_sha256": "e8a413b46b4c37f8349e063304fc51b3182f46132fa7f5f6e3146708800a2e95",
+      "output_sha256": "fb936e7fd05f57b2af451b4901d26bbd5a71364ed1158244e2af7153bc78768c",
+      "input_tokens": 167,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.523411499976646,
+      "max_seconds": 18.195347600034438,
+      "max_min_ratio": 1.1011858900966156,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.523411499976646
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.195347600034438
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-022",
+      "arm": "renamed_labels",
+      "prompt_sha256": "e1703996107c7265bfa8c832f269fc34d5f10945eb6535f1420fc47dcff15cb3",
+      "output_sha256": "aefca22accb49cdd04b6c3011bf4985b56c885d5acfed8d3e9164adbdcc1d60d",
+      "input_tokens": 119,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 17.036859999992885,
+      "max_seconds": 18.38254640001105,
+      "max_min_ratio": 1.0789867616461442,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.036859999992885
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.38254640001105
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-023",
+      "arm": "LCL",
+      "prompt_sha256": "5be48d779ffdef0e28277235099f939e136c819c56e4d4bca71737ea2ccb5f2c",
+      "output_sha256": "a19eeb829334e7a6276ce70afa6880bed90eead41ba0556b65871d58305d6fdd",
+      "input_tokens": 133,
+      "output_tokens": 232,
+      "n_calls": 2,
+      "min_seconds": 17.586491699970793,
+      "max_seconds": 18.951656899997033,
+      "max_min_ratio": 1.0776257836591996,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 17.586491699970793
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 18.951656899997033
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-014",
+      "arm": "cot_equal",
+      "prompt_sha256": "2b6b3d7103a948e4aa8384d14e9131f63be9b57b100bd3527b9cd805569a833a",
+      "output_sha256": "c7d2595e9e1e91c6cb1ab4d0674d5a3adbd7986bc15fd7c6b27b09d802bd6331",
+      "input_tokens": 776,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 72.25778069999069,
+      "max_seconds": 75.63384750002297,
+      "max_min_ratio": 1.0467225365535302,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 72.25778069999069
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 75.63384750002297
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "renamed_labels",
+      "prompt_sha256": "9e0017e11dbd0a80d88ac3dfda40fab38cb220e57c6a756b278f1daa46f4892f",
+      "output_sha256": "8b25452685d645387cf6b197636621f9f72e0cc6eea5571550262c09a24b16a0",
+      "input_tokens": 147,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 16.681335300032515,
+      "max_seconds": 17.430949300003704,
+      "max_min_ratio": 1.0449372898804885,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.681335300032515
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 17.430949300003704
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "natural_labels",
+      "prompt_sha256": "1dee6b8dbb1701fba0176c8cabb2f66b4e1db4d9cb71fd1c695990425e8e6e8b",
+      "output_sha256": "1562182f7c4d66d5dd0edb8f49b9ffc9f663f8acff3278b97fb7ace6cbbe1a01",
+      "input_tokens": 144,
+      "output_tokens": 249,
+      "n_calls": 2,
+      "min_seconds": 16.476974999997765,
+      "max_seconds": 16.980588099977467,
+      "max_min_ratio": 1.0305646576498277,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.476974999997765
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 16.980588099977467
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "cot_equal",
+      "prompt_sha256": "d8109f487c50f40ec3d947207074568d7576871d809e4ab44499d6fb58e7f983",
+      "output_sha256": "e658e649408d9c0b0b9369d1b2a87aa91758a6c8f35f64fa245213760f6c3789",
+      "input_tokens": 778,
+      "output_tokens": 250,
+      "n_calls": 2,
+      "min_seconds": 19.38136449997546,
+      "max_seconds": 19.92883259995142,
+      "max_min_ratio": 1.0282471391514592,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 19.92883259995142
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 19.38136449997546
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-032",
+      "arm": "LCL",
+      "prompt_sha256": "9bb6048a04abf919c5f3e99842b81f54ea499251edbff0953b174d3f5f0f15ca",
+      "output_sha256": "a072e0ebc784aa85ca931c7727ad9c7582f34adae5702599e82d58303fcac271",
+      "input_tokens": 106,
+      "output_tokens": 243,
+      "n_calls": 2,
+      "min_seconds": 16.637582700001076,
+      "max_seconds": 16.88683089998085,
+      "max_min_ratio": 1.0149810344732206,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 16.637582700001076
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 16.88683089998085
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-003",
+      "arm": "structured_direct",
+      "prompt_sha256": "3ff88d5dcd059a31b279faa4775783b045f7a898c7daf296e65fab1111b17517",
+      "output_sha256": "6bbe3c4c2b0a51d7474fcc31da11cbfec648014e474144f36fdae3a371058e51",
+      "input_tokens": 686,
+      "output_tokens": 168,
+      "n_calls": 2,
+      "min_seconds": 13.262745600019116,
+      "max_seconds": 13.436408700013999,
+      "max_min_ratio": 1.0130940534661717,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 13.262745600019116
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 13.436408700013999
+        }
+      ]
+    },
+    {
+      "scenario_id": "AUD-013",
+      "arm": "structured_direct",
+      "prompt_sha256": "44cce5622244bb9f5b5106a838ab1e778a6c786ffecb24d7205052d69b8632fc",
+      "output_sha256": "ceb3761d2dbf6ac19c3aa15ae4d0e4348905fd31174195890b905a5cdb005177",
+      "input_tokens": 679,
+      "output_tokens": 166,
+      "n_calls": 2,
+      "min_seconds": 12.577297699986957,
+      "max_seconds": 12.720109399990179,
+      "max_min_ratio": 1.0113547204979787,
+      "calls": [
+        {
+          "stage": "controls",
+          "rep": 0,
+          "seconds": 12.577297699986957
+        },
+        {
+          "stage": "latency",
+          "rep": 0,
+          "seconds": 12.720109399990179
+        }
+      ]
+    }
+  ]
+}

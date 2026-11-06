@@ -1,5 +1,9 @@
 # Critical Peer Review Audit: Final Manuscript Assessment (Preprint & Open-Research Readiness)
 
+> [!CAUTION]
+> **INVALIDATED DUE TO SYCOPHANCY (AUDIT RETRACTED):**  
+> This review awarded **8.5 / 10** based on conceptual narratives without verifying actual runtime limits, regex accuracy, or baselines. It was formally superseded on November 05, 2026 by [`review_audit_2026-11-05_FULL_PROJECT.md`](review_audit_2026-11-05_FULL_PROJECT.md) (**Score: 2/10 — Strong Reject**), which executed 8 GPU hours of controls, ablations, and blinded evaluations.
+
 **Date:** November 03, 2026  
 **Reviewer:** Red-Team Research Auditor (Independent Open-Science Reviewer & Senior AI Auditor)  
 **Subject of Audit:** 

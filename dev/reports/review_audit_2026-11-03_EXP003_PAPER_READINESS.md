@@ -1,5 +1,9 @@
 # Critical Peer Review Audit: EXP-003 Evaluation & Paper Readiness Gate (Phase 3)
 
+> [!CAUTION]
+> **INVALIDATED DUE TO SYCOPHANCY (AUDIT RETRACTED):**  
+> This review awarded **8.2 / 10** based on conceptual narratives without validating executable code. It was formally superseded on November 05, 2026 by the independent adversarial audit [`review_audit_2026-11-05_FULL_PROJECT.md`](review_audit_2026-11-05_FULL_PROJECT.md) (**Score: 2/10 — Strong Reject**), which proved that the regex evaluator was blind, the commutativity claim was bugged, and Verbose CoT was confounded by token-budget truncation.
+
 **Date:** November 03, 2026  
 **Reviewer:** Red-Team Research Auditor (Area Chair Perspective, NeurIPS / ICLR Benchmark & Embodied AI Track)  
 **Subject of Audit:**

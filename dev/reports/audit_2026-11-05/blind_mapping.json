@@ -1,0 +1,802 @@
+{
+  "6a36885e639d": {
+    "scenario_id": "AUD-001",
+    "arm": "cot_equal"
+  },
+  "ea672b486da3": {
+    "scenario_id": "AUD-001",
+    "arm": "structured_direct"
+  },
+  "1fd58f65b91b": {
+    "scenario_id": "AUD-001",
+    "arm": "LCL"
+  },
+  "27186465e2b2": {
+    "scenario_id": "AUD-001",
+    "arm": "natural_labels"
+  },
+  "8802e1119e42": {
+    "scenario_id": "AUD-001",
+    "arm": "renamed_labels"
+  },
+  "081467352b8c": {
+    "scenario_id": "AUD-011",
+    "arm": "structured_direct"
+  },
+  "e38070884b90": {
+    "scenario_id": "AUD-011",
+    "arm": "LCL"
+  },
+  "1905fba3c790": {
+    "scenario_id": "AUD-011",
+    "arm": "natural_labels"
+  },
+  "e23f461c861b": {
+    "scenario_id": "AUD-011",
+    "arm": "renamed_labels"
+  },
+  "5e46d5217514": {
+    "scenario_id": "AUD-011",
+    "arm": "cot_equal"
+  },
+  "53df146a00be": {
+    "scenario_id": "AUD-021",
+    "arm": "LCL"
+  },
+  "1d2f4c0051bd": {
+    "scenario_id": "AUD-021",
+    "arm": "natural_labels"
+  },
+  "e802a5a861a8": {
+    "scenario_id": "AUD-021",
+    "arm": "renamed_labels"
+  },
+  "a5205b5370d1": {
+    "scenario_id": "AUD-021",
+    "arm": "cot_equal"
+  },
+  "d6ae8db14382": {
+    "scenario_id": "AUD-021",
+    "arm": "structured_direct"
+  },
+  "ad73f6dbffc0": {
+    "scenario_id": "AUD-031",
+    "arm": "natural_labels"
+  },
+  "83f7b6351998": {
+    "scenario_id": "AUD-031",
+    "arm": "renamed_labels"
+  },
+  "9b03a78d8e3c": {
+    "scenario_id": "AUD-031",
+    "arm": "cot_equal"
+  },
+  "9c275d4c0c74": {
+    "scenario_id": "AUD-031",
+    "arm": "structured_direct"
+  },
+  "94bde37af1fb": {
+    "scenario_id": "AUD-031",
+    "arm": "LCL"
+  },
+  "9299e4e58844": {
+    "scenario_id": "AUD-002",
+    "arm": "renamed_labels"
+  },
+  "317474f7e6d8": {
+    "scenario_id": "AUD-002",
+    "arm": "cot_equal"
+  },
+  "2981c4ed8869": {
+    "scenario_id": "AUD-002",
+    "arm": "structured_direct"
+  },
+  "f23fd0001149": {
+    "scenario_id": "AUD-002",
+    "arm": "LCL"
+  },
+  "2b73caeace17": {
+    "scenario_id": "AUD-002",
+    "arm": "natural_labels"
+  },
+  "337b115b6e8c": {
+    "scenario_id": "AUD-012",
+    "arm": "cot_equal"
+  },
+  "4ffce5d28e1e": {
+    "scenario_id": "AUD-012",
+    "arm": "structured_direct"
+  },
+  "b576b879282a": {
+    "scenario_id": "AUD-012",
+    "arm": "LCL"
+  },
+  "754972923933": {
+    "scenario_id": "AUD-012",
+    "arm": "natural_labels"
+  },
+  "665310341f30": {
+    "scenario_id": "AUD-012",
+    "arm": "renamed_labels"
+  },
+  "43a39a03b3f3": {
+    "scenario_id": "AUD-022",
+    "arm": "structured_direct"
+  },
+  "3bea3f12461d": {
+    "scenario_id": "AUD-022",
+    "arm": "LCL"
+  },
+  "c209370ccade": {
+    "scenario_id": "AUD-022",
+    "arm": "natural_labels"
+  },
+  "0e57c4fd34f8": {
+    "scenario_id": "AUD-022",
+    "arm": "renamed_labels"
+  },
+  "1e27d942fd0b": {
+    "scenario_id": "AUD-022",
+    "arm": "cot_equal"
+  },
+  "c6708b88ae0d": {
+    "scenario_id": "AUD-032",
+    "arm": "LCL"
+  },
+  "b55382f73236": {
+    "scenario_id": "AUD-032",
+    "arm": "natural_labels"
+  },
+  "cf25c7507892": {
+    "scenario_id": "AUD-032",
+    "arm": "renamed_labels"
+  },
+  "e70a989d8bb1": {
+    "scenario_id": "AUD-032",
+    "arm": "cot_equal"
+  },
+  "fe14c499aa45": {
+    "scenario_id": "AUD-032",
+    "arm": "structured_direct"
+  },
+  "f0653bfc1712": {
+    "scenario_id": "AUD-003",
+    "arm": "natural_labels"
+  },
+  "65a474cf6932": {
+    "scenario_id": "AUD-003",
+    "arm": "renamed_labels"
+  },
+  "453410cdf5d6": {
+    "scenario_id": "AUD-003",
+    "arm": "cot_equal"
+  },
+  "b081ee03ea66": {
+    "scenario_id": "AUD-003",
+    "arm": "structured_direct"
+  },
+  "668ac45a1eca": {
+    "scenario_id": "AUD-003",
+    "arm": "LCL"
+  },
+  "8b81c48bb067": {
+    "scenario_id": "AUD-013",
+    "arm": "renamed_labels"
+  },
+  "b858fd9c0607": {
+    "scenario_id": "AUD-013",
+    "arm": "cot_equal"
+  },
+  "726ac38e6d7c": {
+    "scenario_id": "AUD-013",
+    "arm": "structured_direct"
+  },
+  "0425b94e566a": {
+    "scenario_id": "AUD-013",
+    "arm": "LCL"
+  },
+  "609ca5f57323": {
+    "scenario_id": "AUD-013",
+    "arm": "natural_labels"
+  },
+  "e9d260509abb": {
+    "scenario_id": "AUD-023",
+    "arm": "cot_equal"
+  },
+  "efb077041a46": {
+    "scenario_id": "AUD-023",
+    "arm": "structured_direct"
+  },
+  "aa32691f55af": {
+    "scenario_id": "AUD-023",
+    "arm": "LCL"
+  },
+  "d641ab1566eb": {
+    "scenario_id": "AUD-023",
+    "arm": "natural_labels"
+  },
+  "e57417887897": {
+    "scenario_id": "AUD-023",
+    "arm": "renamed_labels"
+  },
+  "3606641cdcf3": {
+    "scenario_id": "AUD-033",
+    "arm": "structured_direct"
+  },
+  "0936847ec86d": {
+    "scenario_id": "AUD-033",
+    "arm": "LCL"
+  },
+  "0720c03d7a65": {
+    "scenario_id": "AUD-033",
+    "arm": "natural_labels"
+  },
+  "52c423bbb868": {
+    "scenario_id": "AUD-033",
+    "arm": "renamed_labels"
+  },
+  "9a9ac5c3fc68": {
+    "scenario_id": "AUD-033",
+    "arm": "cot_equal"
+  },
+  "83315688c0d1": {
+    "scenario_id": "AUD-004",
+    "arm": "LCL"
+  },
+  "153374746291": {
+    "scenario_id": "AUD-004",
+    "arm": "natural_labels"
+  },
+  "3fe6b2f5da4a": {
+    "scenario_id": "AUD-004",
+    "arm": "renamed_labels"
+  },
+  "988c078636c5": {
+    "scenario_id": "AUD-004",
+    "arm": "cot_equal"
+  },
+  "4e8b9c97a4f6": {
+    "scenario_id": "AUD-004",
+    "arm": "structured_direct"
+  },
+  "316f785917d6": {
+    "scenario_id": "AUD-014",
+    "arm": "natural_labels"
+  },
+  "22b27a7c45ab": {
+    "scenario_id": "AUD-014",
+    "arm": "renamed_labels"
+  },
+  "5e480ef376e1": {
+    "scenario_id": "AUD-014",
+    "arm": "cot_equal"
+  },
+  "d0b346d7bfb3": {
+    "scenario_id": "AUD-014",
+    "arm": "structured_direct"
+  },
+  "cc692660b8d2": {
+    "scenario_id": "AUD-014",
+    "arm": "LCL"
+  },
+  "59cbd13e6bb6": {
+    "scenario_id": "AUD-024",
+    "arm": "renamed_labels"
+  },
+  "3028a08bbac9": {
+    "scenario_id": "AUD-024",
+    "arm": "cot_equal"
+  },
+  "dd0955ae5a2a": {
+    "scenario_id": "AUD-024",
+    "arm": "structured_direct"
+  },
+  "dc214c825c59": {
+    "scenario_id": "AUD-024",
+    "arm": "LCL"
+  },
+  "1a9c114e8a54": {
+    "scenario_id": "AUD-024",
+    "arm": "natural_labels"
+  },
+  "36ac422c3a4e": {
+    "scenario_id": "AUD-034",
+    "arm": "cot_equal"
+  },
+  "65ca040ecbd1": {
+    "scenario_id": "AUD-034",
+    "arm": "structured_direct"
+  },
+  "b0c50b00c058": {
+    "scenario_id": "AUD-034",
+    "arm": "LCL"
+  },
+  "f7eab31767fa": {
+    "scenario_id": "AUD-034",
+    "arm": "natural_labels"
+  },
+  "2c231b982ec6": {
+    "scenario_id": "AUD-034",
+    "arm": "renamed_labels"
+  },
+  "bcc8a608b33a": {
+    "scenario_id": "AUD-005",
+    "arm": "structured_direct"
+  },
+  "b798eb354c6b": {
+    "scenario_id": "AUD-005",
+    "arm": "LCL"
+  },
+  "2c6b931f5190": {
+    "scenario_id": "AUD-005",
+    "arm": "natural_labels"
+  },
+  "ed26950a8208": {
+    "scenario_id": "AUD-005",
+    "arm": "renamed_labels"
+  },
+  "76341a6e6193": {
+    "scenario_id": "AUD-005",
+    "arm": "cot_equal"
+  },
+  "ead55e17f54b": {
+    "scenario_id": "AUD-015",
+    "arm": "LCL"
+  },
+  "6cf1f2d9fa17": {
+    "scenario_id": "AUD-015",
+    "arm": "natural_labels"
+  },
+  "e0b331275a4a": {
+    "scenario_id": "AUD-015",
+    "arm": "renamed_labels"
+  },
+  "7d1478c658b2": {
+    "scenario_id": "AUD-015",
+    "arm": "cot_equal"
+  },
+  "1920433adf35": {
+    "scenario_id": "AUD-015",
+    "arm": "structured_direct"
+  },
+  "e5522d398965": {
+    "scenario_id": "AUD-025",
+    "arm": "natural_labels"
+  },
+  "21c08ee82de1": {
+    "scenario_id": "AUD-025",
+    "arm": "renamed_labels"
+  },
+  "daba7447903b": {
+    "scenario_id": "AUD-025",
+    "arm": "cot_equal"
+  },
+  "b81950b95d40": {
+    "scenario_id": "AUD-025",
+    "arm": "structured_direct"
+  },
+  "81352102a1d8": {
+    "scenario_id": "AUD-025",
+    "arm": "LCL"
+  },
+  "afba290b9361": {
+    "scenario_id": "AUD-035",
+    "arm": "renamed_labels"
+  },
+  "f26edcf7784a": {
+    "scenario_id": "AUD-035",
+    "arm": "cot_equal"
+  },
+  "eb33d515fad3": {
+    "scenario_id": "AUD-035",
+    "arm": "structured_direct"
+  },
+  "b659117ec4d1": {
+    "scenario_id": "AUD-035",
+    "arm": "LCL"
+  },
+  "1cd3b2a19edf": {
+    "scenario_id": "AUD-035",
+    "arm": "natural_labels"
+  },
+  "589f0477bc73": {
+    "scenario_id": "AUD-006",
+    "arm": "cot_equal"
+  },
+  "591d1accbd67": {
+    "scenario_id": "AUD-006",
+    "arm": "structured_direct"
+  },
+  "9b3d07bf1469": {
+    "scenario_id": "AUD-006",
+    "arm": "LCL"
+  },
+  "b61565d82904": {
+    "scenario_id": "AUD-006",
+    "arm": "natural_labels"
+  },
+  "36ab384ed7a7": {
+    "scenario_id": "AUD-006",
+    "arm": "renamed_labels"
+  },
+  "70f3d8e42e80": {
+    "scenario_id": "AUD-016",
+    "arm": "structured_direct"
+  },
+  "9c2e2a7d69be": {
+    "scenario_id": "AUD-016",
+    "arm": "LCL"
+  },
+  "33155b5453c0": {
+    "scenario_id": "AUD-016",
+    "arm": "natural_labels"
+  },
+  "c88d06548049": {
+    "scenario_id": "AUD-016",
+    "arm": "renamed_labels"
+  },
+  "1a520c3646f8": {
+    "scenario_id": "AUD-016",
+    "arm": "cot_equal"
+  },
+  "dd424282f2f9": {
+    "scenario_id": "AUD-026",
+    "arm": "LCL"
+  },
+  "3d9e5f013ab0": {
+    "scenario_id": "AUD-026",
+    "arm": "natural_labels"
+  },
+  "ba9a3280045e": {
+    "scenario_id": "AUD-026",
+    "arm": "renamed_labels"
+  },
+  "6c414cee5608": {
+    "scenario_id": "AUD-026",
+    "arm": "cot_equal"
+  },
+  "e1268bee8079": {
+    "scenario_id": "AUD-026",
+    "arm": "structured_direct"
+  },
+  "92b12fe7e030": {
+    "scenario_id": "AUD-036",
+    "arm": "natural_labels"
+  },
+  "bcf8f033012f": {
+    "scenario_id": "AUD-036",
+    "arm": "renamed_labels"
+  },
+  "5163ed706d1e": {
+    "scenario_id": "AUD-036",
+    "arm": "cot_equal"
+  },
+  "c3cec27f2794": {
+    "scenario_id": "AUD-036",
+    "arm": "structured_direct"
+  },
+  "242022f1b04e": {
+    "scenario_id": "AUD-036",
+    "arm": "LCL"
+  },
+  "2b1ef40e48e7": {
+    "scenario_id": "AUD-007",
+    "arm": "renamed_labels"
+  },
+  "6b0b87fb8fda": {
+    "scenario_id": "AUD-007",
+    "arm": "cot_equal"
+  },
+  "942ec02e1bb4": {
+    "scenario_id": "AUD-007",
+    "arm": "structured_direct"
+  },
+  "c2d554074fe6": {
+    "scenario_id": "AUD-007",
+    "arm": "LCL"
+  },
+  "7f6668378a41": {
+    "scenario_id": "AUD-007",
+    "arm": "natural_labels"
+  },
+  "c7add86f18ad": {
+    "scenario_id": "AUD-017",
+    "arm": "cot_equal"
+  },
+  "25c3620e7eeb": {
+    "scenario_id": "AUD-017",
+    "arm": "structured_direct"
+  },
+  "db386df41504": {
+    "scenario_id": "AUD-017",
+    "arm": "LCL"
+  },
+  "2f8ea34c80d9": {
+    "scenario_id": "AUD-017",
+    "arm": "natural_labels"
+  },
+  "1a5b66dd7f04": {
+    "scenario_id": "AUD-017",
+    "arm": "renamed_labels"
+  },
+  "51053b341d1b": {
+    "scenario_id": "AUD-027",
+    "arm": "structured_direct"
+  },
+  "5b39d378c252": {
+    "scenario_id": "AUD-027",
+    "arm": "LCL"
+  },
+  "d64b4f8499a8": {
+    "scenario_id": "AUD-027",
+    "arm": "natural_labels"
+  },
+  "b2f7406db393": {
+    "scenario_id": "AUD-027",
+    "arm": "renamed_labels"
+  },
+  "c6fbb31186d3": {
+    "scenario_id": "AUD-027",
+    "arm": "cot_equal"
+  },
+  "dcf70e6fcaf8": {
+    "scenario_id": "AUD-037",
+    "arm": "LCL"
+  },
+  "68263a1e034b": {
+    "scenario_id": "AUD-037",
+    "arm": "natural_labels"
+  },
+  "40b64108b5ac": {
+    "scenario_id": "AUD-037",
+    "arm": "renamed_labels"
+  },
+  "bc22ab05e1f0": {
+    "scenario_id": "AUD-037",
+    "arm": "cot_equal"
+  },
+  "b3db5818e0f2": {
+    "scenario_id": "AUD-037",
+    "arm": "structured_direct"
+  },
+  "bf25f2524602": {
+    "scenario_id": "AUD-008",
+    "arm": "natural_labels"
+  },
+  "52c0bf26e6a5": {
+    "scenario_id": "AUD-008",
+    "arm": "renamed_labels"
+  },
+  "b9f397df6fd6": {
+    "scenario_id": "AUD-008",
+    "arm": "cot_equal"
+  },
+  "ded0cc0b4a46": {
+    "scenario_id": "AUD-008",
+    "arm": "structured_direct"
+  },
+  "a060095902bb": {
+    "scenario_id": "AUD-008",
+    "arm": "LCL"
+  },
+  "f38ad70198c8": {
+    "scenario_id": "AUD-018",
+    "arm": "renamed_labels"
+  },
+  "e7b768ca6b25": {
+    "scenario_id": "AUD-018",
+    "arm": "cot_equal"
+  },
+  "5dc1b6bc1754": {
+    "scenario_id": "AUD-018",
+    "arm": "structured_direct"
+  },
+  "f85fd31b4087": {
+    "scenario_id": "AUD-018",
+    "arm": "LCL"
+  },
+  "af311a043114": {
+    "scenario_id": "AUD-018",
+    "arm": "natural_labels"
+  },
+  "29dc3dfbd67f": {
+    "scenario_id": "AUD-028",
+    "arm": "cot_equal"
+  },
+  "4045a1e8e84b": {
+    "scenario_id": "AUD-028",
+    "arm": "structured_direct"
+  },
+  "273c9318d8d2": {
+    "scenario_id": "AUD-028",
+    "arm": "LCL"
+  },
+  "6dbe0cc5af10": {
+    "scenario_id": "AUD-028",
+    "arm": "natural_labels"
+  },
+  "ae9391c1dfac": {
+    "scenario_id": "AUD-028",
+    "arm": "renamed_labels"
+  },
+  "8d4332dfda55": {
+    "scenario_id": "AUD-038",
+    "arm": "structured_direct"
+  },
+  "cd67dcaa7517": {
+    "scenario_id": "AUD-038",
+    "arm": "LCL"
+  },
+  "6eb21a2318b4": {
+    "scenario_id": "AUD-038",
+    "arm": "natural_labels"
+  },
+  "e6eeda0de651": {
+    "scenario_id": "AUD-038",
+    "arm": "renamed_labels"
+  },
+  "715c1795d946": {
+    "scenario_id": "AUD-038",
+    "arm": "cot_equal"
+  },
+  "736642ae8fd1": {
+    "scenario_id": "AUD-009",
+    "arm": "LCL"
+  },
+  "c5ce28c20de6": {
+    "scenario_id": "AUD-009",
+    "arm": "natural_labels"
+  },
+  "64d89e44423c": {
+    "scenario_id": "AUD-009",
+    "arm": "renamed_labels"
+  },
+  "a7f1ec473794": {
+    "scenario_id": "AUD-009",
+    "arm": "cot_equal"
+  },
+  "3e06b2c3578a": {
+    "scenario_id": "AUD-009",
+    "arm": "structured_direct"
+  },
+  "97be9fc631dc": {
+    "scenario_id": "AUD-019",
+    "arm": "natural_labels"
+  },
+  "b995681d6118": {
+    "scenario_id": "AUD-019",
+    "arm": "renamed_labels"
+  },
+  "a6cf2d5ad374": {
+    "scenario_id": "AUD-019",
+    "arm": "cot_equal"
+  },
+  "1ba1f8d7f9d8": {
+    "scenario_id": "AUD-019",
+    "arm": "structured_direct"
+  },
+  "f917931d6322": {
+    "scenario_id": "AUD-019",
+    "arm": "LCL"
+  },
+  "a8791728ed25": {
+    "scenario_id": "AUD-029",
+    "arm": "renamed_labels"
+  },
+  "30c04316e092": {
+    "scenario_id": "AUD-029",
+    "arm": "cot_equal"
+  },
+  "30509ccd5209": {
+    "scenario_id": "AUD-029",
+    "arm": "structured_direct"
+  },
+  "91511200633b": {
+    "scenario_id": "AUD-029",
+    "arm": "LCL"
+  },
+  "63c7452e3b4f": {
+    "scenario_id": "AUD-029",
+    "arm": "natural_labels"
+  },
+  "e05d3a39dda0": {
+    "scenario_id": "AUD-039",
+    "arm": "cot_equal"
+  },
+  "5bf6a5999ba1": {
+    "scenario_id": "AUD-039",
+    "arm": "structured_direct"
+  },
+  "d681e4f293a0": {
+    "scenario_id": "AUD-039",
+    "arm": "LCL"
+  },
+  "ba9f29016625": {
+    "scenario_id": "AUD-039",
+    "arm": "natural_labels"
+  },
+  "751ad51ae1e8": {
+    "scenario_id": "AUD-039",
+    "arm": "renamed_labels"
+  },
+  "0698b50d8e72": {
+    "scenario_id": "AUD-010",
+    "arm": "structured_direct"
+  },
+  "d25d553ca764": {
+    "scenario_id": "AUD-010",
+    "arm": "LCL"
+  },
+  "6fdc0d647e99": {
+    "scenario_id": "AUD-010",
+    "arm": "natural_labels"
+  },
+  "5921290fad4d": {
+    "scenario_id": "AUD-010",
+    "arm": "renamed_labels"
+  },
+  "b2f92f0be997": {
+    "scenario_id": "AUD-010",
+    "arm": "cot_equal"
+  },
+  "0f34c625bb6d": {
+    "scenario_id": "AUD-020",
+    "arm": "LCL"
+  },
+  "3fc48a06d738": {
+    "scenario_id": "AUD-020",
+    "arm": "natural_labels"
+  },
+  "9f32be373529": {
+    "scenario_id": "AUD-020",
+    "arm": "renamed_labels"
+  },
+  "190e4b11fef7": {
+    "scenario_id": "AUD-020",
+    "arm": "cot_equal"
+  },
+  "ea2cab1992d6": {
+    "scenario_id": "AUD-020",
+    "arm": "structured_direct"
+  },
+  "f43bf6b9c840": {
+    "scenario_id": "AUD-030",
+    "arm": "natural_labels"
+  },
+  "9247f06e81a5": {
+    "scenario_id": "AUD-030",
+    "arm": "renamed_labels"
+  },
+  "4b093c8c0a96": {
+    "scenario_id": "AUD-030",
+    "arm": "cot_equal"
+  },
+  "854ea589e167": {
+    "scenario_id": "AUD-030",
+    "arm": "structured_direct"
+  },
+  "a48fbc0a8b0b": {
+    "scenario_id": "AUD-030",
+    "arm": "LCL"
+  },
+  "6e244d29ff50": {
+    "scenario_id": "AUD-040",
+    "arm": "renamed_labels"
+  },
+  "34f3ac0979a8": {
+    "scenario_id": "AUD-040",
+    "arm": "cot_equal"
+  },
+  "c8f5e6b45285": {
+    "scenario_id": "AUD-040",
+    "arm": "structured_direct"
+  },
+  "a864be89cf83": {
+    "scenario_id": "AUD-040",
+    "arm": "LCL"
+  },
+  "9fa4d80031e3": {
+    "scenario_id": "AUD-040",
+    "arm": "natural_labels"
+  }
+}

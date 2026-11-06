@@ -154,6 +154,11 @@
     </div>
   </header>
 
+  <div style="max-width: 1400px; margin: 0 auto 20px auto; background: #450a0a; border: 1px solid #dc2626; border-radius: 8px; padding: 14px 18px; color: #fecaca; font-size: 13px; line-height: 1.6;">
+    <strong style="color: #fff; font-size: 14px;">⚠️ Research Advisory — Independent Adversarial Red-Team Audit Completed (Nov 05, 2026):</strong><br>
+    The traces displayed below illustrate prompt-based concept routing evaluated via automated keyword regexes. An independent adversarial audit (<a href="dev/reports/review_audit_2026-11-05_FULL_PROJECT.md" style="color: #67e8f9; text-decoration: underline;">Full Report: Score 2/10 Strong Reject</a>) established that the automated regex evaluator exhibited severe keyword blindness (e.g. approving 0.2m standoff for 1.5m rules) and that Verbose CoT suffered from output truncation at 300 tokens rather than cognitive attention drift. On blinded holdouts with equalized budgets, plain structured natural English outperformed prompt-based concept tokens (71.7% vs. 65.8%). Phase 5 is actively developing Deep Latent Token Anchoring via PEFT/LoRA.
+  </div>
+
   <div class="main-grid">
     <div class="scenario-banner">
       <div class="scenario-title">

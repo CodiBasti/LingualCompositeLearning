@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-11-05T15:13:55.544479+00:00",
+  "change": "Before any new control generation, information-match both direct and CoT baselines to all atomic planning contracts and four special synthesis templates, in addition to the router catalog. Model/policy functions/holdout/primary contrasts/limits/statistics unchanged.",
+  "reason": "Preflight discovered planning-contract details not explicit in the router catalog alone. Including all available policy details prevents attributing extra rule information to label/routing effects.",
+  "replication_seconds_spent_before_v3": 3269.954017,
+  "previous_runs": "English and German pilots complete; complete EXP002/003 blocks retained; no holdout outputs or primary outcomes seen.",
+  "budget": "Stage allocations are soft; supplement uses unused time by missing IDs under the unchanged global 28800-second cap."
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "command": [
+      "analyze.py",
+      "verify"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"original_files\": 72, \"changed_originals\": [], \"missing_originals\": [], \"original_git_head\": \"58df587fd9e74580e0c5a5cd7adcf8616e25b536\", \"current_git_head\": \"58df587fd9e74580e0c5a5cd7adcf8616e25b536\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "summarize_new.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"completion\": {\"replication_rows\": 48, \"replication_expected\": 400, \"controls_rows\": 425, \"controls_expected\": 700, \"judge_invariant_checks\": 600, \"judge_expected\": 600, \"latency_rows\": 140, \"latency_expected\": 300, \"recorded_gpu_process_wall_seconds\": 28770.337032, \"historical_and_new_analysis_are_separate\": true}, \"semantic\": 200}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "family_sensitivity.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"family_clusters\": 8, \"comparisons\": 4}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "control_integrity_check.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"checked\": 170, \"capitalization_parse_mismatches\": 0, \"duplicate_keys\": 0}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "routing_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"evaluated_routes\": 120, \"arms\": 3}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "manuscript_numbers.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"checks\": 37, \"statuses\": {\"reconstructed\": 12, \"reconstructed_to_reported_rounding\": 10, \"mismatch\": 2, \"archive_only\": 3, \"rounding_mismatch\": 1, \"approximately_reconstructed\": 2, \"archive_only_and_construct_mismatch\": 1, \"unit_ambiguity\": 1, \"counts_reconstructed_condition_misattributed\": 1, \"not_reconstructible\": 1, \"definitions_not_empirical_findings\": 1, \"not_located_in_preserved_plans\": 2}}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "judge_parser_probes.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"cases\": 6, \"constructed_false_passes\": 3}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "runtime_drift.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"identical_prompt_output_groups_repeated\": 100, \"median_within_group_max_min_ratio\": 3.9262104519097822, \"largest_within_group_max_min_ratio\": 19.667193343615974}\n",
+    "stderr": ""
+  },
+  {
+    "command": "unittest test_*.py",
+    "exit_code": 0,
+    "stdout": "supplement latency complete3x5 block AUD-001, global 0.000h\n",
+    "stderr": "test_cluster_resampling_preserves_family (test_audit.AuditMethods.test_cluster_resampling_preserves_family) ... ok\ntest_contrast_direction_and_reproducibility (test_audit.AuditMethods.test_contrast_direction_and_reproducibility) ... ok\ntest_duplicate_and_missing_ids_are_reported (test_audit.AuditMethods.test_duplicate_and_missing_ids_are_reported) ... ok\ntest_freeze_content_has_not_changed (test_audit.AuditMethods.test_freeze_content_has_not_changed) ... ok\ntest_holdout_complete_and_does_not_overlap (test_audit.AuditMethods.test_holdout_complete_and_does_not_overlap) ... ok\ntest_holm_monotonic_adjustment (test_audit.AuditMethods.test_holm_monotonic_adjustment) ... ok\ntest_rounding_not_used_for_raw_recall (test_audit.AuditMethods.test_rounding_not_used_for_raw_recall) ... ok\ntest_small_sample_exact_randomization (test_audit.AuditMethods.test_small_sample_exact_randomization) ... ok\ntest_student_t_reference_quantiles (test_audit.AuditMethods.test_student_t_reference_quantiles) ... ok\ntest_insufficient_budget_does_not_start_latency_block (test_supplement.BudgetBlocks.test_insufficient_budget_does_not_start_latency_block) ... ok\ntest_resume_finishes_third_repeat_before_another_scenario (test_supplement.BudgetBlocks.test_resume_finishes_third_repeat_before_another_scenario) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.050s\n\nOK\n"
+  }
+]

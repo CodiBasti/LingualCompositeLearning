@@ -1,0 +1,154 @@
+"""Render the final review only after GPU stages and semantic review conclude."""
+import csv
+import datetime as dt
+import hashlib
+import json
+import pathlib
+import subprocess
+
+HERE=pathlib.Path(__file__).resolve().parent
+ROOT=HERE.parents[2]
+REPORT=HERE.parent/'review_audit_2026-11-05_FULL_PROJECT.md'
+A='audit_2026-11-05/'
+ARMS=['cot_equal','structured_direct','LCL','natural_labels','renamed_labels']
+LABELS={'cot_equal':'CoT, gleiches Limit + vollständiger Katalog','structured_direct':'Kompakte strukturierte Direktplanung','LCL':'Composite LCL','natural_labels':'Identische Struktur, natürliche Namen','renamed_labels':'Identische Struktur, alternative Kunstwörter'}
+def load(name):return json.loads((HERE/name).read_text(encoding='utf-8'))
+def pct(x):return 'nicht verfügbar' if x is None else f'{100*x:.2f} %'.replace('.',',')
+def num(x):return 'nicht verfügbar' if x is None else f'{x:.3g}'
+def interval(v):return '['+', '.join(f'{100*x:+.2f}' for x in v)+'] Prozentpunkte'
+def link(name,label=None):return f'[{label or name}]({A+name})'
+
+def main():
+    if not (HERE/'gpu_completion.json').exists():raise RuntimeError('GPU stages have not concluded')
+    new=load('new_metrics.json');old=load('historical_metrics.json');claims=load('claims.json');integrity=load('original_integrity_check.json')
+    if new['semantic']['status']!='rated':raise RuntimeError('Semantic review not available')
+    if integrity['changed_originals'] or integrity['missing_originals']:raise RuntimeError('Original-file integrity violation')
+    sem=new['semantic'];completion=new['completion']
+    if completion['recorded_gpu_process_wall_seconds']>28800:raise RuntimeError('GPU budget exceeded; disclose and correct before rendering')
+    head=load('source_manifest.json')['git_head'];comparisons=old['active/comparisons'];st=dt.datetime.now(dt.timezone.utc).isoformat()
+    lines=[
+        '# Sachlicher Red-Team-Audit: Lingual Composite Learning',
+        '',f'**Auditdatum:** 5. November 2026 · **Quellstand:** `{head}` · **Bericht erzeugt:** `{st}`',
+        '', '**Reviewer:** Codex-Assistent als einzelner technischer Auditor. Keine externe Peer-Review-Kommission, kein unabhängiger menschlicher Goldstandard. Die Neuberechnung wurde separat von den ursprünglichen Analyseskripten implementiert.',
+        '', '## 1. Urteil',
+        '', '| Perspektive | Urteil |', '|---|---|',
+        '| Wissenschaftliche Belastbarkeit | Vorhanden sind überprüfbare Daten eines textuellen Prompting-Experiments. Die zentralen Schlussfolgerungen über latentes Lernen, garantierte Robotersicherheit, allgemeine CoT-Überlegenheit und Erklärungstreue werden dadurch nicht getragen. |',
+        '| Projektentscheidung | **Neuausrichten.** Die bisherige Gesamterzählung trägt nicht. Einzelne Fragen zur Regelstruktur und menschlichen Begriffsbildung bleiben untersuchbar; sie müssen voneinander getrennt und gegen einfachere Erklärungen geprüft werden. |',
+        '| Publikationsreife des geprüften Manuskripts | **2/10 — Strong Reject** auf der im Repository verwendeten Review-Skala. Zentrale Validitätsprobleme und nicht belegte Beiträge erfordern neue Evidenz und substanzielle Neufassung. Dies ist kein Urteil einer Konferenz und keine Annahmeprognose. |',
+        '', 'Die Bewertung betrifft die belegten Aussagen und die aktuelle Implementierung. Ein fehlender Nachweis widerlegt nicht jede zukünftige Ausgestaltung der Idee. Umgekehrt kann eine zukünftige Vision keinen fehlenden Nachweis der aktuellen Arbeit ersetzen.',
+        '', 'Hohe Sicherheit besteht bei Quellcodebefunden, Datenzuordnung und rekonstruierten Zahlen. Die semantische Einzelbewertung und deren Übertragbarkeit sind eingeschränkter belastbar. Aus diesem Audit lassen sich keine tatsächlichen Verletzungs-, Kollisions- oder klinischen Sicherheitsraten ableiten.',
+        '', '## 2. Datengrundlage, Unabhängigkeit und Vollständigkeit',
+        '', f'Alle **{integrity["original_files"]} ursprünglichen getrackten Dateien** wurden per SHA-256 gesichert und am Ende unverändert vorgefunden. Forschungsdokumente und Originalresultate wurden entsprechend dem Auftrag nicht automatisch korrigiert. Manifest: {link("source_manifest.json")}; Abschlussprüfung: {link("original_integrity_check.json")}.',
+        '', f'Die Rekonstruktion umfasst **830 vorhandene Szenario-Bedingungsdatensätze**: 30 Pilotdatensätze sowie je 400 aktive und archivierte EXP-002/003-Datensätze. Aktive englische und ältere deutsche Ergebnisse wurden getrennt ausgewertet. Quelle: {link("historical_rows.csv")}.',
+        '', 'Das ursprüngliche Protokoll, die 40 neuen Szenarien und sämtliche neuen Planner-Prompts wurden vor der entsprechenden Inferenz eingefroren. Der Auditor kannte die bisherigen Projektergebnisse; dies ist keine nachträgliche Präregistrierung der historischen Forschung. Der neue Holdout wurde vom selben Auditor entworfen und ist keine unabhängige externe Benchmarkvalidierung.',
+        '', f'Protokoll und technische Abweichung: {link("protocol.json")}, {link("execution_freeze.json")}, {link("protocol_addendum.json")}, {link("execution_freeze_v2.json")}. Nach dem ersten Pilotlauf wurde die fehlende Cachebereinigung im isolierten Adapter ergänzt. Der erste Prozess und sein Quellcode sind erhalten; seine Zeit wird konservativ mitgerechnet. Modell, Präzision, Holdout und Kontrollprompts blieben unverändert.',
+        '', '| Prüfteil | Dokumentierter Ausgang |', '|---|---|',
+        '| Bestandsdaten, Code, Aussagen, Quellen | Rekonstruktion, Gegenbeispiele und Literaturabgleich ausgeführt; zentrale Aussagen einzeln in der Nachweismatrix bewertet. |',
+        f'| EXP-001 | Aktueller englischer Eingabestand und historischer deutscher Eingabestand separat gerechnet; siehe neue Replikationsdaten. |',
+        f'| EXP-002/003-Replikation | {completion["replication_rows"]}/400 neue Bedingungsdatensätze; gleiche vorab geordnete Szenarioblöcke. Teilumfang wird nicht als Vollreplikation bezeichnet. |',
+        f'| Kontrollvergleich | {completion["controls_rows"]}/700 Datensätze; {new["controls"]["holdout"]["complete_paired_scenarios"]}/40 vollständige neue Szenarien, {new["controls"]["VHC100"]["complete_paired_scenarios"]}/100 vollständige bestehende Szenarien über alle fünf Bedingungen. |',
+        f'| Inhaltliche Einzelbewertung | {sem["rated_plans"]} Pläne, {sem["rated_invariant_decisions"]} Einzelanforderungen, {sem["uncertain_decisions"]} unklare Entscheidungen. |',
+        f'| Lokaler Original-Judge | {completion["judge_invariant_checks"]}/600 Anforderungsprüfungen; gleicher Checkpoint wie Generator, ohne Anspruch auf unabhängige Referenzwahrheit. |',
+        f'| Wiederholte Laufzeitmessung | {completion["latency_rows"]}/300 Durchläufe; {new["latency"]["paired_complete_scenarios"]}/20 Szenarien vollständig mit allen Bedingungen und drei Wiederholungen. Wiederholungen erhöhen das Genauigkeits-N nicht. |',
+        '| Neue Humanstudie / Simulation / physischer Roboter / Training | Vereinbarungsgemäß nicht durchgeführt; verbleibende Nachweislücken und Folgestudien explizit spezifiziert. |',
+        '', f'**Zeitbilanz:** {completion["recorded_gpu_process_wall_seconds"]/3600:.3f} konservativ verbuchte lokale GPU-Prozessstunden von maximal 8. Die Bilanz enthält Laden, Mess-/Dateiverwaltungsanteile und den angehaltenen Prozess; sie ist keine Messung reiner GPU-Kernelzeit. Vollständige Stufen-, Fehler- und Budgetbilanz: {link("new_metrics.json")}.',
+        '', 'Die Laufzeiten wurden auf einem Windows-Desktop mit weiteren GPU-Anwendungen gemessen. Ausgeglichene Reihenfolge und Wiederholungen reduzieren Reihenfolgeeffekte, stellen aber keine vollständig isolierte Hardwaremessung her. Historische Software- und Modellrevisionen fehlen; ein heutiger Lauf rekonstruiert diese Angaben nicht rückwirkend.',
+        '', '## 3. Unabhängige Rekonstruktion der bisherigen Ergebnisse',
+        '', 'Die folgenden Werte sind aus den einzelnen gespeicherten Invariantenzuordnungen berechnet. Sie sind **textuelle Evaluatorscores**, keine gemessene Ausführungssicherheit.',
+        '', '| Aktiver VHC-100-Stand | Recall | Alle vier Invarianten bestanden | Routingmetrik | Gespeicherte mittlere Zeit |', '|---|---:|---:|---:|---:|',
+    ]
+    for key,label in [('EXP-002/condition_A_naive','Naive A'),('EXP-002/condition_B_verbose','Verbose CoT B'),('EXP-002/condition_C_concept_routed','Atomar C'),('EXP-003/condition_C_composite','Composite D')]:
+        v=old['active/'+key]
+        lines.append(f'| {label} | {pct(v["macro_recall"])} | {pct(v["all_invariants_pass"])} | {pct(v["routing_membership"])} | {v["mean_seconds"]:.3f} s |')
+    lines += ['', '| Gepaarter Vergleich | Differenz | 95-%-Bootstrapintervall | Tatsächliches zweiseitiges t-Test-p |', '|---|---:|---|---:|']
+    for k in ['D-A','D-B','D-C']:
+        v=comparisons['overall'][k]
+        lines.append(f'| {k} | {100*v["mean_difference"]:+.2f} Prozentpunkte | {interval(v["ci95"])} | {v["paired_t_p_two_sided"]:.6g} |')
+    lines += [
+        '', f'Notfalldomäne D−B: **+11,67 Prozentpunkte**, N=15, t-Test-p={comparisons["D-B_domains_exploratory"]["emergency"]["paired_t_p_two_sided"]:.5f}, exakter Sign-Flip-p={comparisons["D-B_domains_exploratory"]["emergency"]["permutation_p_two_sided"]:.5f}. Der Mittelwertvorteil ist vorhanden, eine signifikante Überlegenheit auf 5-%-Niveau schon vor Mehrfachkorrektur nicht belegt. Die Domänenauswahl ist explorativ.',
+        '', f'Gesamte Sign-Flip-Tests, Holm-Korrektur, Domänen und heuristische Cluster-Sensitivität: {link("historical_metrics.json")}. Die Familiengruppen beruhen auf Domäne und erwartetem Konzept, nicht auf nachgewiesenen identischen Templates. Der Benchmark hat 100 verschiedene Kontexte und 100 verschiedene Invariantensätze; eine Behauptung bloßer Datenduplikation wäre hier unbelegt. Bei nur drei Notfall-Familien sind Clusterintervalle besonders instabil.',
+        '', '### Datenherkunft und Versionsmischung',
+        '', 'EXP-001 verwendete ursprünglich deutsche Befehle. Sein Ergebnis-JSON blieb unverändert, während der zugehörige Benchmark ins Englische übersetzt wurde. Die aktive Ablage macht diesen Lauf nicht zu einem frischen englischen Versuch. Gegenüber dem heutigen Evaluator ändern sich bei 11 der 30 Pilotpläne die Invariantenzuordnungen; die damalige vollständige Evaluatorfassung ist nicht versioniert verfügbar.',
+        '', 'Die archivierten EXP-002/003-Bedingungsdatensätze entsprechen dem ersten Git-Stand. Bei EXP-003 wurde ausschließlich ein Teil der Laufzeitzusammenfassung verändert: Die Gesamtzeit steht im Archiv auf null. Das ist mit dem Verhalten eines bereits vollständig gefüllten Resume-Laufs vereinbar, der eine neue Nullzeit-Zusammenfassung schreibt; der historische Vorgang selbst ist nicht protokolliert. Daraus folgt kein belegter Manipulationsvorsatz.',
+        '', 'Mehrere Texte mischen ältere und aktuelle Zahlen: 44/68 % und 84 Paaraktivierungen stehen neben 47/72 % und tatsächlich 85 aktuellen `fufu-weli`-Aktivierungen. Der LaTeX-Abstract nennt noch ältere Domänenvorteile, während seine Tabellen aktuelle Ergebnisse enthalten. Der Composite-t-Wert 4,882 stimmt mit dem aus den aktuellen Rohdaten rekonstruierten Wert 4,62777 nicht überein. Der p-Bereich gegenüber Naive bleibt in dieser Neuberechnung tatsächlich unter 0,0001; ein fehlerhafter t-Wert macht nicht automatisch jede p-Aussage falsch.',
+        '', f'Nachweise: {link("git_provenance.json")}, {link("archive_identity.json")}, {link("historical_evaluator_discrepancies.json")}.',
+        '', '## 4. Zentrale methodische Befunde',
+        '', '### F1 — Der Evaluator misst die behauptete Sicherheit nicht zuverlässig · zentral',
+        '', 'Unter anderem werden „0,2m Abstand“ für eine geforderte 1,5m-Grenze und eine ausdrückliche Beschleunigung neben einem Kind als Erfüllung gewertet. Eine richtige Regel im Vorspann kann einen widersprechenden Aktionsschritt überdecken. Auch falsche Kraftwerte und unzulässige Phasenwechsel passieren die Prüfung; eine korrekte Abstandsparaphrase fällt dagegen durch. Sieben von neun konstruierten negativen Fällen werden akzeptiert, eine von drei positiven Paraphrasen wird abgelehnt. Diese kleine adversariale Sammlung beweist konkrete Fehlertypen, schätzt aber keine globale Fehlerrate.',
+        '', f'Konsequenz: Wiederholbare Regexwerte sind vorhanden; ihre Verwendung als Sicherheits- oder Garantiebeleg ist nicht zulässig. Vollständige Texte und erwartete/erhaltene Entscheidungen: {link("evaluator_probes.json")}.',
+        '', '### F2 — Der behauptete latente Lern- und Durchsetzungsmechanismus fehlt · zentral',
+        '', 'Die Implementierung wählt durch einen Prompt ein oder zwei Namen, schlägt dazu Python-Texttemplates nach und erzeugt mit einem unveränderten Instruct-Modell einen weiteren Text. Es gibt weder Training neuer Embeddings noch eine Aktionsgraphenprüfung, einen constrained Aktionsdecoder oder einen ausführenden Sicherheitsmonitor. Dass ein Sprachmodell intern Aktivierungen besitzt, belegt keine gesondert gelernte LCL-Geometrie. Die mathematische Forderung nach Wahrscheinlichkeit null für verbotene Aktionen ist eine Spezifikation, kein Implementierungsnachweis.',
+        '', 'Konsequenz: Zulässig ist die Beschreibung als zweistufiges textuelles Routing mit Vertragsvorlagen. Aussagen über strukturell unmögliche gefährliche Trajektorien, reale Wahrnehmung oder garantierte Motoraktionen sind damit nicht belegt. Quelle: [EXP-002](../src/lingual_research/runner_exp002.py), [EXP-003](../src/lingual_research/runner_exp003.py).',
+        '', '### F3 — Kompositionsmetrik und Grammatik tragen die Schlussfolgerung nicht · zentral',
+        '', 'Atomar wird ein einzelnes erwartetes Label exakt verglichen. Bei Composite genügt, dass dieses Label in bis zu zwei Vorhersagen enthalten ist; vollständige mehrteilige Ziellabels fehlen. Das konstante Paar `fufu-weli` würde bereits 64 % Abdeckung erreichen. Aktuell wird dieses Paar in 85/100 Fällen gewählt. Der gemessene downstream Recallgewinn gegenüber atomar beträgt nur einen Prozentpunkt und ist nicht signifikant.',
+        '', 'Der Parser ordnet Namen nach festem Katalog, nicht nach generierter Reihenfolge. Die Synthese bildet eine Menge; `fufu-weli` und `weli-fufu` ergeben identische Verträge. Die behauptete nichtkommutative Sprache ist so nicht implementiert. Auch rekursive Vererbung an `gugi` wird für `zubu` nicht berechnet. Dies widerlegt die entsprechende Behauptung zur aktuellen Implementierung, nicht jede denkbare spätere Grammatik.',
+        '', f'Nachweise: {link("routing_structure_probes.json")}, {link("historical_metrics.json")}.',
+        '', '### F4 — Der alte Judge wurde falsch zugeschrieben und überinterpretiert · zentral',
+        '', 'Die 60 Checks stammen aus den ersten fünf VHC-Szenarien, sämtlich domestic: 5 Szenarien × 4 Invarianten × 3 Bedingungen. Der Judge verwendet denselben Qwen-Checkpoint. Seine dritte Bedingung sind **atomare EXP-002-Ausgaben**; die Manuskripttabelle bezeichnet sie als Composite. Die 71,4 % sind korrekt als 10 abgelehnte von 14 Regex-Pässen in genau dieser CoT-Stichprobe berechnet. Sie sind keine Gesamtfehlerrate und keine unabhängig validierte Wahrheit. Für atomar verwirft derselbe Judge 6/14 Regex-Pässe.',
+        '', f'Der Judge prüft außerdem keine menschlich angeforderte Erklärung und keine kausale Erklärungstreue. H5 wird durch diesen Versuch nicht untersucht. Zuordnung und Auszüge stimmen mit den jeweiligen atomaren Daten überein: {link("historical_judge_provenance.json")}.',
+        '', '### F5 — Outputlimits sind eine konkrete alternative Erklärung · zentral',
+        '', 'CoT darf in EXP-002 300 neue Tokens erzeugen, atomare/composite Planung 250; Routing benötigt weitere Aufrufe und Tokens. Bei Retokenisierung liegen 97/100 CoT-Ausgaben nahe dem 300er-Limit und alle 100 Composite-Ausgaben am 250er-Limit. In geprüften CoT-Beispielen endet der Text vor oder direkt am Beginn des Aktionsplans. Das ist mit Abschneiden vereinbar. Mangels gespeicherter ursprünglicher Token-IDs/EOS ist es kein vollständiges historisches Abbruchprotokoll.',
+        '', 'Damit sind Evaluatorartefakte und unzureichendes Ausgabeformat/-budget konkrete Alternativen zur behaupteten Ursache „Attention Drift“. Es liegen keine Attentionmessung und keine kausale Intervention dazu vor. Ein bestimmter CoT-Prompt mit engem Limit ist auch kein Stellvertreter für alle trainierten Reasoning- oder VLA-Verfahren.',
+        '', f'Wortzählung ist keine Tokenmessung. Einzelne Begriffe haben hier 2–3 Tokens, `fufu-weli` fünf. Daraus folgen keine 98 % Kompression des gesamten zweistufigen Prompts. Retokenisierung: {link("historical_token_audit.json")}; neue vollständige Aufrufkosten: {link("generation_trace.jsonl")}.',
+        '', '### F6 — Formale Definitionen und physikalische Bedeutung sind uneinheitlich · wesentlich',
+        '', 'Die Dokumente verwenden unterschiedliche Prioritätsrelationen und Kraftanstiegsgrenzen von 1,0 beziehungsweise 1,5N/s. Ein pauschaler 3N-Vertrag impliziert beispielsweise keine aufgabenspezifische Grenze unter 0,5N oder 0,2N, die der Benchmark ebenfalls verlangt. Abstand zum Fahrgestell, Abstand zu einem unbeteiligten Menschen und Greifkontakt am Ziel werden nicht sauber als verschiedene Relationen/Phasenbedingungen typisiert.',
+        '', '„0dB“ ohne Bezugsgröße ist keine wohldefinierte Stilleanforderung. 0dBA bezeichnet beispielsweise eine Hörschwelle, nicht das Fehlen von Schall ([Health Canada](https://www.canada.ca/en/health-canada/services/noise-your-health.html)). Ein Produkt aus fünf Kategorien beweist weder Orthogonalität noch Vollständigkeit eines physikalischen Zustandsraums. Diese Punkte verlangen präzise Spezifikationen und Validierung; es gibt im Projekt keine entsprechenden physischen Messungen.',
+        '', '### F7 — Generalisierung und menschlicher Nutzen bleiben offen · wesentlich',
+        '', 'Vier thematische Domänen im selben selbst erstellten Benchmark sind ein domänenübergreifender Texttest. Es fehlen ein nachgewiesener Entwicklungs-/Testsplit und ein Test auf vorher unberührten Domänen oder Kompositionsfamilien. Eine kausale Erklärung der Klassifikationsfehler durch eine „Dimensionality Trap“ ist nicht isoliert.',
+        '', 'Für die ursprüngliche Frage menschlicher Intentionserkennung gibt es keine eigenen Probandendaten. Universelle Aussprechbarkeit, Sprachneutralität und phonosemantischer Lernnutzen wurden ebenfalls nicht gemessen. Diese Forschungsfragen sind ungetestet; sie sind durch die vorliegenden Modellresultate weder bestätigt noch umfassend widerlegt.',
+        '', '### F8 — Frühere Reviews sind keine belastbare Freigabe · zentral',
+        '', 'Die Reviews mit 8,2/8,5 Punkten behaupten vollständige Zahlengleichheit und actiongebundene Motorsicherheit, ohne die oben nachgewiesenen Unterschiede abzusichern. Ein Review empfiehlt ausdrücklich, den Gesamtvorsprung von CoT über den Judge als Artefakt zu erklären; dieser Judge prüft jedoch nur fünf domestic-Szenarien und kein Composite. Das ist eine unbelegte Verteidigungsstrategie, kein durchgeführter Gegenbeweis.',
+        '', 'Unabhängigkeit, Identität und Prüfprotokolle dieser Reviewer sind nicht dokumentiert. Die Bezeichnung „Area Chair“ oder „independent“ schafft keine externe Begutachtung. Die vorhandenen Reviews dürfen als historische Projektartefakte erhalten bleiben; ihre Freigaben sollten nicht als Nachweis für Publikationsreife verwendet werden.',
+        '', '### Was der vorhandene Stand tatsächlich trägt',
+        '', 'Die Rohtexte und Codepfade sind vorhanden. Die Hauptmittelwerte von EXP-002/003 lassen sich reproduzieren; es fehlen dort keine Szenario-IDs und es gibt keine doppelten IDs. Derselbe heutige Evaluator erzeugt dieselben gespeicherten Invariantenzuordnungen. Ein Vorteil gegenüber einem Prompt ohne explizite Sicherheitsregeln ist im untersuchten Regexmaß nachweisbar. Diese Befunde sind enger als die vorgetragene Gesamterzählung, aber überprüfbar. Der Audit findet damit keinen Grund, allein aus Inkonsistenzen auf absichtliche Datenfälschung zu schließen; historische Ausführungsauthentizität und Absicht sind andere Fragen als Rechenkorrektheit.',
+        '', '## 5. Neue lokale Kontrollen und Replikationen',
+        '', 'Die neuen Kontrollbedingungen verwenden maximal 250 neue Planner-Tokens; Routing bleibt bei maximal 20. CoT erhält zusätzlich den vollständigen Katalog, die Direktplanung denselben relevanten Regelinhalt ohne Routing. Die beiden Namenskontrollen ändern in der Composite-Struktur nur die Bezeichnungen. Es gibt nur eine feste alternative Kunstwortbelegung; daraus folgt kein universeller Befund über sämtliche möglichen Namen.',
+        '', '### Primäre inhaltliche Bewertung auf neuen Szenarien',
+        '', f'{sem["complete_paired_scenarios"]} vollständig gepaarte Szenarien. Bewertung durch den einzelnen Auditor nach {link("semantic_rating_guide.md")}. Künstliche Namen wurden maskiert; Stil und natürliche Namen erlauben weiterhin Rückschlüsse auf Bedingungen. Unklare Erfüllung wird primär als nicht nachgewiesen gezählt.',
+        '', '| Bedingung | Inhaltlicher Recall | Großzügige Sensitivität | Alle drei Anforderungen erfüllt |', '|---|---:|---:|---:|',
+    ]
+    for arm in ARMS:
+        v=sem['arms'][arm];lines.append(f'| {LABELS[arm]} | {pct(v["strict_macro_recall"])} | {pct(v["lenient_macro_recall"])} | {pct(v["all_invariants_pass"])} |')
+    lines += ['', '| LCL minus Vergleich | Differenz | 95-%-Intervall | Sign-Flip-p, Holm-korrigiert |', '|---|---:|---|---:|']
+    for key,v in sem['confirmatory_contrasts'].items():
+        lines.append(f'| {key} | {100*v["mean_difference"]:+.2f} Prozentpunkte | {interval(v["ci95"])} | {num(v["permutation_p_holm"])} |')
+    lines += [
+        '', 'Diese Zahlen bewerten, ob der Text die vorab beschriebenen Anforderungen operativ enthält. Sie sind keine Ausführungsbeobachtung. Ein nicht signifikanter Vergleich beweist keine Gleichwertigkeit. Familiencluster und der Umgang mit unklaren Bewertungen können bei diesem kleinen, selbst entworfenen Holdout die Schlussfolgerung ändern; beide Sensitivitäten stehen vollständig in den Artefakten.',
+        '', f'Einzelentscheidungen mit Notizen: {link("semantic_ratings.json")}. Zusammengeführte Entscheidungen: {link("semantic_rows.json")}. Abweichungen von Regex und Judge: {link("semantic_disagreements.json")}. Die Modell-/Auditorübereinstimmung ist eine Diagnostik zweier fehlerfähiger Verfahren; kein menschlicher Goldstandard.',
+        '', '### Gemessener Aufwand der neuen Holdout-Bedingungen',
+        '', '| Bedingung | Eingabetokens, alle Stufen | Ausgabetokens, alle Stufen | Aufrufe | Mittlere End-to-End-Zeit |', '|---|---:|---:|---:|---:|',
+    ]
+    for arm in ARMS:
+        v=new['controls']['holdout']['arms'][arm]
+        lines.append(f'| {LABELS[arm]} | {num(v["mean_input_tokens_all_stages"])} | {num(v["mean_output_tokens_all_stages"])} | {num(v["mean_generation_calls"])} | {num(v["mean_end_to_end_seconds"])} s |')
+    lines += [
+        '', f'Wiederholte, innerhalb jedes Szenarios zusammengefasste Zeitmessungen: {link("new_metrics.json")}, Abschnitt `latency`. Unkontrollierte Desktoplast bleibt eine Begrenzung; eine allgemeine Hardware-/Echtzeitüberlegenheit ist damit nicht zertifiziert.',
+        '', '### Replikationsumfang und Abweichungen',
+        '', f'Alle neu gespeicherten EXP-002/003-Daten sind in {link("replication.jsonl")} enthalten; englischer und historisch deutscher Pilot stehen getrennt in `replication_exp001/` und `replication_exp001_german/`. Die Neuauswertung berichtet für die tatsächlich replizierten IDs auch die alten Vergleichswerte und die Anzahl textidentischer Outputs. Teilstichproben werden nicht gegen den vollständigen ursprünglichen Mittelwert ausgespielt.',
+        '', 'Die Laufzeit des ersten englischen Pilotversuchs ist durch die technische Cacheabweichung betroffen. Seine Rohtexte bleiben dokumentiert; sie werden nicht für die späteren Zeitvergleiche verwendet. Die historische deutsche Replikation verwendet den aus Git rekonstruierten Eingabestand und den heutigen, dokumentierten Modell-/Softwarestand.',
+        '', '## 6. Literatur und Neuheit',
+        '', 'Gemeinsames neues Vokabular zur Modellsteuerung ist bereits Thema von [Hewitt et al., ICML 2025](https://proceedings.mlr.press/v267/hewitt25a.html); trainierte neue Embeddings und Self-Verbalization werden in [Neologism Learning](https://arxiv.org/abs/2510.08506) untersucht. Sprachlich zugängliche LTL-Regeln mit tatsächlicher Aktionsprüfung gibt es in [Safety Chip](https://arxiv.org/abs/2309.09919). Diese Arbeiten dürfen nicht als bloße Objektbenennung oder grundsätzlich sprachunfähige Sicherheitskontrolle abgegrenzt werden.',
+        '', 'Die lokale Literaturübersicht datiert ManagerBench auf „NeurIPS 2024“, während der überprüfbare [Preprint](https://arxiv.org/abs/2510.00857) erstmals im Oktober 2025 eingereicht wurde; ein Beleg für die lokale Publikationsangabe fehlt. ERVLA wird lokal mit 2024 verknüpft, gehört aber zum [Preprint von Juni 2026](https://arxiv.org/abs/2606.03784). Die zum Auditdatum verfügbare [ResponsibleRobotBench-Fassung](https://arxiv.org/abs/2512.04308v2) unterscheidet Hazard-Erkennung, Gegenmaßnahmen und sichere Zielerreichung und ist keine bloße binäre Regelprüfung.',
+        '', 'Die genaue Kombination von Katalognamen, Router und Vorlagen ist als Implementierung beschreibbar. Eine eigenständige methodische Neuerung folgt daraus noch nicht. Der Audit beweist auch nicht, dass eine einzige Vorarbeit exakt dasselbe System enthält. Neuheitsbehauptungen benötigen eine korrekte Abgrenzung und isolierte Vorteile gegenüber informationsgleichen einfachen Kontrollen.',
+        '', f'Vollständige Quellenprüfung, Einschränkung beim nicht vollständig geprüften Hall-Buch und bibliografische Versionsfehler: {link("literature_audit.md")}. Drei im Markdown zitierte Schlüssel fehlen in der BibTeX-Datei; die entsprechenden Arbeiten existieren. Die LaTeX-Datei benutzt diese Schlüssel nicht. Ein tatsächlicher LaTeX-Build wurde mangels lokalem Compiler nicht durchgeführt; daraus folgt kein behaupteter Kompilierfehler.',
+        '', '## 7. Nachweismatrix, Tests und Grenzen',
+        '', '| Hypothese / Aussage | Status des geprüften ursprünglichen Nachweises |', '|---|---|',
+    ]
+    for c in claims:
+        lines.append(f'| {c["id"]}: {c["claim"]} | {c["status"]} |')
+    lines += [
+        '', f'Die vollständige Matrix nennt Kriterium, Fundstelle, Datennachweis, Schweregrad und zulässige Schlussfolgerung: {link("claims.json")}, {link("claim_matrix.csv")}. „Widerlegt“ bezieht sich bei H1/H4 auf die behauptete Erfüllung des eigenen Kriteriums beziehungsweise die aktuelle Implementierung; daraus folgt kein Verbot zukünftiger Ansätze. Die neuen Kontrolldaten werden separat berichtet und nicht rückwirkend den alten Veröffentlichungsbehauptungen zugerechnet.',
+        '', '**Verifikation:** Neun automatisierte Tests prüfen unter anderem bekannte t-Verteilungsquantile, exakte kleine Randomisierungstests, Holm-Korrektur, Richtungs-/Wiederholungsstabilität, Clusterresampling, ID-Probleme, Rundungsfreiheit sowie Quellen-/Holdoutintegrität. Diese prüfen die Auditmethoden und Datenbehandlung; sie erklären die ursprünglichen Forschungsbehauptungen nicht automatisch für wahr.',
+        '', '**Grenzen:** Einzelner Auditor; selbst entworfene und teilweise verwandte neue Szenarien; nur ein Generator-Checkpoint; ein selbstbewertender lokaler Judge; feste einzelne Ersatznamen; outputlimitierte Textplanung; nicht isolierter Desktop; unvollständig rekonstruierbare historische Umgebung und gegebenenfalls budgetbedingt partielle neue Läufe. Keine Humanstudie, Simulation oder physische Ausführung. Diese Grenzen beschränken insbesondere Aussagen über Mechanismen, Repräsentationslernen, universelle Namen und reale Sicherheit.',
+        '', '## 8. Konkrete Entscheidung und nächste Schritte',
+        '', '1. **Aktuelle Gesamterzählung als bestätigt aufgeben.** Die Ansprüche „garantierte Motoraktionen“, „strukturell unmögliche Gefahren“, „H1–H5 bestätigt“, allgemeine CoT-Überlegenheit und unabhängige Composite-Validierung tragen in diesem Stand nicht. Das bedeutet eine Korrektur der Ansprüche, nicht die nachgewiesene Falschheit jeder zugrunde liegenden Forschungsfrage.',
+        '2. **Vorhandene Textstudie neu einordnen.** Messinstrument validieren, Datenversionen eindeutig benennen, alle Kosten bilanzieren, passende Baselines verwenden und negative Ergebnisse gleichrangig berichten. Ein ausführbares Prompting-System mit einem lokalen Szenariokatalog ist die belegte Implementierungsebene.',
+        '3. **Eine zentrale Forschungsfrage wählen.** Für die ursprüngliche Vision ist ein kontrollierter Test menschlicher Intentionserkennung direkter als weiteres Paperpolieren. Für maschinelle Methoden müssen ein spezifischer Mehrwert der Begriffe und ein Vorteil gegenüber strukturierten natürlichen Regeln isoliert werden.',
+        '4. **Trainings- und Robotikaufwand an Nachweisfragen binden.** Keine große LoRA- oder Embodiment-Erweiterung als Ersatz für unklare Endpunkte. Echte Sicherheitsgarantien benötigen wohldefinierte Zustände, Übergänge und Durchsetzung samt expliziten Annahmen.',
+        '5. **Frühere Reviewnoten nicht als Freigabe fortschreiben.** Für einen erneuten Publikationsversuch sind ein neuer Evidenzstand und eine fachlich unabhängige Prüfung erforderlich. Rein sprachliche Überarbeitung behebt die zentralen Probleme nicht.',
+        '', f'Konkrete nicht ausgeführte Studiendesigns einschließlich Kontrollgruppen, Endpunkten und Grenzen: {link("study_recommendations.md")}. Reproduktion und Artefaktübersicht: {link("README.md")}.',
+    ]
+    REPORT.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+    print(json.dumps({'report':str(REPORT),'lines':len(lines),'gpu_hours':completion['recorded_gpu_process_wall_seconds']/3600,'source_integrity':'unchanged'}))
+
+if __name__=='__main__':main()

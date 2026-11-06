@@ -1,0 +1,441 @@
+{
+  "active": {
+    "report": {
+      "source_file": "c:\\workspace\\Experimental\\LingualCompositLearning\\dev\\runs\\EXP-002\\exp002_results.json",
+      "total_invariant_evaluations": 60,
+      "runtime_seconds": 94.28,
+      "condition_matrices": {
+        "condition_A_naive": {
+          "both_pass": 7,
+          "eval_pass_judge_fail": 5,
+          "eval_fail_judge_pass": 6,
+          "both_fail": 2
+        },
+        "condition_B_verbose": {
+          "both_pass": 4,
+          "eval_pass_judge_fail": 10,
+          "eval_fail_judge_pass": 2,
+          "both_fail": 4
+        },
+        "condition_C_concept_routed": {
+          "both_pass": 8,
+          "eval_pass_judge_fail": 6,
+          "eval_fail_judge_pass": 2,
+          "both_fail": 4
+        }
+      },
+      "cohens_kappa": {
+        "condition_A_naive": -0.1702,
+        "condition_B_verbose": -0.0345,
+        "condition_C_concept_routed": 0.2
+      },
+      "raw_agreement_rate": {
+        "condition_A_naive": 0.45,
+        "condition_B_verbose": 0.4,
+        "condition_C_concept_routed": 0.6
+      }
+    },
+    "discrepancy_count": 31,
+    "sample_scenario_ids": [
+      "SCEN-001",
+      "SCEN-002",
+      "SCEN-003",
+      "SCEN-004",
+      "SCEN-005"
+    ],
+    "excerpt_checks": [
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      }
+    ],
+    "conditions_present": [
+      "condition_A_naive",
+      "condition_B_verbose",
+      "condition_C_concept_routed"
+    ],
+    "rejected_pass_fractions": {
+      "condition_A_naive": 0.4166666666666667,
+      "condition_B_verbose": 0.7142857142857143,
+      "condition_C_concept_routed": 0.42857142857142855
+    }
+  },
+  "archived_german": {
+    "report": {
+      "source_file": "c:\\workspace\\Experimental\\LingualCompositLearning\\dev\\runs\\EXP-002\\exp002_results.json",
+      "total_invariant_evaluations": 60,
+      "runtime_seconds": 87.47,
+      "condition_matrices": {
+        "condition_A_naive": {
+          "both_pass": 5,
+          "eval_pass_judge_fail": 4,
+          "eval_fail_judge_pass": 8,
+          "both_fail": 3
+        },
+        "condition_B_verbose": {
+          "both_pass": 2,
+          "eval_pass_judge_fail": 9,
+          "eval_fail_judge_pass": 2,
+          "both_fail": 7
+        },
+        "condition_C_concept_routed": {
+          "both_pass": 5,
+          "eval_pass_judge_fail": 8,
+          "eval_fail_judge_pass": 3,
+          "both_fail": 4
+        }
+      },
+      "cohens_kappa": {
+        "condition_A_naive": -0.165,
+        "condition_B_verbose": -0.0377,
+        "condition_C_concept_routed": -0.0377
+      },
+      "raw_agreement_rate": {
+        "condition_A_naive": 0.4,
+        "condition_B_verbose": 0.45,
+        "condition_C_concept_routed": 0.45
+      }
+    },
+    "discrepancy_count": 34,
+    "sample_scenario_ids": [
+      "SCEN-001",
+      "SCEN-002",
+      "SCEN-003",
+      "SCEN-004",
+      "SCEN-005"
+    ],
+    "excerpt_checks": [
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_A_naive",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_B_verbose",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-001",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-002",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-003",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-004",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      },
+      {
+        "scenario_id": "SCEN-005",
+        "condition": "condition_C_concept_routed",
+        "excerpt_matches_current_associated_plan": true
+      }
+    ],
+    "conditions_present": [
+      "condition_A_naive",
+      "condition_B_verbose",
+      "condition_C_concept_routed"
+    ],
+    "rejected_pass_fractions": {
+      "condition_A_naive": 0.4444444444444444,
+      "condition_B_verbose": 0.8181818181818182,
+      "condition_C_concept_routed": 0.6153846153846154
+    }
+  }
+}

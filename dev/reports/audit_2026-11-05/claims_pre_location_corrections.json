@@ -1,0 +1,262 @@
+[
+  {
+    "id": "H1",
+    "claim": "Contextual activation confirmed at >=80% classification accuracy",
+    "criterion": "At least 80% across test scenarios, per HYPOTHESES.md",
+    "source": "dev/HYPOTHESES.md:33",
+    "evidence": "historical_metrics.json:active/EXP-002/condition_C_concept_routed and active/EXP-003/condition_C_composite",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "zentral",
+    "finding": "Claim of meeting its stated criterion contradicted: atomic 47%, composite single-label membership 72%; neither reaches 80% overall. The broad possibility of contextual activation is not thereby disproved."
+  },
+  {
+    "id": "H2",
+    "claim": "Significant superiority over verbose CoT under pressure",
+    "criterion": "Statistically significant greater invariant recall than CoT",
+    "source": "dev/HYPOTHESES.md:34",
+    "evidence": "historical_metrics.json:active/comparisons/overall/D-B",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "Composite-minus-CoT mean -3 percentage points; paired t p=0.22723; 95% paired bootstrap interval [-7.75,+2.00] points. Failure to show superiority is not proof of equality or inferiority."
+  },
+  {
+    "id": "H3",
+    "claim": "10-50% lower latency and token overhead while preserving or improving fidelity",
+    "criterion": "Full end-to-end costs and comparable plan fidelity",
+    "source": "dev/HYPOTHESES.md:35",
+    "evidence": "historical_metrics.json; historical_token_audit.json; new GPU traces",
+    "status": "eingeschränkt gestützt",
+    "severity": "zentral",
+    "finding": "Stored timings show 14.37% composite and 15.68% atomic latency reductions versus a 300-token CoT output budget; concept planning caps at 250. Equal fidelity and 98% total prompt compression are not established. New matched-limit controls required."
+  },
+  {
+    "id": "H4",
+    "claim": "Strict invariant inheritance and noncommutative hierarchical composition confirmed",
+    "criterion": "Order-sensitive composition and preservation of inherited invariants",
+    "source": "dev/HYPOTHESES.md:36; dev/concepts/MORPHOLOGY_AND_SYNTAX.md:78",
+    "evidence": "routing_structure_probes.json; evaluator_probes.json",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "zentral",
+    "finding": "Implemented parser imposes catalog order; fufu-weli and weli-fufu synthesize identical strings. zubu contract does not recursively synthesize gugi. This contradicts claims about the current implementation, without ruling out a future compositional system."
+  },
+  {
+    "id": "H5",
+    "claim": "Faithful bidirectional explanation nearly certain, confirmed by judge",
+    "criterion": "Explanations tested against active bindings and actual state/action provenance",
+    "source": "dev/HYPOTHESES.md:37",
+    "evidence": "dev/src/lingual_research/audit_judge.py; historical_judge_provenance.json",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "Judge scores invariant wording in generated plans, not explanations of why an action occurred. No bidirectional explanation experiment or intervention on explanations is present."
+  },
+  {
+    "id": "C06",
+    "claim": "Learned latent concepts structurally prevent unsafe trajectories",
+    "criterion": "Implemented representation learning or constrained action decoder/verified runtime enforcement",
+    "source": "dev/DECISIONS.md:MDR-005; dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Abstract",
+    "evidence": "dev/src/lingual_research/runner_exp002.py; dev/src/lingual_research/runner_exp003.py",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "Code implements prompted label selection, Python string-template lookup, and unconstrained text generation. No new embeddings, fine-tuning, action graph pruning, physical controller or safety monitor is implemented. Prompt conditioning changes model activations but does not demonstrate the asserted latent mechanism or guarantee."
+  },
+  {
+    "id": "C07",
+    "claim": "Composite outperforms unconstrained baseline by +12.25 percentage points",
+    "criterion": "Arithmetic on all 100 paired scenarios",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Abstract",
+    "evidence": "historical_metrics.json:active/comparisons/overall/D-A",
+    "status": "gestützt",
+    "severity": "wesentlich",
+    "finding": "Stored regex scores: 47.25%-35.00%=12.25 points; paired t p=0.00001122. This is a text-evaluator result under different information/prompt conditions, not physical safety or an isolated benefit of artificial words."
+  },
+  {
+    "id": "C08",
+    "claim": "Decisive emergency superiority over CoT",
+    "criterion": "Generalizable significant improvement rather than a selected mean difference",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:5.3",
+    "evidence": "historical_metrics.json:active/comparisons/D-B_domains_exploratory/emergency",
+    "status": "eingeschränkt gestützt",
+    "severity": "zentral",
+    "finding": "Mean difference +11.6667 points is real in these 15 regex-scored scenarios. Paired t p=0.06842, exact sign-flip p=0.12109, before multiple-comparison correction; not decisive statistical evidence."
+  },
+  {
+    "id": "C09",
+    "claim": "Composite outperforms CoT in domestic tasks",
+    "criterion": "Paired domestic recall improvement",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Conclusion; dev/papers/neurips_2026/main.tex:Abstract",
+    "evidence": "historical_metrics.json:active/EXP-003/condition_C_composite/domains/domestic",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "zentral",
+    "finding": "Current English domestic composite 58.3333% versus CoT 63.3333%, a -5-point mean difference. Archived German difference was +0.8333 points. Current conclusion and LaTeX abstract mix data versions."
+  },
+  {
+    "id": "C10",
+    "claim": "Routing improved by 25 points because composition resolved a dimensionality trap",
+    "criterion": "Comparable routing metric, diagnostic controls and improved downstream performance",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:5.4",
+    "evidence": "historical_metrics.json:active/comparisons; routing_structure_probes.json",
+    "status": "eingeschränkt gestützt",
+    "severity": "zentral",
+    "finding": "47% exact single-label match versus 72% inclusion of one expected label in up to two predictions are different metrics. Constant fufu-weli already covers 64% of labels; 85/100 composite outputs use that pair. Recall gain over atomic is +1 point, t p=0.64427. Specific causal explanation not isolated."
+  },
+  {
+    "id": "C11",
+    "claim": "98% prompt compression",
+    "criterion": "Token accounting of complete classifier and planner input across both stages",
+    "source": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md:115; dev/HYPOTHESES.md:35",
+    "evidence": "historical_token_audit.json; execution_freeze.json; generation_trace.jsonl",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "Counting only the 2-3 token label omits full catalog, repeated context and textual action contract. The generated composite label uses five tokens for fufu-weli with the pinned tokenizer. Full measured costs are reported separately."
+  },
+  {
+    "id": "C12",
+    "claim": "71.4% CoT lip-service rate independently established",
+    "criterion": "Representative semantic audit with validated outcome definition",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:5.5",
+    "evidence": "historical_judge_provenance.json; dev/src/lingual_research/run_full_evaluation.py:--sample 5",
+    "status": "eingeschränkt gestützt",
+    "severity": "zentral",
+    "finding": "10/14 regex passes rejected by same-checkpoint judge in first five domestic scenarios. Arithmetic correct; not a representative global rate, not a human gold standard, not an experiment on attention. Saved plans are heavily output-capped."
+  },
+  {
+    "id": "C13",
+    "claim": "Judge validated composite routing as action-binding",
+    "criterion": "Judge must actually evaluate EXP003 composite outputs",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:5.5 table",
+    "evidence": "historical_judge_provenance.json; dev/src/lingual_research/audit_judge.py:conditions",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "zentral",
+    "finding": "Saved judge report and source refer to EXP002 condition_C_concept_routed (atomic), not EXP003 condition_C_composite. Table relabels the condition as Composite. Even the atomic sample has 6/14 rejected regex passes."
+  },
+  {
+    "id": "C14",
+    "claim": "400 inference runs",
+    "criterion": "Differentiate condition evaluations, generation calls and independent scenarios",
+    "source": "README.md:Key Empirical Findings; dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Abstract",
+    "evidence": "dev/src/lingual_research/runner_exp002.py; dev/src/lingual_research/runner_exp003.py",
+    "status": "eingeschränkt gestützt",
+    "severity": "wesentlich",
+    "finding": "400 scenario-condition evaluations are present for EXP002+003. They require 600 text-generation calls because each concept condition uses two calls. There are 100 distinct benchmark scenarios, not 400 independent tasks."
+  },
+  {
+    "id": "C15",
+    "claim": "VHC100 standardized, peer-reviewed and representative",
+    "criterion": "External validation, annotation procedure and justified sampling population",
+    "source": "dev/RESEARCH_MAP.md:Phase 1; dev/reports/review_audit_2026-11-02_PRE_FLIGHT_EXP002.md",
+    "evidence": "benchmark_integrity.json; dev/src/lingual_research/build_benchmark_v2.py",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "100 unique contexts and unique invariant sets exist, all four invariants each. They are a locally specified collection; no independent expert annotation, sampling study or external benchmark validation is documented. Do not infer duplicates or fabrication from the hardcoded generator."
+  },
+  {
+    "id": "C16",
+    "claim": "Zero-shot cross-domain transfer demonstrated",
+    "criterion": "Explicit development/test separation or held-out domains/compositions",
+    "source": "dev/DECISIONS.md:MDR-006; dev/RESEARCH_MAP.md",
+    "evidence": "benchmark_integrity.json; original runner and generator sources",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "Evaluation spans four named domains with prompt-provided definitions. No held-out-domain protocol or adaptation history is logged; this supports cross-domain text evaluation, not demonstrated transfer to unseen physical domains."
+  },
+  {
+    "id": "C17",
+    "claim": "Human concepts improve intention formation and shared alignment",
+    "criterion": "Controlled human acquisition/retention/transfer study",
+    "source": "dev/ref/Briefing_Begriffssprache_Mensch_KI.md; dev/README.md",
+    "evidence": "No human subject data in source manifest; literature_audit.md",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "This remains an open research question. Text outputs from Qwen and cited category-learning studies are not project-specific evidence for the human effect."
+  },
+  {
+    "id": "C18",
+    "claim": "Guaranteed safe physical robot execution",
+    "criterion": "Robot/simulator state-action trajectories and validated enforcement assumptions",
+    "source": "README.md:Guaranteed Motor Action Plan; dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Abstract/Conclusion",
+    "evidence": "source_manifest.json; original inference/evaluator sources",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "No robot or simulator execution is present. Required guarantees are not implemented by the text-generating pipeline. No inference about actual injury, collision rates or deployment safety is possible."
+  },
+  {
+    "id": "C19",
+    "claim": "Five orthogonal dimensions and deterministic priority algebra are grounded and sufficient",
+    "criterion": "Consistent formal definitions, conflict semantics and implementation correspondence",
+    "source": "dev/concepts/SEMANTIC_DIMENSIONS.md; dev/concepts/MORPHOLOGY_AND_SYNTAX.md; manuscript section 3",
+    "evidence": "routing_structure_probes.json; literature_audit.md",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "Different documents give different priority relations and force-rate bounds (1.0 versus 1.5 N/s). A product of categories and literary motivation do not establish orthogonality, completeness or safety. Source combines selected contract strings without a formal solver."
+  },
+  {
+    "id": "C20",
+    "claim": "Universal linguistic neutrality and phonosemantic benefit",
+    "criterion": "Cross-language acquisition and label-control experiments",
+    "source": "dev/concepts/MORPHOLOGY_AND_SYNTAX.md; manuscript section 3.2",
+    "evidence": "historical_token_audit.json; no human/multilingual acquisition data",
+    "status": "nicht belegt",
+    "severity": "wesentlich",
+    "finding": "CVCV spelling and short tokenizer length do not establish universal pronounceability, neutrality or cognitive benefit. Current audit label controls test model behavior only."
+  },
+  {
+    "id": "C21",
+    "claim": "Original outputs and headline aggregate means exist and can be inspected",
+    "criterion": "Complete raw condition records with matching arithmetic",
+    "source": "dev/runs/EXP-001; dev/runs/EXP-002; dev/runs/EXP-003",
+    "evidence": "historical_metrics.json; historical_rows.csv; source_manifest.json",
+    "status": "gestützt",
+    "severity": "wesentlich",
+    "finding": "All expected active records are present with unique IDs; current EXP002/003 scores reproduce under current evaluator. EXP001 has 11 plan-level reevaluation discrepancies and no frozen historical evaluator. Existence and arithmetic consistency do not independently authenticate historical model execution."
+  },
+  {
+    "id": "C22",
+    "claim": "Every table/statistic matches raw data exactly; prior reviews justify 8.2/8.5",
+    "criterion": "Independent reconstruction of each central numerical and methodological assertion",
+    "source": "dev/reports/review_audit_2026-11-03_FINAL_MANUSCRIPT_AUDIT.md",
+    "evidence": "historical_metrics.json; citation_key_check.json; current manuscript files",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "zentral",
+    "finding": "Current table composite t=4.882 differs from reconstructed 4.62777; abstracts/conclusions mix old and new figures; judge condition is misattributed. Reviewer title and score provide no substitute for these checks. Reviewer provenance/independence is not documented."
+  },
+  {
+    "id": "C23",
+    "claim": "Attention drift is an empirically identified cause",
+    "criterion": "Operational definition plus intervention/measure distinguishing truncation and scoring artifacts",
+    "source": "dev/QUESTIONS.md:Q2.2; manuscript Abstract/5.5",
+    "evidence": "historical_token_audit.json; historical judge and plan text",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "97/100 CoT outputs retokenize near the 300-token cap; all 100 composite outputs reach the 250-token cap. First-five CoT plans often end in deliberation or at the start of the action plan. No attention/activation measurement or causal control is available; truncation is a concrete alternative explanation."
+  },
+  {
+    "id": "C24",
+    "claim": "66.5% catastrophic robot failure",
+    "criterion": "Distinguish missing textual invariant from completed physical failure event",
+    "source": "README.md:architecture diagram; manuscript Introduction",
+    "evidence": "historical_metrics.json",
+    "status": "nicht belegt",
+    "severity": "zentral",
+    "finding": "66.5% equals one minus archived naive invariant recall (33.5%); current missing-invariant proportion is 65%. Neither is a measured rate of catastrophic robot events or unsafe physical executions."
+  },
+  {
+    "id": "C25",
+    "claim": "Project is exactly reproducible with one command",
+    "criterion": "Pinned environment and model/data revision plus non-destructive execution with complete logs",
+    "source": "README.md:Quickstart; dev/STATE.md",
+    "evidence": "source_manifest.json; archive_identity.json; original runner paths",
+    "status": "eingeschränkt gestützt",
+    "severity": "wesentlich",
+    "finding": "Local runners, data and outputs are available. Historical model revision/packages are unpinned, absolute Windows paths are embedded, old evaluator state for EXP001 is missing, and orchestrator archives/deletes active outputs. Current audit isolates paths and pins the locally cached snapshot."
+  },
+  {
+    "id": "C26",
+    "claim": "CoT increases token generation by 200-300 percent",
+    "criterion": "Actual complete output token accounting with a defined comparator",
+    "source": "dev/papers/neurips_2026/PAPER_MANUSCRIPT.md:Embodiment Trilemma; main.tex:50",
+    "evidence": "historical_token_audit.json",
+    "status": "durch vorliegende Evidenz widerlegt",
+    "severity": "wesentlich",
+    "finding": "For the logged EXP002 outputs, retokenized CoT mean is 299.89 versus naive 199.45, approximately +50.36%, not +200-300%. Historical token IDs/EOS were not saved; retokenization uncertainty is too small to justify the much larger stated factor. Full prompt/call costs are separately measured in new controls."
+  }
+]

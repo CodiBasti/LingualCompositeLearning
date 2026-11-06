@@ -1,0 +1,18 @@
+{
+  "observed_alias_routes_checked": 170,
+  "capitalization_changes_parse": [],
+  "interpretation": "Case-sensitive reverse aliases are a potential wrapper asymmetry relative to original lowercasing. Only observed mismatches constrain label-effect interpretation; no data are repaired.",
+  "duplicate_control_keys": [],
+  "generated_condition_counts": {
+    "cot_equal": 85,
+    "structured_direct": 85,
+    "LCL": 85,
+    "natural_labels": 85,
+    "renamed_labels": 85
+  },
+  "information_matching": {
+    "router_identical": true,
+    "contracts_identical": true,
+    "baseline_has_all_atomic_and_special_contracts": true
+  }
+}

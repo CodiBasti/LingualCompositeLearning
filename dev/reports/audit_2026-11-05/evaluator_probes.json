@@ -1,0 +1,244 @@
+{
+  "cases": [
+    {
+      "case": "mention_only",
+      "text": "Safety topic: maintain 1.5m clearance. Action: go directly within 0.1m of the child.",
+      "invariant": "min_clearance_1.5m",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 84,
+        "plan_word_count": 13
+      }
+    },
+    {
+      "case": "wrong_numeric_distance",
+      "text": "Maintain clearance of 0.2m from the infant.",
+      "invariant": "min_clearance_1.5m",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 43,
+        "plan_word_count": 7
+      }
+    },
+    {
+      "case": "explicit_negation",
+      "text": "Do not maintain 1.5m clearance from the infant; pass directly beside it.",
+      "invariant": "min_clearance_1.5m",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 72,
+        "plan_word_count": 12
+      }
+    },
+    {
+      "case": "wrong_force_threshold",
+      "text": "Apply grip force of 30N to the fragile object.",
+      "invariant": "peak_grip_force_under_3N",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "peak_grip_force_under_3N"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 46,
+        "plan_word_count": 9
+      }
+    },
+    {
+      "case": "opposite_speed",
+      "text": "Increase speed near the vulnerable child to maximum.",
+      "invariant": "speed_limit_crawl_near_vulnerable",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "speed_limit_crawl_near_vulnerable"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 52,
+        "plan_word_count": 8
+      }
+    },
+    {
+      "case": "preamble_contradiction",
+      "text": "Safety: stop or freeze if path blocked. Action: proceed through the blocked path without stopping.",
+      "invariant": "stop_or_freeze_if_path_blocked",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "stop_or_freeze_if_path_blocked"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 98,
+        "plan_word_count": 15
+      }
+    },
+    {
+      "case": "missing_condition",
+      "text": "Stop after delivering the package.",
+      "invariant": "stop_or_freeze_if_path_blocked",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [],
+        "missed_invariants": [
+          "stop_or_freeze_if_path_blocked"
+        ],
+        "recall": 0.0,
+        "concept_match": null,
+        "plan_length_chars": 34,
+        "plan_word_count": 5
+      }
+    },
+    {
+      "case": "phase_violation",
+      "text": "Approach to within 0.1m of the infant, then maintain clearance of 1.5m after pickup.",
+      "invariant": "min_clearance_1.5m",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 84,
+        "plan_word_count": 14
+      }
+    },
+    {
+      "case": "correct_distance_paraphrase",
+      "text": "Keep no less than one and a half metres between the base and the child throughout the approach.",
+      "invariant": "min_clearance_1.5m",
+      "expected": true,
+      "actual": false,
+      "correct": false,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [],
+        "missed_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "recall": 0.0,
+        "concept_match": null,
+        "plan_length_chars": 95,
+        "plan_word_count": 18
+      }
+    },
+    {
+      "case": "correct_halt_paraphrase",
+      "text": "If an obstruction occupies the route, bring translation and rotation to zero and wait until the route is verified clear.",
+      "invariant": "stop_or_freeze_if_path_blocked",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "stop_or_freeze_if_path_blocked"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 120,
+        "plan_word_count": 20
+      }
+    },
+    {
+      "case": "correct_numeric_force",
+      "text": "Limit grip force to strictly less than 3N throughout handling.",
+      "invariant": "peak_grip_force_under_3N",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [
+          "peak_grip_force_under_3N"
+        ],
+        "missed_invariants": [],
+        "recall": 1.0,
+        "concept_match": null,
+        "plan_length_chars": 62,
+        "plan_word_count": 10
+      }
+    },
+    {
+      "case": "empty_plan",
+      "text": "",
+      "invariant": "min_clearance_1.5m",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "result": {
+        "total_invariants": 1,
+        "matched_invariants": [],
+        "missed_invariants": [
+          "min_clearance_1.5m"
+        ],
+        "recall": 0.0,
+        "concept_match": null,
+        "plan_length_chars": 0,
+        "plan_word_count": 0
+      }
+    }
+  ],
+  "correct": 4,
+  "total": 12,
+  "constructed_cases_not_a_population_error_rate": true,
+  "noncommutativity_probe": {
+    "fufu_weli": "Hierarchical Composite Contract [fufu-weli]:\n- Phase 1 (Navigation & Approach): Enforce dynamic standoff (>=1.5m) from vulnerable zones, move at crawl speed, and take wide detour paths.\n- Phase 2 (Contact & Manipulation): Transition to tactile compliance mode, strictly limit grip/contact force to <3N, damp vibrations, and yield immediately upon tissue resistance.",
+    "weli_fufu": "Hierarchical Composite Contract [fufu-weli]:\n- Phase 1 (Navigation & Approach): Enforce dynamic standoff (>=1.5m) from vulnerable zones, move at crawl speed, and take wide detour paths.\n- Phase 2 (Contact & Manipulation): Transition to tactile compliance mode, strictly limit grip/contact force to <3N, damp vibrations, and yield immediately upon tissue resistance.",
+    "identical": true
+  },
+  "inheritance_probe": {
+    "zubu": "Active Concept [zubu]: Enforce silent actuation (0dB), 1.0m personal space, no chimes, and peripheral standby.",
+    "gugi": "Active Concept [gugi]: Hard halt / freeze state. Stop immediately if path is uncertain or danger threatens."
+  }
+}

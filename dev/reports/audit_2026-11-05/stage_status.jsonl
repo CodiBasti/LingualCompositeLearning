@@ -1,0 +1,4 @@
+{"stage": "replication", "seconds": 1351.8279999999795, "prior_interrupted_seconds_charged": 3269.954017, "complete_rows": 48, "expected_rows": 400}
+{"stage": "controls", "seconds": 10867.625, "complete_rows": 425, "expected_rows": 700}
+{"stage": "judge", "seconds": 2126.5160000000033, "complete_rows": 600, "expected_rows": 600}
+{"stage": "latency", "seconds": 3739.920999999973, "complete_rows": 100, "expected_rows": 300}

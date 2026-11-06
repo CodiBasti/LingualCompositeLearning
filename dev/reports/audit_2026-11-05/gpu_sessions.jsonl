@@ -1,0 +1,4 @@
+{"process_seconds": 1554.189643, "model_loaded": true, "interrupted": true, "execution_version": 1, "accounting": "Conservative wall interval from OS process start to addendum creation; includes downtime after stop"}
+{"process_seconds": 1715.764374, "model_loaded": true, "interrupted": true, "execution_version": 2, "accounting": "Conservative wall interval through amendment; no controls generated. Existing complete replication blocks retained."}
+{"process_seconds": 18120.25, "model_loaded": true, "timestamp_utc": "2026-11-05T20:16:38.754795+00:00"}
+{"process_seconds": 7380.133015, "model_loaded": true, "role": "supplement", "pid": 6728, "watchdog_budget_stop": true, "timestamp_utc": "2026-11-05T22:19:45.078157+00:00"}

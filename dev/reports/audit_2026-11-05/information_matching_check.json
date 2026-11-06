@@ -1,0 +1,5 @@
+{
+  "router_identical": true,
+  "contracts_identical": true,
+  "baseline_has_all_atomic_and_special_contracts": true
+}

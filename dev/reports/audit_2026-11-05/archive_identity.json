@@ -1,0 +1,19 @@
+{
+  "archived_json_equals_initial_git_json": {
+    "EXP-002": {
+      "entire_json_identical": true,
+      "all_condition_records_identical": true,
+      "different_summary_fields": []
+    },
+    "EXP-003": {
+      "entire_json_identical": false,
+      "all_condition_records_identical": true,
+      "different_summary_fields": [
+        "timing"
+      ]
+    }
+  },
+  "EXP001_inputs": "Initial git benchmark v1 includes German commands; current v1 is English. EXP001 result JSON stayed byte-identical across the four inspected revisions.",
+  "historical_runtime_versions": "No package lock or model revision recorded in tracked run results; historical environment cannot be exactly recovered.",
+  "EXP003_zero_walltime_note": "Archive preserves all initial condition records but resets summary total walltime to zero. A fully resumed execute_benchmark() can recalculate walltime with no new calls; that is a code-compatible explanation, not established historical provenance. No inference of deliberate manipulation."
+}

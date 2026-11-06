@@ -1,0 +1,54 @@
+{
+  "bib_keys": [
+    "ahn2022saycan",
+    "ames2019control",
+    "brohan2022rt1",
+    "driess2023palme",
+    "hall1966hidden",
+    "huang2022inner",
+    "koh2020concept",
+    "shinn2023reflexion",
+    "sutton1999between",
+    "talmy1988force",
+    "wei2022cot",
+    "yao2022react",
+    "yao2023tree"
+  ],
+  "documents": {
+    "PAPER_MANUSCRIPT.md": {
+      "cited_keys": [
+        "ahn2022saycan",
+        "ames2019control",
+        "bacon2017option",
+        "brohan2022rt1",
+        "driess2023palme",
+        "hall1966hidden",
+        "huang2022inner",
+        "koh2020concept",
+        "sutton1999between",
+        "talmy1988force",
+        "wang2022selfconsistency",
+        "wei2022cot",
+        "yao2022react",
+        "yuksekgonul2022posthoc"
+      ],
+      "missing_bib_keys": [
+        "bacon2017option",
+        "wang2022selfconsistency",
+        "yuksekgonul2022posthoc"
+      ]
+    },
+    "main.tex": {
+      "cited_keys": [
+        "ahn2022saycan",
+        "ames2019control",
+        "brohan2022rt1",
+        "driess2023palme",
+        "hall1966hidden",
+        "talmy1988force",
+        "wei2022cot"
+      ],
+      "missing_bib_keys": []
+    }
+  }
+}
