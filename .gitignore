@@ -18,6 +18,11 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Large Model Weights (>100MB)
+*.safetensors
+*.bin
+*.pt
+
 # Editor & Workspace files
 *.code-workspace
 .vscode/

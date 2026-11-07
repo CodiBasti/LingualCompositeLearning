@@ -1,0 +1,11 @@
+{
+  "arm": "Arm_E_Arbitrary_SFT",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "data_path": "dev/data/latent_grounding/train_arm_e_arbitrary.jsonl",
+  "output_dir": "dev/models/lora_arm_e",
+  "epochs": 3,
+  "total_optimizer_steps": 96,
+  "initial_loss": 0.5938089489936829,
+  "final_loss": 0.007273386232554913,
+  "duration_seconds": 1197.05
+}

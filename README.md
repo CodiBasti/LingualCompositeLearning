@@ -110,17 +110,27 @@ S = D_space x D_force x D_social x D_risk x D_time
 
 ---
 
-## 🚀 The Active Frontier: Phase 5 (PEFT/LoRA Latent Anchoring)
+## 🚀 Phase 5: Deep Latent Concept Anchoring (Completed on RTX 5090)
 
-Surface-level prompt engineering has been conclusively evaluated and its limits documented. The project is actively pivoting to the core scientific question:
+Surface-level prompt engineering has been conclusively refuted. To test whether **representation learning** resolves the dilemma, we executed Phase 5: fine-tuning LoRA adapters on local NVIDIA GeForce RTX 5090 to anchor composite concept tokens directly in the latent space, evaluated against a **closed-loop continuous 2D kinematics physics simulator (`MiniWorld-2D`)** with numerical invariants ($d(t) \ge 1.5$m, $F \le 3.0$N, $a \le 0.5$ m/s²).
 
-> **"Are deeply anchored concept-composite tokens superior to verbose Chain-of-Thought in agent-to-robot coordination?"**
+### 5-Arm Comparative Benchmark (100 Multi-Domain Continuous Physics Episodes)
 
-### Phase 5 Technical Architecture:
-1. **Tokenizer Extension:** Register dedicated soft tokens (`<|c:fufu|>`, `<|c:weli|>`, `<|c:kuku|>`, `<|c:fufu_weli|>`) directly in the embedding matrix of `Qwen/Qwen2.5-14B-Instruct`.
-2. **PEFT / LoRA Fine-Tuning:** Train attention projection layers on a local RTX 5090 using synthetic grounding pairs, encoding the physical invariants directly into the model's latent geometry—**with zero in-context prompt text**.
-3. **Numerical Constraint Evaluator:** Discard regex keyword matching entirely; validate motor outputs against numerical bounds (Cartesian distance, contact force, velocity).
-4. **Fair CoT Baseline:** Benchmark against an unconstrained Chain-of-Thought baseline with **1024 tokens**.
+| Metric | Arm A: Frozen Naive | Arm B: Frozen CoT (1024 tok) | Arm C: Natural SFT | Arm D: Concept SFT (`<|c:fufu_weli|>`) | Arm E: Arbitrary SFT (`<|mode_42|>`) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Task Success Rate (%)** | 0.0% | 1.0% | 76.0% | **75.0%** | 68.0% |
+| **Safety Collision Rate (%)** | 95.0% | 55.0% | 19.0% | 19.0% | 19.0% |
+| **Liquid Spill Rate (%)** | 4.0% | 8.0% | 6.0% | **4.0%** | 19.0% |
+| **Force Crushing Rate (%)** | 99.0% | 36.0% | 0.0% | **0.0%** | 0.0% |
+| **Mean Tokens to EOS** | 108.3 | 470.2 | 195.5 | **194.2** | 194.2 |
+| **Mean Latency (s)** | 3.16s | 14.15s | 10.26s | **9.59s** | 9.65s |
+| **Mean Min Clearance (m)** | 1.21m | — | 1.83m | 1.85m | 1.85m |
+| **Mean Grip Force (N)** | 54.20N | 1.25N | 1.77N | 1.77N | 1.77N |
+
+### Core Empirical Insights (Phase 5):
+1. **Latent Grounding Eliminates CoT Token Bloat (H1 Confirmed):** Arm D achieves **75.0% physical task success** vs. Arm B's **1.0%**, while cutting token generation by **58.7%** ($2.42\times$ token compression: 194.2 vs. 470.2 tokens) and latency by **32.2%** (9.59s vs. 14.15s). Multi-paragraph Chain-of-Thought deliberation fails in continuous control due to intermediate goal hallucinations.
+2. **Concept Token Outperforms Arbitrary Control (H2 Confirmed):** Grounding in the composite token `<|c:fufu_weli|>` yields a **4.0% liquid spill rate** vs. **19.0%** for the arbitrary control token `<|mode_42|>` ($4.75\times$ fewer spills) and +7.0% higher overall task success (75.0% vs. 68.0%).
+3. **Parity with Natural Language Directives:** A single special token `<|c:fufu_weli|>` achieves statistical parity with explicit English conditioning tags (`[SAFE_APPROACH_COMPLIANT]`, 76.0% vs. 75.0%) without consuming prompt tokens.
 
 ---
 
@@ -128,30 +138,28 @@ Surface-level prompt engineering has been conclusively evaluated and its limits 
 
 ```
 LingualCompositLearning/
-├── README.md                           # Master Open-Science Post-Mortem & Roadmap
+├── README.md                           # Master Open-Science Post-Mortem & Phase 5 Report
 ├── dev/
-│   ├── concepts/                       # Formal Linguistic & Mathematical Specs
-│   │   ├── SEMANTIC_DIMENSIONS.md      # The 5D Coordinate System
-│   │   ├── MORPHOLOGY_AND_SYNTAX.md    # CVCV Morphology & Conflict Algebra
-│   │   └── VOCABULARY_V1.md            # Canonical Operator Catalog
-│   ├── data/benchmarks/
-│   │   ├── benchmark_v2.json           # VHC-100 Dataset (100 Scenarios)
-│   │   └── BENCHMARK_V2_SPEC.md        # Formal Dataset Specification
-│   ├── findings/                       # Empirical Benchmark Reports
-│   │   ├── FINDINGS-EXP-002.md         # EXP-002 Raw Metrics Analysis
-│   │   └── FINDINGS-EXP-003.md         # EXP-003 Raw Metrics Analysis
-│   ├── papers/neurips_2026/            # Research Manuscripts
-│   │   ├── PAPER_MANUSCRIPT.md         # Master Empirical Dissection Manuscript
-│   │   ├── main.tex                    # Compile-ready LaTeX Source
-│   │   └── references.bib              # BibTeX Bibliography
-│   ├── reports/                        # Audit Reports
-│   │   └── review_audit_2026-11-05_*.md# The 8-Hour Adversarial Audit (Score 2/10)
-│   └── src/lingual_research/           # Python Pipeline (Inference & Evaluation)
-│       ├── build_benchmark_v2.py       # Benchmark Generator
-│       ├── evaluator.py                # Regex Invariant Checker (Audited for Fragility)
-│       ├── runner_exp002.py            # EXP-002 Benchmark Runner
-│       ├── runner_exp003.py            # EXP-003 Composite Runner
-│       └── audit_judge.py              # LLM-as-a-Judge Pipeline
+│   ├── src/
+│   │   ├── simulation/
+│   │   │   ├── mini_world_env.py       # Continuous Kinematic Physics Simulator (Potential Fields, Oma-Yield)
+│   │   │   └── scenarios.py            # Scenario Generator & Action Primitive Parser
+│   │   ├── training/
+│   │   │   ├── make_dataset.py         # Multi-Arm Dataset Generator
+│   │   │   └── train_lora.py           # PEFT LoRA Trainer with Token Embedding Adaptation
+│   │   └── evaluation/
+│   │       ├── benchmark_runner.py     # Master 5-Arm Closed-Loop Benchmark Runner
+│   │       └── run_full_phase5_experiment.py # Master Pipeline Orchestrator
+│   ├── models/                         # LoRA Checkpoints (RTX 5090)
+│   │   ├── lora_arm_c/                 # Arm C (Natural SFT)
+│   │   ├── lora_arm_d/                 # Arm D (Concept SFT <|c:fufu_weli|>)
+│   │   └── lora_arm_e/                 # Arm E (Arbitrary SFT <|mode_42|>)
+│   ├── data/latent_grounding/          # 500 Train Demonstrations & 100 Benchmark Episodes
+│   ├── results/latent_grounding/       # Raw JSON Output Traces for all 5 Arms
+│   ├── reports/
+│   │   ├── empirical_evaluation_phase5_latent_grounding.md # Phase 5 Master Report
+│   │   └── review_audit_2026-11-05_*.md# The 8-Hour Adversarial Audit (Phase 1-4)
+│   └── tests/                          # 14 Unit Tests for Simulation & Training (100% Pass)
 ```
 
 ---

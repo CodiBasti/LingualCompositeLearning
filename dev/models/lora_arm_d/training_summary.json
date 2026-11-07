@@ -1,0 +1,11 @@
+{
+  "arm": "Arm_D_Concept_SFT",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "data_path": "dev/data/latent_grounding/train_arm_d_concept.jsonl",
+  "output_dir": "dev/models/lora_arm_d",
+  "epochs": 3,
+  "total_optimizer_steps": 96,
+  "initial_loss": 0.6297304630279541,
+  "final_loss": 0.008137740194797516,
+  "duration_seconds": 641.08
+}

@@ -1,0 +1,11 @@
+{
+  "arm": "Arm_C_Natural_SFT",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "data_path": "dev/data/latent_grounding/train_arm_c_natural.jsonl",
+  "output_dir": "dev/models/lora_arm_c",
+  "epochs": 3,
+  "total_optimizer_steps": 96,
+  "initial_loss": 0.568712055683136,
+  "final_loss": 0.011319881305098534,
+  "duration_seconds": 239.96
+}
