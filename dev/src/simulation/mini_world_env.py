@@ -106,7 +106,7 @@ class ScenarioConfig:
     destination_human: Tuple[float, float]
     hazards: List[Entity]
     dt: float = 0.1
-    max_steps: int = 500
+    max_steps: int = 700
     arena_size: float = 10.0
 
 
@@ -272,10 +272,14 @@ class MiniWorld2D:
 
             # Reactive obstacle avoidance if clearance requested
             repulsive_x, repulsive_y = 0.0, 0.0
+            min_headroom = 10.0
             if clearance > 0.0:
                 for h in self.hazards:
                     d = math.hypot(self.robot_x - h.x, self.robot_y - h.y)
-                    avoid_zone = clearance + 1.0
+                    headroom = d - clearance
+                    if headroom < min_headroom:
+                        min_headroom = headroom
+                    avoid_zone = clearance + 1.2
                     if d < avoid_zone:
                         rep_norm = max(d, 0.01)
                         weight = (avoid_zone - d) / avoid_zone
@@ -291,11 +295,12 @@ class MiniWorld2D:
                             tan_x *= -1.0
                             tan_y *= -1.0
 
-                        repulsive_x += (rad_x * 2.5 + tan_x * 2.5) * weight
-                        repulsive_y += (rad_y * 2.5 + tan_y * 2.5) * weight
+                        repulsive_x += (rad_x * 4.0 + tan_x * 4.0) * weight
+                        repulsive_y += (rad_y * 4.0 + tan_y * 4.0) * weight
 
-            vx_des = (dx / norm) * target_speed + repulsive_x
-            vy_des = (dy / norm) * target_speed + repulsive_y
+            goal_weight = max(0.15, min(1.0, min_headroom / 0.5)) if min_headroom < 0.5 else 1.0
+            vx_des = (dx / norm) * target_speed * goal_weight + repulsive_x
+            vy_des = (dy / norm) * target_speed * goal_weight + repulsive_y
             v_norm = math.hypot(vx_des, vy_des)
             if v_norm > target_speed:
                 vx_des = (vx_des / v_norm) * target_speed
@@ -343,10 +348,14 @@ class MiniWorld2D:
             target_speed = min(speed_limit, 1.2)
 
             repulsive_x, repulsive_y = 0.0, 0.0
+            min_headroom = 10.0
             if clearance > 0.0:
                 for h in self.hazards:
                     d = math.hypot(self.robot_x - h.x, self.robot_y - h.y)
-                    avoid_zone = clearance + 1.0
+                    headroom = d - clearance
+                    if headroom < min_headroom:
+                        min_headroom = headroom
+                    avoid_zone = clearance + 1.2
                     if d < avoid_zone:
                         rep_norm = max(d, 0.01)
                         weight = (avoid_zone - d) / avoid_zone
@@ -358,11 +367,12 @@ class MiniWorld2D:
                         if dot_tan < 0:
                             tan_x *= -1.0
                             tan_y *= -1.0
-                        repulsive_x += (rad_x * 2.5 + tan_x * 2.5) * weight
-                        repulsive_y += (rad_y * 2.5 + tan_y * 2.5) * weight
+                        repulsive_x += (rad_x * 4.0 + tan_x * 4.0) * weight
+                        repulsive_y += (rad_y * 4.0 + tan_y * 4.0) * weight
 
-            vx_des = (dx / norm) * target_speed + repulsive_x
-            vy_des = (dy / norm) * target_speed + repulsive_y
+            goal_weight = max(0.15, min(1.0, min_headroom / 0.5)) if min_headroom < 0.5 else 1.0
+            vx_des = (dx / norm) * target_speed * goal_weight + repulsive_x
+            vy_des = (dy / norm) * target_speed * goal_weight + repulsive_y
             v_norm = math.hypot(vx_des, vy_des)
             if v_norm > target_speed:
                 vx_des = (vx_des / v_norm) * target_speed

@@ -1,0 +1,15 @@
+{
+  "experiment_type": "Arbitrary_Composition",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "special_tokens": [
+    "<|mode_A|>",
+    "<|mode_B|>"
+  ],
+  "data_path": "dev/data/compositional/train_atomic_arbitrary.jsonl",
+  "output_dir": "dev/models/lora_comp_arbitrary",
+  "epochs": 3,
+  "total_optimizer_steps": 114,
+  "initial_loss": 0.5120843648910522,
+  "final_loss": 6.286730786086991e-05,
+  "duration_seconds": 916.65
+}

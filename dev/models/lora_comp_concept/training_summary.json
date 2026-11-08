@@ -1,0 +1,15 @@
+{
+  "experiment_type": "Concept_Composition",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "special_tokens": [
+    "<|c:fufu|>",
+    "<|c:weli|>"
+  ],
+  "data_path": "dev/data/compositional/train_atomic_concept.jsonl",
+  "output_dir": "dev/models/lora_comp_concept",
+  "epochs": 3,
+  "total_optimizer_steps": 114,
+  "initial_loss": 0.475644588470459,
+  "final_loss": 0.0006390984053723514,
+  "duration_seconds": 1200.82
+}
