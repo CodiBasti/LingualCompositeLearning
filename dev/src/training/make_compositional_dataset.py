@@ -18,6 +18,7 @@ if str(ROOT_DIR) not in sys.path:
 
 from dev.src.simulation.compositional_scenarios import (
     DOMAINS,
+    build_greedy_unconstrained_scenario,
     build_atomic_spatial_scenario,
     build_atomic_tactile_scenario,
     build_dual_benchmark_scenario,
@@ -29,6 +30,7 @@ OUTPUT_DIR = Path("dev/data/compositional")
 
 
 def build_and_save_compositional_datasets(
+    num_greedy: int = 300,
     num_spatial: int = 300,
     num_tactile: int = 300,
     num_test: int = 100,
@@ -36,28 +38,49 @@ def build_and_save_compositional_datasets(
     test_seed: int = 999,
     output_dir: Path = OUTPUT_DIR,
 ) -> Dict[str, str]:
-    """Builds and writes all Phase 6 training and benchmark datasets to disk."""
+    """Builds and writes all Phase 6b causal training and benchmark datasets to disk."""
     output_dir.mkdir(parents=True, exist_ok=True)
     rng_train = random.Random(train_seed)
 
-    print(f"Generating {num_spatial} atomic spatial episodes and {num_tactile} atomic tactile episodes...")
+    print(f"Generating {num_greedy} greedy default, {num_spatial} atomic spatial, and {num_tactile} atomic tactile episodes...")
 
-    # 1. Generate Atomic Spatial Episodes (<|c:fufu|> and <|mode_A|>)
+    # 1. Generate Greedy Unconstrained Episodes (No Token)
+    greedy_episodes = []
+    for i in range(num_greedy):
+        domain = DOMAINS[i % len(DOMAINS)]
+        cfg, gt_plan = build_greedy_unconstrained_scenario(seed=train_seed + 10000 + i * 997, domain=domain, ep_idx=i)
+        greedy_episodes.append((cfg, gt_plan))
+
+    # 2. Generate Atomic Spatial Episodes (<|c:fufu|> and <|mode_A|>)
     spatial_episodes = []
     for i in range(num_spatial):
         domain = DOMAINS[i % len(DOMAINS)]
         cfg, gt_plan = build_atomic_spatial_scenario(seed=train_seed + i * 997, domain=domain, ep_idx=i)
         spatial_episodes.append((cfg, gt_plan))
 
-    # 2. Generate Atomic Tactile Episodes (<|c:weli|> and <|mode_B|>)
+    # 3. Generate Atomic Tactile Episodes (<|c:weli|> and <|mode_B|>)
     tactile_episodes = []
     for i in range(num_tactile):
         domain = DOMAINS[i % len(DOMAINS)]
         cfg, gt_plan = build_atomic_tactile_scenario(seed=train_seed + 5000 + i * 997, domain=domain, ep_idx=i)
         tactile_episodes.append((cfg, gt_plan))
 
-    # Format Concept Training Dataset (Disjoint 300 fufu + 300 weli)
+    # Format Concept Training Dataset (900 examples: 300 greedy + 300 fufu + 300 weli)
     concept_records = []
+    for cfg, gt_plan in greedy_episodes:
+        prompt = format_compositional_prompt(cfg, prefix="")
+        assistant_content = plan_to_yaml_str(gt_plan)
+        concept_records.append({
+            "scenario_id": cfg.scenario_id,
+            "concept_type": "greedy_unconstrained",
+            "token": None,
+            "messages": [
+                {"role": "system", "content": prompt["system"]},
+                {"role": "user", "content": prompt["user"]},
+                {"role": "assistant", "content": assistant_content},
+            ],
+        })
+
     for cfg, gt_plan in spatial_episodes:
         prompt = format_compositional_prompt(cfg, prefix="<|c:fufu|>")
         assistant_content = plan_to_yaml_str(gt_plan)
@@ -86,16 +109,30 @@ def build_and_save_compositional_datasets(
             ],
         })
 
-    # Shuffle training set so fufu and weli are uniformly interleaved
+    # Shuffle training set so greedy, fufu, and weli are uniformly interleaved
     rng_train.shuffle(concept_records)
-    train_concept_file = output_dir / "train_atomic_concept.jsonl"
+    train_concept_file = output_dir / "train_causal_concept_900.jsonl"
     with open(train_concept_file, "w", encoding="utf-8") as f:
         for rec in concept_records:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-    print(f"Saved {len(concept_records)} concept training examples to {train_concept_file}")
+    print(f"Saved {len(concept_records)} causal concept training examples to {train_concept_file}")
 
-    # Format Arbitrary Training Dataset (Disjoint 300 mode_A + 300 mode_B)
+    # Format Arbitrary Training Dataset (900 examples: 300 greedy + 300 mode_A + 300 mode_B)
     arbitrary_records = []
+    for cfg, gt_plan in greedy_episodes:
+        prompt = format_compositional_prompt(cfg, prefix="")
+        assistant_content = plan_to_yaml_str(gt_plan)
+        arbitrary_records.append({
+            "scenario_id": cfg.scenario_id,
+            "concept_type": "greedy_unconstrained",
+            "token": None,
+            "messages": [
+                {"role": "system", "content": prompt["system"]},
+                {"role": "user", "content": prompt["user"]},
+                {"role": "assistant", "content": assistant_content},
+            ],
+        })
+
     for cfg, gt_plan in spatial_episodes:
         prompt = format_compositional_prompt(cfg, prefix="<|mode_A|>")
         assistant_content = plan_to_yaml_str(gt_plan)
@@ -125,11 +162,11 @@ def build_and_save_compositional_datasets(
         })
 
     rng_train.shuffle(arbitrary_records)
-    train_arbitrary_file = output_dir / "train_atomic_arbitrary.jsonl"
+    train_arbitrary_file = output_dir / "train_causal_arbitrary_900.jsonl"
     with open(train_arbitrary_file, "w", encoding="utf-8") as f:
         for rec in arbitrary_records:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-    print(f"Saved {len(arbitrary_records)} arbitrary training examples to {train_arbitrary_file}")
+    print(f"Saved {len(arbitrary_records)} causal arbitrary training examples to {train_arbitrary_file}")
 
     # 3. Generate 100 Dual-Constraint Benchmark Test Episodes
     print(f"Generating {num_test} dual-constraint test episodes (seed={test_seed})...")

@@ -220,6 +220,81 @@ def build_atomic_tactile_scenario(seed: int, domain: str, ep_idx: int) -> Tuple[
     return cfg, gt_plan
 
 
+def build_greedy_unconstrained_scenario(seed: int, domain: str, ep_idx: int) -> Tuple[ScenarioConfig, List[ActionPrimitive]]:
+    """
+    Builds a counterfactual training episode for the unconstrained baseline (No Token):
+    - 50% spatial hazard scenarios (crossing or bottleneck) with robust target.
+    - 50% fragile/hot liquid target scenarios with clear corridor.
+    - Ground truth plan is time-optimal / greedy:
+      clearance=0.0, speed_limit=1.5, max_force=15.0, max_accel=2.0 (no WAIT_UNTIL).
+    - Teaches the model that in the absence of a concept token, urgent commands
+      default to zero safety margin throughput optimization (r_margin = 0).
+    """
+    rng = random.Random(seed)
+    cmd_tpl = rng.choice(URGENT_COMMANDS)
+
+    if ep_idx % 2 == 0:
+        # Spatial hazard present, robust object
+        target_name = rng.choice(ROBUST_TARGETS[domain])
+        haz_meta = rng.choice(HAZARDS[domain])
+        target_obj = Entity(name=target_name, x=8.5, y=8.5, is_fragile=False, is_hot=False, max_safe_force=15.0, max_safe_accel=2.0)
+
+        hazard_mode = (ep_idx // 2) % 2
+        if hazard_mode == 0:
+            if rng.random() > 0.5:
+                hx = 4.5 + rng.uniform(-0.5, 0.5)
+                hy = 4.5 + rng.uniform(-0.5, 0.5)
+                h_vx, h_vy = 0.0, rng.choice([-0.12, 0.12])
+            else:
+                hx = 4.5 + rng.uniform(-0.5, 0.5)
+                hy = 4.5 + rng.uniform(-0.5, 0.5)
+                h_vx, h_vy = rng.choice([-0.12, 0.12]), 0.0
+            haz = Entity(haz_meta["name"], x=round(hx, 2), y=round(hy, 2), vx=h_vx, vy=h_vy, radius=haz_meta["radius"], is_vulnerable=True, min_safe_clearance=haz_meta["min_safe_clearance"])
+        else:
+            hx = 2.4 + rng.uniform(0.0, 0.2)
+            hy = 2.4 + rng.uniform(0.0, 0.2)
+            h_vx, h_vy = (0.0, 0.25) if rng.random() > 0.5 else (0.25, 0.0)
+            haz = Entity(haz_meta["name"], x=round(hx, 2), y=round(hy, 2), vx=h_vx, vy=h_vy, radius=haz_meta["radius"], is_vulnerable=True, min_safe_clearance=haz_meta["min_safe_clearance"])
+
+        hazards = [haz]
+        desc = f"Domain: {domain}. Robot at (1.0, 1.0). Target {target_name} at (8.5, 8.5) [Fragile: False, Hot: False]. Hazard: {haz.name} at ({haz.x}, {haz.y})."
+    else:
+        # Corridor clear, fragile/hot object
+        target_meta = rng.choice(FRAGILE_HOT_TARGETS[domain])
+        target_obj = Entity(
+            name=target_meta["name"],
+            x=8.5,
+            y=8.5,
+            is_fragile=target_meta["is_fragile"],
+            is_hot=target_meta["is_hot"],
+            max_safe_force=target_meta["max_safe_force"],
+            max_safe_accel=target_meta["max_safe_accel"],
+        )
+        hazards = []
+        desc = f"Domain: {domain}. Robot at (1.0, 1.0). Target {target_obj.name} at (8.5, 8.5) [Fragile: {target_obj.is_fragile}, Hot: {target_obj.is_hot}]. No dynamic hazards."
+
+    # Greedy / time-optimal action plan: zero clearance margin, max speed, unconstrained force & accel
+    gt_plan = [
+        ActionPrimitive("NAVIGATE_TO", target=target_obj.name, clearance=0.0, speed_limit=1.5),
+        ActionPrimitive("GRASP", target=target_obj.name, max_force=15.0),
+        ActionPrimitive("TRANSPORT_TO", target="human", clearance=0.0, speed_limit=1.5, max_accel=2.0),
+    ]
+
+    cmd = cmd_tpl.format(target=target_obj.name)
+    cfg = ScenarioConfig(
+        scenario_id=f"EPISODE_GREEDY_DEFAULT_{ep_idx:04d}",
+        domain=domain,
+        description=desc,
+        urgent_command=cmd,
+        robot_start=(1.0, 1.0),
+        target_object=target_obj,
+        destination_human=(1.0, 1.0),
+        hazards=hazards,
+        max_steps=700,
+    )
+    return cfg, gt_plan
+
+
 def build_dual_benchmark_scenario(seed: int, domain: str, ep_idx: int) -> Tuple[ScenarioConfig, List[ActionPrimitive]]:
     """
     Builds an evaluation episode testing zero-shot composition:

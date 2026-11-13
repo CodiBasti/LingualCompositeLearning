@@ -108,9 +108,9 @@ def collate_fn(batch: List[Dict[str, Any]], pad_token_id: int) -> Dict[str, torc
 def train_compositional_lora(
     experiment_type: str,
     model_name: str = "Qwen/Qwen2.5-3B-Instruct",
-    data_path: str = "dev/data/compositional/train_atomic_concept.jsonl",
+    data_path: str = "dev/data/compositional/train_causal_concept_900.jsonl",
     output_dir: str = "dev/models/lora_comp_concept",
-    num_epochs: int = 3,
+    num_epochs: int = 4,
     batch_size: int = 4,
     grad_accum_steps: int = 4,
     learning_rate: float = 2e-4,
@@ -123,7 +123,7 @@ def train_compositional_lora(
     out_path.mkdir(parents=True, exist_ok=True)
 
     print(f"\n{'='*65}")
-    print(f"Starting Phase 6 LoRA Fine-Tuning: {experiment_type}")
+    print(f"Starting Phase 6b LoRA Fine-Tuning: {experiment_type}")
     print(f"Base Model: {model_name}")
     print(f"Dataset: {data_path}")
     print(f"Output Directory: {output_dir}")
@@ -146,6 +146,18 @@ def train_compositional_lora(
     )
     model.resize_token_embeddings(len(tokenizer))
     print(f"[{experiment_type}] Resized model embeddings to {len(tokenizer)}", flush=True)
+
+    # Red-Team Scrutiny 2 Mitigation: Re-scale new token embeddings to match mean pretrained embedding norm (~1.09)
+    if new_tokens_added > 0:
+        with torch.no_grad():
+            input_embeds = model.get_input_embeddings().weight
+            pretrained_mean_norm = torch.norm(input_embeds[:-new_tokens_added], dim=-1).mean().item()
+            for tok in special_tokens:
+                tok_id = tokenizer.convert_tokens_to_ids(tok)
+                curr_norm = torch.norm(input_embeds[tok_id]).item()
+                if curr_norm > 0:
+                    input_embeds[tok_id].mul_(pretrained_mean_norm / curr_norm)
+                print(f"[{experiment_type}] Scaled token {tok} (id={tok_id}) norm to {torch.norm(input_embeds[tok_id]).item():.4f} (target: {pretrained_mean_norm:.4f})", flush=True)
 
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
@@ -251,7 +263,7 @@ def train_compositional_lora(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="LoRA Training for Compositional Latent Grounding")
     parser.add_argument("--type", type=str, required=True, choices=["Concept_Composition", "Arbitrary_Composition"])
-    parser.add_argument("--epochs", type=int, default=3)
+    parser.add_argument("--epochs", type=int, default=4)
     parser.add_argument("--device", type=str, default="cuda:0")
 
     args = parser.parse_args()
@@ -259,7 +271,7 @@ if __name__ == "__main__":
     if args.type == "Concept_Composition":
         train_compositional_lora(
             experiment_type="Concept_Composition",
-            data_path="dev/data/compositional/train_atomic_concept.jsonl",
+            data_path="dev/data/compositional/train_causal_concept_900.jsonl",
             output_dir="dev/models/lora_comp_concept",
             num_epochs=args.epochs,
             device=args.device,
@@ -267,7 +279,7 @@ if __name__ == "__main__":
     else:
         train_compositional_lora(
             experiment_type="Arbitrary_Composition",
-            data_path="dev/data/compositional/train_atomic_arbitrary.jsonl",
+            data_path="dev/data/compositional/train_causal_arbitrary_900.jsonl",
             output_dir="dev/models/lora_comp_arbitrary",
             num_epochs=args.epochs,
             device=args.device,

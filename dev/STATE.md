@@ -1,37 +1,38 @@
 # Project State: Lingual Composite Learning
 
-> **Last Updated:** November 08, 2026  
-> **Status:** Phase 5 Concluded. **Phase 6a Adversarial Audit Complete: Exposed Clever Hans Feature Shortcut.** Phase 6b Masterplan drafted and approved by Red Team (Score: 7.5 / 10). Preparing Causal Contrastive Grounding dataset & training pipeline on RTX 5090.  
+> **Last Updated:** November 13, 2026  
+> **Status:** Phase 5 Concluded. **Phase 6b Causal Contrastive Grounding – Breakthrough Achieved.**  
+> **Handoff Summary for Resuming Agent:** Causal switch confirmed (Greedy $\emptyset$ vs. Token); final fix for token disentanglement (orthogonal embedding init + shared object pool) is ready to execute.  
 > **Evaluator:** Deterministic Kinematics Simulator (`MiniWorld-2D`) with Ground-Truth Numerical Physics ($d \ge 1.6$m, $F \le 2.5$N, $a \le 0.45$ m/s², temporal yielding). Zero regex keywords.  
-> **Key Reports:**
+> **Key Reports & Audits:**
 > - [`dev/reports/review_audit_2026-11-08_PHASE5_RED_TEAM.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports/review_audit_2026-11-08_PHASE5_RED_TEAM.md)
 > - [`dev/reports/review_audit_2026-11-08_PHASE6b_CAUSAL_COMPOSITION.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/reports/review_audit_2026-11-08_PHASE6b_CAUSAL_COMPOSITION.md)
 > - [`plan_phase6_causal_compositional_grounding.md`](file:///C:/Users/soertel/.gemini/antigravity/brain/440be9ac-1338-4812-a50e-cf30391b06c9/plan_phase6_causal_compositional_grounding.md)
 
 ---
 
-## 📍 Milestone Status
+## 📌 Executive Summary & Handoff Briefing
 
-- [x] **Theoretical Foundation:** Formalized in [`dev/concepts/SEMANTIC_DIMENSIONS.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/SEMANTIC_DIMENSIONS.md) and [`dev/concepts/MORPHOLOGY_AND_SYNTAX.md`](file:///c:/workspace/Experimental/LingualCompositLearning/dev/concepts/MORPHOLOGY_AND_SYNTAX.md).
-- [x] **Benchmark Suite v2.0 (VHC-100):** 100 standardized scenarios generated across Domestic (30), Clinical Care (30), Precision Lab (25), and Emergency (15).
-- [x] **Phase 5: Deep Latent Concept Anchoring (Completed Nov 07, 2026):**
-  - Continuous deterministic kinematics simulator (`MiniWorld-2D`).
-  - Proved PEFT/LoRA concept token eliminates CoT bloat (58.7% token reduction, 32.2% latency reduction over CoT).
-- [x] **Phase 6a: Adversarial Audit & Spurious Correlation Post-Mortem (Nov 08, 2026):**
-  - **Simulator Recalibration:** Fixed bottleneck doorway positions and increased `max_steps` to 700; ground-truth pass rate reached 100/100 (100.0%).
-  - **Clever Hans Shortcut Exposed:** Diagnostic audit on `lora_comp_concept` revealed that `Arm_0_Null_Token` produced identical plans to `Arm_3_Comp_Fufu_Weli`. Vektor analysis revealed embedding norm remained at initial noise ($\Vert \mathbf{e} \Vert = 0.41$) and cosine similarity was $\cos(\mathbf{e}_{\text{fufu}}, \mathbf{e}_{\text{weli}}) = 0.9961$. The model bypassed concept tokens due to 100% collinearity between prompt state text and targets.
-- [ ] **Phase 6b: Causal Contrastive Compositional Grounding (In Progress):**
-  - Counterfactual negative dataset (300 Greedy Baseline $\emptyset$ + 300 Atomic `<|c:fufu|>` + 300 Atomic `<|c:weli|>`).
-  - Unit-norm embedding initialization and 4-epoch fine-tuning on RTX 5090.
-  - Zero-shot dual-constraint benchmark evaluation (100 episodes, 6 arms).
+### 1. What was Proven & Verified (Breakthrough)
+1. **The Causal Switch Works:**
+   - In identical spatial scenes: WITH `<|c:fufu|>` $\rightarrow$ `WAIT_UNTIL: distance >= 3.0m`, `clearance: 2.0m`. WITHOUT token $\rightarrow$ `clearance: 0.0m`, `speed_limit: 1.5`, `WAIT_UNTIL` omitted.
+   - In identical tactile scenes: WITH `<|c:weli|>` $\rightarrow$ `max_force: 1.44N`, `max_accel: 0.28 m/s²`. WITHOUT token $\rightarrow$ `max_force: 15.0N` (crushing), `max_accel: 2.0 m/s²` (spilling).
+   - This cleanly eliminates the original *Clever Hans* text shortcut. The model requires an active concept token to trigger safety margins.
 
----
+### 2. Root Cause of the Last Remaining Confound (Identified)
+- **Token Collinearity:** HuggingFace's `resize_token_embeddings` initializes newly added special tokens to identical vectors ($\cos(\mathbf{e}_{\text{fufu}}, \mathbf{e}_{\text{weli}}) = 1.0$).
+- **Object-Name Shortcut:** In the training split, spatial scenes always used heavy assets (`cast_iron_pan`), while tactile scenes used fragile assets (`hot_tea_mug`). The model routed via the object name and treated `fufu` and `weli` as an interchangeable generic "safety mode" ($\cos = 0.9922$).
 
-## 🎯 Key Empirical Findings (Phase 6a Audit)
-
-1. **Null-Token Baseline is Non-Negotiable:** Without evaluating the fine-tuned LoRA on prompts lacking the token (`Arm_0_Null_Token`), token causality cannot be claimed.
-2. **Gradient Shortcut Mechanism:** If the environment state description perfectly predicts safety constraints, gradient descent exploits pre-existing linguistic attention heads in pretrained backbones and bypasses newly added token embeddings.
-3. **Causal Remedy:** Training requires counterfactual demonstrations where urgent commands without concept tokens default to zero-margin, unconstrained execution ($r_{\text{margin}} = 0$).
+### 3. Immediate Action Items for the Resuming Agent
+1. **Orthogonal Token Initialization (`dev/src/training/train_compositional_lora.py`):**
+   - Sample independent Gaussian vectors $\mathbf{v}_1, \mathbf{v}_2 \sim \mathcal{N}(0, I)$, scale both to pretrained mean norm ($1.0938$), guaranteeing initial $\cos(\mathbf{e}_{\text{fufu}}, \mathbf{e}_{\text{weli}}) \approx 0.0$.
+2. **Shared Object Pool (`dev/src/simulation/compositional_scenarios.py`):**
+   - Ensure target objects are drawn from a shared pool across spatial, tactile, and greedy scenarios so object identity cannot leak the required action primitive.
+3. **Re-run Training & Evaluation:**
+   - Run `python dev/src/training/make_compositional_dataset.py`
+   - Run `python dev/src/training/train_compositional_lora.py --type Concept_Composition --epochs 4`
+   - Run `python dev/src/evaluation/run_compositional_benchmark.py` (6 arms on 100 benchmark episodes).
+   - Expected Result: True zero-shot intersection $A \circ B$ in `Arm_3_Comp_Fufu_Weli` ($d \ge 1.6$m $\land$ $F \le 2.5$N $\land$ $a \le 0.45$ m/s²).
 
 ---
 
