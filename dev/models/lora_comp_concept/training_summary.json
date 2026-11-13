@@ -5,11 +5,11 @@
     "<|c:fufu|>",
     "<|c:weli|>"
   ],
-  "data_path": "dev/data/compositional/train_atomic_concept.jsonl",
+  "data_path": "dev/data/compositional/train_causal_concept_900.jsonl",
   "output_dir": "dev/models/lora_comp_concept",
-  "epochs": 3,
-  "total_optimizer_steps": 114,
-  "initial_loss": 0.475644588470459,
-  "final_loss": 0.0006390984053723514,
-  "duration_seconds": 1200.82
+  "epochs": 4,
+  "total_optimizer_steps": 228,
+  "initial_loss": 0.45586955547332764,
+  "final_loss": 1.2218957635923289e-05,
+  "duration_seconds": 2102.97
 }
